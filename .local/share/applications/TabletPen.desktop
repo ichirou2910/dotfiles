@@ -1,7 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=Tablet Pen Setup
-Comment=Set screen zone that the pen will be active on
-Exec=xinput set-prop "Tablet Monitor Pen Pen (0)" --type=float "Coordinate Transformation Matrix" 0.584297 0 0.415703 0 1 0 0 0 1
-Terminal=false

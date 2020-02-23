@@ -1,7 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=Stop Windows 10
-Comment=Stop Windows 10 VM
-Type=Application
-Terminal=true
-Exec=sh -c "sudo virsh shutdown win10 && xrandr --output HDMI-1 --auto --right-of DP-1"

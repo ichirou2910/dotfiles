@@ -1,9 +1,0 @@
-[Desktop Entry]
-
-Type=Application
-Name=Music Player
-Version=1.0
-Comment=NCMPCPP - Music player
-Exec=ncmpcpp
-Categories=Music
-Terminal=true
