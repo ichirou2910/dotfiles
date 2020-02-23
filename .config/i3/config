@@ -193,7 +193,7 @@ exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
 
 # Desktop background notes
-exec --no-startup-id python3 /home/ichirou2910/Pictures/BG/walltext.py
+exec --no-startup-id python3 /home/ichirou2910/.config/wallpaper/walltext.py
 
 for_window [class="Brave"] move workspace $ws5
 for_window [class="Spotify"] move workspace $ws6

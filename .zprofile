@@ -13,6 +13,7 @@ export APPLAUNCHER="rofi"
 # Directories
 export ZDOTDIR="$HOME/.config/zsh"
 export SCREENSHOTDIR="$HOME/Pictures/Screenshots"
+export BG_NOTES="$HOME/.config/wallpaper/notes.txt"
 
 # PATH
 export JAVA_HOME=/usr/lib/jvm/jdk-11.0.4

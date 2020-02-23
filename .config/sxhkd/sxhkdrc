@@ -18,7 +18,7 @@ super + d
 super + m
 	ncmpcpp
 super + n
-	$TERMINAL --title Notes -e vim /home/ichirou2910/Pictures/BG/notes.txt
+	$TERMINAL --title Notes -e vim $BG_NOTES
 alt + Tab							
 	rofi -show window
 
