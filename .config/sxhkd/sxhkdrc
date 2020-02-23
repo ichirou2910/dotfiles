@@ -1,0 +1,56 @@
+
+# BASIC BINDING
+# -------------
+super + Return						
+	$TERMINAL
+super + i								
+	$TERMINAL -e $FILE
+super + e							
+	$TERMINAL -e neomutt
+super + shift + w						
+	$TERMINAL -e sudo nmtui
+super + w					
+	$BROWSER
+super + s
+	spotify
+super + d							
+	rofi -show drun
+super + m
+	ncmpcpp
+super + n
+	$TERMINAL --title Notes -e vim /home/ichirou2910/Pictures/BG/notes.txt
+alt + Tab							
+	rofi -show window
+
+# MEDIA BINDING
+# -------------
+XF86AudioRaiseVolume				
+	pactl set-sink-volume 0 +5%
+XF86AudioLowerVolume				
+	pactl set-sink-volume 0 -5%
+XF86AudioMute						
+	pactl set-sink-mute 0 toggle
+XF86AudioPlay						
+	playerctl play-pause
+XF86AudioNext						
+	playerctl next
+XF86AudioPrev						
+	playerctl previous
+XF86MonBrightnessUp					
+	sudo /usr/bin/light -A 10
+XF86MonBrightnessDown				
+	sudo /usr/bin/light -U 10
+
+# SCREEN CAPTURE + RECORDING
+# -------------------------
+Print								
+	maim | xclip -selection clipboard -t image/png && notify-send "Screenshot saved."
+alt + Print
+	maim -i $(xdotool getactivewindow) $SCREENSHOTDIR/$(date +%Y-%M-%d_%H:%M:%s).png && notify-send "Active window captured."
+alt + shift + Print
+	maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png && notify-send "Active window copied."
+ctrl + alt + a
+	maim -s | xclip -selection clipboard -t image/png && notify-send "Selected region copied."
+ctrl + shift + a
+	maim -s $SCREENSHOTDIR/`date +%Y-%m-%d_%H:%H:%S`.png && notify-send "Selected region captured."
+

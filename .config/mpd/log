@@ -1,0 +1,1701 @@
+Jan 12 13:01 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 12 13:02 : client: [0] opened from 127.0.0.1:42886
+Jan 12 13:02 : client: [0] closed
+Jan 12 13:02 : client: [1] opened from 127.0.0.1:42890
+Jan 12 13:08 : client: [1] closed
+Jan 12 13:08 : client: [2] opened from 127.0.0.1:42996
+Jan 12 13:08 : client: [2] closed
+Jan 12 13:09 : client: [3] opened from 127.0.0.1:43000
+Jan 12 13:09 : client: [3] closed
+Jan 12 13:10 : client: [4] opened from 127.0.0.1:43006
+Jan 12 13:18 : client: [4] closed
+Jan 12 13:18 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 12 13:18 : update: added /Sdorica - WT new.mp3
+Jan 12 13:18 : update: added /EXILE - Rising Sun.mp3
+Jan 12 13:18 : update: added /BnS - Battlefield.mp3
+Jan 12 13:18 : update: added Exile - Awakening/Exile - Awakening.mp3
+Jan 12 13:18 : update: added Exile - Awakening/01.Awakening.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/11-01 Final Countdown.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/10-18 Break Out (Resonance Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Telos/10-07 vs. Omega.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/12-07 I, 0 Your Fellow.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/10-14 Reborn Mechanics.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/10-15 Old Space Life.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/11-08 Cold Smile.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/11-10 Submerged Memory.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/10-06 Exiled One -Omega-.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/10-05 Darkness Over World.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/10-11 Visor Eyes.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/12-13 I, 0 Your Fellow -Interlude-.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/11-03 Darkelf (Arrange).flac
+Jan 12 13:18 : update: added Rockman Zero Telos/10-09 Result of Mission III.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/10-10 Prismatic.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/11-13 Trail on Powdery Snow (Resonance Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Telos/10-04 Break Out.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/11-05 Sand Triangle II.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/11-11 High-Speed Lift.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/12-04 Return to Zero.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/12-10 Hell's Gate Open (Mythos Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Telos/12-09 Labo -System-a-Ciel-.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/11-12 Cold Smile (Resonance Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Telos/10-13 Water City.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/11-06 Infiltration II.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/12-02 Scrapped Beat.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/11-07 Neo Arcadia III.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/10-03 Forbidden Ark.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/12-12 Cannon Ball (Mythos Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Telos/10-01 Title III.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/12-15 Labo (Resonance Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Telos/12-11 Cannon Ball (Resonance Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Telos/10-12 Volcano.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/12-16 Cold Smile (Game Edit).flac
+Jan 12 13:18 : update: added Rockman Zero Telos/10-02 Neo Arcadia March.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/12-06 Cannon Ball.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/11-02 Omega Missile.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/12-03 Judgment Day.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/10-17 Crash III.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/12-05 Apocalypse Now.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/12-01 Hell's Gate Open.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/11-09 Trail on Powdery Snow.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/12-08 Everlasting Red.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/11-04 For Endless Fight III.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/10-16 Crèer & Prier.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/10-08 Curse of Vile.flac
+Jan 12 13:18 : update: added Rockman Zero Telos/12-14 Everlasting.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/7-16 Silver Wolf (Mythos Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/7-13 Clover.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/7-07 Silver Wolf -Yggr-drasil-.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/7-06 Result of Mission II.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/5-14 Enemy Hall (Mythos Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/5-06 Momentary Peace.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/6-15 Red Time.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/5-17 Ice Brain (Resonance Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/6-09 Combustion.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/5-07 Labo.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/5-01 Title II.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/7-01 Melt Down.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/7-04 Harpuia.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/6-06 Cool Water.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/6-02 Neo Arcadia II.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/7-09 Darkelf.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/7-17 Awakening Will (Resonance Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/7-15 Cyberelf (Resonance Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/6-05 Spreading Darkness.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/7-12 Awakening Will.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/7-03 The Cloudy Stone.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/6-12 Sand Triangle (Mythos Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/6-01 Imminent Storm (Uneasy Arrange).flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/5-10 Ice Brain.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/6-14 L'oiseau du bonheur (Karaoke Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/6-07 Passionate.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/5-11 Platinum.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/6-04 Uneasy.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/5-09 Sand Triangle.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/5-03 Departure.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/6-10 Mark of Justice -Resistance Anthem-.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/6-11 Departure (Mythos Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/6-13 L'oiseau du bonheur.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/7-18 Red Time (2 Player Mode Edit).flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/5-15 Neo Arcadia (Mythos Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/5-02 For Endless Fight II.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/5-04 Crash II.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/7-10 The Last -The Wish Punished-.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/5-12 Gravity.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/5-13 Resistance (Mythos Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/5-08 Instructions.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/7-14 Clover (Karaoke Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/5-16 For Endless Fight (Resonance Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/6-08 Flash Back.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/7-08 Supreme Ruler.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/6-03 Power Bomb.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/6-16 Area of Zero (Mythos Ver.).flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/5-05 Resistance Force.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/7-05 Strong Will.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/7-11 In Mother's Light.flac
+Jan 12 13:18 : update: added Rockman Zero Ideas/7-02 Cool Hearted Fellow.flac
+Jan 12 13:18 : update: added /EXILE - NEW HORIZON.mp3
+Jan 12 13:18 : update: added Eve - Bunka/09. Okinimesumama.mp3
+Jan 12 13:18 : update: added Eve - Bunka/07. Furiwoshita..mp3
+Jan 12 13:18 : update: added Eve - Bunka/06. Kaishingeki.mp3
+Jan 12 13:18 : update: added Eve - Bunka/01. Fanfare (Instrumental).mp3
+Jan 12 13:18 : update: added Eve - Bunka/02. Nonsense Bungaku.mp3
+Jan 12 13:18 : update: added Eve - Bunka/03. Dramaturgy.mp3
+Jan 12 13:18 : update: added Eve - Bunka/04. Homesick.mp3
+Jan 12 13:18 : update: added Eve - Bunka/08. Hitsujiwokazoete.mp3
+Jan 12 13:18 : update: added Eve - Bunka/10. Paradigm (Instrumental).mp3
+Jan 12 13:18 : update: added Eve - Bunka/05. Anoko Secret.mp3
+Jan 12 13:18 : update: added /EXILE - AMAZING WORLD.mp3
+Jan 12 13:18 : update: added Eve - Official number/1-02 Caravan.mp3
+Jan 12 13:18 : update: added Eve - Official number/1-10 sister(Rearrange Ver.).mp3
+Jan 12 13:18 : update: added Eve - Official number/1-03 Wakusei Loop.mp3
+Jan 12 13:18 : update: added Eve - Official number/1-09 Mel Factory(Rearrange Ver.).mp3
+Jan 12 13:18 : update: added Eve - Official number/1-08 Perfect Seimei.mp3
+Jan 12 13:18 : update: added Eve - Official number/1-01 Doushiyou mo Nai Kurai ni Kimi ga Suki.mp3
+Jan 12 13:18 : update: added Eve - Official number/1-07 Rabbit Gray.mp3
+Jan 12 13:18 : update: added Eve - Official number/1-06 Short Umbrella.mp3
+Jan 12 13:18 : update: added Eve - Official number/1-04 Demon Dance Tokyo.mp3
+Jan 12 13:18 : update: added Eve - Official number/1-05 Fuuyuukan.mp3
+Jan 12 13:18 : update: added Eve - Round Robin/04 - 不完全な処遇 album ver.mp3
+Jan 12 13:18 : update: added Eve - Round Robin/03 - 右に曲ガール.mp3
+Jan 12 13:18 : update: added Eve - Round Robin/06 - フォーリンマイワールド.mp3
+Jan 12 13:18 : update: added Eve - Round Robin/01 - 名前も知らない貴方に恋をした.mp3
+Jan 12 13:18 : update: added Eve - Round Robin/07 - メルファクトリー.mp3
+Jan 12 13:18 : update: added Eve - Round Robin/05 - 反対車線.mp3
+Jan 12 13:18 : update: added Eve - Round Robin/02 - Round Robin.mp3
+Jan 12 13:18 : update: added Eve - Round Robin/09 - いかないで album ver.mp3
+Jan 12 13:18 : update: added Eve - Round Robin/10 - グッバイデイ.mp3
+Jan 12 13:18 : update: added Eve - Round Robin/08 - 新宿シック.mp3
+Jan 12 13:18 : update: added Rockman ZXA Tunes/10-08 Mirai e Tsuzuku Kaze.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/9-03 Overloaded.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/9-01 Flashover.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/10-10 Go For It! (Karaoke Ver.).flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/8-02 Destiny.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/9-07 Evil Heritage.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/10-01 Path to the Truth.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/9-02 Bullet Drive.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/8-06 Target Chaser.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/10-11 Be One (Karaoke Ver.).flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/10-07 Divine Hammer.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/8-03 Through the Lightning.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/10-09 Rockman 'a' (antique Remix).flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/8-15 Be One (feat. Ashe).flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/10-15 The Chosen One (Gigamix Ver.).flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/9-13 Bullet Drive (Gigamix Ver.).flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/8-08 Dive into Depth.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/10-05 The Chosen One.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/10-03 Uroboros.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/8-04 Relief.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/8-12 Be One.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/10-16 Battle Giga Mixture.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/10-06 Soul Ablaze.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/9-08 Determined Eyes.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/10-04 United Forces.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/9-14 Overloaded (Gigamix Ver.).flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/9-11 Whisper of Relics.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/10-02 Trap Phantasm.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/8-14 Believe In Myself (feat. Grey).flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/8-07 Slam Down.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/8-09 Drifting Floe.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/8-13 Drifting Floe (Gigamix Ver.).flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/9-15 Whisper of Relics (Gigamix Ver.).flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/9-05 Rush Trash Squash.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/10-12 Xun Qiu Wei Lai (Karaoke Ver.).flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/9-10 Oriental Sentinels.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/10-14 Trap Fanatics.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/9-04 In the Wind.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/10-13 Mirai e Tsuzuku Kaze (Karaoke Ver.).flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/8-11 Dance-macabre -Second Act-.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/9-06 Brimstone.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/8-01 Go For It!.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/8-10 Twisted Vine.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/9-09 Organic Line.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/8-05 Den of Hunters.flac
+Jan 12 13:18 : update: added Rockman ZXA Tunes/9-12 Xun Qiu Wei Lai.flac
+Jan 12 13:18 : update: added EXILE - STAR OF WISH (2018) [FLAC]/09-24karats GOLD SOUL.flac
+Jan 12 13:18 : update: added EXILE - STAR OF WISH (2018) [FLAC]/04-Turn Back Time feat. FANTASTICS.flac
+Jan 12 13:18 : update: added EXILE - STAR OF WISH (2018) [FLAC]/01-PARTY ALL NIGHT ~STAR OF WISH~.flac
+Jan 12 13:18 : update: added EXILE - STAR OF WISH (2018) [FLAC]/13-Joy-ride ~歓喜のドライブ~.flac
+Jan 12 13:18 : update: added EXILE - STAR OF WISH (2018) [FLAC]/10-UPSIDE DOWN.flac
+Jan 12 13:18 : update: added EXILE - STAR OF WISH (2018) [FLAC]/03-My Star.flac
+Jan 12 13:18 : update: added EXILE - STAR OF WISH (2018) [FLAC]/11-AMAZING WORLD.flac
+Jan 12 13:18 : update: added EXILE - STAR OF WISH (2018) [FLAC]/02-Melody.flac
+Jan 12 13:18 : update: added EXILE - STAR OF WISH (2018) [FLAC]/07-Heads or Tails.flac
+Jan 12 13:18 : update: added EXILE - STAR OF WISH (2018) [FLAC]/05-Awakening.flac
+Jan 12 13:18 : update: added EXILE - STAR OF WISH (2018) [FLAC]/06-STEP UP.flac
+Jan 12 13:18 : update: added EXILE - STAR OF WISH (2018) [FLAC]/12-Ki・mi・ni・mu・chu.flac
+Jan 12 13:18 : update: added EXILE - STAR OF WISH (2018) [FLAC]/08-STYLE of 24karats.flac
+Jan 12 13:18 : update: added EXILE - STAR OF WISH (2018) [FLAC]/14-浪漫の地球(ホシ).flac
+Jan 12 13:18 : update: added Eve - Wonder Word/06 - またあした.mp3
+Jan 12 13:18 : update: added Eve - Wonder Word/07 - 夜を超えろ.mp3
+Jan 12 13:18 : update: added Eve - Wonder Word/02 - アルカリ成人.mp3
+Jan 12 13:18 : update: added Eve - Wonder Word/05 - 蜃気楼.mp3
+Jan 12 13:18 : update: added Eve - Wonder Word/01 - よるのゆめ.mp3
+Jan 12 13:18 : update: added Eve - Wonder Word/03 - 線香花火.mp3
+Jan 12 13:18 : update: added Eve - Wonder Word/04 - ヘロウメロウ.mp3
+Jan 12 13:18 : update: added Eve - Otogi/08. ラストダンス.mp3
+Jan 12 13:18 : update: added Eve - Otogi/03. アウトサイダー.mp3
+Jan 12 13:18 : update: added Eve - Otogi/04. 迷い子.mp3
+Jan 12 13:18 : update: added Eve - Otogi/01. slumber.mp3
+Jan 12 13:18 : update: added Eve - Otogi/09. 僕らまだアンダーグラウンド.mp3
+Jan 12 13:18 : update: added Eve - Otogi/07. 楓.mp3
+Jan 12 13:18 : update: added Eve - Otogi/10. 君に世界.mp3
+Jan 12 13:18 : update: added Eve - Otogi/11. dawn.mp3
+Jan 12 13:18 : update: added Eve - Otogi/02. トーキョーゲットー.mp3
+Jan 12 13:18 : update: added Eve - Otogi/05. やどりぎ.mp3
+Jan 12 13:18 : update: added Eve - Otogi/06. アンビバレント.mp3
+Jan 12 13:18 : update: added Rockman ZX Tunes/5-15 Flow of the Times.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/3-02 Awake.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/4-12 Innocence (PV Ver.).flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/5-03 Metallic Soul.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/5-07 Trap Factory.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/3-03 Fragments.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/3-15 Awake (Gigamix Ver.).flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/4-08 Ultramarine Meditation.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/3-09 Mountain Rider.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/4-07 Misty Rain.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/3-10 Brilliant Show Window.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/3-04 Crisis Zone.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/4-01 Industrialism.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/5-09 Pallida Mors.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/5-12 High-press Energy -Super Aniki Edition-.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/3-12 Phalanx.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/5-08 Snake Eyes.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/3-14 Trinity.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/3-08 En-trance Code.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/4-05 Dance-macabre -First Act-.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/3-11 Sky High -Grand Nuage-.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/5-04 Doomsday Device.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/4-03 Ogre Claw.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/5-01 High-press Energy.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/3-05 Green Grass Gradation.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/4-13 Green Grass Gradation (Gigamix Ver.).flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/5-11 Dream Weaver.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/4-04 Danger Attraction.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/3-01 Innocence.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/4-02 Wonder Panorama.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/4-11 Innocence (Karaoke Ver.).flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/4-09 Brilliant Show Window -Shooter Trance-.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/5-14 Snake Eyes ~ Innocence.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/4-06 Onslaught.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/4-14 Brilliant Show Window (Gigamix Ver.).flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/3-16 En-trance Code (Gigamix Ver.).flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/5-13 Black Burn -Electpital Dance-.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/5-05 Cannon Ball -Hard Revenge-.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/3-13 Cinq Ville -c'est notre espoir-.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/5-02 Gauntlet.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/3-07 Rockin' On.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/3-06 Fate -deep-seated grudge-.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/5-10 Babel Tower.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/4-10 Ultramarine Meditation -Blessed Pop-.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/5-06 Black Burn.flac
+Jan 12 13:18 : update: added Rockman ZX Tunes/5-16 Freebirds.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-13 Scorching Desert.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-09 Intermission.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-20 Fake.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-17 Enemy Hall.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-08 Result of Mission.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-11 Express UG.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-21 The End of Legend.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-05 Zero's Theme (from Rockman X).flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-24 Final Match.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-12 Deadzone.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-22 For Endless Fight.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-03 Captive Legend.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-18 Neo Arcadia.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-06 Guarder Room.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-16 Emergency.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-02 The Ruins of Lab.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-01 Title.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-07 Crash.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-14 Hell Plant.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-04 Cyberelf.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-23 Area of Zero.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-19 X, The Legend.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-15 Infiltration.flac
+Jan 12 13:18 : update: added Rockman Zero Remastered/2-10 Resistance.flac
+Jan 12 13:18 : update: added /EXILE - Futatsu no Kuchibiru.mp3
+Jan 12 13:18 : update: added [Eve x Yurin] oyasumi/04. 愛憎感のユーエフオー (oyasumi Ver.).mp3
+Jan 12 13:18 : update: added [Eve x Yurin] oyasumi/03. ハローグッバイの法則.mp3
+Jan 12 13:18 : update: added [Eve x Yurin] oyasumi/02. ていていしんじゃえ.mp3
+Jan 12 13:18 : update: added [Eve x Yurin] oyasumi/05.  おやすみ.mp3
+Jan 12 13:18 : update: added [Eve x Yurin] oyasumi/01. うちゅうりょこう.mp3
+Jan 12 13:18 : update: added [Eve x Yurin] oyasumi/06.  Zzz・・・.mp3
+Jan 12 13:18 : client: [0] opened from 127.0.0.1:43092
+Jan 12 13:18 : client: [0] closed
+Jan 12 13:18 : client: [1] opened from 127.0.0.1:43096
+Jan 12 13:19 : client: [1] closed
+Jan 12 13:19 : client: [2] opened from 127.0.0.1:43100
+Jan 12 13:19 : client: [2] closed
+Jan 12 13:19 : client: [3] opened from 127.0.0.1:43158
+Jan 12 13:19 : client: [3] closed
+Jan 12 13:20 : client: [4] opened from 127.0.0.1:43174
+Jan 12 13:20 : client: [4] closed
+Jan 12 13:20 : client: [5] opened from 127.0.0.1:43178
+Jan 12 13:20 : client: [5] closed
+Jan 12 13:20 : client: [6] opened from 127.0.0.1:43182
+Jan 12 13:20 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 12 13:20 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 12 13:20 : client: [6] closed
+Jan 12 13:20 : client: [7] opened from 127.0.0.1:43196
+Jan 12 13:20 : player: played "Sdorica - WT new.mp3"
+Jan 12 13:20 : client: [7] closed
+Jan 12 13:20 : client: [8] opened from 127.0.0.1:43204
+Jan 12 13:22 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Jan 12 13:24 : client: [8] closed
+Jan 12 13:25 : client: [9] opened from 127.0.0.1:43400
+Jan 12 13:30 : client: [10] opened from 127.0.0.1:43558
+Jan 12 13:30 : client: [10] closed
+Jan 12 13:31 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Jan 12 13:31 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Jan 12 13:31 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Jan 12 13:31 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Jan 12 13:31 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Jan 12 13:31 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Jan 12 13:31 : client: [9] closed
+Jan 12 13:31 : client: [11] opened from 127.0.0.1:43564
+Jan 12 13:31 : client: [11] closed
+Jan 12 14:33 : client: [12] opened from 127.0.0.1:45654
+Jan 12 14:33 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Jan 12 14:38 : player: played "Rockman ZXA Tunes/10-01 Path to the Truth.flac"
+Jan 12 14:56 : player: played "Rockman ZXA Tunes/9-08 Determined Eyes.flac"
+Jan 12 14:59 : client: [12] closed
+Jan 12 15:06 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 12 16:47 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 12 16:47 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 12 17:11 : client: [0] opened from 127.0.0.1:47410
+Jan 12 17:35 : client: [0] closed
+Jan 13 00:09 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 13 08:18 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 13 08:18 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 13 16:19 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 13 20:54 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 13 20:54 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 14 00:49 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 14 08:17 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 14 08:17 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 14 16:52 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 14 21:57 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 14 21:57 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 15 00:55 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 15 08:24 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 15 08:24 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 15 13:14 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 15 15:17 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 15 15:17 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 15 15:24 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 15 15:24 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 15 15:24 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 15 15:30 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 15 15:32 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 15 15:32 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 15 16:41 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 15 20:28 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 15 20:28 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 16 00:30 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 16 15:42 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 16 15:42 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 16 15:43 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 16 08:50 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 16 08:50 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 16 16:18 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 16 20:53 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 16 20:53 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 17 00:32 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 17 15:27 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 17 15:27 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 17 15:33 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 17 08:37 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 17 08:37 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 17 14:20 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 17 20:39 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 17 20:39 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 17 23:57 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 18 13:36 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 18 13:36 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 18 13:37 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 18 17:23 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 18 17:23 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 18 17:30 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 18 18:12 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 18 18:12 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 19 00:29 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 19 21:04 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 19 21:04 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 19 21:06 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 19 21:06 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 19 21:06 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 00:51 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 20 13:04 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 13:04 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 14:14 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 20 14:58 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 14:58 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 19:13 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 20 20:39 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 20:39 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 20:39 : exception: Failed to enable output "mpd_pulse" (pulse)
+Jan 20 20:39 : exception: nested: pa_context_connect() has failed: Connection refused
+Jan 20 20:40 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 20 20:40 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 20:40 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 20:40 : exception: Failed to enable output "mpd_pulse" (pulse)
+Jan 20 20:40 : exception: nested: pa_context_connect() has failed: Connection refused
+Jan 20 20:42 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 20:42 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 20:42 : exception: Failed to enable output "mpd_pulse" (pulse)
+Jan 20 20:42 : exception: nested: pa_context_connect() has failed: Connection refused
+Jan 20 20:45 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 20 20:46 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 20:46 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 20:46 : exception: Failed to enable output "mpd_pulse" (pulse)
+Jan 20 20:46 : exception: nested: pa_context_connect() has failed: Connection refused
+Jan 20 20:50 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 20 20:51 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 20:51 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 20:53 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 20 20:54 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 20:54 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 21:04 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 20 21:05 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 21:05 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 21:17 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 20 21:17 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 21:17 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 21:24 : player: played "Rockman ZXA Tunes/8-09 Drifting Floe.flac"
+Jan 20 21:25 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 21:25 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 21:34 : client: [0] opened from 127.0.0.1:60656
+Jan 20 21:34 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 21:35 : client: [0] closed
+Jan 20 21:35 : client: [1] opened from 127.0.0.1:60662
+Jan 20 21:37 : client: [1] closed
+Jan 20 21:37 : player: played "Rockman ZXA Tunes/9-10 Oriental Sentinels.flac"
+Jan 20 21:37 : exception: Failed to play on "mpd_pulse" (pulse): disconnected
+Jan 20 21:38 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 21:38 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 21:39 : player: played "Rockman ZXA Tunes/9-10 Oriental Sentinels.flac"
+Jan 20 21:40 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 21:40 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 22:03 : player: played "Rockman ZXA Tunes/9-10 Oriental Sentinels.flac"
+Jan 20 22:04 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 22:04 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 22:06 : player: played "Rockman ZXA Tunes/9-10 Oriental Sentinels.flac"
+Jan 20 22:07 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 22:07 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 22:13 : player: played "Rockman ZXA Tunes/9-10 Oriental Sentinels.flac"
+Jan 20 22:14 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 22:14 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 22:18 : player: played "Rockman ZXA Tunes/9-10 Oriental Sentinels.flac"
+Jan 20 22:19 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 22:19 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 22:20 : player: played "Rockman ZXA Tunes/9-10 Oriental Sentinels.flac"
+Jan 20 22:21 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 22:21 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 22:42 : player: played "Rockman ZXA Tunes/9-10 Oriental Sentinels.flac"
+Jan 20 22:43 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 20 22:43 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 21 00:31 : player: played "Rockman ZXA Tunes/9-10 Oriental Sentinels.flac"
+Jan 21 08:59 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 21 08:59 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 21 13:22 : player: played "Rockman ZXA Tunes/9-10 Oriental Sentinels.flac"
+Jan 22 08:15 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 22 08:15 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 22 09:13 : update: updating Eve - Otogi/05. やどりぎ.mp3
+Jan 22 09:13 : update: updating Eve - Otogi/11. dawn.mp3
+Jan 22 09:13 : update: updating Eve - Otogi/10. 君に世界.mp3
+Jan 22 09:13 : update: updating Eve - Otogi/09. 僕らまだアンダーグラウンド.mp3
+Jan 22 09:13 : update: updating Eve - Otogi/02. トーキョーゲットー.mp3
+Jan 22 09:13 : update: updating Eve - Otogi/01. slumber.mp3
+Jan 22 09:13 : update: updating Eve - Otogi/07. 楓.mp3
+Jan 22 09:13 : update: updating Eve - Otogi/06. アンビバレント.mp3
+Jan 22 09:13 : update: updating Eve - Otogi/08. ラストダンス.mp3
+Jan 22 09:13 : update: updating Eve - Otogi/03. アウトサイダー.mp3
+Jan 22 09:13 : update: updating Eve - Otogi/04. 迷い子.mp3
+Jan 22 09:13 : update: updating /EXILE - AMAZING WORLD.mp3
+Jan 22 09:13 : update: updating /Sdorica - WT new.mp3
+Jan 22 09:13 : update: updating Eve - Bunka/03. Dramaturgy.mp3
+Jan 22 09:13 : update: updating Eve - Bunka/06. Kaishingeki.mp3
+Jan 22 09:13 : update: updating Eve - Bunka/01. Fanfare (Instrumental).mp3
+Jan 22 09:13 : update: updating Eve - Bunka/04. Homesick.mp3
+Jan 22 09:13 : update: updating Eve - Bunka/02. Nonsense Bungaku.mp3
+Jan 22 09:13 : update: updating Eve - Bunka/08. Hitsujiwokazoete.mp3
+Jan 22 09:13 : update: updating Eve - Bunka/10. Paradigm (Instrumental).mp3
+Jan 22 09:13 : update: updating Eve - Bunka/09. Okinimesumama.mp3
+Jan 22 09:13 : update: updating Eve - Bunka/07. Furiwoshita..mp3
+Jan 22 09:13 : update: updating Eve - Bunka/05. Anoko Secret.mp3
+Jan 22 09:13 : update: updating /EXILE - NEW HORIZON.mp3
+Jan 22 09:13 : update: updating /EXILE - Futatsu no Kuchibiru.mp3
+Jan 22 09:13 : update: updating Rockman ZX Tunes/4-02 Wonder Panorama.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/5-10 Babel Tower.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/3-12 Phalanx.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/4-08 Ultramarine Meditation.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/4-09 Brilliant Show Window -Shooter Trance-.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/5-16 Freebirds.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/5-08 Snake Eyes.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/3-07 Rockin' On.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/4-14 Brilliant Show Window (Gigamix Ver.).flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/3-14 Trinity.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/3-08 En-trance Code.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/3-11 Sky High -Grand Nuage-.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/4-06 Onslaught.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/3-05 Green Grass Gradation.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/5-14 Snake Eyes ~ Innocence.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/4-10 Ultramarine Meditation -Blessed Pop-.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/5-01 High-press Energy.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/3-13 Cinq Ville -c'est notre espoir-.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/5-07 Trap Factory.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/4-13 Green Grass Gradation (Gigamix Ver.).flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/5-02 Gauntlet.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/3-02 Awake.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/5-15 Flow of the Times.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/5-05 Cannon Ball -Hard Revenge-.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/5-04 Doomsday Device.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/4-04 Danger Attraction.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/3-16 En-trance Code (Gigamix Ver.).flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/5-12 High-press Energy -Super Aniki Edition-.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/3-01 Innocence.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/4-07 Misty Rain.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/4-11 Innocence (Karaoke Ver.).flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/5-03 Metallic Soul.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/3-03 Fragments.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/4-05 Dance-macabre -First Act-.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/3-15 Awake (Gigamix Ver.).flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/3-09 Mountain Rider.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/3-06 Fate -deep-seated grudge-.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/5-09 Pallida Mors.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/3-10 Brilliant Show Window.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/4-03 Ogre Claw.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/5-13 Black Burn -Electpital Dance-.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/3-04 Crisis Zone.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/5-11 Dream Weaver.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/4-01 Industrialism.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/5-06 Black Burn.flac
+Jan 22 09:13 : update: updating Rockman ZX Tunes/4-12 Innocence (PV Ver.).flac
+Jan 22 09:13 : update: updating Eve - Wonder Word/01 - よるのゆめ.mp3
+Jan 22 09:13 : update: updating Eve - Wonder Word/05 - 蜃気楼.mp3
+Jan 22 09:13 : update: updating Eve - Wonder Word/02 - アルカリ成人.mp3
+Jan 22 09:13 : update: updating Eve - Wonder Word/06 - またあした.mp3
+Jan 22 09:13 : update: updating Eve - Wonder Word/03 - 線香花火.mp3
+Jan 22 09:13 : update: updating Eve - Wonder Word/07 - 夜を超えろ.mp3
+Jan 22 09:13 : update: updating Eve - Wonder Word/04 - ヘロウメロウ.mp3
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/10-15 The Chosen One (Gigamix Ver.).flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/9-12 Xun Qiu Wei Lai.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/9-15 Whisper of Relics (Gigamix Ver.).flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/9-07 Evil Heritage.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/10-05 The Chosen One.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/9-06 Brimstone.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/8-12 Be One.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/8-04 Relief.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/8-02 Destiny.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/8-08 Dive into Depth.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/8-11 Dance-macabre -Second Act-.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/9-11 Whisper of Relics.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/8-09 Drifting Floe.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/8-15 Be One (feat. Ashe).flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/9-01 Flashover.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/8-01 Go For It!.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/9-02 Bullet Drive.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/10-13 Mirai e Tsuzuku Kaze (Karaoke Ver.).flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/10-14 Trap Fanatics.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/10-04 United Forces.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/8-03 Through the Lightning.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/8-10 Twisted Vine.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/10-02 Trap Phantasm.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/10-16 Battle Giga Mixture.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/10-01 Path to the Truth.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/9-03 Overloaded.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/9-09 Organic Line.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/10-09 Rockman 'a' (antique Remix).flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/10-08 Mirai e Tsuzuku Kaze.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/8-07 Slam Down.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/10-03 Uroboros.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/10-06 Soul Ablaze.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/9-13 Bullet Drive (Gigamix Ver.).flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/9-14 Overloaded (Gigamix Ver.).flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/9-04 In the Wind.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/8-13 Drifting Floe (Gigamix Ver.).flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/9-10 Oriental Sentinels.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/8-05 Den of Hunters.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/10-11 Be One (Karaoke Ver.).flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/10-12 Xun Qiu Wei Lai (Karaoke Ver.).flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/9-05 Rush Trash Squash.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/8-06 Target Chaser.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/10-07 Divine Hammer.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/8-14 Believe In Myself (feat. Grey).flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/9-08 Determined Eyes.flac
+Jan 22 09:13 : update: updating Rockman ZXA Tunes/10-10 Go For It! (Karaoke Ver.).flac
+Jan 22 09:13 : update: updating Eve - Official number/1-10 sister(Rearrange Ver.).mp3
+Jan 22 09:13 : update: updating Eve - Official number/1-06 Short Umbrella.mp3
+Jan 22 09:13 : update: updating Eve - Official number/1-07 Rabbit Gray.mp3
+Jan 22 09:13 : update: updating Eve - Official number/1-01 Doushiyou mo Nai Kurai ni Kimi ga Suki.mp3
+Jan 22 09:13 : update: updating Eve - Official number/1-09 Mel Factory(Rearrange Ver.).mp3
+Jan 22 09:13 : update: updating Eve - Official number/1-03 Wakusei Loop.mp3
+Jan 22 09:13 : update: updating Eve - Official number/1-08 Perfect Seimei.mp3
+Jan 22 09:13 : update: updating Eve - Official number/1-05 Fuuyuukan.mp3
+Jan 22 09:13 : update: updating Eve - Official number/1-02 Caravan.mp3
+Jan 22 09:13 : update: updating Eve - Official number/1-04 Demon Dance Tokyo.mp3
+Jan 22 09:13 : update: updating Rockman Zero Telos/11-11 High-Speed Lift.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/11-12 Cold Smile (Resonance Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/12-09 Labo -System-a-Ciel-.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/12-08 Everlasting Red.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/10-17 Crash III.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/10-09 Result of Mission III.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/10-11 Visor Eyes.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/10-03 Forbidden Ark.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/12-03 Judgment Day.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/10-01 Title III.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/11-06 Infiltration II.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/12-05 Apocalypse Now.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/10-14 Reborn Mechanics.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/12-06 Cannon Ball.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/12-07 I, 0 Your Fellow.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/10-04 Break Out.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/12-01 Hell's Gate Open.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/12-04 Return to Zero.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/11-07 Neo Arcadia III.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/11-08 Cold Smile.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/10-05 Darkness Over World.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/11-10 Submerged Memory.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/10-16 Crèer & Prier.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/11-05 Sand Triangle II.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/10-10 Prismatic.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/12-13 I, 0 Your Fellow -Interlude-.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/11-02 Omega Missile.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/11-09 Trail on Powdery Snow.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/12-12 Cannon Ball (Mythos Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/11-04 For Endless Fight III.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/11-13 Trail on Powdery Snow (Resonance Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/11-03 Darkelf (Arrange).flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/10-06 Exiled One -Omega-.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/10-13 Water City.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/12-14 Everlasting.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/12-02 Scrapped Beat.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/10-07 vs. Omega.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/10-12 Volcano.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/12-16 Cold Smile (Game Edit).flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/10-08 Curse of Vile.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/12-10 Hell's Gate Open (Mythos Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/10-15 Old Space Life.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/12-15 Labo (Resonance Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/11-01 Final Countdown.flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/12-11 Cannon Ball (Resonance Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/10-18 Break Out (Resonance Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Telos/10-02 Neo Arcadia March.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-21 The End of Legend.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-04 Cyberelf.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-03 Captive Legend.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-07 Crash.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-05 Zero's Theme (from Rockman X).flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-15 Infiltration.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-11 Express UG.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-22 For Endless Fight.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-06 Guarder Room.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-13 Scorching Desert.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-09 Intermission.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-24 Final Match.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-19 X, The Legend.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-18 Neo Arcadia.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-12 Deadzone.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-14 Hell Plant.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-10 Resistance.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-17 Enemy Hall.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-08 Result of Mission.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-01 Title.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-23 Area of Zero.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-02 The Ruins of Lab.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-16 Emergency.flac
+Jan 22 09:13 : update: updating Rockman Zero Remastered/2-20 Fake.flac
+Jan 22 09:13 : update: updating /BnS - Battlefield.mp3
+Jan 22 09:13 : update: updating Rockman Zero Ideas/7-18 Red Time (2 Player Mode Edit).flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/5-14 Enemy Hall (Mythos Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/6-15 Red Time.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/6-07 Passionate.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/7-04 Harpuia.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/7-15 Cyberelf (Resonance Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/7-16 Silver Wolf (Mythos Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/7-10 The Last -The Wish Punished-.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/7-13 Clover.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/7-07 Silver Wolf -Yggr-drasil-.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/6-14 L'oiseau du bonheur (Karaoke Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/5-02 For Endless Fight II.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/5-05 Resistance Force.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/5-09 Sand Triangle.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/6-11 Departure (Mythos Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/5-04 Crash II.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/7-11 In Mother's Light.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/5-01 Title II.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/5-17 Ice Brain (Resonance Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/7-01 Melt Down.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/5-06 Momentary Peace.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/6-04 Uneasy.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/6-01 Imminent Storm (Uneasy Arrange).flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/6-10 Mark of Justice -Resistance Anthem-.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/7-17 Awakening Will (Resonance Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/6-12 Sand Triangle (Mythos Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/5-15 Neo Arcadia (Mythos Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/5-16 For Endless Fight (Resonance Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/6-13 L'oiseau du bonheur.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/5-12 Gravity.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/6-06 Cool Water.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/5-11 Platinum.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/6-03 Power Bomb.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/5-13 Resistance (Mythos Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/5-07 Labo.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/7-08 Supreme Ruler.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/6-09 Combustion.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/6-02 Neo Arcadia II.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/7-02 Cool Hearted Fellow.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/5-10 Ice Brain.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/6-05 Spreading Darkness.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/5-03 Departure.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/7-06 Result of Mission II.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/7-12 Awakening Will.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/5-08 Instructions.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/7-03 The Cloudy Stone.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/6-16 Area of Zero (Mythos Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/7-05 Strong Will.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/7-14 Clover (Karaoke Ver.).flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/6-08 Flash Back.flac
+Jan 22 09:13 : update: updating Rockman Zero Ideas/7-09 Darkelf.flac
+Jan 22 09:13 : update: updating Eve - Round Robin/06 - フォーリンマイワールド.mp3
+Jan 22 09:13 : update: updating Eve - Round Robin/08 - 新宿シック.mp3
+Jan 22 09:13 : update: updating Eve - Round Robin/10 - グッバイデイ.mp3
+Jan 22 09:13 : update: updating Eve - Round Robin/05 - 反対車線.mp3
+Jan 22 09:13 : update: updating Eve - Round Robin/03 - 右に曲ガール.mp3
+Jan 22 09:13 : update: updating Eve - Round Robin/09 - いかないで album ver.mp3
+Jan 22 09:13 : update: updating Eve - Round Robin/04 - 不完全な処遇 album ver.mp3
+Jan 22 09:13 : update: updating Eve - Round Robin/01 - 名前も知らない貴方に恋をした.mp3
+Jan 22 09:13 : update: updating Eve - Round Robin/07 - メルファクトリー.mp3
+Jan 22 09:13 : update: updating Eve - Round Robin/02 - Round Robin.mp3
+Jan 22 09:13 : update: updating /EXILE - Rising Sun.mp3
+Jan 22 09:13 : update: updating [Eve x Yurin] oyasumi/03. ハローグッバイの法則.mp3
+Jan 22 09:13 : update: updating [Eve x Yurin] oyasumi/06.  Zzz・・・.mp3
+Jan 22 09:13 : update: updating [Eve x Yurin] oyasumi/01. うちゅうりょこう.mp3
+Jan 22 09:13 : update: updating [Eve x Yurin] oyasumi/05.  おやすみ.mp3
+Jan 22 09:13 : update: updating [Eve x Yurin] oyasumi/02. ていていしんじゃえ.mp3
+Jan 22 09:13 : update: updating [Eve x Yurin] oyasumi/04. 愛憎感のユーエフオー (oyasumi Ver.).mp3
+Jan 22 09:13 : update: updating Exile - Awakening/Exile - Awakening.mp3
+Jan 22 09:13 : update: updating Exile - Awakening/01.Awakening.flac
+Jan 22 09:13 : update: updating EXILE - STAR OF WISH (2018) [FLAC]/02-Melody.flac
+Jan 22 09:13 : update: updating EXILE - STAR OF WISH (2018) [FLAC]/04-Turn Back Time feat. FANTASTICS.flac
+Jan 22 09:13 : update: updating EXILE - STAR OF WISH (2018) [FLAC]/01-PARTY ALL NIGHT ~STAR OF WISH~.flac
+Jan 22 09:13 : update: updating EXILE - STAR OF WISH (2018) [FLAC]/13-Joy-ride ~歓喜のドライブ~.flac
+Jan 22 09:13 : update: updating EXILE - STAR OF WISH (2018) [FLAC]/07-Heads or Tails.flac
+Jan 22 09:13 : update: updating EXILE - STAR OF WISH (2018) [FLAC]/03-My Star.flac
+Jan 22 09:13 : update: updating EXILE - STAR OF WISH (2018) [FLAC]/09-24karats GOLD SOUL.flac
+Jan 22 09:13 : update: updating EXILE - STAR OF WISH (2018) [FLAC]/05-Awakening.flac
+Jan 22 09:13 : update: updating EXILE - STAR OF WISH (2018) [FLAC]/11-AMAZING WORLD.flac
+Jan 22 09:13 : update: updating EXILE - STAR OF WISH (2018) [FLAC]/06-STEP UP.flac
+Jan 22 09:13 : update: updating EXILE - STAR OF WISH (2018) [FLAC]/08-STYLE of 24karats.flac
+Jan 22 09:13 : update: updating EXILE - STAR OF WISH (2018) [FLAC]/14-浪漫の地球(ホシ).flac
+Jan 22 09:13 : update: updating EXILE - STAR OF WISH (2018) [FLAC]/10-UPSIDE DOWN.flac
+Jan 22 09:13 : update: updating EXILE - STAR OF WISH (2018) [FLAC]/12-Ki・mi・ni・mu・chu.flac
+Jan 22 09:22 : update: added BATTLE OF TOKYO ~ENTER THE Jr.EXILE~/05 MIX IT UP.mp3
+Jan 22 09:22 : update: added BATTLE OF TOKYO ~ENTER THE Jr.EXILE~/04 SHOCK THE WORLD.mp3
+Jan 22 09:22 : update: added BATTLE OF TOKYO ~ENTER THE Jr.EXILE~/01 SHOOT IT OUT.mp3
+Jan 22 09:22 : update: added BATTLE OF TOKYO ~ENTER THE Jr.EXILE~/03 Supersonic.mp3
+Jan 22 09:22 : update: added BATTLE OF TOKYO ~ENTER THE Jr.EXILE~/06 BREAK DOWN YA WALLS.mp3
+Jan 22 09:22 : update: added BATTLE OF TOKYO ~ENTER THE Jr.EXILE~/07 24WORLD.mp3
+Jan 22 09:22 : update: added BATTLE OF TOKYO ~ENTER THE Jr.EXILE~/02 Dead Or Alive.mp3
+Jan 22 09:32 : update: added BATTLE OF TOKYO ~ENTER THE Jr.EXILE~/Mix it up extra.mp3
+Jan 22 09:33 : update: updating BATTLE OF TOKYO ~ENTER THE Jr.EXILE~/Mix it up extra.mp3
+Jan 22 10:13 : update: added BATTLE OF TOKYO ~ENTER THE Jr.EXILE~/Mix It Up addition.mp3
+Jan 22 11:04 : update: updating BATTLE OF TOKYO ~ENTER THE Jr.EXILE~/Mix It Up addition.mp3
+Jan 22 11:10 : update: removing BATTLE OF TOKYO ~ENTER THE Jr.EXILE~/Mix It Up addition.mp3
+Jan 22 11:10 : update: added BATTLE OF TOKYO ~ENTER THE Jr.EXILE~/Mix It Up with extra beat.mp3
+Jan 22 11:52 : player: played "Rockman ZXA Tunes/9-10 Oriental Sentinels.flac"
+Jan 22 15:49 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 22 15:49 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 22 15:51 : client: [0] opened from 127.0.0.1:43364
+Jan 22 15:52 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Jan 22 15:52 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Jan 22 15:52 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Jan 22 15:53 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 22 15:57 : client: [0] closed
+Jan 22 16:18 : player: played "Sdorica - WT new.mp3"
+Jan 22 16:19 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 22 16:19 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 22 16:48 : player: played "Sdorica - WT new.mp3"
+Jan 22 23:26 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 22 23:26 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 22 23:50 : update: added /music_cytus_Stewrica_-Cross-.wav
+Jan 22 23:50 : client: [0] opened from 127.0.0.1:43070
+Jan 22 23:50 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Jan 22 23:50 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 22 23:52 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 22 23:54 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 22 23:56 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 22 23:58 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 23 00:00 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 23 00:03 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 23 00:05 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 23 00:07 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 23 00:09 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 23 00:49 : client: [0] closed
+Jan 23 00:49 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 23 08:34 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 23 08:34 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 23 08:55 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 23 17:59 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 23 17:59 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 24 00:43 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 24 08:43 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 24 08:43 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 24 19:11 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 24 20:14 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 24 20:14 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 24 22:13 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 25 01:45 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 25 01:45 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 25 03:18 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 25 11:18 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 25 11:18 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 25 12:33 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 25 16:37 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 25 16:37 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 25 16:58 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 25 20:44 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 25 20:44 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 26 02:25 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 26 11:13 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 26 11:13 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 27 00:15 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 27 10:09 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 27 10:09 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 27 10:12 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 27 10:13 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 27 10:13 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 27 22:47 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 28 19:38 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 28 19:38 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 29 00:53 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 29 09:58 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 29 09:58 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 29 20:01 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 29 20:01 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 30 02:20 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 30 12:26 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 30 12:26 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 30 13:39 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 30 22:21 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 30 22:21 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 31 00:26 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 31 10:50 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 31 10:50 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 31 15:59 : update: added Gym/05 MIX IT UP.mp3
+Jan 31 15:59 : update: added Gym/04 SHOCK THE WORLD.mp3
+Jan 31 15:59 : update: added Gym/01 SHOOT IT OUT.mp3
+Jan 31 15:59 : update: added Gym/03 Supersonic.mp3
+Jan 31 15:59 : update: added Gym/06 BREAK DOWN YA WALLS.mp3
+Jan 31 15:59 : update: added Gym/02 Dead Or Alive.mp3
+Jan 31 16:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:24 : update: added GENERATIONS from EXILE TRIBE - SHONEN CHRONICLE/12. DREAMERS 「jpopsingles.eu」.m4a
+Jan 31 16:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:24 : update: added GENERATIONS from EXILE TRIBE - SHONEN CHRONICLE/05. また、アシタ 「jpopsingles.eu」.m4a
+Jan 31 16:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:24 : update: added GENERATIONS from EXILE TRIBE - SHONEN CHRONICLE/06. 何もかもがせつない 「jpopsingles.eu」.m4a
+Jan 31 16:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:24 : update: added GENERATIONS from EXILE TRIBE - SHONEN CHRONICLE/16. 心声 「jpopsingles.eu」.m4a
+Jan 31 16:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:24 : update: added GENERATIONS from EXILE TRIBE - SHONEN CHRONICLE/15. EXPerience Greatness 「jpopsingles.eu」.m4a
+Jan 31 16:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:24 : update: added GENERATIONS from EXILE TRIBE - SHONEN CHRONICLE/09. Nostalgie 「jpopsingles.eu」.m4a
+Jan 31 16:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:24 : update: added GENERATIONS from EXILE TRIBE - SHONEN CHRONICLE/14. United Journey 「jpopsingles.eu」.m4a
+Jan 31 16:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:24 : update: added GENERATIONS from EXILE TRIBE - SHONEN CHRONICLE/13. MAD CYCLONE 「jpopsingles.eu」.m4a
+Jan 31 16:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:24 : update: added GENERATIONS from EXILE TRIBE - SHONEN CHRONICLE/04. Control Myself 「jpopsingles.eu」.m4a
+Jan 31 16:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:24 : update: added GENERATIONS from EXILE TRIBE - SHONEN CHRONICLE/02. G-ENERGY 「jpopsingles.eu」.m4a
+Jan 31 16:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:24 : update: added GENERATIONS from EXILE TRIBE - SHONEN CHRONICLE/07. F.L.Y. BOYS F.L.Y. GIRLS 「jpopsingles.eu」.m4a
+Jan 31 16:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:24 : update: added GENERATIONS from EXILE TRIBE - SHONEN CHRONICLE/17. 少年 「jpopsingles.eu」.m4a
+Jan 31 16:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:24 : update: added GENERATIONS from EXILE TRIBE - SHONEN CHRONICLE/10. 回転 「jpopsingles.eu」.m4a
+Jan 31 16:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:24 : update: added GENERATIONS from EXILE TRIBE - SHONEN CHRONICLE/11. One in a Million -奇跡の夜に- 「jpopsingles.eu」.m4a
+Jan 31 16:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:24 : update: added GENERATIONS from EXILE TRIBE - SHONEN CHRONICLE/08. SNAKE PIT 「jpopsingles.eu」.m4a
+Jan 31 16:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:24 : update: added GENERATIONS from EXILE TRIBE - SHONEN CHRONICLE/03. Brand New Story 「jpopsingles.eu」.m4a
+Jan 31 16:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:24 : update: added GENERATIONS from EXILE TRIBE - SHONEN CHRONICLE/01. A New Chronicle 「jpopsingles.eu」.m4a
+Jan 31 16:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:24 : update: added Gym/02. G-ENERGY 「jpopsingles.eu」.m4a
+Jan 31 16:24 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:24 : update: added Gym/08. SNAKE PIT 「jpopsingles.eu」.m4a
+Jan 31 16:31 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:31 : update: added THE RIOT/11 FIRED UP.m4a
+Jan 31 16:31 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:31 : update: added THE RIOT/03 DOWN BY LAW.m4a
+Jan 31 16:31 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:31 : update: added THE RIOT/13 Seasons.m4a
+Jan 31 16:31 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:31 : update: added THE RIOT/06 All day.m4a
+Jan 31 16:31 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:31 : update: added THE RIOT/07 Nobody.m4a
+Jan 31 16:31 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:31 : update: added THE RIOT/12 Starlight.m4a
+Jan 31 16:31 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:31 : update: added THE RIOT/01 THROW YA FIST.m4a
+Jan 31 16:31 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:31 : update: added THE RIOT/05 WELCOME 2 PARADISE.m4a
+Jan 31 16:31 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:31 : update: added THE RIOT/04 SUMMER DAYS.m4a
+Jan 31 16:31 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:31 : update: added THE RIOT/09 One More Kiss.m4a
+Jan 31 16:31 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:31 : update: added THE RIOT/02 Move the world.m4a
+Jan 31 16:31 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:31 : update: added THE RIOT/08 So Good.m4a
+Jan 31 16:31 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:31 : update: added THE RIOT/10 SWAG & PRIDE.m4a
+Jan 31 16:31 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:31 : update: added Gym/11 FIRED UP.m4a
+Jan 31 16:31 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:31 : update: added Gym/01 THROW YA FIST.m4a
+Jan 31 16:31 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Jan 31 16:31 : update: added Gym/10 SWAG & PRIDE.m4a
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 1/03 Fandango.mp3
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 1/01 Lightning.mp3
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 1/02 LA FIESTA.mp3
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 1/05 100degrees.mp3
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 1/08 SWAG IT OUT.mp3
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 1/06 Knocking Knocking.mp3
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 1/09 FRONTIERS.mp3
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 1/04 HARD HIT.mp3
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 1/10 GO ON THE RAMPAGE.mp3
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 1/07 New Jack Swing.mp3
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 2/02 DREAM YELL.mp3
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 2/09 Shangri-La.mp3
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 2/01 Dirty Disco.mp3
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 2/10 Only One.mp3
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 2/06 The Typhoon Eye.mp3
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 2/03 Cant Say Goodbye.mp3
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 2/08 BREAKING THE ICE.mp3
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 2/07 Dream On.mp3
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 2/05 ELEVATION.mp3
+Jan 31 16:45 : update: added THE RAMPAGE/Disc 2/04 Over.mp3
+Jan 31 16:46 : update: added Gym/09 Shangri-La.mp3
+Jan 31 16:46 : update: added Gym/06 The Typhoon Eye.mp3
+Jan 31 16:46 : update: added Gym/05 ELEVATION.mp3
+Jan 31 16:46 : update: added Gym/04 Over.mp3
+Jan 31 16:47 : update: added Gym/03 Fandango.mp3
+Jan 31 16:47 : update: added Gym/01 Lightning.mp3
+Jan 31 16:47 : update: added Gym/05 100degrees.mp3
+Jan 31 16:47 : update: added Gym/09 FRONTIERS.mp3
+Jan 31 16:47 : update: added Gym/04 HARD HIT.mp3
+Jan 31 16:54 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 31 19:40 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 31 19:40 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 31 20:05 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Jan 31 22:12 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 31 22:12 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 01 01:30 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Feb 01 13:09 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 01 13:09 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 16:10 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 16:10 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 16:10 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Feb 02 16:11 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 16:11 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 16:14 : client: [0] opened from 127.0.0.1:42268
+Feb 02 16:14 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 16:14 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Feb 02 16:17 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Feb 02 16:19 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Feb 02 16:21 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Feb 02 16:23 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Feb 02 16:25 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Feb 02 16:27 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Feb 02 16:28 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 02 16:35 : player: played "Rockman Zero Remastered/2-17 Enemy Hall.flac"
+Feb 02 16:40 : player: played "Rockman Zero Remastered/2-18 Neo Arcadia.flac"
+Feb 02 16:47 : player: played "Rockman Zero Remastered/2-22 For Endless Fight.flac"
+Feb 02 16:52 : player: played "Rockman Zero Remastered/2-22 For Endless Fight.flac"
+Feb 02 16:57 : player: played "Rockman Zero Remastered/2-22 For Endless Fight.flac"
+Feb 02 16:58 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 02 16:59 : player: played "Rockman Zero Telos/10-01 Title III.flac"
+Feb 02 16:59 : player: played "Rockman Zero Telos/10-01 Title III.flac"
+Feb 02 16:59 : player: played "Rockman Zero Telos/10-01 Title III.flac"
+Feb 02 16:59 : player: played "Rockman Zero Telos/10-02 Neo Arcadia March.flac"
+Feb 02 17:00 : player: played "Rockman Zero Telos/10-02 Neo Arcadia March.flac"
+Feb 02 17:05 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 02 17:06 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 02 17:06 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 02 17:06 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 02 17:11 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 02 17:14 : client: [0] closed
+Feb 02 17:14 : client: [1] opened from 127.0.0.1:46374
+Feb 02 17:14 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 02 17:19 : player: played "Rockman Zero Telos/11-06 Infiltration II.flac"
+Feb 02 17:24 : player: played "Rockman Zero Telos/12-06 Cannon Ball.flac"
+Feb 02 17:24 : client: [1] closed
+Feb 02 17:34 : player: played "Rockman Zero Telos/10-07 vs. Omega.flac"
+Feb 02 22:35 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 22:35 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 03 00:49 : player: played "Rockman Zero Telos/10-07 vs. Omega.flac"
+Feb 03 09:48 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 03 09:48 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 03 11:07 : inotify: Failed to open directory /home/ichirou2910/Music/Unpack-6085/Cytus II OST: No such file or directory
+Feb 03 11:07 : inotify: Failed to open directory /home/ichirou2910/Music/Unpack-6085/Cytus II OST/Disc.12 NEKO: No such file or directory
+Feb 03 11:07 : inotify: Failed to open directory /home/ichirou2910/Music/Unpack-6085/Cytus II OST: No such file or directory
+Feb 03 11:07 : inotify: Failed to open directory /home/ichirou2910/Music/Unpack-6085/Cytus II OST/Disc.13 Miku: No such file or directory
+Feb 03 11:07 : inotify: Failed to open directory /home/ichirou2910/Music/Unpack-6085/Cytus II OST: No such file or directory
+Feb 03 11:07 : inotify: Failed to open directory /home/ichirou2910/Music/Unpack-6085/Cytus II OST/Disc.14 Sagar: No such file or directory
+Feb 03 11:07 : inotify: Failed to open directory /home/ichirou2910/Music/Unpack-6085/Cytus II OST: No such file or directory
+Feb 03 11:07 : inotify: Failed to open directory /home/ichirou2910/Music/Unpack-6085/Cytus II OST/Disc.15 Rin: No such file or directory
+Feb 03 11:07 : inotify: Failed to open directory /home/ichirou2910/Music/Unpack-6085: No such file or directory
+Feb 03 11:07 : inotify: Failed to open directory /home/ichirou2910/Music/Unpack-6085/Cytus II OST: No such file or directory
+Feb 03 11:07 : inotify: Failed to open directory /home/ichirou2910/Music/Unpack-6085: No such file or directory
+Feb 03 11:07 : inotify: Failed to open directory /home/ichirou2910/Music/Unpack-6085/Cytus II OST: No such file or directory
+Feb 03 11:07 : inotify: Failed to open directory /home/ichirou2910/Music/Unpack-6085: No such file or directory
+Feb 03 11:08 : client: [0] opened from 127.0.0.1:54774
+Feb 03 11:08 : player: played "Rockman Zero Telos/10-07 vs. Omega.flac"
+Feb 03 11:08 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 03 11:09 : update: added Cytus II OST/Disc.11 Nora/Phagy Mutation.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.11 Nora/Bastard of Hardcore.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.11 Nora/Eternity.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.11 Nora/Uranus.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.11 Nora/Drop The World.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.11 Nora/Accelerator.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.11 Nora/Jakarta PROGRESSION.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.11 Nora/ATONEMENT.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.11 Nora/Dance till Dawn.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.11 Nora/Starlight (KIVΛ Remix).mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/Area184.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/Lunar Mare.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/CODE NAME  SIGMA.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/Sentimental Journey.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/Cristalisia.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/Red Five.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/Alexandrite.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/99 Glooms.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/Halloween Party - SHK.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/Purge.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/Tokiwatari.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/BloodyMare.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/V. .mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/Biotonic.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/VISCRACKED.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/AssaultMare.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/Occidens.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/Wicked Ceremony.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/Homebound Train & Moving Thoughts.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/iL.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/What's Your PR.Ice.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/Reset.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/Pressure.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/New Challenger Approaching.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.04 Ivy/D R G.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.12 NEKO/Log In.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.12 NEKO/Mammal .mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.12 NEKO/リラ.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.12 NEKO/Chocolate Missile .mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.12 NEKO/DJ Mashiro is dead or alive.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.12 NEKO/Pink Graduation .mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.12 NEKO/一啖兩啖.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.12 NEKO/Blah!! .mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.12 NEKO/I can avoid it.#φωφ.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.12 NEKO/Re_incRnaTiØN ～夕焼ケ世界ノ決別ヲ～.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.08 Cherry/Capture me.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.08 Cherry/I'M NOT.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.08 Cherry/Living for you (Andy Tunstall remix).mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.08 Cherry/Stop at nothing (Andy Tunstall remix).mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.08 Cherry/Scenery in your eyes.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.08 Cherry/hunted.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.08 Cherry/RETRIEVE.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.08 Cherry/CREDENCE.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.08 Cherry/Still.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.08 Cherry/LEVEL4.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.08 Cherry/SYSTEMFEIT.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.09 Joe/Take me to the Future.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.09 Joe/Absolutely.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.09 Joe/Turnstile Jumper.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.09 Joe/Higher and Higher.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.09 Joe/Hydrangea.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.09 Joe/Open the Game.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.09 Joe/Bass Music.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.09 Joe/Nautilus.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.09 Joe/Standby for Action.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.09 Joe/Childish.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.09 Joe/Juicy Gossip.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/TOKONOMA Spacewalk.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Alterna Pt.1 -Cosmogony -.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Online.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Blow My Mind (tpz Overheat Remix).mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/One Way Love.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Rei - Catalyst.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Hydra - James Landino X Akira Complex.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Resurrection.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Hard Landing.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Liberation - Silaver & lixound.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/UnNOT!CED.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Happiness Breeze.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Maboroshi.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/extinguisher.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Blow my mind.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/For You the Bellz Toll .mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/下水鳴動して鼠一匹.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Brain Power.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Ramen is God - Ramenbot a.k.a Ice VS Masahiro Godspeed Aokiamen is God.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/The Spark.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/FUJIN Rumble .mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/ReVeLΔTiØN ～光道ト破壊ノ双白翼～  - NeLiME OVERDRIVE vs. Apo11o月読命program.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Walnuts Walkers.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Praystation.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Rebirth - 3R2 & SIHanatsuka.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/小悪魔×3の大脫走！？ .mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Capybara Kids' Paradise.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Sunday Night Blues.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Chrome VOX.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/CODE NAME  GAMMA.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Keep it up.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Zealous Hearts (Rayark Edit).mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/REmorse.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/100sec Cat Dreams.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.02 NEKO#ΦωΦ/Stranger.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Hagiasmos - Iris.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Make Me Burn.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/ViRUS - Deepshout.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/CHAOS.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/SHIRO - James Landino.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Sickest City.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Awakening - DiagonalT.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Dasein.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Midnight.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Pure Powerstomper.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Armaros - DJ Grimoire.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Celestial Sounds (KIVΛ Remix).mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Restriction.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Fade Into The Darkness - SADA.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Break The Core - PTB10.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Deadly Slot Game.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Accelerator - Massive New Krew.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Luolimasi.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/EMber.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Claim the Game.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/cold.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Tunnef's Nightmare - Neutral Moon.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Dead Master .mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Devillic Sphere.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Dead Point.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Milky Way Galaxy (SIHanatsuka Remix) -3R2.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Grimoire of Crimson_.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Nocturnal Type .mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Break Through The Barrier.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/Jazzy Glitch Machine .mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/dimensionalize nervous break.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.03 ROBO/NRG_Tech.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.14 Sagar/Space Alien - SADA 2Futureanthem.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.14 Sagar/Return of the Lamp - 柳田Ethnica.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.14 Sagar/Nídhögg - 溝口ゆうま feat. 大瀬良あい.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.14 Sagar/Elysium - SprightS.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.14 Sagar/Doldrums - Paul Bazooka.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.14 Sagar/Sacrifice - TERU FOX.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.14 Sagar/A Portent of the Silver Wheel - millstones.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.14 Sagar/Amenemhat - Rabbit House + A. Ki + litmus.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.14 Sagar/Immram Brain - 大嶋啓之.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.14 Sagar/Legacy - technoplanet.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.06 Xenon/Asylum - Zangief.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.06 Xenon/Whispers in my Head.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.06 Xenon/VioLet - Yohei Kimura.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.06 Xenon/IOLITE-SUNSTONE.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.06 Xenon/Karma - Obsess.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.06 Xenon/To the Light.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.06 Xenon/Phantom Razor.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.06 Xenon/Concentric circles.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.06 Xenon/Sairai.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.06 Xenon/Samurai.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.06 Xenon/Return.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.06 Xenon/Ultimate feat. 放課後のあいつ.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.06 Xenon/Chosen - 既定印象.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.06 Xenon/Fighting.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.06 Xenon/INSPION.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.06 Xenon/Black Hole.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.05 Crystal PuNK/Familiar Craze  - MELOIMAGE.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.05 Crystal PuNK/Deep Dive.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.05 Crystal PuNK/velkinta feat. Cikado & A-Tse - EAjRock.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.05 Crystal PuNK/Sunshine Duration.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.05 Crystal PuNK/Chandelier XIII.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.05 Crystal PuNK/βinαrΨ.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.05 Crystal PuNK/V.R.W (feat. shully) - カラスヤサボウ.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.05 Crystal PuNK/Crimson Fate - tetsuyanao feat. ROXI CHEN(渣泥ZANI).mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.05 Crystal PuNK/Dark Madness.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.05 Crystal PuNK/Darling Staring... .mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.05 Crystal PuNK/Effervesce.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.05 Crystal PuNK/The Cross (feat. Silvia Su) - Lyc.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.05 Crystal PuNK/Malstream - MELOIMAGE.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.13 Miku/Can't Make a Song!! - beat_shobon.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.13 Miku/Venus di Ujung Jari - mohax.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.13 Miku/Ten Thousand Stars - CircusP.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.13 Miku/Decade - Dixie Flatline.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.13 Miku/月西江 - SolPie.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.13 Miku/Glass Wall - GuitarHeroPianoZero.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.13 Miku/ラッキー☆オーブ(3R2 Remix) - emon(Tes.).mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.13 Miku/Blue Star - 八王子P.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.13 Miku/Cybernetic - 雄之助 × Circus-P.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.13 Miku/ラッキー☆オーブ - emon(Tes.).mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.13 Miku/BREAK IT - 雄之助.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.13 Miku/Miku - Anamanaguchi.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.13 Miku/Sharing The World - BIGHEAD.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.13 Miku/魔法みたいなミュージック！ - OSTER project.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.10 Aroma/Make U Mine.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.10 Aroma/Neon Escape .mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.10 Aroma/Bring the light .mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.10 Aroma/漂流.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.10 Aroma/Spotlight On.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.10 Aroma/Anzen Na Kusuri.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.10 Aroma/Perspectives.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.10 Aroma/風の声 .mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.10 Aroma/No One Can't Stop Me .mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.10 Aroma/change .mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.07 ConneR/REBELLIUM.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.07 ConneR/Nostalgia Sonatina.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.07 ConneR/Demetrius.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.07 ConneR/tondari-hanetari.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.07 ConneR/Instinct.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.07 ConneR/Aphasia.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.07 ConneR/L'Ultima Cena.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.07 ConneR/Floor of Lava.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.07 ConneR/Xiorc.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.07 ConneR/Deus Ex Machina.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.07 ConneR/Olympia.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.07 ConneR/I luv U.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.07 ConneR/Fur War , Pur War.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.07 ConneR/Abduction.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.07 ConneR/Imprinting.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.07 ConneR/Gekkouka.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.07 ConneR/Light of Buenos Aires.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.15 Rin/「妖怪録、我し来にけり。」 - TEZUKApo11o band ft. ランコ(豚乙女)+OFFICE萬田㈱.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.15 Rin/The Siege - 3R2.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.15 Rin/Inari -TERU FOX.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.15 Rin/すゝめ☆クノイチの巻  - 黒沢ダイスケ x mitsu feat. ななひら.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.15 Rin/The Grand Debate - Sherwin.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.15 Rin/彩 - MisoilePunch♪.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.15 Rin/Mari-Temari - Miku Fujimoto.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.15 Rin/決戦 - 篤志.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.15 Rin/Starry Summoner - アマギセーラ.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.15 Rin/三灯火 - yuritoworks.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/So In Love.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/Fireflies (Funk Fiction remix).mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/PIXIE DUST.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/Fight Another Day (Andy Tunstall remix).mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/Survive.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/Gravity.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/Baptism of Fire (CliqTrack remix).mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/I Wish You Were Mine.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/Under the same sky .mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/SECRET;WEAPON.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/Bullet Waiting for Me (James Landino Remix).mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/Winter Games.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/Blossoms for Life.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/ReCall.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/Favorites.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/Body Talk.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/Light up my love!!.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/Make Me Alive.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/Who Am I.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/KANATA.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/Super attractor.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/Lilac for Anabel.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/Cityscape.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/ReBoost.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/New World.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/More Than Diamond.mp3
+Feb 03 11:09 : update: added Cytus II OST/Disc.01 PAFF/Green Hope.mp3
+Feb 03 11:09 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 03 11:09 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 03 11:10 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 03 11:10 : player: played "Cytus II OST/Disc.07 ConneR/Abduction.mp3"
+Feb 03 11:13 : player: played "Cytus II OST/Disc.01 PAFF/KANATA.mp3"
+Feb 03 11:48 : player: played "Cytus II OST/Disc.01 PAFF/Make Me Alive.mp3"
+Feb 03 11:50 : player: played "Cytus II OST/Disc.01 PAFF/Light up my love!!.mp3"
+Feb 03 11:54 : player: played "Cytus II OST/Disc.02 NEKO#ΦωΦ/The Spark.mp3"
+Feb 03 11:56 : player: played "Cytus II OST/Disc.02 NEKO#ΦωΦ/Resurrection.mp3"
+Feb 03 12:00 : player: played "Cytus II OST/Disc.02 NEKO#ΦωΦ/One Way Love.mp3"
+Feb 03 12:02 : player: played "Cytus II OST/Disc.02 NEKO#ΦωΦ/One Way Love.mp3"
+Feb 03 12:05 : player: played "Cytus II OST/Disc.02 NEKO#ΦωΦ/Happiness Breeze.mp3"
+Feb 03 12:07 : player: played "Cytus II OST/Disc.02 NEKO#ΦωΦ/Alterna Pt.1 -Cosmogony -.mp3"
+Feb 03 12:11 : player: played "Cytus II OST/Disc.02 NEKO#ΦωΦ/Keep it up.mp3"
+Feb 03 12:14 : player: played "Cytus II OST/Disc.02 NEKO#ΦωΦ/Brain Power.mp3"
+Feb 03 12:18 : player: played "Cytus II OST/Disc.02 NEKO#ΦωΦ/REmorse.mp3"
+Feb 03 12:20 : player: played "Cytus II OST/Disc.02 NEKO#ΦωΦ/Stranger.mp3"
+Feb 03 12:22 : player: played "Cytus II OST/Disc.02 NEKO#ΦωΦ/FUJIN Rumble .mp3"
+Feb 03 12:25 : player: played "Cytus II OST/Disc.02 NEKO#ΦωΦ/For You the Bellz Toll .mp3"
+Feb 03 12:33 : player: played "Cytus II OST/Disc.02 NEKO#ΦωΦ/Capybara Kids' Paradise.mp3"
+Feb 03 12:37 : player: played "Cytus II OST/Disc.02 NEKO#ΦωΦ/Liberation - Silaver & lixound.mp3"
+Feb 03 12:39 : player: played "Cytus II OST/Disc.02 NEKO#ΦωΦ/Ramen is God - Ramenbot a.k.a Ice VS Masahiro Godspeed Aokiamen is God.mp3"
+Feb 03 12:43 : player: played "Cytus II OST/Disc.02 NEKO#ΦωΦ/ReVeLΔTiØN ～光道ト破壊ノ双白翼～  - NeLiME OVERDRIVE vs. Apo11o月読命program.mp3"
+Feb 03 12:46 : player: played "Cytus II OST/Disc.02 NEKO#ΦωΦ/Rei - Catalyst.mp3"
+Feb 03 12:53 : player: played "Cytus II OST/Disc.03 ROBO/Grimoire of Crimson_.mp3"
+Feb 03 12:56 : player: played "Cytus II OST/Disc.03 ROBO/Dasein.mp3"
+Feb 03 13:00 : player: played "Cytus II OST/Disc.03 ROBO/CHAOS.mp3"
+Feb 03 13:03 : player: played "Cytus II OST/Disc.03 ROBO/EMber.mp3"
+Feb 03 13:05 : player: played "Cytus II OST/Disc.03 ROBO/Midnight.mp3"
+Feb 03 13:08 : player: played "Cytus II OST/Disc.03 ROBO/Dead Point.mp3"
+Feb 03 13:14 : player: played "Cytus II OST/Disc.03 ROBO/Awakening - DiagonalT.mp3"
+Feb 03 13:21 : player: played "Cytus II OST/Disc.04 Ivy/D R G.mp3"
+Feb 03 13:23 : player: played "Cytus II OST/Disc.04 Ivy/Biotonic.mp3"
+Feb 03 13:26 : player: played "Cytus II OST/Disc.04 Ivy/Alexandrite.mp3"
+Feb 03 13:28 : player: played "Cytus II OST/Disc.04 Ivy/Area184.mp3"
+Feb 03 13:30 : player: played "Cytus II OST/Disc.04 Ivy/Area184.mp3"
+Feb 03 13:35 : player: played "Cytus II OST/Disc.04 Ivy/V. .mp3"
+Feb 03 13:37 : player: played "Cytus II OST/Disc.04 Ivy/Cristalisia.mp3"
+Feb 03 13:40 : player: played "Cytus II OST/Disc.04 Ivy/Occidens.mp3"
+Feb 03 13:43 : player: played "Cytus II OST/Disc.04 Ivy/iL.mp3"
+Feb 03 13:46 : player: played "Cytus II OST/Disc.07 ConneR/Xiorc.mp3"
+Feb 03 13:48 : player: played "Cytus II OST/Disc.07 ConneR/REBELLIUM.mp3"
+Feb 03 13:50 : player: played "Cytus II OST/Disc.07 ConneR/Imprinting.mp3"
+Feb 03 13:51 : player: played "Cytus II OST/Disc.07 ConneR/Gekkouka.mp3"
+Feb 03 13:54 : player: played "Cytus II OST/Disc.07 ConneR/Light of Buenos Aires.mp3"
+Feb 03 13:56 : player: played "Cytus II OST/Disc.07 ConneR/tondari-hanetari.mp3"
+Feb 03 13:58 : player: played "Cytus II OST/Disc.07 ConneR/Abduction.mp3"
+Feb 03 14:01 : player: played "Cytus II OST/Disc.07 ConneR/Nostalgia Sonatina.mp3"
+Feb 03 14:03 : player: played "Cytus II OST/Disc.07 ConneR/Aphasia.mp3"
+Feb 03 14:06 : player: played "Cytus II OST/Disc.07 ConneR/Olympia.mp3"
+Feb 03 14:08 : player: played "Cytus II OST/Disc.07 ConneR/Demetrius.mp3"
+Feb 03 14:11 : player: played "Cytus II OST/Disc.07 ConneR/L'Ultima Cena.mp3"
+Feb 03 14:13 : player: played "Cytus II OST/Disc.07 ConneR/Deus Ex Machina.mp3"
+Feb 03 14:16 : player: played "Cytus II OST/Disc.14 Sagar/Immram Brain - 大嶋啓之.mp3"
+Feb 03 14:18 : player: played "Cytus II OST/Disc.14 Sagar/Space Alien - SADA 2Futureanthem.mp3"
+Feb 03 14:34 : player: played "Cytus II OST/Disc.04 Ivy/Halloween Party - SHK.mp3"
+Feb 03 14:35 : player: played "Cytus II OST/Disc.04 Ivy/Halloween Party - SHK.mp3"
+Feb 03 14:37 : player: played "Cytus II OST/Disc.04 Ivy/Halloween Party - SHK.mp3"
+Feb 03 14:39 : player: played "Cytus II OST/Disc.04 Ivy/Halloween Party - SHK.mp3"
+Feb 03 14:41 : player: played "Cytus II OST/Disc.04 Ivy/Halloween Party - SHK.mp3"
+Feb 03 14:43 : player: played "Cytus II OST/Disc.04 Ivy/Halloween Party - SHK.mp3"
+Feb 03 14:45 : player: played "Cytus II OST/Disc.04 Ivy/Halloween Party - SHK.mp3"
+Feb 03 14:47 : player: played "Cytus II OST/Disc.04 Ivy/Halloween Party - SHK.mp3"
+Feb 03 14:49 : player: played "Cytus II OST/Disc.04 Ivy/Halloween Party - SHK.mp3"
+Feb 03 14:51 : player: played "Cytus II OST/Disc.04 Ivy/Halloween Party - SHK.mp3"
+Feb 03 14:52 : player: played "Cytus II OST/Disc.04 Ivy/Halloween Party - SHK.mp3"
+Feb 03 14:54 : player: played "Cytus II OST/Disc.04 Ivy/Halloween Party - SHK.mp3"
+Feb 03 14:56 : client: [0] closed
+Feb 03 14:56 : client: [1] opened from 127.0.0.1:43034
+Feb 03 14:56 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 03 14:58 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Feb 03 15:01 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Feb 03 15:03 : player: played "music_cytus_Stewrica_-Cross-.wav"
+Feb 03 15:12 : player: played "Rockman ZXA Tunes/8-02 Destiny.flac"
+Feb 03 15:17 : player: played "Rockman ZXA Tunes/8-06 Target Chaser.flac"
+Feb 03 15:23 : player: played "Rockman ZXA Tunes/9-02 Bullet Drive.flac"
+Feb 03 15:27 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 03 15:27 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 03 15:47 : client: [1] closed
+Feb 03 15:47 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 03 16:22 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 03 16:22 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 03 17:19 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 03 20:04 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 03 20:04 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 03 22:13 : client: [0] opened from 127.0.0.1:59800
+Feb 03 22:13 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 03 22:13 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 03 22:19 : player: played "Rockman ZX Tunes/3-01 Innocence.flac"
+Feb 03 22:19 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 03 22:19 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 03 22:19 : player: played "Rockman ZX Tunes/3-02 Awake.flac"
+Feb 03 22:19 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 03 22:24 : client: [1] opened from 127.0.0.1:60540
+Feb 03 22:26 : client: [1] closed
+Feb 04 00:52 : client: [0] closed
+Feb 04 00:52 : player: played "Rockman ZX Tunes/3-05 Green Grass Gradation.flac"
+Feb 04 08:22 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 04 08:22 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 04 08:29 : player: played "Rockman ZX Tunes/3-05 Green Grass Gradation.flac"
+Feb 04 08:42 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 04 08:42 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 04 15:12 : update: added megamantapedelay2020.zip/Rockman Live 2020/01 - Rockman 2 Opening ~ Title.mp3
+Feb 04 15:12 : update: added megamantapedelay2020.zip/Rockman Live 2020/02 - Rockman 2 StageSelect~Start~Metal~Boss Medley.mp3
+Feb 04 15:12 : update: added megamantapedelay2020.zip/Rockman Live 2020/03 - Rockman 2 Medley [GetWeapon~Wood~Flash~Quick~GameOver].mp3
+Feb 04 15:12 : update: added megamantapedelay2020.zip/Rockman Live 2020/04 - Theme Of RockmanEXE.mp3
+Feb 04 15:12 : update: added megamantapedelay2020.zip/Rockman Live 2020/05 - Fire Field.mp3
+Feb 04 15:12 : update: added megamantapedelay2020.zip/Rockman Live 2020/06 - EXE Battle Medley [Operation!~NetBattle~VsDreamVirus].mp3
+Feb 04 15:12 : update: added megamantapedelay2020.zip/Rockman Live 2020/07 - Running Through The Cyberworld.mp3
+Feb 04 15:12 : update: added megamantapedelay2020.zip/Rockman Live 2020/08 - Esperanto.mp3
+Feb 04 15:12 : update: added megamantapedelay2020.zip/Rockman Live 2020/09 - Weapon Get~Dr Wily Stage 1.mp3
+Feb 04 15:12 : update: added megamantapedelay2020.zip/Rockman Live 2020/10 - Re-Boot!.mp3
+Feb 04 15:12 : update: added megamantapedelay2020.zip/Rockman Live 2020/11 - Departure.mp3
+Feb 04 15:12 : update: added megamantapedelay2020.zip/Rockman Live 2020/12 - Cannonball ~ Theme Of Zero.mp3
+Feb 04 15:12 : update: added megamantapedelay2020.zip/Rockman Live 2020/13 - Through The Lightning ~ Rockin' On.mp3
+Feb 04 15:12 : update: added megamantapedelay2020.zip/Rockman Live 2020/14 - Trap Factory ~ Trap Phantasm.mp3
+Feb 04 15:12 : update: added megamantapedelay2020.zip/Rockman Live 2020/15 - Rockman 2 Medley [Password~Wily Map~Wily Stage 1~All Clear.mp3
+Feb 04 15:12 : update: added megamantapedelay2020.zip/Rockman Live 2020/16 - Encore! Running Through The Cyberworld.mp3
+Feb 04 15:12 : update: added megamantapedelay2020.zip/Rockman Live 2020/17 - Encore! Ending ~ Staff Roll.mp3
+Feb 04 15:12 : update: added megamantapedelay2020.zip/Rockman Live 2020/18 - [Secret Track] Rap Man.mp3
+Feb 04 16:45 : player: played "Rockman ZX Tunes/3-05 Green Grass Gradation.flac"
+Feb 04 20:14 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 04 20:14 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 05 00:04 : player: played "Rockman ZX Tunes/3-05 Green Grass Gradation.flac"
+Feb 05 00:04 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 05 00:04 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 05 00:36 : player: played "Rockman ZX Tunes/3-05 Green Grass Gradation.flac"
+Feb 05 08:15 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 05 08:15 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 05 14:39 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 05 14:39 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 05 16:24 : player: played "Rockman ZX Tunes/3-05 Green Grass Gradation.flac"
+Feb 05 20:13 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 05 20:13 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 05 23:44 : player: played "Rockman ZX Tunes/3-05 Green Grass Gradation.flac"
+Feb 05 23:45 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 05 23:45 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 06 00:23 : player: played "Rockman ZX Tunes/3-05 Green Grass Gradation.flac"
+Feb 06 08:02 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 06 08:02 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 06 08:40 : player: played "Rockman ZX Tunes/3-05 Green Grass Gradation.flac"
+Feb 06 08:41 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 06 08:41 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 06 08:47 : player: played "Rockman ZX Tunes/3-05 Green Grass Gradation.flac"
+Feb 06 08:47 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 06 08:47 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 06 10:07 : client: [0] opened from 127.0.0.1:34538
+Feb 06 10:07 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 06 10:08 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 06 10:19 : player: played "Rockman ZXA Tunes/9-02 Bullet Drive.flac"
+Feb 06 10:25 : player: played "Rockman ZXA Tunes/9-02 Bullet Drive.flac"
+Feb 06 10:38 : player: played "Rockman ZXA Tunes/9-03 Overloaded.flac"
+Feb 06 10:44 : player: played "Rockman ZXA Tunes/9-03 Overloaded.flac"
+Feb 06 10:51 : player: played "Rockman ZXA Tunes/9-03 Overloaded.flac"
+Feb 06 10:57 : player: played "Rockman ZXA Tunes/9-03 Overloaded.flac"
+Feb 06 11:10 : client: [0] closed
+Feb 06 11:10 : player: played "Rockman ZXA Tunes/9-03 Overloaded.flac"
+Feb 06 14:25 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 06 14:25 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 06 15:52 : player: played "Rockman ZXA Tunes/9-03 Overloaded.flac"
+Feb 06 17:49 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 06 17:49 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 06 18:47 : player: played "Rockman ZXA Tunes/9-03 Overloaded.flac"
+Feb 06 18:48 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 06 18:48 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 06 18:50 : player: played "Rockman ZXA Tunes/9-03 Overloaded.flac"
+Feb 06 22:45 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 06 22:45 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 07 00:04 : player: played "Rockman ZXA Tunes/9-03 Overloaded.flac"
+Feb 07 08:25 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 07 08:25 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 07 11:02 : player: played "Rockman ZXA Tunes/9-03 Overloaded.flac"
+Feb 07 11:02 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 07 11:02 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 07 16:49 : player: played "Rockman ZXA Tunes/9-03 Overloaded.flac"
+Feb 07 19:38 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 07 19:38 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 07 19:54 : player: played "Rockman ZXA Tunes/9-03 Overloaded.flac"
+Feb 07 19:54 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 07 19:54 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 07 22:03 : player: played "Rockman ZXA Tunes/9-03 Overloaded.flac"
+Feb 07 22:03 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 07 22:03 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 08 00:45 : player: played "Rockman ZXA Tunes/9-03 Overloaded.flac"
+Feb 08 08:49 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 08 08:49 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 08 16:59 : player: played "Rockman ZXA Tunes/9-03 Overloaded.flac"
+Feb 08 20:05 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 08 20:05 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 09 00:51 : player: played "Rockman ZXA Tunes/9-03 Overloaded.flac"
+Feb 09 08:55 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 09 08:55 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 09 08:59 : player: played "Rockman ZXA Tunes/9-03 Overloaded.flac"
+Feb 09 09:00 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 09 09:00 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 09 10:13 : client: [0] opened from 127.0.0.1:59694
+Feb 09 10:14 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 09 10:21 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 09 10:28 : player: played "Rockman ZX Tunes/4-02 Wonder Panorama.flac"
+Feb 09 10:55 : player: played "Rockman ZX Tunes/3-11 Sky High -Grand Nuage-.flac"
+Feb 09 11:01 : player: played "Rockman ZX Tunes/5-06 Black Burn.flac"
+Feb 09 11:06 : player: played "Rockman ZX Tunes/5-05 Cannon Ball -Hard Revenge-.flac"
+Feb 09 11:12 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 09 11:19 : player: played "Rockman ZXA Tunes/10-02 Trap Phantasm.flac"
+Feb 09 11:29 : player: played "Rockman ZXA Tunes/10-01 Path to the Truth.flac"
+Feb 09 11:45 : player: played "Rockman ZXA Tunes/8-02 Destiny.flac"
+Feb 09 11:57 : player: played "Rockman ZXA Tunes/9-08 Determined Eyes.flac"
+Feb 09 11:59 : player: played "Rockman ZXA Tunes/9-08 Determined Eyes.flac"
+Feb 09 12:03 : player: played "Rockman ZXA Tunes/9-08 Determined Eyes.flac"
+Feb 09 12:05 : player: played "Rockman ZXA Tunes/9-08 Determined Eyes.flac"
+Feb 09 12:08 : player: played "Rockman ZXA Tunes/9-08 Determined Eyes.flac"
+Feb 09 12:14 : player: played "Rockman ZXA Tunes/9-10 Oriental Sentinels.flac"
+Feb 09 12:19 : player: played "Rockman ZXA Tunes/9-10 Oriental Sentinels.flac"
+Feb 09 12:24 : player: played "Rockman ZXA Tunes/9-10 Oriental Sentinels.flac"
+Feb 09 12:30 : player: played "Rockman ZXA Tunes/9-10 Oriental Sentinels.flac"
+Feb 09 12:35 : player: played "Rockman ZXA Tunes/9-10 Oriental Sentinels.flac"
+Feb 09 12:41 : player: played "Rockman ZXA Tunes/9-10 Oriental Sentinels.flac"
+Feb 09 12:46 : player: played "Rockman ZXA Tunes/9-10 Oriental Sentinels.flac"
+Feb 09 12:46 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 09 12:46 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 09 12:51 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 09 12:55 : player: played "Rockman Zero Ideas/5-03 Departure.flac"
+Feb 09 13:01 : player: played "Rockman Zero Ideas/6-12 Sand Triangle (Mythos Ver.).flac"
+Feb 09 13:04 : player: played "Rockman Zero Ideas/6-12 Sand Triangle (Mythos Ver.).flac"
+Feb 09 13:10 : player: played "Rockman Zero Ideas/5-15 Neo Arcadia (Mythos Ver.).flac"
+Feb 09 13:14 : player: played "Rockman Zero Ideas/5-15 Neo Arcadia (Mythos Ver.).flac"
+Feb 09 13:17 : player: played "Rockman Zero Ideas/5-15 Neo Arcadia (Mythos Ver.).flac"
+Feb 09 13:19 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 09 13:19 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 09 13:25 : player: played "Rockman Zero Telos/10-13 Water City.flac"
+Feb 09 13:37 : player: played "Rockman Zero Telos/11-06 Infiltration II.flac"
+Feb 09 13:42 : player: played "Rockman Zero Telos/11-06 Infiltration II.flac"
+Feb 09 13:48 : player: played "Rockman Zero Telos/11-10 Submerged Memory.flac"
+Feb 09 15:15 : player: played "Rockman Zero Telos/11-09 Trail on Powdery Snow.flac"
+Feb 09 15:23 : player: played "Rockman Zero Telos/11-09 Trail on Powdery Snow.flac"
+Feb 09 15:31 : player: played "Rockman Zero Telos/11-09 Trail on Powdery Snow.flac"
+Feb 09 16:21 : client: [0] closed
+Feb 09 16:21 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 09 17:10 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 09 17:10 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 09 17:50 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 09 22:56 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 09 22:56 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 10 00:30 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 10 08:19 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 10 08:19 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 10 11:25 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 10 14:13 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 10 14:13 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 10 15:35 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 10 21:02 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 10 21:02 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 11 01:28 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 11 08:30 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 11 08:30 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 11 17:00 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 11 19:47 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 11 19:47 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 11 19:53 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 11 19:53 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 11 19:53 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 11 20:45 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 11 20:53 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 11 20:53 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 11 21:51 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 11 21:52 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 11 21:52 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 11 23:55 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 12 08:48 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 12 08:48 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 12 16:54 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 12 19:46 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 12 19:46 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 13 00:49 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 13 08:28 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 13 08:28 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 13 16:19 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 13 16:31 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 13 16:31 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 13 17:01 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 13 20:28 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 13 20:28 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 14 00:22 : player: played "Rockman Zero Telos/10-04 Break Out.flac"
+Feb 14 08:05 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 14 08:05 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 14 10:59 : client: [0] opened from 127.0.0.1:35546
+Feb 14 10:59 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 14 10:59 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 14 11:05 : player: played "Rockman ZXA Tunes/8-03 Through the Lightning.flac"
+Feb 14 11:10 : player: played "Rockman ZXA Tunes/8-03 Through the Lightning.flac"
+Feb 14 11:16 : player: played "Rockman ZXA Tunes/8-02 Destiny.flac"
+Feb 14 11:21 : player: played "Rockman ZXA Tunes/8-02 Destiny.flac"
+Feb 14 11:26 : player: played "Rockman ZXA Tunes/8-02 Destiny.flac"
+Feb 14 11:37 : player: played "Rockman ZXA Tunes/9-04 In the Wind.flac"
+Feb 14 11:43 : player: played "Rockman ZXA Tunes/9-04 In the Wind.flac"
+Feb 14 11:45 : player: played "Rockman ZXA Tunes/9-08 Determined Eyes.flac"
+Feb 14 11:48 : player: played "Rockman ZXA Tunes/9-08 Determined Eyes.flac"
+Feb 14 11:51 : player: played "Rockman ZXA Tunes/9-08 Determined Eyes.flac"
+Feb 14 11:53 : player: played "Rockman ZXA Tunes/9-08 Determined Eyes.flac"
+Feb 14 11:56 : player: played "Rockman ZXA Tunes/9-08 Determined Eyes.flac"
+Feb 14 11:58 : player: played "Rockman ZXA Tunes/9-08 Determined Eyes.flac"
+Feb 14 12:10 : player: played "Rockman ZXA Tunes/9-10 Oriental Sentinels.flac"
+Feb 14 12:16 : player: played "Rockman ZXA Tunes/9-11 Whisper of Relics.flac"
+Feb 14 13:10 : player: played "Rockman ZXA Tunes/9-11 Whisper of Relics.flac"
+Feb 14 13:16 : player: played "Rockman ZXA Tunes/9-11 Whisper of Relics.flac"
+Feb 14 13:22 : player: played "Rockman ZXA Tunes/9-11 Whisper of Relics.flac"
+Feb 14 13:28 : player: played "Rockman ZXA Tunes/9-11 Whisper of Relics.flac"
+Feb 14 13:29 : client: [0] closed
+Feb 14 16:46 : player: played "Rockman ZXA Tunes/9-11 Whisper of Relics.flac"
+Feb 14 20:07 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 14 20:07 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 15 00:06 : player: played "Rockman ZXA Tunes/9-11 Whisper of Relics.flac"
+Feb 15 08:47 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 15 08:47 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 15 17:06 : player: played "Rockman ZXA Tunes/9-11 Whisper of Relics.flac"
+Feb 15 20:39 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 15 20:39 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 16 00:24 : player: played "Rockman ZXA Tunes/9-11 Whisper of Relics.flac"
+Feb 16 09:04 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 16 09:04 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 16 12:29 : player: played "Rockman ZXA Tunes/9-11 Whisper of Relics.flac"
+Feb 16 19:49 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 16 19:49 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 16 20:48 : player: played "Rockman ZXA Tunes/9-11 Whisper of Relics.flac"
+Feb 16 20:49 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 16 20:49 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 17 00:11 : player: played "Rockman ZXA Tunes/9-11 Whisper of Relics.flac"
+Feb 17 08:41 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 17 08:41 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 17 09:03 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 17 09:03 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 18 01:09 : player: played "Rockman ZXA Tunes/9-11 Whisper of Relics.flac"
+Feb 18 08:23 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 18 08:23 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 18 10:09 : player: played "Rockman ZXA Tunes/9-11 Whisper of Relics.flac"
+Feb 18 10:10 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 18 10:10 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 19 00:29 : player: played "Rockman ZXA Tunes/9-11 Whisper of Relics.flac"
+Feb 19 08:26 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 19 08:26 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 19 12:35 : player: played "Rockman ZXA Tunes/9-11 Whisper of Relics.flac"
+Feb 19 20:15 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 19 20:15 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 20 00:48 : player: played "Rockman ZXA Tunes/9-11 Whisper of Relics.flac"
+Feb 20 08:30 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 20 08:30 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 20 16:38 : player: played "Rockman ZXA Tunes/9-11 Whisper of Relics.flac"
+Feb 20 19:31 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 20 19:31 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 20 19:52 : inotify: Failed to open directory /home/ichirou2910/Music/Unpack-3229/ロックマンエグゼ 15周年アレンジベストトラック: No such file or directory
+Feb 20 19:52 : inotify: Failed to open directory /home/ichirou2910/Music/Unpack-3229: No such file or directory
+Feb 20 19:53 : client: [0] opened from 127.0.0.1:39130
+Feb 20 19:53 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 20 19:53 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 20 19:53 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 20 19:53 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 20 19:53 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 20 19:53 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 20 19:53 : update: added ロックマンエグゼ 15周年アレンジベストトラック/13. THEME OF ROCKMAN EXE.flac
+Feb 20 19:53 : update: added ロックマンエグゼ 15周年アレンジベストトラック/10. A Total War.flac
+Feb 20 19:53 : update: added ロックマンエグゼ 15周年アレンジベストトラック/07. farewell.flac
+Feb 20 19:53 : update: added ロックマンエグゼ 15周年アレンジベストトラック/03. FIRE FIELD.flac
+Feb 20 19:53 : update: added ロックマンエグゼ 15周年アレンジベストトラック/06. FINAL TRANSMISSION.flac
+Feb 20 19:53 : update: added ロックマンエグゼ 15周年アレンジベストトラック/11. Surge of Power!.flac
+Feb 20 19:53 : update: added ロックマンエグゼ 15周年アレンジベストトラック/12. VS.ネビュラグレイ.flac
+Feb 20 19:53 : update: added ロックマンエグゼ 15周年アレンジベストトラック/04. ウイルスバスティング.flac
+Feb 20 19:53 : update: added ロックマンエグゼ 15周年アレンジベストトラック/02. ホームタウン.flac
+Feb 20 19:53 : update: added ロックマンエグゼ 15周年アレンジベストトラック/05. YOU CAN'T GO BACK.flac
+Feb 20 19:53 : update: added ロックマンエグゼ 15周年アレンジベストトラック/09. ロックマンエグゼ4.5戦闘曲メドレー.flac
+Feb 20 19:53 : update: added ロックマンエグゼ 15周年アレンジベストトラック/01. RUNNING THROUGH THE CYBER WORLD.flac
+Feb 20 19:53 : update: added ロックマンエグゼ 15周年アレンジベストトラック/08. Theme of ROCKMAN EXE4.flac
+Feb 20 19:53 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 20 19:53 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 20 19:57 : exception: Failed to open /home/ichirou2910/.config/mpd/playlists: Not a directory
+Feb 20 19:57 : player: played "ロックマンエグゼ 15周年アレンジベストトラック/01. RUNNING THROUGH THE CYBER WORLD.flac"
+Feb 20 20:01 : player: played "ロックマンエグゼ 15周年アレンジベストトラック/01. RUNNING THROUGH THE CYBER WORLD.flac"
+Feb 20 20:09 : player: played "ロックマンエグゼ 15周年アレンジベストトラック/06. FINAL TRANSMISSION.flac"
+Feb 20 20:12 : player: played "ロックマンエグゼ 15周年アレンジベストトラック/07. farewell.flac"
+Feb 20 20:16 : player: played "ロックマンエグゼ 15周年アレンジベストトラック/10. A Total War.flac"
+Feb 21 00:28 : client: [0] closed
+Feb 21 00:28 : player: played "ロックマンエグゼ 15周年アレンジベストトラック/12. VS.ネビュラグレイ.flac"
+Feb 21 13:19 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 21 13:19 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 00:57 : player: played "ロックマンエグゼ 15周年アレンジベストトラック/12. VS.ネビュラグレイ.flac"
+Feb 22 08:37 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 08:37 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 10:06 : player: played "ロックマンエグゼ 15周年アレンジベストトラック/12. VS.ネビュラグレイ.flac"
+Feb 22 10:07 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 10:07 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 10:12 : player: played "ロックマンエグゼ 15周年アレンジベストトラック/12. VS.ネビュラグレイ.flac"
+Feb 22 10:12 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 10:12 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 10:15 : player: played "ロックマンエグゼ 15周年アレンジベストトラック/12. VS.ネビュラグレイ.flac"
+Feb 22 10:18 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 10:18 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 10:25 : player: played "ロックマンエグゼ 15周年アレンジベストトラック/12. VS.ネビュラグレイ.flac"
+Feb 22 10:25 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 10:25 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 10:30 : player: played "ロックマンエグゼ 15周年アレンジベストトラック/12. VS.ネビュラグレイ.flac"
+Feb 22 10:31 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 10:31 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 11:33 : player: played "ロックマンエグゼ 15周年アレンジベストトラック/12. VS.ネビュラグレイ.flac"
+Feb 22 14:28 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 14:28 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 15:24 : player: played "ロックマンエグゼ 15周年アレンジベストトラック/12. VS.ネビュラグレイ.flac"
+Feb 22 17:55 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 17:55 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 20:40 : player: played "ロックマンエグゼ 15周年アレンジベストトラック/12. VS.ネビュラグレイ.flac"
+Feb 22 20:40 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 20:40 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 21:04 : player: played "ロックマンエグゼ 15周年アレンジベストトラック/12. VS.ネビュラグレイ.flac"
+Feb 22 21:04 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 22 21:04 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
