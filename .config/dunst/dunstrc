@@ -38,6 +38,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
+	allow_markup = yes
     format = "%a\n<b>%s</b>\n%b"
 
     alignment = left
