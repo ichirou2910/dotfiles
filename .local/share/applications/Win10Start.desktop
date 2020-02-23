@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Start Windows 10
+Comment=Start Windows 10 VM
+Exec=sh -c "sudo virsh start win10 && xrandr --output HDMI-1 --off"
+Terminal=true

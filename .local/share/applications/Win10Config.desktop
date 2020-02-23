@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Edit Windows 10
+Comment=Configure Windows 10 VM
+Version=1.0
+Type=Application
+Exec=sh -c "sudo virt-manager --connect qemu:///system --show-domain-editor=54a4033a-f5be-49ed-afe1-fc222c42da31"
+Terminal=false

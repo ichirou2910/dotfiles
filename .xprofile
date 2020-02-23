@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+xrandr --output DP-1 --auto --pos 0x0
+xrandr --output HDMI-1 --auto --right-of DP-1
+ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3
+dunst &
+~/.fehbg &
+sxhkd -m 1 &
+remaps &
+notify-send -i /home/ichirou2910/Pictures/Ichirou2910.jpg "Welcome Ichirou Keita, have a nice day!"
