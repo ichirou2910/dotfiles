@@ -45,9 +45,9 @@ XF86MonBrightnessDown
 # -------------------------
 Print								
 	maim | xclip -selection clipboard -t image/png && notify-send "Screenshot saved."
-alt + Print
-	maim -i $(xdotool getactivewindow) $SCREENSHOTDIR/$(date +%Y-%M-%d_%H:%M:%s).png && notify-send "Active window captured."
 alt + shift + Print
+	maim -i $(xdotool getactivewindow) $SCREENSHOTDIR/$(date +%Y-%M-%d_%H:%M:%s).png && notify-send "Active window captured."
+alt + Print
 	maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png && notify-send "Active window copied."
 ctrl + alt + a
 	maim -s | xclip -selection clipboard -t image/png && notify-send "Selected region copied."
