@@ -100,7 +100,11 @@ source $ZSH/oh-my-zsh.sh
 
 #autoload -U promptinit; promptinit
 #prompt spaceship
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias vim="nvim"
+alias vi="nvim"
+alias oldvim="vim"
+
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
