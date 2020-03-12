@@ -6,5 +6,5 @@ ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3
 dunst &
 ~/.fehbg &
 sxhkd -m 1 &
-remaps &
+setxkbmap -option caps:swapescape
 notify-send -i /home/ichirou2910/Pictures/Ichirou2910.jpg "Welcome Ichirou Keita, have a nice day!"
