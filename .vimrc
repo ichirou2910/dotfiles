@@ -23,7 +23,10 @@ call vundle#begin('~/.vim/plugged/vundle')
 " let Vundle manage vundle
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'jiangmiao/auto-pairs'
+
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
 Plugin 'junegunn/gv.vim'
 
 Plugin 'scrooloose/nerdtree'
@@ -124,13 +127,6 @@ nnoremap <C-Up> <C-W><C-K>
 nnoremap <C-Right> <C-W><C-L>
 nnoremap <C-Left> <C-W><C-H>
 
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
-
+set rnu
 set swapfile
 set dir=~/.swap-files
