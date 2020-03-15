@@ -100,6 +100,15 @@ source $ZSH/oh-my-zsh.sh
 
 #autoload -U promptinit; promptinit
 #prompt spaceship
+SPACESHIP_USER_SHOW=always
+SPACESHIP_PROMPT_ORDER=(
+	user
+	dir
+	host
+	git
+	line_sep
+	char
+)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"

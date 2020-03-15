@@ -3,6 +3,7 @@ export WM="i3"
 
 # Default programs
 export EDITOR="/usr/bin/nvim"
+export VISUAL="/usr/bin/nvim"
 export TERMINAL="alacritty"
 export BROWSER="brave"
 export READER="zathura"
