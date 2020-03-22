@@ -200,9 +200,8 @@ exec --no-startup-id compton --config ~/.config/compton/compton.conf
 # Desktop background notes
 exec --no-startup-id python3 /home/ichirou2910/.config/wallpaper/walltext.py
 
-exec --no-startup-id onboard
-
 for_window [class="Brave"] move workspace $ws5
 for_window [class="Spotify"] move workspace $ws6
 for_window [class="Yad" title="yad-calendar"] floating enable
 for_window [class="Alacritty" title="Notes"] floating enable resize set 500 400
+for_window [title="Network Connections"] floating enable

@@ -8,7 +8,7 @@ super + i
 super + e							
 	$TERMINAL -e neomutt
 super + shift + w						
-	$TERMINAL -e sudo nmtui
+	nm-connection-editor
 super + w					
 	$BROWSER
 super + s
