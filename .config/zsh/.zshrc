@@ -68,7 +68,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
 #autoload -U promptinit; promptinit
 #prompt spaceship
 SPACESHIP_USER_SHOW=always
+SPACESHIP_USER_COLOR=#00b3ff
 SPACESHIP_PROMPT_ORDER=(
 	user
 	dir
@@ -111,9 +112,14 @@ SPACESHIP_PROMPT_ORDER=(
 )
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Aliases -------------------------------------------------------------------
+#
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias vim="nvim"
 alias vi="nvim"
 alias oldvim="vim"
+alias tas="tmux attach-session"
+alias cfz="nvim .config/zsh/.zshrc"
+alias cfv="nvim .vimrc"
 
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
