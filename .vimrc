@@ -1,46 +1,95 @@
-call plug#begin('~/.vim/plugged')
-
-Plug 'itchyny/lightline.vim'
-
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-Plug 'ryanoasis/vim-devicons'
-
-Plug 'lervag/vimtex'
-
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-
-call plug#end()
-
 " Vundle
 set nocompatible
-filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/plugged/vundle')
 " let Vundle manage vundle
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'ryanoasis/vim-devicons'
 
 Plugin 'jiangmiao/auto-pairs'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 Plugin 'junegunn/gv.vim'
+Plugin 'kien/ctrlp.vim'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
+
+"Plugin 'davidhalter/jedi-vim'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'deoplete-plugins/deoplete-jedi'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'python-mode/python-mode'
 
 Plugin 'dracula/vim', { 'name': 'dracula' }
 
 Plugin 'plasticboy/vim-markdown'
 
 call vundle#end()
-filetype plugin indent on
 
-" neovim config
+let mapleader = ","
+
+" Auto reload vimrc when saved
+autocmd! bufwritepost .vimrc source %
+
+" Enable swap files
+set swapfile
+set dir=~/.swap-files
+
+" Bind :nohl <- removes highlight of last search
+noremap <C-n> :nohl<CR>
+vnoremap <C-n> :nohl<CR>
+inoremap <C-n> :nohl<CR>
+
+" Map keys
+nnoremap <C-Down> <C-W><C-J>
+nnoremap <C-Up> <C-W><C-K>
+nnoremap <C-Right> <C-W><C-L>
+nnoremap <C-Left> <C-W><C-H>
+
+" bind Ctrl + movement kets to move around the windows, instead of using
+" Ctrl+w+movement
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-H> <C-W><C-L>
+nnoremap <C-L> <C-W><C-H>
+
+" Insert only a character without switching to insert mode
+nnoremap <Space> i_<Esc>r
+
+" Easier moving between tabs
+noremap <Leader>n <esc>:tabprevious<CR>
+noremap <Leader>m <esc>:tabnext<CR>
+
+" Vim sort function
+vnoremap <Leader>s :sort<CR>
+
+" Easier moving of code blocks
+vnoremap < <gv
+vnoremap > >gv
+
+" Show bad white space
+highlight BadWhitespace ctermbg=red guibg=red
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" Enable syntax highlighting
+filetype off
+filetype plugin indent on
+syntax on
+
+" Show line numbers and length
+set rnu
 set number
+set nowrap
+
+" Some other stuff
 set mouse=a
 set showmatch
 set showcmd
@@ -48,17 +97,35 @@ set cursorline
 
 set virtualedit=onemore
 set autoindent
+set foldmethod=indent
 set shiftwidth=4
 set wildmenu
 set confirm
 
+set encoding=utf-8
+set clipboard=unnamed
+
+set history=700
+set undolevels=700
+
+" Tabs
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+set laststatus=2
+set splitright
+set splitbelow
+
 " Git-fugitive stuff
 nmap <leader>g :Gstatus<cr>gg<C-n>
 
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:SimpylFold_docstring_preview=1
+let NERDTreeIgnore=['\.pyc$', '\~$']
 
+" Lightline -------------------------------------------------
 highlight clear CursorLine " Removes the underline causes by enabling cursorline
-syntax on
 let g:lightline = {
   \   'colorscheme': 'dracula',
   \   'active': {
@@ -85,8 +152,7 @@ let g:lightline.tabline = {
   \ }
 set showtabline=2  " Show tabline
 set guioptions-=e  " Don't use GUI tabline
-execute pathogen#infect()
-call pathogen#helptags()
+"------------------------------------------------------------
 
 " NERDTRee
 let NERDTreeShowHidden = 1
@@ -110,23 +176,72 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" Set default identation
-set tabstop=4
-set shiftwidth=0
-set laststatus=2
-set splitright
-set splitbelow
+let python_highlight_all=1
+
+" Ctrlp --------------------------------------------------
+let g:ctrlp_max_height=30
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=*/coverage/*
+
+" Python-mode --------------------------------------------
+"map <Leader>g :call RopeGotoDefinition()<CR>
+"let ropevim_enable_shortcuts = 1
+"let g:pymode_rope_goto_def_newwin = "vnew"
+"let g:pymode_rope_extended_complete = 1
+"let g:pymode_breakpoint = 0
+"let g:pymode_syntax = 1
+"let g:pymode_syntax_builtin_objs = 0
+"let g:pymode_syntax_buildin_funcs = 0
+
+" Jedi-vim ----------------------------------------------
+"let g:jedi#completions_enabled = 0
+"let g:jedi#use_splits_not_buffers = "right"
+"let g:jedi#usages_command = "<leader>z"
+"let g:jedi#popup_on_dot = 0
+"let g:jedi#popup_select_first = 0
+
+" Deoplete ----------------------------------------------
+let g:deoplete#enable_at_startup = 1
+
+
+" Omnicomplete
+"set completeopt=longest,menuone
+"function! OmniPopup(action)
+"    if pumvisible()
+"        if a:action == 'j'
+"            return "\<C-N>"
+"        elseif a:action == 'k'
+"            return "\<C-P>"
+"        endif
+"    endif
+"    return a:action
+"endfunction
+"
+"inoremap <silent>j <C-R>=OmniPopup('j')<CR>
+"inoremap <silent>k <C-R>=OmniPopup('k')<CR>
+
+"" Python PEP 8 indentation
+au BufNewFile,BufRead *.py
+	\ set tabstop=4 |
+	\ set softtabstop=4 |
+	\ set shiftwidth=4 |
+	\ set textwidth=100 |
+	\ set expandtab |
+	\ set autoindent |
+	\ set fileformat=unix |
+
+" For full stack dev
+au BufNewFile,BufRead *.js,*.html,*.css
+	\ set tabstop=2
+	\ set softtabstop=2
+	\ set shiftwidth=2
 
 "Vimtex
 let g:tex_flavor="latex"
 let g:vimtex_view_general_viewer = 'zathura'
 
-" Map keys
-nnoremap <C-Down> <C-W><C-J>
-nnoremap <C-Up> <C-W><C-K>
-nnoremap <C-Right> <C-W><C-L>
-nnoremap <C-Left> <C-W><C-H>
 
-set rnu
-set swapfile
-set dir=~/.swap-files
+" Tab completion
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
