@@ -102,6 +102,7 @@ source $ZSH/oh-my-zsh.sh
 #prompt spaceship
 SPACESHIP_USER_SHOW=always
 SPACESHIP_USER_COLOR=#00b3ff
+SPACESHIP_DIR_COLOR=blue
 SPACESHIP_PROMPT_ORDER=(
 	user
 	dir
@@ -120,6 +121,7 @@ alias vim="nvim"
 alias vi="nvim"
 alias oldvim="vim"
 alias tas="tmux attach-session"
+alias ta="tmux attach || tmux new-session"
 alias cfz="nvim .config/zsh/.zshrc"
 alias cfv="nvim .vimrc"
 
