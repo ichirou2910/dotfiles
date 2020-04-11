@@ -2,9 +2,11 @@
 set nocompatible
 
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/plugged/syntastic
+set rtp+=~/.vim/plugged/lightline.vim
 call vundle#begin('~/.vim/plugged/vundle')
 
-" Plugin Lists ===============================================================
+" PLUGINS LIST ===============================================================
 Plugin 'VundleVim/Vundle.vim'
 
 " Visual theme
@@ -16,22 +18,38 @@ Plugin 'ryanoasis/vim-devicons'
 
 " File handlers
 Plugin 'scrooloose/nerdtree' " file viewer
-Plugin 'kien/ctrlp.vim' " file jumper
-
+Plugin 'jistr/vim-nerdtree-tabs' " make nerd tree feel like a panel
+Plugin 'kien/ctrlp.vim' " file jumper 
 " Git
 Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/gv.vim'
 
-" Easy good-looking code
-Plugin 'jiangmiao/auto-pairs' " Auto close 
-Plugin 'tpope/vim-surround' " Handle pairs 
-Plugin 'tpope/vim-repeat' " Enhance dot commands
-Plugin 'tmhedberg/SimpylFold' " Fold code
+" Language support
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Python
 Plugin 'vim-scripts/indentpython.vim' " Python indentation
+
+" Web dev
+Plugin 'mattn/emmet-vim'
+Plugin 'digitaltoad/vim-pug'
+Plugin 'ap/vim-css-color'
+Plugin 'Glench/Vim-Jinja2-Syntax'
+
+" Javascript
+Plugin 'pangloss/vim-javascript'
+Plugin 'ternjs/tern_for_vim'
+
+" Easy good-looking code
+Plugin 'jiangmiao/auto-pairs' " Auto close
+Plugin 'tpope/vim-surround' " Handle pairs
+Plugin 'tpope/vim-repeat' " Enhance dot commands
+Plugin 'tpope/vim-commentary' " Code comments
+Plugin 'tmhedberg/SimpylFold' " Fold code
 Plugin 'vim-syntastic/syntastic' " Write syntactically well please
 Plugin 'nvie/vim-flake8' " Python PEP8 antidote
-
-Plugin 'scrooloose/nerdcommenter'
+Plugin 'jelera/vim-javascript-syntax' " Javascript syntax
+Plugin 'sheerun/vim-polyglot'
 
 " Auto completion
 Plugin 'davidhalter/jedi-vim'
@@ -40,7 +58,7 @@ Plugin 'deoplete-plugins/deoplete-jedi'
 
 call vundle#end()
 
-" Basic Configuration ========================================================
+" BASIC CONFIGURATION ========================================================
 "
 " Set leader shortcut
 let mapleader = ","
@@ -57,25 +75,24 @@ noremap <C-n> :nohl<CR>
 vnoremap <C-n> :nohl<CR>
 inoremap <C-n> :nohl<CR>
 
-" Map keys (conflicted with tmux so not used anymore)
-"nnoremap <C-Down> <C-W><C-J>
-"nnoremap <C-Up> <C-W><C-K>
-"nnoremap <C-Right> <C-W><C-L>
-"nnoremap <C-Left> <C-W><C-H>
-
 " bind Ctrl + movement kets to move around the windows, instead of using Ctrl+w+movement
-" (conflicted with tmux so not used anymore)
-"nnoremap <C-J> <C-W><C-J>
-"nnoremap <C-K> <C-W><C-K>
-"nnoremap <C-H> <C-W><C-L>
-"nnoremap <C-L> <C-W><C-H>
+nnoremap <A-j> <C-W><C-J>
+nnoremap <A-k> <C-W><C-K>
+nnoremap <A-l> <C-W><C-L>
+nnoremap <A-h> <C-W><C-H>
 
 " Insert only a character without switching to insert mode
 nnoremap <Space> i_<Esc>r
 
 " Easier moving between tabs
-noremap <Leader>n <esc>:tabprevious<CR>
-noremap <Leader>m <esc>:tabnext<CR>
+"noremap <Leader>n <esc>:tabprevious<CR>
+"noremap <Leader>m <esc>:tabnext<CR>
+noremap <C-d> :tabnext<CR>
+noremap <C-s> :tabprevious<CR>
+noremap <C-t> :tabnew<CR>
+inoremap <C-d> <Esc>:tabnext<CR>
+inoremap <C-s> <Esc>:tabprevious<CR>
+inoremap <C-t> <Esc>:tabnew<CR>
 
 " Vim sort function
 vnoremap <Leader>s :sort<CR>
@@ -116,7 +133,12 @@ set splitbelow
 " Enable syntax highlighting
 filetype off
 filetype plugin indent on
-syntax on
+syntax enable
+
+" Color scheme
+" Disable background highlight to use terminal's BG
+au ColorScheme * hi Normal ctermbg=None
+colorscheme dracula " Use dracula theme
 
 " Show line numbers and length
 set rnu
@@ -140,27 +162,37 @@ au BufNewFile,BufRead *.py
 
 " For full stack dev
 au BufNewFile,BufRead *.js,*.html,*.css
-	\ set tabstop=2 |
-	\ set softtabstop=2 |
-	\ set shiftwidth=2 |
+	\ set tabstop=4 |
+	\ set softtabstop=4 |
+	\ set shiftwidth=4 |
     \ set textwidth=80 |
 
 " Unfold all when open a file
 au BufWinEnter * normal zR
 
-" Git-fugitive stuff
-nmap <leader>g :Gstatus<cr>gg<C-n>
+" Terminal
+command! -nargs=* T split | terminal <args>
+command! -nargs=* VT vsplit | terminal <args>
+tnoremap <Esc> <C-\><C-n>
+noremap <A-t> :vsplit+terminal<CR>
+au TermOpen * setlocal nonumber norelativenumber
+
+
+" PLUGINS CONFIGURATION =======================================================
+
+" Git-fugitive -----------------------------------------------
+nmap <leader>gs :vertical Gstatus<cr>gg<C-n>
+nmap <leader>gd :vertical Gdiff<CR>
 
 let g:SimpylFold_docstring_preview=1
-let NERDTreeIgnore=['\.pyc$', '\~$']
 
 " Lightline -------------------------------------------------
 highlight clear CursorLine " Removes the underline causes by enabling cursorline
 let g:lightline = {
-  \   'colorscheme': 'dracula',
+  \ 'colorscheme': 'dracula',
   \   'active': {
   \     'left':[ [ 'mode', 'paste' ],
-  \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]
+  \              [ 'gitbranch', 'readonly', 'filename', 'modified', 'cocstatus' ]
   \     ]
   \   },
 	\   'component': {
@@ -168,6 +200,7 @@ let g:lightline = {
 	\   },
   \   'component_function': {
   \     'gitbranch': 'fugitive#head',
+  \     'cocstatus': 'coc#status',
   \   }
   \ }
 let g:lightline.separator = {
@@ -182,30 +215,37 @@ let g:lightline.tabline = {
   \ }
 set showtabline=2  " Show tabline
 set guioptions-=e  " Don't use GUI tabline
-"------------------------------------------------------------
 
-" NERDTRee
+" NERDTRee ----------------------------------------------------
+let NERDTreeIgnore=['\.pyc$', '\~$']
 let NERDTreeShowHidden = 1
 let NERDTreeDirArrows = 1
 let NERDTreeHijackNetrw = 1
 let g:NERDTreeWinSize=40
-map <C-t> :NERDTreeToggle<CR>
+let NERDTreeMapOpenInTab='\r'
+"map <C-t> :NERDTreeToggle<CR>
 
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | q | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+nmap <A-e> :NERDTreeFocus<cr>R<C-W><C-P>:CtrlPClearAllCaches<CR>
+map <C-e> :NERDTreeTabsToggle<CR>
 
 " Syntastic ---------------------------------------------------
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_highlighting = 0
+
+let g:syntastic_javascript_checkers=['eslint']
+
+" Delay the execution of lightline#update() so that SyntasticCheck got executed
+" first, which avoid missing 'MODE' of lightline
+function! SyntasticCheckHook(errors)
+    call timer_start(10, {_->lightline#update()})
+endfunction
 
 let python_highlight_all=1
 
@@ -214,6 +254,7 @@ let g:ctrlp_max_height=30
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
+set wildignore+=*/node_modules/*
 
 " Jedi-vim ----------------------------------------------
 let g:jedi#completions_enabled = 0
@@ -223,8 +264,12 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 
 " Deoplete ----------------------------------------------
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
 
+" Emmet -------------------------------------------------
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key=','
 
 " Omnicomplete
 "set completeopt=longest,menuone
@@ -242,12 +287,26 @@ let g:deoplete#enable_at_startup = 1
 "inoremap <silent>j <C-R>=OmniPopup('j')<CR>
 "inoremap <silent>k <C-R>=OmniPopup('k')<CR>
 
+" Coc
+set hidden
+set nobackup
+set nowritebackup
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
 
-"Vimtex
-let g:tex_flavor="latex"
-let g:vimtex_view_general_viewer = 'zathura'
-
+inoremap <silent><expr> <C-space> coc#refresh()
 
 " Tab completion
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB> 
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~# '\s'
+endfunction
 
