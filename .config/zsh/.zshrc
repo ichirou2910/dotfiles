@@ -101,13 +101,17 @@ source $ZSH/oh-my-zsh.sh
 #autoload -U promptinit; promptinit
 #prompt spaceship
 SPACESHIP_USER_SHOW=always
-SPACESHIP_USER_COLOR=#00b3ff
+SPACESHIP_USER_COLOR=cyan
 SPACESHIP_DIR_COLOR=blue
 SPACESHIP_PROMPT_ORDER=(
 	user
 	dir
 	host
 	git
+    package
+    node
+    pyenv
+    exec_time
 	line_sep
 	char
 )
@@ -120,8 +124,10 @@ alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias vim="nvim"
 alias vi="nvim"
 alias oldvim="vim"
+alias mutt="TERM=xterm-256color neomutt"
 alias tas="tmux attach-session"
 alias ta="tmux attach || tmux new-session"
-alias cfz="nvim .config/zsh/.zshrc"
-alias cfv="nvim .vimrc"
+alias cfz="nvim ~/.config/zsh/.zshrc"
+alias cfv="nvim ~/.vimrc"
+alias cft="nvim ~/.tmux.conf"
 
