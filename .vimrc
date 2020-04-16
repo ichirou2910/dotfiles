@@ -20,6 +20,8 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'scrooloose/nerdtree' " file viewer
 Plugin 'jistr/vim-nerdtree-tabs' " make nerd tree feel like a panel
 Plugin 'kien/ctrlp.vim' " file jumper 
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight' " Syntax highlighting for nerd tree
+
 " Git
 Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/gv.vim'
@@ -32,7 +34,7 @@ Plugin 'vim-scripts/indentpython.vim' " Python indentation
 
 " Web dev
 Plugin 'mattn/emmet-vim'
-Plugin 'digitaltoad/vim-pug'
+Plugin 'digitaltoad/vim-pug' " HTML syntax hightlight
 Plugin 'ap/vim-css-color'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 
@@ -231,6 +233,11 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 nmap <A-e> :NERDTreeFocus<cr>R<C-W><C-P>:CtrlPClearAllCaches<CR>
 map <C-e> :NERDTreeTabsToggle<CR>
+
+" Nerd tree highlighting
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHightlightFullName = 1
 
 " Syntastic ---------------------------------------------------
 let g:syntastic_always_populate_loc_list = 1
