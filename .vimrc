@@ -16,6 +16,10 @@ Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'itchyny/lightline.vim'
 Plugin 'ryanoasis/vim-devicons'
 
+" Snippets
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
 " File handlers
 Plugin 'scrooloose/nerdtree' " file viewer
 Plugin 'jistr/vim-nerdtree-tabs' " make nerd tree feel like a panel
@@ -36,7 +40,6 @@ Plugin 'vim-scripts/indentpython.vim' " Python indentation
 Plugin 'mattn/emmet-vim'
 Plugin 'digitaltoad/vim-pug' " HTML syntax hightlight
 Plugin 'ap/vim-css-color'
-Plugin 'Glench/Vim-Jinja2-Syntax'
 
 " Javascript
 Plugin 'pangloss/vim-javascript'
@@ -51,12 +54,21 @@ Plugin 'tmhedberg/SimpylFold' " Fold code
 Plugin 'vim-syntastic/syntastic' " Write syntactically well please
 Plugin 'nvie/vim-flake8' " Python PEP8 antidote
 Plugin 'jelera/vim-javascript-syntax' " Javascript syntax
-Plugin 'sheerun/vim-polyglot'
+
+" Plugin 'vim-scripts/django.vim'
+Plugin 'tweekmonster/django-plus.vim' " Syntax highlighting for django html
 
 " Auto completion
 Plugin 'davidhalter/jedi-vim'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'deoplete-plugins/deoplete-jedi'
+
+" Note taking
+Plugin 'vimwiki/vimwiki' 
+" Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
+Plugin 'iamcco/markdown-preview.nvim', {'do' : 'cd app && yarn install'}
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 call vundle#end()
 
@@ -112,7 +124,6 @@ set cursorline
 set virtualedit=onemore
 set autoindent
 set foldmethod=indent
-set textwidth=80
 set wildmenu
 set confirm
 
@@ -134,7 +145,7 @@ set splitbelow
 
 " Enable syntax highlighting
 filetype off
-filetype plugin indent on
+filetype plugin on
 syntax enable
 
 " Color scheme
@@ -148,8 +159,7 @@ set number
 set nowrap
 
 " Show bad white space
-highlight BadWhitespace ctermbg=red guibg=red
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " Python indentation
 au BufNewFile,BufRead *.py
@@ -158,19 +168,18 @@ au BufNewFile,BufRead *.py
 	\ set shiftwidth=4 |
 	\ set expandtab |
 	\ set autoindent |
-	\ set textwidth=80 |
 	\ set fileformat=unix |
-    \ set colorcolumn=80 |
 
 " For full stack dev
 au BufNewFile,BufRead *.js,*.html,*.css
 	\ set tabstop=4 |
 	\ set softtabstop=4 |
 	\ set shiftwidth=4 |
-    \ set textwidth=80 |
 
 " Unfold all when open a file
 au BufWinEnter * normal zR
+
+au FileType vimwiki set syntax=markdown
 
 " Terminal
 command! -nargs=* T split | terminal <args>
@@ -203,6 +212,7 @@ let g:lightline = {
   \   'component_function': {
   \     'gitbranch': 'fugitive#head',
   \     'cocstatus': 'coc#status',
+  \     'filename': 'LightlineFilename',
   \   }
   \ }
 let g:lightline.separator = {
@@ -217,6 +227,15 @@ let g:lightline.tabline = {
   \ }
 set showtabline=2  " Show tabline
 set guioptions-=e  " Don't use GUI tabline
+
+function! LightlineFilename()
+    let root = fnamemodify(get(b:, 'git_dir'), ':h')
+    let path = expand('%:p')
+    if path[:len(root)-1] ==# root
+        return path[len(root)+1:]
+    endif
+    return expand('%')
+endfunction
 
 " NERDTRee ----------------------------------------------------
 let NERDTreeIgnore=['\.pyc$', '\~$']
@@ -246,7 +265,13 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_highlighting = 0
 
+let g:syntastic_python_pylint_post_args="--rcfile=~/.pylintrc"
 let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_html_tidy_ignore_errors=["trimming empty <",
+                    \ "<img> escaping malformed URI reference",
+                    \ "plain text isn't allowed in <",
+                    \ "illegal characters found in URI",
+                    \ "unexpected <"]
 
 " Delay the execution of lightline#update() so that SyntasticCheck got executed
 " first, which avoid missing 'MODE' of lightline
@@ -275,7 +300,7 @@ let g:deoplete#enable_at_startup = 0
 
 " Emmet -------------------------------------------------
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,htmldjango,css EmmetInstall
 let g:user_emmet_leader_key=','
 
 " Omnicomplete
@@ -303,7 +328,39 @@ set updatetime=300
 set shortmess+=c
 set signcolumn=yes
 
+autocmd BufNew,BufEnter *.md execute "silent! CocDisable"
+autocmd BufLeave *.md execute "silent! CocEnable"
+
 inoremap <silent><expr> <C-space> coc#refresh()
+
+" Vim-wiki
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+let g:vimwiki_table_mappings = 0
+let g:vimwiki_global_ext = 0
+nmap <leader>wf <Plug>VimwikiFollowLink
+nmap <leader>wb <Plug>VimwikiGoBackLink
+nmap <leader>wn <Plug>VimwikiNextLink
+nmap <leader>wp <Plug>VimwikiPrevLink
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger = '<Tab>'
+let g:UltiSnipsJumpForwardTrigger = '<Tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-b>'
+
+let g:UltiSnipsEditSplit = "vertical"
+
+" Vim-instant-markdown --------------------------------------
+let g:instant_markdown_autostart = 1
+map <leader>md :InstantMarkdownPreview<CR>
+let g:instant_markdown_mathjax = 1
+
+" Vim-markdown
+ let g:vim_markdown_no_default_key_mappings = 0
+ let g:vim_markdown_frontmatter = 1
+
+" Markdown-preview
+let g:mkdp_browser = 'firefox'
+let g:mkdp_auto_closer = 0
 
 " Tab completion
 inoremap <expr><TAB> 
