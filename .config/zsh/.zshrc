@@ -1,3 +1,13 @@
+echo " _____     _     _                   _   __     _ _        ";
+echo "|_   _|   | |   (_)                 | | / /    (_) |       ";
+echo "  | |  ___| |__  _ _ __ ___  _   _  | |/ /  ___ _| |_ __ _ ";
+echo "  | | / __| '_ \| | '__/ _ \| | | | |    \ / _ \ | __/ _\` |";
+echo " _| || (__| | | | | | | (_) | |_| | | |\  \  __/ | || (_| |";
+echo " \___/\___|_| |_|_|_|  \___/ \__,_| \_| \_/\___|_|\__\__,_|";
+echo "                                                           ";
+echo "                                                           ";
+echo "                                                           ";
+echo "                                                           ";
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -70,6 +80,7 @@ ZSH_THEME="spaceship"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-syntax-highlighting)
 
+ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -102,6 +113,7 @@ source $ZSH/oh-my-zsh.sh
 #prompt spaceship
 SPACESHIP_USER_SHOW=always
 SPACESHIP_USER_COLOR=cyan
+SPACESHIP_USER_COLOR_ROOT=red
 SPACESHIP_DIR_COLOR=blue
 SPACESHIP_PROMPT_ORDER=(
 	user
@@ -117,6 +129,8 @@ SPACESHIP_PROMPT_ORDER=(
 )
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#export TERM=xterm-256color-italic
 
 # Aliases -------------------------------------------------------------------
 #
