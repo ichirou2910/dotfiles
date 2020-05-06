@@ -192,7 +192,7 @@ client.unfocused        #00ffff #282828 #282828 #282828
 client.urgent           #00ffff #dc322f #fdf6e3 #002b36
 
 # Polybar
-exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
+exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh
 
 # compton
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
@@ -200,8 +200,7 @@ exec --no-startup-id compton --config ~/.config/compton/compton.conf
 # Desktop background notes
 exec --no-startup-id python3 /home/ichirou2910/.config/wallpaper/walltext.py
 
-for_window [class="Brave"] move workspace $ws5
 for_window [class="Spotify"] move workspace $ws6
 for_window [class="Yad" title="yad-calendar"] floating enable
-for_window [class="Alacritty" title="Notes"] floating enable resize set 500 400
+for_window [class="Alacritty" title="Notes"] floating enable
 for_window [title="Network Connections"] floating enable
