@@ -27,12 +27,12 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-[bar/right]
+[bar/main-right]
 monitor = ${env:MONITOR:}
-width = 56%
+width = 72%
 height = 30
 bottom = false
-offset-x = 44%:-10
+offset-x = 28%:-10
 offset-y = 10
 radius = 15
 fixed-center = true
@@ -52,18 +52,20 @@ padding-right = 5
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = Noto sans:pixelsize=11;3
-font-1 = RobotoMono Nerd Font Mono:size=11:weight=bold;2
+font-0 = Noto sans:pixelsize=11;style=Regular;4
+font-1 = Source Han Sans JP:pixelsize=10;style=Regular;2
+font-2 = Source Han Sans KR:pixelsize=11;style=Regular;3
+font-3 = RobotoMono Nerd Font Mono:size=11:weight=bold;3
 
-modules-left = 
-modules-right = filesystem wlan eth weather calendar time battery powermenu
+modules-left = mpd
+modules-right = info-trash updates-arch filesystem wlan eth weather calendar time battery powermenu
 
-tray-position = left 
-tray-padding = 2
-tray-detached = true
-tray-offset-x = 17
-tray-offset-y = 0
-tray-maxsize = 16
+; tray-position = left 
+; tray-padding = 2
+; tray-detached = true
+; tray-offset-x = 17
+; tray-offset-y = 0
+; tray-maxsize = 16
 
 wm-restack = i3
 override-redirect = true
@@ -73,8 +75,53 @@ seperator =
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[bar/left]
-inherit = bar/right
+[bar/main-left]
+inherit = bar/main-right
+
+width = 27%
+offset-x = 0%:10
+offset-y = 10
+
+modules-left = i3
+modules-right = system-gpu-intel memory cpu pulseaudio backlight
+
+tray-position = none
+
+; [bar/main-center]
+; inherit = bar/main-right
+; width = 15%
+
+; offset-x = 28%
+; offset-y = 10
+
+; border-right-size = 4
+
+; modules-left = mpd
+; modules-center = 
+; modules-right = 
+
+; tray-position = none 
+
+[bar/sub-right]
+inherit = bar/main-right
+
+width = 56%
+; bottom = false
+offset-x = 44%:-10
+; offset-y = 10
+
+modules-left = 
+modules-right = eth weather calendar time powermenu
+
+tray-position = left 
+tray-padding = 2
+tray-detached = true
+tray-offset-x = 17
+tray-offset-y = 0
+tray-maxsize = 16
+
+[bar/sub-left]
+inherit = bar/main-left
 
 width = 27%
 offset-x = 0%:10
@@ -85,8 +132,8 @@ modules-right = memory cpu pulseaudio backlight
 
 tray-position = none
 
-[bar/center]
-inherit = bar/right
+[bar/sub-center]
+inherit = bar/main-right
 width = 15%
 
 offset-x = 28%
@@ -94,7 +141,7 @@ offset-y = 10
 
 border-right = 4
 
-modules-left = xwindow
+modules-left = 
 modules-center = 
 modules-right = 
 
@@ -147,7 +194,7 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %{F#00ff00}%index%
+label-focused = %{F#00ffff}%index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
@@ -167,22 +214,33 @@ label-urgent = %index%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-; Separator in between workspaces
-; label-separator = |
-
-
 [module/mpd]
 type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+format-online = %{F#00ffff}<icon-prev> %{F#ffff00}<icon-seekb> %{F#ff0000}<icon-stop> %{F#00ff00}<toggle> %{F#ffff00}<icon-seekf> %{F#00ffff}<icon-next>%{F--} %{F#ffff00}[<label-time>] %{F#00ff00}<bar-progress> %{F#00ffff}<label-song>
+format-stopped = %{F#00ffff}<icon-prev> %{F#ffff00}<icon-seekb> %{F#00ff00}<toggle> %{F#ffff00}<icon-seekf> %{F#00ffff}<icon-next>%{F--} %{F#ffff00}[--:--] %{F#808080} not playing
+label-song= %artist% - %title%
+label-offline = Offline
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+host = 127.0.0.1
+port = 6600
+password = 
 
-label-song-maxlen = 25
-label-song-ellipsis = true
+interval = 1
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+icon-seekb = 
+icon-seekf = 
+
+bar-progress-width = 15
+bar-progress-indicator = |
+bar-progress-fill = ─
+bar-progress-empty = ─
+
+; [module/sub-mpd]
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -194,10 +252,10 @@ bar-width = 5
 bar-indicator = |
 bar-indicator-foreground = #fff
 bar-indicator-font = 2
-bar-fill = -
+bar-fill = ─
 bar-fill-font = 2
 bar-fill-foreground = #9f78e1
-bar-empty = -
+bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
@@ -210,32 +268,31 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
+format = <label>%{A}
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
+format = %{A1:~/.config/polybar/system-info.sh --mem &:}<label>%{A}
 
 [module/wlan]
 type = internal/network
 interface = wlp5s0
 interval = 3.0
 
+; format-connected = %{A1:~/.config/polybar/network-speed.sh --wlan &:}<label-connected>%{A}
 format-connected = <label-connected>
 format-connected-underline = #9f78e1
-label-connected =  %essid:7%  %downspeed:7%  %upspeed:7%
+label-connected =  %essid:7% 
+;  %downspeed:7%  %upspeed:7%
 
 format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected = disconnected
 
 ramp-signal-0 = 
 ramp-signal-1 = 
@@ -246,25 +303,17 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp3s0
+interface = enp2s0
 interval = 3.0
 
-format-connected-underline = #55aa55
+format-connected-underline = #ffff00
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
+; format-connected = %{A1:. ~/.config/polybar/network-speed.sh --eth &:}<label-connected>%{A}
+format-connected = <label-connected>
 label-connected = %local_ip%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-[module/weather]
-type = custom/script
-exec = ~/.config/polybar/weather.sh
-interval = 5
-format-underline = #0a6cf5
+label-disconnected = disconnected
 
 [module/date]
 type = internal/date
@@ -273,17 +322,9 @@ interval = 5
 date = " %a %d %b %Y"
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = #0a81f5
 
 label = %date%
-
-[module/calendar]
-type = custom/script
-exec = ~/.config/polybar/calendar.sh
-format-underline = #0a6cf5
-interval = 5
-click-left = ~/.config/polybar/calendar.sh --popup &
 
 [module/time]
 type = internal/date
@@ -292,8 +333,7 @@ interval = 5
 time = " %I:%M %p"
 
 format-prefix =  
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = #00ffff
 
 label = %time%
 
@@ -322,9 +362,9 @@ bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
-bar-volume-fill = -
+bar-volume-fill = ─
 bar-volume-fill-font = 2
-bar-volume-empty = -
+bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
@@ -350,9 +390,9 @@ bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
-bar-volume-fill = ─
+bar-volume-fill = -
 bar-volume-fill-font = 2
-bar-volume-empty = ─
+bar-volume-empty = -
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
@@ -436,5 +476,43 @@ screenchange-reload = true
 [global/wm]
 margin-top = 5
 margin-bottom = 5
+
+; User-created modules =========================
+
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar/weather.sh
+interval = 5
+format-underline = #00ff00
+
+[module/updates-arch]
+type = custom/script
+exec = ~/.config/polybar/updates-arch.sh
+interval = 600
+format-prefix = " "
+format-underline = #f90000
+
+[module/calendar]
+type = custom/script
+exec = ~/.config/polybar/calendar.sh
+format-underline = #0a6cf5
+interval = 5
+click-left = ~/.config/polybar/calendar.sh --popup &
+
+[module/info-trash]
+type = custom/script
+exec = ~/.config/polybar/info-trash.sh
+interval = 60
+format-prefix = " "
+format-underline = #808080
+click-left = ~/.config/polybar/info-trash.sh --clean &
+
+[module/system-gpu-intel]
+type = custom/script
+exec = ~/.config/polybar/system-gpu-intel.sh
+format-prefix = " "
+format-underline = #00ff00
+interval = 2
+click-left = ~/.config/polybar/system-info.sh --gpu &
 
 ; vim:ft=dosini
