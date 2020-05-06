@@ -45,12 +45,12 @@ mpd_music_dir = ~/Music
 ## visualization or 44100:16:2 for stereo visualization. Example configuration
 ## (it has to be put into mpd.conf):
 ##
-audio_output {
-        type            "fifo"
-        name            "Visualizer feed"
-        path            "/tmp/mpd.fifo"
-        format          "44100:16:2"
-}
+# audio_output {
+#         type            "fifo"
+#         name            "Visualizer feed"
+#         path            "/tmp/mpd.fifo"
+#         format          "44100:16:2"
+# }
 ##
 #
 visualizer_fifo_path = /tmp/mpd.fifo
@@ -86,13 +86,13 @@ visualizer_sync_interval = 30
 ##
 visualizer_type = spectrum
 #
-visualizer_look = +|
+visualizer_look = ●▮
 #
 #visualizer_color = blue, cyan, green, yellow, magenta, red
 #
 ## Alternative subset of 256 colors for terminals that support it.
 ##
-#visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
+visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
 #
 ##### system encoding #####
 ##
@@ -106,18 +106,18 @@ visualizer_look = +|
 ## if your encoding is different.
 ##
 #
-#system_encoding = ""
+system_encoding = "UTF-8"
 #
 ##### delays #####
 #
 ## Time of inactivity (in seconds) after playlist highlighting will be disabled
 ## (0 = always on).
 ##
-#playlist_disable_highlight_delay = 5
+playlist_disable_highlight_delay = 5
 #
 ## Defines how long messages are supposed to be visible.
 ##
-#message_delay_time = 5
+message_delay_time = 5
 #
 ##### song format #####
 ##
@@ -186,15 +186,15 @@ visualizer_look = +|
 ## Note: colors can be nested.
 ##
 #
-#song_list_format = {%a - }{%t}|{$8%f$9}$R{$3(%l)$9}
+song_list_format = {%a - }{%t}|{$8%f$9}$R{$3(%l)$9}
 #
-#song_status_format = {{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
+song_status_format = {{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
 #
-#song_library_format = {%n - }{%t}|{%f}
+song_library_format = {%n - }{%t}|{%f}
 #
-#alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
+alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
 #
-#alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
+alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
 #
 #current_item_prefix = $(yellow)$r
 #
@@ -219,7 +219,7 @@ visualizer_look = +|
 ##
 ## Note: attributes are not supported for the following variables.
 ##
-#song_window_title_format = {%a - }{%t}|{%f}
+song_window_title_format = {%a - }{%t}|{%f}
 ##
 ## Note: Below variables are used for sorting songs in browser.  The sort mode
 ## determines how songs are sorted, and can be used in combination with a sort
@@ -266,7 +266,7 @@ visualizer_look = +|
 ##   available.
 ##
 #
-#song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
+song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
 #
 ##### various settings #####
 #
@@ -274,7 +274,7 @@ visualizer_look = +|
 ## Note: Custom command that will be executed each time song changes. Useful for
 ## notifications etc.
 ##
-#execute_on_song_change = ""
+execute_on_song_change = "/usr/bin/python3 /home/$USER/.local/bin/mpd-notify.py"
 #
 ##
 ## Note: Custom command that will be executed each time player state
@@ -284,24 +284,24 @@ visualizer_look = +|
 #
 #execute_on_player_state_change = ""
 #
-#playlist_show_mpd_host = no
+playlist_show_mpd_host = no
 #
-#playlist_show_remaining_time = no
+playlist_show_remaining_time = yes
 #
-#playlist_shorten_total_times = no
+playlist_shorten_total_times = no
 #
-#playlist_separate_albums = no
+playlist_separate_albums = no
 #
 ##
 ## Note: Possible display modes: classic, columns.
 ##
-#playlist_display_mode = columns
+playlist_display_mode = columns
 #
-#browser_display_mode = classic
+browser_display_mode = classic
 #
-#search_engine_display_mode = classic
+search_engine_display_mode = classic
 #
-#playlist_editor_display_mode = classic
+playlist_editor_display_mode = classic
 #
 #discard_colors_if_item_is_selected = yes
 #
@@ -313,9 +313,9 @@ visualizer_look = +|
 #
 #volume_change_step = 2
 #
-#autocenter_mode = no
+autocenter_mode = yes
 #
-#centered_cursor = no
+centered_cursor = yes
 #
 ##
 ## Note: You can specify third character which will be used to build 'empty'
@@ -329,7 +329,7 @@ visualizer_look = +|
 #
 ## Available values: classic, alternative.
 ##
-#user_interface = classic
+user_interface = alternative
 #
 #data_fetching_delay = yes
 #
@@ -345,16 +345,16 @@ visualizer_look = +|
 #
 #default_tag_editor_pattern = %n - %t
 #
-#header_visibility = yes
+header_visibility = yes
 #
-#statusbar_visibility = yes
+statusbar_visibility = yes
 #
 ## Show the "Connected to ..." message on startup
 #connected_message_on_startup = yes
 #
-#titles_visibility = yes
+titles_visibility = yes
 #
-#header_text_scrolling = yes
+header_text_scrolling = yes
 #
 #cyclic_scrolling = no
 #
@@ -362,7 +362,7 @@ visualizer_look = +|
 #
 #lyrics_fetchers = lyricwiki, azlyrics, genius, sing365, lyricsmania, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, internet
 #
-#follow_now_playing_lyrics = no
+follow_now_playing_lyrics = yes
 #
 #fetch_lyrics_for_current_song_in_background = no
 #
@@ -395,32 +395,32 @@ visualizer_look = +|
 ## media_library, playlist_editor, tag_editor, outputs, visualizer, clock,
 ## lyrics, last_fm.
 ##
-#screen_switcher_mode = playlist, browser
+screen_switcher_mode = browser, media_library, visualizer
 #
 ##
 ## Note: You can define startup screen by choosing screen from the list above.
 ##
-#startup_screen = playlist
+startup_screen = playlist
 #
 ##
 ## Note: You can define startup slave screen by choosing screen from the list
 ## above or an empty value for no slave screen.
 ##
-#startup_slave_screen = ""
+startup_slave_screen = "visualizer"
 #
-#startup_slave_screen_focus = no
+startup_slave_screen_focus = no
 #
 ##
 ## Default width of locked screen (in %).  Acceptable values are from 20 to 80.
 ##
 #
-#locked_screen_width_part = 50
+locked_screen_width_part = 50
 #
-#ask_for_locked_screen_width_part = yes
+ask_for_locked_screen_width_part = yes
 #
-#jump_to_now_playing_song_at_start = yes
+jump_to_now_playing_song_at_start = yes
 #
-#ask_before_clearing_playlists = yes
+ask_before_clearing_playlists = yes
 #
 #clock_display_seconds = no
 #
@@ -449,9 +449,9 @@ visualizer_look = +|
 #
 #block_search_constraints_change_if_items_found = yes
 #
-#mouse_support = yes
+mouse_support = yes
 #
-#mouse_list_scroll_whole_page = yes
+mouse_list_scroll_whole_page = yes
 #
 #empty_tag_marker = <empty>
 #
@@ -461,7 +461,7 @@ visualizer_look = +|
 #
 #media_library_sort_by_mtime = no
 #
-#enable_window_title = yes
+enable_window_title = yes
 #
 ##
 ## Note: You can choose default search mode for search engine. Available modes
