@@ -5,9 +5,6 @@ echo "  | | / __| '_ \| | '__/ _ \| | | | |    \ / _ \ | __/ _\` |";
 echo " _| || (__| | | | | | | (_) | |_| | | |\  \  __/ | || (_| |";
 echo " \___/\___|_| |_|_|_|  \___/ \__,_| \_| \_/\___|_|\__\__,_|";
 echo "                                                           ";
-echo "                                                           ";
-echo "                                                           ";
-echo "                                                           ";
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -141,6 +138,7 @@ alias oldvim="vim"
 alias mutt="TERM=xterm-256color neomutt"
 alias tas="tmux attach-session"
 alias ta="tmux attach || tmux new-session"
+alias td="tmux detach"
 alias cfz="nvim ~/.config/zsh/.zshrc"
 alias cfv="nvim ~/.vimrc"
 alias cft="nvim ~/.tmux.conf"
