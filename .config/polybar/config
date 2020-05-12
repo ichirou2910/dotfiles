@@ -218,7 +218,7 @@ label-urgent-padding = 2
 type = internal/mpd
 format-online = %{F#00ffff}<icon-prev> %{F#ffff00}<icon-seekb> %{F#ff0000}<icon-stop> %{F#00ff00}<toggle> %{F#ffff00}<icon-seekf> %{F#00ffff}<icon-next>%{F--} %{F#ffff00}[<label-time>] %{F#00ff00}<bar-progress> %{F#00ffff}<label-song>
 format-stopped = %{F#00ffff}<icon-prev> %{F#ffff00}<icon-seekb> %{F#00ff00}<toggle> %{F#ffff00}<icon-seekf> %{F#00ffff}<icon-next>%{F--} %{F#ffff00}[--:--] %{F#808080} not playing
-label-song= %artist% - %title%
+label-song= %artist% - %title:0:15:...%
 label-offline = Offline
 
 host = 127.0.0.1
@@ -235,7 +235,7 @@ icon-next = 
 icon-seekb = 
 icon-seekf = 
 
-bar-progress-width = 15
+bar-progress-width = 10
 bar-progress-indicator = |
 bar-progress-fill = ─
 bar-progress-empty = ─
@@ -303,7 +303,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp2s0
+interface = enp3s0
 interval = 3.0
 
 format-connected-underline = #ffff00
@@ -491,6 +491,7 @@ exec = ~/.config/polybar/updates-arch.sh
 interval = 600
 format-prefix = " "
 format-underline = #f90000
+click-left = alacritty -e yay -Syu
 
 [module/calendar]
 type = custom/script
