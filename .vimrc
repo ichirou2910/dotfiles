@@ -77,6 +77,8 @@ call vundle#end()
 " Set leader shortcut
 let mapleader = ","
 
+let g:BASH_Ctrl_j = 'off'
+
 " Auto reload vimrc when saved
 autocmd! bufwritepost .vimrc source %
 
@@ -328,8 +330,21 @@ set updatetime=300
 set shortmess+=c
 set signcolumn=yes
 
-autocmd BufNew,BufEnter *.md execute "silent! CocDisable"
-autocmd BufLeave *.md execute "silent! CocEnable"
+" autocmd WinEnter *.md call SetMarkdown()
+" autocmd WinLeave *.md call UnsetMarkdown()
+
+au FileType markdown au WinEnter call SetMarkdown()
+au FileType markdown au WinLeave call UnsetMarkdown()
+
+function SetMarkdown()
+    execute "silent! CocDisable"
+    set rtp+=~/.config/nvim/vim/plugged/vundle/ultisnips
+endfunction
+
+function UnsetMarkdown()
+    execute "silent! CocEnable"
+    set rtp-=~/.config/nvim/vim/plugged/vundle/ultisnips
+endfunction
 
 inoremap <silent><expr> <C-space> coc#refresh()
 
@@ -341,6 +356,17 @@ nmap <leader>wf <Plug>VimwikiFollowLink
 nmap <leader>wb <Plug>VimwikiGoBackLink
 nmap <leader>wn <Plug>VimwikiNextLink
 nmap <leader>wp <Plug>VimwikiPrevLink
+
+" Tab completion
+inoremap <expr><TAB> 
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~# '\s'
+endfunction
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger = '<Tab>'
@@ -362,15 +388,15 @@ let g:instant_markdown_mathjax = 1
 let g:mkdp_browser = 'firefox'
 let g:mkdp_auto_closer = 0
 
-" Tab completion
-inoremap <expr><TAB> 
-    \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
-    \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" inoremap <silent><expr><TAB> 
+"     \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump', ''])\<CR>" :
+"     \ <SID>check_back_space() ? "\<TAB>" :
+"     \ coc#refresh()
 
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1] =~# '\s'
-endfunction
+" function! s:check_back_space() abort
+"     let col = col('.') - 1
+"     return !col || getline('.')[col - 1] =~# '\s'
+" endfunction
 
+" let g:coc_snippet_next = '<tab>'
+" let g:coc_snippet_prev = '<s-tab>'
