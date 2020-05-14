@@ -17,10 +17,15 @@ if type "xrandr"; then
             MONITOR=$m polybar -c $HOME/.config/polybar/config -r sub-right 2> /tmp/polybar_log &
             MONITOR=$m polybar -c $HOME/.config/polybar/config -r sub-left 2> /tmp/polybar_log &
             MONITOR=$m polybar -c $HOME/.config/polybar/config -r sub-center 2> /tmp/polybar_log &
-        else
+        elif [ $m == 'HDMI-1' ]
+        then
             MONITOR=$m polybar -c $HOME/.config/polybar/config -r main-right 2> /tmp/polybar_log &
-            MONITOR=$m polybar -c $HOME/.config/polybar/config -r main-center 2> /tmp/polybar_log &
             MONITOR=$m polybar -c $HOME/.config/polybar/config -r main-left 2> /tmp/polybar_log &
+            MONITOR=$m polybar -c $HOME/.config/polybar/config -r main-center 2> /tmp/polybar_log &
+        else
+            MONITOR=$m polybar -c $HOME/.config/polybar/config -r laptop-right 2> /tmp/polybar_log &
+            MONITOR=$m polybar -c $HOME/.config/polybar/config -r laptop-center 2> /tmp/polybar_log &
+            MONITOR=$m polybar -c $HOME/.config/polybar/config -r laptop-left 2> /tmp/polybar_log &
         fi
 	done
 else
