@@ -554,11 +554,11 @@ format-underline = #00ff00
 
 [module/updates-arch]
 type = custom/script
-exec = ~/.config/polybar/updates-arch.sh
+exec = ~/.config/polybar/updates-arch.sh --info
 interval = 600
 format-prefix = " "
 format-underline = #f90000
-click-left = alacritty -e yay -Syu
+click-left = ~/.config/polybar/updates-arch.sh --update
 
 [module/calendar]
 type = custom/script
