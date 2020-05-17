@@ -29,10 +29,10 @@ alert = #bd2c40
 
 [bar/main-right]
 monitor = ${env:MONITOR:}
-width = 72%
+width = 65%
 height = 30
 bottom = false
-offset-x = 28%:-10
+offset-x = 34%:10
 offset-y = 10
 radius = 15
 fixed-center = true
@@ -58,7 +58,7 @@ font-2 = Source Han Sans KR:pixelsize=11;style=Regular;3
 font-3 = RobotoMono Nerd Font Mono:size=11:weight=bold;3
 
 modules-left = mpd
-modules-right = info-trash updates-arch filesystem wlan eth weather calendar time battery powermenu
+modules-right = info-trash updates-arch filesystem eth weather calendar time powermenu
 
 wm-restack = i3
 override-redirect = true
@@ -118,29 +118,32 @@ tray-maxsize = 16
 [bar/main-left]
 inherit = bar/main-right
 
-width = 27%
+width = 10%
 offset-x = 0%:10
 offset-y = 10
 
 modules-left = i3
-modules-right = system-gpu-intel memory cpu pulseaudio backlight
+modules-right = 
 
-tray-position = none
+[bar/main-center]
+inherit = bar/main-right
+width = 24%
 
-; [bar/main-center]
-; inherit = bar/main-right
-; width = 15%
+offset-x = 10%:10
+offset-y = 10
 
-; offset-x = 28%
-; offset-y = 10
+border-right-size = 4
 
-; border-right-size = 4
+modules-left = system-gpu-intel memory cpu pulseaudio
+modules-center = 
+modules-right = 
 
-; modules-left = mpd
-; modules-center = 
-; modules-right = 
-
-; tray-position = none 
+tray-position = right
+tray-padding = 2
+tray-detached = true
+tray-offset-x = -5
+tray-offset-y = 0
+tray-maxsize = 16
 
 [bar/sub-right]
 inherit = bar/main-right
@@ -283,7 +286,7 @@ label-urgent-padding = 2
 
 [module/mpd]
 type = internal/mpd
-format-online = %{F#00ffff}<icon-prev> %{F#ffff00}<icon-seekb> %{F#ff0000}<icon-stop> %{F#00ff00}<toggle> %{F#ffff00}<icon-seekf> %{F#00ffff}<icon-next>%{F--} %{F#ffff00}[<label-time>] %{F#00ff00}<bar-progress> %{F#00ffff}<label-song>
+format-online = %{F#00ffff}<icon-prev> %{F#ffff00}<icon-seekb> %{F#ff0000}<icon-stop> %{F#00ff00}<toggle> %{F#ffff00}<icon-seekf> %{F#00ffff}<icon-next>%{F--} %{F#ffff00}[<label-time>] %{F#ff00ff} %{F#00ffff}<label-song>
 format-stopped = %{F#00ffff}<icon-prev> %{F#ffff00}<icon-seekb> %{F#00ff00}<toggle> %{F#ffff00}<icon-seekf> %{F#00ffff}<icon-next>%{F--} %{F#ffff00}[--:--] %{F#808080} not playing
 label-song= %artist% - %title:0:15:...%
 label-offline = Offline

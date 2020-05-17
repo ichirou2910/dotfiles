@@ -30,10 +30,5 @@ if type "xrandr"; then
 	done
 else
     echo "No monitor returned" | tee /tmp/polybar_log
-	polybar -c $HOME/.config/polybar/config -r main-right 2> /tmp/polybar_log &
-	polybar -c $HOME/.config/polybar/config -r main-center 2> /tmp/polybar_log &
-	polybar -c $HOME/.config/polybar/config -r main-left 2> /tmp/polybar_log &
 fi
 
-
-echo "Bars launched...."
