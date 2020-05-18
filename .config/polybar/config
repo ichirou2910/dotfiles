@@ -70,10 +70,10 @@ cursor-scroll = ns-resize
 
 [bar/laptop-right]
 monitor = ${env:MONITOR:}
-width = 57%
-offset-x = 42%:10
+width = 65%
 height = 30
 bottom = false
+offset-x = 34%:10
 offset-y = 10
 radius = 15
 fixed-center = true
@@ -98,6 +98,7 @@ font-1 = Source Han Sans JP:pixelsize=10;style=Regular;2
 font-2 = Source Han Sans KR:pixelsize=11;style=Regular;3
 font-3 = RobotoMono Nerd Font Mono:size=11:weight=bold;3
 
+modules-left = mpd
 modules-right = info-trash updates-arch filesystem wlan eth weather calendar time battery powermenu
 
 wm-restack = i3
@@ -107,13 +108,6 @@ seperator =
 
 cursor-click = pointer
 cursor-scroll = ns-resize
-
-tray-position = left
-tray-padding = 2
-tray-detached = true
-tray-offset-x = 17
-tray-offset-y = 0
-tray-maxsize = 16
 
 [bar/main-left]
 inherit = bar/main-right
@@ -191,31 +185,34 @@ modules-right =
 tray-position = none 
 
 [bar/laptop-left]
-inherit = bar/laptop-right
+inherit = bar/main-right
 
-width = 30%
+width = 10%
 offset-x = 0%:10
 offset-y = 10
 
 modules-left = i3
-modules-right = system-gpu-intel memory cpu pulseaudio backlight
-
-tray-position = none
-
-[bar/laptop-center]
-inherit = bar/laptop-right
-width = 12%
-
-offset-x = 30%:10
-offset-y = 10
-
-border-right = 4
-
-modules-left = 
-modules-center = core-temp
 modules-right = 
 
-tray-position = none
+[bar/laptop-center]
+inherit = bar/main-right
+width = 24%
+
+offset-x = 10%:10
+offset-y = 10
+
+border-right-size = 4
+
+modules-left = memory cpu pulseaudio xbacklight
+modules-center = 
+modules-right = 
+
+tray-position = right
+tray-padding = 2
+tray-detached = true
+tray-offset-x = -5
+tray-offset-y = 0
+tray-maxsize = 16
 
 [module/xwindow]
 format = <label>
@@ -356,20 +353,14 @@ interface = wlp5s0
 interval = 3.0
 
 ; format-connected = %{A1:~/.config/polybar/network-speed.sh --wlan &:}<label-connected>%{A}
-format-connected = %{A1:nm-connection-editor &:}<label-connected>%{A}
+format-connected = <label-connected>
 format-connected-underline = #9f78e1
 label-connected =  %essid:7% 
 ;  %downspeed:7%  %upspeed:7%
 
-format-disconnected = %{A1:nm-connetion-editor &:}<label-disconnected>%{A}
-label-disconnected = %{F:#555555}None%{F--}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+format-disconnected = <label-disconnected>
+format-disconnected-underline = #9f78e1
+label-disconnected =  None
 
 [module/eth]
 type = internal/network
