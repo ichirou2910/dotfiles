@@ -9,16 +9,19 @@ call vundle#begin('~/.vim/plugged/vundle')
 " PLUGINS LIST ===============================================================
 Plugin 'VundleVim/Vundle.vim'
 
+" Local config
+Plugin 'embear/vim-localvimrc'
+
+" Snippets
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
 " Visual theme
 Plugin 'dracula/vim', { 'name': 'dracula' }
 
 " Visual status line
 Plugin 'itchyny/lightline.vim'
 Plugin 'ryanoasis/vim-devicons'
-
-" Snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
 
 " File handlers
 Plugin 'scrooloose/nerdtree' " file viewer
@@ -65,7 +68,6 @@ Plugin 'deoplete-plugins/deoplete-jedi'
 
 " Note taking
 Plugin 'vimwiki/vimwiki' 
-" Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
 Plugin 'iamcco/markdown-preview.nvim', {'do' : 'cd app && yarn install'}
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -76,8 +78,6 @@ call vundle#end()
 "
 " Set leader shortcut
 let mapleader = ","
-
-let g:BASH_Ctrl_j = 'off'
 
 " Auto reload vimrc when saved
 autocmd! bufwritepost .vimrc source %
@@ -330,22 +330,6 @@ set updatetime=300
 set shortmess+=c
 set signcolumn=yes
 
-" autocmd WinEnter *.md call SetMarkdown()
-" autocmd WinLeave *.md call UnsetMarkdown()
-
-au FileType markdown au WinEnter call SetMarkdown()
-au FileType markdown au WinLeave call UnsetMarkdown()
-
-function SetMarkdown()
-    execute "silent! CocDisable"
-    set rtp+=~/.config/nvim/vim/plugged/vundle/ultisnips
-endfunction
-
-function UnsetMarkdown()
-    execute "silent! CocEnable"
-    set rtp-=~/.config/nvim/vim/plugged/vundle/ultisnips
-endfunction
-
 inoremap <silent><expr> <C-space> coc#refresh()
 
 " Vim-wiki
@@ -363,17 +347,16 @@ inoremap <expr><TAB>
     \ <SID>check_back_space() ? "\<TAB>" :
     \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
 function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1] =~# '\s'
 endfunction
 
 " Ultisnips
-let g:UltiSnipsExpandTrigger = '<Tab>'
-let g:UltiSnipsJumpForwardTrigger = '<Tab>'
+let g:UltiSnipsExpandTrigger = '<C-z>'
+let g:UltiSnipsJumpForwardTrigger = '<C-z>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-b>'
-
-let g:UltiSnipsEditSplit = "vertical"
 
 " Vim-instant-markdown --------------------------------------
 let g:instant_markdown_autostart = 1
@@ -381,22 +364,9 @@ map <leader>md :InstantMarkdownPreview<CR>
 let g:instant_markdown_mathjax = 1
 
 " Vim-markdown
- let g:vim_markdown_no_default_key_mappings = 0
- let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_no_default_key_mappings = 0
+let g:vim_markdown_frontmatter = 1
 
 " Markdown-preview
 let g:mkdp_browser = 'firefox'
 let g:mkdp_auto_closer = 0
-
-" inoremap <silent><expr><TAB> 
-"     \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump', ''])\<CR>" :
-"     \ <SID>check_back_space() ? "\<TAB>" :
-"     \ coc#refresh()
-
-" function! s:check_back_space() abort
-"     let col = col('.') - 1
-"     return !col || getline('.')[col - 1] =~# '\s'
-" endfunction
-
-" let g:coc_snippet_next = '<tab>'
-" let g:coc_snippet_prev = '<s-tab>'
