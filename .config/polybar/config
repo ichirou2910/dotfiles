@@ -70,10 +70,10 @@ cursor-scroll = ns-resize
 
 [bar/laptop-right]
 monitor = ${env:MONITOR:}
-width = 65%
+width = 63%
 height = 30
 bottom = false
-offset-x = 34%:10
+offset-x = 36%:10
 offset-y = 10
 radius = 15
 fixed-center = true
@@ -196,7 +196,7 @@ modules-right =
 
 [bar/laptop-center]
 inherit = bar/main-right
-width = 24%
+width = 26%
 
 offset-x = 10%:10
 offset-y = 10
