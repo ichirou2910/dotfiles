@@ -9,19 +9,19 @@ call vundle#begin('~/.vim/plugged/vundle')
 " PLUGINS LIST ===============================================================
 Plugin 'VundleVim/Vundle.vim'
 
-" Local config
-Plugin 'embear/vim-localvimrc'
-
 " Snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
 " Visual theme
 Plugin 'dracula/vim', { 'name': 'dracula' }
+Plugin 'drewtempelmeyer/palenight.vim'
 
 " Visual status line
 Plugin 'itchyny/lightline.vim'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'morhetz/gruvbox'
+Plugin 'ayu-theme/ayu-vim'
 
 " File handlers
 Plugin 'scrooloose/nerdtree' " file viewer
@@ -41,7 +41,6 @@ Plugin 'vim-scripts/indentpython.vim' " Python indentation
 
 " Web dev
 Plugin 'mattn/emmet-vim'
-Plugin 'digitaltoad/vim-pug' " HTML syntax hightlight
 Plugin 'ap/vim-css-color'
 
 " Javascript
@@ -49,6 +48,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'ternjs/tern_for_vim'
 
 " Easy good-looking code
+Plugin 'sheerun/vim-polyglot' " Support multiple languages
 Plugin 'jiangmiao/auto-pairs' " Auto close
 Plugin 'tpope/vim-surround' " Handle pairs
 Plugin 'tpope/vim-repeat' " Enhance dot commands
@@ -56,6 +56,8 @@ Plugin 'tpope/vim-commentary' " Code comments
 Plugin 'tmhedberg/SimpylFold' " Fold code
 Plugin 'vim-syntastic/syntastic' " Write syntactically well please
 Plugin 'nvie/vim-flake8' " Python PEP8 antidote
+
+Plugin 'digitaltoad/vim-pug' " HTML syntax hightlight
 Plugin 'jelera/vim-javascript-syntax' " Javascript syntax
 
 " Plugin 'vim-scripts/django.vim'
@@ -150,10 +152,17 @@ filetype off
 filetype plugin on
 syntax enable
 
-" Color scheme
+" Enable true color support
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 " Disable background highlight to use terminal's BG
-au ColorScheme * hi Normal ctermbg=None
-colorscheme dracula " Use dracula theme
+" au ColorScheme * hi Normal guibg=None
+" Color scheme
+colorscheme palenight
+hi Normal guibg=None
 
 " Show line numbers and length
 set rnu
@@ -202,7 +211,7 @@ let g:SimpylFold_docstring_preview=1
 " Lightline -------------------------------------------------
 highlight clear CursorLine " Removes the underline causes by enabling cursorline
 let g:lightline = {
-  \ 'colorscheme': 'dracula',
+  \ 'colorscheme': 'palenight',
   \   'active': {
   \     'left':[ [ 'mode', 'paste' ],
   \              [ 'gitbranch', 'readonly', 'filename', 'modified', 'cocstatus' ]
@@ -331,6 +340,14 @@ set shortmess+=c
 set signcolumn=yes
 
 inoremap <silent><expr> <C-space> coc#refresh()
+
+nmap <silent> <leader>cd :CocList diagnostics<CR>
+nmap <silent> <leader>n <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>m <Plug>(coc-diagnostic-next)
+
+nmap <silent> <leader>dd :vs<CR><Plug>(coc-definition)
+nmap <silent> <leader>dr :vs<CR><Plug>(coc-references)
+nmap <silent> <leader>di :vs<CR><Plug>(coc-implementation)
 
 " Vim-wiki
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
