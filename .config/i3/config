@@ -201,7 +201,7 @@ exec --no-startup-id compton --config ~/.config/compton/compton.conf
 exec --no-startup-id python3 /home/ichirou2910/.config/wallpaper/walltext.py
 
 # Redshift
-exec --no-startup-id redshift
+exec --no-startup-id redshift-gtk
 
 for_window [class="Spotify"] move workspace $ws6
 for_window [class="Yad" title="yad-calendar"] floating enable
