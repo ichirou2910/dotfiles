@@ -21,4 +21,4 @@ dunst &
 ~/.fehbg &
 sxhkd -m 1 &
 setxkbmap -option caps:swapescape
-notify-send -i /home/ichirou2910/Pictures/Ichirou2910.jpg "Welcome Ichirou Keita, have a nice day!"
+notify-send -i $HOME/.config/home/Ichirou2910.jpg "Welcome Ichirou Keita, have a nice day!"
