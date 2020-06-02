@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# check if a terminal is opening
+if pgrep -c $TERMINAL >/dev/null 2>&1; then
+    # if running tmux
+    if tmux display-message >/dev/null 2>&1; then
+        tmux attach || tmux new-session
+
+        # Check if current selected windows has >= 2 windows
+        if [ $(tmux display-message -p '#{window_panes}') -ge 2 ]; then
+            # create another window and run File Manager there
+            tmux new-window -n Files $FILE
+            notify-send -a Tmux "File Manager" "$FILE opened in a new Tmux window"
+        else
+            # else then vertical split and run File Manager
+            tmux split-window -h $FILE
+            notify-send -a Tmux "File Manager" "opened in split Tmux window"
+        fi
+    else
+        notify-send -a Notice "File Manager" "Tmux not running. Opened in new window"
+        $TERMINAL -e $FILE
+    fi
+else
+    $TERMINAL -e $FILE
+fi
