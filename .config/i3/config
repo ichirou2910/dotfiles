@@ -170,6 +170,10 @@ mode "resize" {
 
 bindsym $mod+Shift+r mode "resize"
 
+# Other function bindings
+
+# bindsym $mod+i exec --no-startup-id file-manager
+
 # border on all windows
 for_window [class=.*] border pixel 3
 

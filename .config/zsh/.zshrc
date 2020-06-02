@@ -145,4 +145,5 @@ alias td="tmux detach"
 alias cfz="nvim ~/.config/zsh/.zshrc"
 alias cfv="nvim ~/.vimrc"
 alias cft="nvim ~/.tmux.conf"
+alias rg="ranger"
 
