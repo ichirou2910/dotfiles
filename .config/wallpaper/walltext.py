@@ -13,8 +13,8 @@ import os
 import time
 
 curr_dir = os.path.dirname(os.path.realpath(__file__))
-curr_wall = curr_dir+"/"+"wallpaper.jpg"
-notes = curr_dir+"/"+"notes.txt"
+curr_wall = curr_dir + "/" + "wallpaper.jpg"
+notes = curr_dir + "/" + "notes.txt"
 
 # -- CUSTOM PARAMETERS
 shell = "/bin/zsh"              # your shell binary path, I use zsh
@@ -43,14 +43,16 @@ def get_value(cmd):
 
 def read_text(file):
     with open(file) as src:
-        return [l.replace('\t', tab).replace("\\x", done) for l in src.readlines()]
+        if os.stat(file).st_size != 0:
+            return [l.replace('\t', tab).replace("\\x", done) for l in src.readlines()]
+        return ['(None)']
 
 
 def slice_lines(lines, n_lines, columns):
     markers = [i for i in range(len(lines)) if i % n_lines == 0]
     last = len(lines)
-    markers = markers+[last] if markers[-1] != last else markers
-    textblocks = [lines[markers[i]:markers[i+1]] for i in range(len(markers)-1)]
+    markers = markers + [last] if markers[-1] != last else markers
+    textblocks = [lines[markers[i]:markers[i + 1]] for i in range(len(markers) - 1)]
     filled_blocks = len(textblocks)
     if filled_blocks < columns:
         for n in range(columns - filled_blocks):
@@ -62,38 +64,38 @@ def slice_lines(lines, n_lines, columns):
 
 def create_section(psize, text, layer):
     print(text)
-    run_command("convert -background none" +
-                " -fill " + text_color +
-                " -border " + str(borderX) + "x" + str(borderY) +
-                " -bordercolor none" +
-                " -pointsize " + size +
-                " -size " + psize +
-                " -font " + font +
-                " caption:" + '"' + text + '" ' + layer)
+    run_command("convert -background none"
+                + " -fill " + text_color
+                + " -border " + str(borderX) + "x" + str(borderY)
+                + " -bordercolor none"
+                + " -pointsize " + size
+                + " -size " + psize
+                + " -font " + font
+                + " caption:" + '"' + text + '" ' + layer)
 
 
-def combine_sections(layers):
-    run_command("convert "+image_1+" "+image_2+" "+"+append "+span_image)
-    pass
+# def combine_sections(layers):
+#     run_command("convert " + image_1 +" " + image_2 + " " + "+append " + span_image)
+#     pass
 
 
 def set_overlay():
     boxes = slice_lines(read_text(notes), n_lines, columns)
-    resolution = get_value('identify -format "%wx%h" '+curr_wall).split("x")
-    w = str(int(int(resolution[0])/columns)-2*borderX)
-    h = str(int(resolution[1])-2*borderY)
+    resolution = get_value('identify -format "%wx%h" ' + curr_wall).split("x")
+    w = str(int(int(resolution[0]) / columns) - 2 * borderX)
+    h = str(int(resolution[1]) - 2 * borderY)
     layers = []
     for i in range(len(boxes)):
-        layer = curr_dir+"/"+"layer_"+str(i+1)+".png"
-        create_section(w+"x"+h, boxes[i], layer)
+        layer = curr_dir + "/" + "layer_" + str(i + 1) + ".png"
+        create_section(w + "x" + h, boxes[i], layer)
         layers.append(layer)
-    run_command("convert "+(" ").join(layers)+" "+"+append "+curr_dir+"/"+"layer_span.png")
-    wall_img = curr_dir+"/"+"walltext.jpg"
-    run_command("convert "+curr_wall+" "+curr_dir+"/"+"layer_span.png"+" -background None -layers merge "+wall_img)
+    run_command("convert " + (" ").join(layers) + " " + "+append " + curr_dir + "/" + "layer_span.png")
+    wall_img = curr_dir + "/" + "walltext.jpg"
+    run_command("convert " + curr_wall + " " + curr_dir + "/" + "layer_span.png" + " -background None -layers merge " + wall_img)
 
-    run_command(set_bg_cmd+wall_img)
+    run_command(set_bg_cmd + wall_img)
     for img in [img for img in os.listdir(curr_dir) if img.startswith("layer_")]:
-        os.remove(curr_dir+"/"+img)
+        os.remove(curr_dir + "/" + img)
 
 
 while True:

@@ -183,14 +183,14 @@ focus_follows_mouse no
 
 # Gaps (i3-gaps)
 gaps inner 10
-gaps top 40
+gaps top 30
 
 # Only enable gaps on a workspace when there is at least one container
 #smart_gaps on
 
 # Window Border color
 # class                 border  backgr. text    indicator child_border
-client.focused          #ff0000 #ff0000 #282828 #ffff00
+client.focused          #ff0000 #00ffff #282828 #ff0000
 client.focused_inactive #00ffff #282828 #282828 #282828
 client.unfocused        #00ffff #282828 #282828 #282828
 client.urgent           #00ffff #dc322f #fdf6e3 #002b36

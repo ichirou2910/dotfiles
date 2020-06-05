@@ -17,11 +17,9 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #222
+background = #000000
 background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
+foreground = #ffffff
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
@@ -32,19 +30,21 @@ monitor = ${env:MONITOR:}
 width = 65%
 height = 30
 bottom = false
-offset-x = 34%:10
-offset-y = 10
-radius = 15
+offset-x = 35%
+offset-y = 0
 fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 2
 line-color = #f00
 
-border-size = 4
-border-color = #00000000
+border-size = 2
+border-color = ${colors.background}
+
+border-right-size = 5
+border-right-color = #0000ff
 
 padding-left = 5
 padding-right = 5
@@ -63,8 +63,6 @@ modules-right = info-trash updates-arch filesystem eth weather calendar time pow
 wm-restack = i3
 override-redirect = true
 
-seperator = 
-
 cursor-click = pointer
 cursor-scroll = ns-resize
 
@@ -74,7 +72,7 @@ width = 63%
 height = 30
 bottom = false
 offset-x = 36%:10
-offset-y = 10
+; offset-y = 10
 radius = 15
 fixed-center = true
 
@@ -90,8 +88,8 @@ border-color = #00000000
 padding-left = 5
 padding-right = 5
 
-module-margin-left = 2
-module-margin-right = 2
+module-margin-left = 0
+module-margin-right = 0
 
 font-0 = Noto sans:pixelsize=11;style=Regular;4
 font-1 = Source Han Sans JP:pixelsize=10;style=Regular;2
@@ -112,9 +110,13 @@ cursor-scroll = ns-resize
 [bar/main-left]
 inherit = bar/main-right
 
-width = 10%
-offset-x = 0%:10
-offset-y = 10
+width = 11%
+offset-x = 0
+
+border-right-size = 2
+border-right-color = #00ffff
+border-left-size = 5
+border-left-color = #0000ff
 
 modules-left = i3
 modules-right = 
@@ -123,10 +125,10 @@ modules-right =
 inherit = bar/main-right
 width = 24%
 
-offset-x = 10%:10
-offset-y = 10
+offset-x = 11%
 
-border-right-size = 4
+border-right-size = 2
+border-right-color = #00ffff
 
 modules-left = system-gpu-intel memory cpu pulseaudio
 modules-center = 
@@ -162,7 +164,6 @@ inherit = bar/main-left
 
 width = 27%
 offset-x = 0%:10
-offset-y = 10
 
 modules-left = i3
 modules-right = memory cpu pulseaudio backlight
@@ -174,7 +175,6 @@ inherit = bar/main-right
 width = 15%
 
 offset-x = 28%
-offset-y = 10
 
 border-right = 4
 
@@ -189,7 +189,6 @@ inherit = bar/main-right
 
 width = 10%
 offset-x = 0%:10
-offset-y = 10
 
 modules-left = i3
 modules-right = 
@@ -199,7 +198,6 @@ inherit = bar/main-right
 width = 26%
 
 offset-x = 10%:10
-offset-y = 10
 
 border-right-size = 4
 
@@ -283,7 +281,7 @@ label-urgent-padding = 2
 
 [module/mpd]
 type = internal/mpd
-format-online = %{F#00ffff}<icon-prev> %{F#ffff00}<icon-seekb> %{F#ff0000}<icon-stop> %{F#00ff00}<toggle> %{F#ffff00}<icon-seekf> %{F#00ffff}<icon-next>%{F--} %{F#ffff00}[<label-time>] %{F#ff00ff} %{F#00ffff}<label-song>
+format-online = %{F#00ffff}<icon-prev> %{F#ffff00}<icon-seekb> %{F#ff0000}<icon-stop> %{F#00ff00}<toggle> %{F#ffff00}<icon-seekf> %{F#00ffff}<icon-next>%{F--} %{F#ffff00}[<label-time>] %{F#00ffff}# %{F#ffffff}<label-song>
 format-stopped = %{F#00ffff}<icon-prev> %{F#ffff00}<icon-seekb> %{F#00ff00}<toggle> %{F#ffff00}<icon-seekf> %{F#00ffff}<icon-next>%{F--} %{F#ffff00}[--:--] %{F#808080} not playing
 label-song= %artist% - %title:0:15:...%
 label-offline = Offline
