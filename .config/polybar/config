@@ -31,7 +31,7 @@ width = 65%
 height = 30
 bottom = false
 offset-x = 35%
-offset-y = 0
+offset-y = -5
 fixed-center = true
 
 background = ${colors.background}
@@ -40,7 +40,7 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = #f00
 
-border-size = 2
+border-size = 0
 border-color = ${colors.background}
 
 border-right-size = 5
@@ -62,47 +62,6 @@ modules-right = info-trash updates-arch filesystem eth weather calendar time pow
 
 wm-restack = i3
 override-redirect = true
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-[bar/laptop-right]
-monitor = ${env:MONITOR:}
-width = 63%
-height = 30
-bottom = false
-offset-x = 36%:10
-; offset-y = 10
-radius = 15
-fixed-center = true
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 3
-line-color = #f00
-
-border-size = 4
-border-color = #00000000
-
-padding-left = 5
-padding-right = 5
-
-module-margin-left = 0
-module-margin-right = 0
-
-font-0 = Noto sans:pixelsize=11;style=Regular;4
-font-1 = Source Han Sans JP:pixelsize=10;style=Regular;2
-font-2 = Source Han Sans KR:pixelsize=11;style=Regular;3
-font-3 = RobotoMono Nerd Font Mono:size=11:weight=bold;3
-
-modules-left = mpd
-modules-right = info-trash updates-arch filesystem wlan eth weather calendar time battery powermenu
-
-wm-restack = i3
-override-redirect = true
-
-seperator = 
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -141,65 +100,70 @@ tray-offset-x = -5
 tray-offset-y = 0
 tray-maxsize = 16
 
-[bar/sub-right]
-inherit = bar/main-right
+[bar/laptop-right]
+monitor = ${env:MONITOR:}
+width = 64%
+height = 30
+bottom = false
+offset-x = 36%
+offset-y = 0
+fixed-center = true
 
-width = 56%
-; bottom = false
-offset-x = 44%:-10
-; offset-y = 10
+background = ${colors.background}
+foreground = ${colors.foreground}
 
-modules-left = 
-modules-right = eth weather calendar time powermenu
+line-size = 3
+line-color = #f00
 
-tray-position = left 
-tray-padding = 2
-tray-detached = true
-tray-offset-x = 17
-tray-offset-y = 0
-tray-maxsize = 16
+border-size = 0
+border-color = #00000000
 
-[bar/sub-left]
-inherit = bar/main-left
+border-right-size = 5
+border-right-color = #0000ff
 
-width = 27%
-offset-x = 0%:10
+padding-left = 5
+padding-right = 5
 
-modules-left = i3
-modules-right = memory cpu pulseaudio backlight
+module-margin-left = 2
+module-margin-right = 2
 
-tray-position = none
+font-0 = Noto sans:pixelsize=11;style=Regular;4
+font-1 = Source Han Sans JP:pixelsize=10;style=Regular;2
+font-2 = Source Han Sans KR:pixelsize=11;style=Regular;3
+font-3 = RobotoMono Nerd Font Mono:size=11:weight=bold;3
 
-[bar/sub-center]
-inherit = bar/main-right
-width = 15%
+modules-left = mpd
+modules-right = info-trash updates-arch filesystem wlan eth weather calendar time battery powermenu
 
-offset-x = 28%
+wm-restack = i3
+override-redirect = true
 
-border-right = 4
+seperator = 
 
-modules-left = 
-modules-center = 
-modules-right = 
-
-tray-position = none 
-
+cursor-click = pointer
+cursor-scroll = ns-resize
 [bar/laptop-left]
-inherit = bar/main-right
+inherit = bar/laptop-right
 
-width = 10%
-offset-x = 0%:10
+width = 12%
+offset-x = 0%
+
+border-left-size = 5
+border-left-color = #0000ff
+border-right-size = 2
+border-right-color = #00ffff
 
 modules-left = i3
 modules-right = 
 
 [bar/laptop-center]
-inherit = bar/main-right
-width = 26%
+inherit = bar/laptop-right
+width = 24%
 
-offset-x = 10%:10
+offset-x = 12%
 
-border-right-size = 4
+border-right-size = 2
+border-right-color = #00ffff
 
 modules-left = memory cpu pulseaudio xbacklight
 modules-center = 
@@ -211,6 +175,52 @@ tray-detached = true
 tray-offset-x = -5
 tray-offset-y = 0
 tray-maxsize = 16
+
+; [bar/sub-right]
+; inherit = bar/main-right
+
+; width = 56%
+; offset-x = 44%:-10
+; ; offset-y = 10
+
+; modules-left = 
+; modules-right = eth weather calendar time powermenu
+
+; tray-position = left 
+; tray-padding = 2
+; tray-detached = true
+; tray-offset-x = 17
+; tray-offset-y = 0
+; tray-maxsize = 16
+
+; [bar/sub-left]
+; inherit = bar/main-left
+
+; width = 27%
+; offset-x = 0%:10
+
+; modules-left = i3
+; modules-right = memory cpu pulseaudio backlight
+
+; tray-position = none
+
+; [bar/sub-center]
+; inherit = bar/main-right
+; width = 15%
+
+; offset-x = 28%
+
+; border-right = 4
+
+; modules-left = 
+; modules-center = 
+; modules-right = 
+
+; tray-position = none 
+
+; ==========================
+; ======== MODULES =========
+; ==========================
 
 [module/xwindow]
 format = <label>
