@@ -6,7 +6,7 @@ case "$1" in
             exit 0;
         fi
 
-        $TERMINAL --title "Powermenu" -e $HOME/.config/polybar/power-menu.sh &
+        $TERMINAL --title "Powermenu" -e $HOME/.local/bin/power-menu.sh &
         
         # sleep to wait for terminal window appear
         sleep 0.1
