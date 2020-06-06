@@ -211,3 +211,4 @@ for_window [class="Spotify"] move workspace $ws6
 for_window [class="Yad" title="yad-calendar"] floating enable
 for_window [class="Alacritty" title="Notes"] floating enable
 for_window [title="Network Connections"] floating enable
+for_window [title="Powermenu"] floating enable 

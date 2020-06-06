@@ -23,6 +23,8 @@ super + n
 	$TERMINAL --title Notes -e $EDITOR $BG_NOTES
 alt + Tab							
 	rofi -show window
+alt + q
+    powermenu --popup
 
 # MEDIA BINDING
 # -------------

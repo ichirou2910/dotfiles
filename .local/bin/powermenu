@@ -1,0 +1,22 @@
+#!/bin/sh
+
+case "$1" in
+    --popup)
+        if [ $(xdotool search --name "Powermenu") ]; then
+            exit 0;
+        fi
+
+        $TERMINAL --title "Powermenu" -e $HOME/.config/polybar/power-menu.sh &
+        
+        # sleep to wait for terminal window appear
+        sleep 0.1
+
+        # resize and move powermenu window
+        id=$(xdotool search --name "Powermenu")
+
+        xdotool windowsize $id 300 300
+        xdotool windowmove $id 1620 40
+        ;;
+    *) break ;;
+esac
+

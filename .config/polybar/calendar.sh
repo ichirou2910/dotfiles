@@ -31,7 +31,7 @@ case "$1" in
         : $((pos_y = BAR_HEIGHT + BORDER_SIZE))
     fi
 
-    GTK_THEME=Arc:dark yad --calendar --undecorated --fixed --close-on-unfocus --no-buttons \
+    yad --calendar --undecorated --fixed --close-on-unfocus --no-buttons \
         --width=$YAD_WIDTH --height=$YAD_HEIGHT --posx=$pos_x --posy=$pos_y \
         --title="yad-calendar" --borders=0 >/dev/null &
     ;;
