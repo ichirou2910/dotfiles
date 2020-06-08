@@ -102,7 +102,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 ""
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -195,6 +195,9 @@ client.focused_inactive #00ffff #282828 #282828 #282828
 client.unfocused        #00ffff #282828 #282828 #282828
 client.urgent           #00ffff #dc322f #fdf6e3 #002b36
 
+# BashTOP
+exec --no-startup-id $TERMINAL -e bashtop
+
 # Polybar
 exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh
 
@@ -212,3 +215,4 @@ for_window [class="Yad" title="yad-calendar"] floating enable
 for_window [class="Alacritty" title="Notes"] floating enable
 for_window [title="Network Connections"] floating enable
 for_window [title="Powermenu"] floating enable 
+for_window [title="BashTOP"] move workspace $ws10
