@@ -14,8 +14,8 @@ case "$1" in
         # resize and move powermenu window
         id=$(xdotool search --name "Powermenu")
 
-        xdotool windowsize $id 300 300
-        xdotool windowmove $id 1620 40
+        xdotool windowsize $id 350 350
+        xdotool windowmove $id 1570 40
         ;;
     *) break ;;
 esac
