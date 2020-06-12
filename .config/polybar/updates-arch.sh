@@ -19,6 +19,7 @@ case "$1" in
         fi
         ;;
     --update)
+        notify-send -i $HOME/.config/home/icons/archlinux.png -a "Arch Linux" "Update" "Updating packages......"
         if pgrep -c $TERMINAL >/dev/null 2>&1; then
             tmux attach || tmux new-session
             tmux new-window -n Update yay -Syu

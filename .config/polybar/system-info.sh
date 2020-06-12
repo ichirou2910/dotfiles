@@ -8,7 +8,7 @@ case "$1" in
         mem_avail=($(expr ${info[2]} / 1024))
         mem_used=($(expr ${mem_total} - ${mem_avail}))
         mem_noti="Total: ${mem_total}MB\nUsed: ${mem_used}MB\nAvailable: ${mem_avail}MB"
-        notify-send -a Polybar "RAM" "$mem_noti"
+        notify-send -i $HOME/.config/home/icons/ram.png -a Polybar "RAM" "$mem_noti"
         ;;
     --cpu)
         notify-send -a Polybar "CPU"

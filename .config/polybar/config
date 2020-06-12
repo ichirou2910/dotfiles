@@ -46,8 +46,8 @@ border-color = ${colors.background}
 border-right-size = 5
 border-right-color = #0000ff
 
-padding-left = 5
-padding-right = 5
+padding-left = 3
+padding-right = 3
 
 module-margin-left = 2
 module-margin-right = 2
@@ -76,6 +76,8 @@ border-right-size = 2
 border-right-color = #00ffff
 border-left-size = 5
 border-left-color = #0000ff
+
+padding-left = 1
 
 modules-left = i3
 modules-right = 
