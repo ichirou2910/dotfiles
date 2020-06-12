@@ -29,6 +29,10 @@ Plugin 'jistr/vim-nerdtree-tabs' " make nerd tree feel like a panel
 Plugin 'kien/ctrlp.vim' " file jumper 
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight' " Syntax highlighting for nerd tree
 
+" Tabs manager
+Plugin 'zefei/vim-wintabs'
+Plugin 'zefei/vim-wintabs-powerline'
+
 " Git
 Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/gv.vim'
@@ -102,16 +106,6 @@ nnoremap <A-h> <C-W><C-H>
 " Insert only a character without switching to insert mode
 nnoremap <Space> i_<Esc>r
 
-" Easier moving between tabs
-"noremap <Leader>n <esc>:tabprevious<CR>
-"noremap <Leader>m <esc>:tabnext<CR>
-noremap <C-d> :tabnext<CR>
-noremap <C-s> :tabprevious<CR>
-noremap <C-t> :tabnew<CR>
-inoremap <C-d> <Esc>:tabnext<CR>
-inoremap <C-s> <Esc>:tabprevious<CR>
-inoremap <C-t> <Esc>:tabnew<CR>
-
 " Vim sort function
 vnoremap <Leader>s :sort<CR>
 
@@ -136,6 +130,8 @@ set clipboard=unnamed
 
 set history=700
 set undolevels=700
+
+set noequalalways
 
 " Tabs
 set tabstop=4
@@ -196,7 +192,7 @@ au FileType vimwiki set syntax=markdown
 command! -nargs=* T split | terminal <args>
 command! -nargs=* VT vsplit | terminal <args>
 tnoremap <Esc> <C-\><C-n>
-noremap <A-t> :vsplit+terminal<CR>
+noremap <A-t> :split +term \| resize15<CR>
 au TermOpen * setlocal nonumber norelativenumber
 
 
@@ -247,6 +243,31 @@ function! LightlineFilename()
     endif
     return expand('%')
 endfunction
+
+" Wintabs ---------------------------------------
+nmap <C-t> :enew<CR>
+map <C-s> <Plug>(wintabs_previous)
+map <C-d> <Plug>(wintabs_next)
+map <C-q> <Plug>(wintabs_close)
+" map <C-T>u <Plug>(wintabs_undo)
+" map <C-T>o <Plug>(wintabs_only)
+map <C-W>c <Plug>(wintabs_close_window)
+map <C-W>o <Plug>(wintabs_only_window)
+command! Tabc WintabsCloseVimtab
+command! Tabo WintabsOnlyVimtab
+
+" == Wintabs' tabline settings
+let g:wintabs_display = 'tabline' " take over lightline's tabline
+
+" Replicate lightline's palenight theme for tabline
+let g:wintabs_powerline_sep_buffer_transition = "\ue0b0"
+let g:wintabs_powerline_sep_buffer = "\ue0b1"
+highlight WintabsActive guibg=#ffbc6b guifg=#121212
+highlight WintabsInactive guibg=#3e4452 guifg=#ffbc6b
+highlight WintabsArrow guifg=#ffbc6b guibg=#ffbc6b
+highlight WintabsActiveNC guibg=#ffbc6b guifg=#3e4452
+highlight WintabsInactiveNC guibg=#ffbc6b guifg=#3e4452
+highlight WintabsEmpty guibg=#3e4452 guifg=None
 
 " NERDTRee ----------------------------------------------------
 let NERDTreeIgnore=['\.pyc$', '\~$']
