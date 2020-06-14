@@ -1,10 +1,8 @@
-echo " _____     _     _                   _   __     _ _        ";
-echo "|_   _|   | |   (_)                 | | / /    (_) |       ";
-echo "  | |  ___| |__  _ _ __ ___  _   _  | |/ /  ___ _| |_ __ _ ";
-echo "  | | / __| '_ \| | '__/ _ \| | | | |    \ / _ \ | __/ _\` |";
-echo " _| || (__| | | | | | | (_) | |_| | | |\  \  __/ | || (_| |";
-echo " \___/\___|_| |_|_|_|  \___/ \__,_| \_| \_/\___|_|\__\__,_|";
-echo "                                                           ";
+# echo -e "********************************************"
+# echo -e "*                                          *"
+echo -e "\nHello \033[1mIchirou Keita\033[0m, have a nice day ~~~"
+# echo -e "*                                          *"
+# echo -e "********************************************"
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 
