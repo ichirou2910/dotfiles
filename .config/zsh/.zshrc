@@ -120,7 +120,7 @@ SPACESHIP_PROMPT_ORDER=(
 	git
     package
     node
-    pyenv
+    venv
     exec_time
 	line_sep
 	char
@@ -129,6 +129,45 @@ SPACESHIP_PROMPT_ORDER=(
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #export TERM=xterm-256color-italic
+
+# Configurations
+_comp_options+=(globdots)		# Include hidden files.
+
+# Vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+# Edit line in vim with ctrl-e:
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
 
 # Aliases -------------------------------------------------------------------
 #
@@ -152,4 +191,13 @@ alias cpush="config push origin master"
 alias cpull="config pull origin master"
 alias cres="config restore"
 alias cress="config restore --staged"
+
+bindkey "^P" up-line-or-history
+bindkey "^[OA" up-line-or-history
+bindkey "^[[5~" up-line-or-history
+bindkey "^[[A" up-line-or-search
+bindkey "^N" down-line-or-history
+bindkey "^[OB" down-line-or-history
+bindkey "^[[6~" down-line-or-history
+bindkey "^[[B" down-line-or-search
 
