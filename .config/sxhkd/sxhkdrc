@@ -20,7 +20,7 @@ super + shift + d
 super + m
 	ncmpcpp
 super + n
-	$TERMINAL --title Notes -e $EDITOR $BG_NOTES
+	$TERMINAL --title "BG Notes" -e $EDITOR $BG_NOTES
 alt + Tab							
 	rofi -show window
 alt + q
