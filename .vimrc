@@ -1,3 +1,19 @@
+" LIST OF CONFIGURED EXTENSIONS ==============================================
+" Quick jump: @ + index
+" 1. Coc.nvim
+" 2. Lightline
+" 3. Wintabs
+" 4. NERDTRee
+" 5. Fzf-vim
+" 6. Tags
+" 7. Ultisnips
+" --------
+" 0.1 Emmet (HTML)
+" 0.2 vim-javascript (JS)
+" 0.3 OmniSharp (C#)
+" 0.4 Markdown (MD)
+" 0.0 Uncategorized
+
 " Vundle
 set nocompatible
 
@@ -14,20 +30,24 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
 " Visual theme
-Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'drewtempelmeyer/palenight.vim'
 
 " Visual status line
 Plugin 'itchyny/lightline.vim'
 Plugin 'ryanoasis/vim-devicons'
-Plugin 'morhetz/gruvbox'
-Plugin 'ayu-theme/ayu-vim'
 
 " File handlers
 Plugin 'scrooloose/nerdtree' " file viewer
 Plugin 'jistr/vim-nerdtree-tabs' " make nerd tree feel like a panel
-Plugin 'kien/ctrlp.vim' " file jumper 
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight' " Syntax highlighting for nerd tree
+
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
+
+" Tags
+Plugin 'universal-ctags/ctags'
+Plugin 'ludovicchabant/vim-gutentags'
 
 " Tabs manager
 Plugin 'zefei/vim-wintabs'
@@ -49,7 +69,9 @@ Plugin 'ap/vim-css-color'
 
 " Javascript
 Plugin 'pangloss/vim-javascript'
-Plugin 'ternjs/tern_for_vim'
+
+" CSharp
+Plugin 'omnisharp/OmniSharp-vim', { 'do': './install' }
 
 " Easy good-looking code
 Plugin 'sheerun/vim-polyglot' " Support multiple languages
@@ -58,19 +80,12 @@ Plugin 'tpope/vim-surround' " Handle pairs
 Plugin 'tpope/vim-repeat' " Enhance dot commands
 Plugin 'tpope/vim-commentary' " Code comments
 Plugin 'tmhedberg/SimpylFold' " Fold code
-Plugin 'vim-syntastic/syntastic' " Write syntactically well please
 Plugin 'nvie/vim-flake8' " Python PEP8 antidote
 
 Plugin 'digitaltoad/vim-pug' " HTML syntax hightlight
 Plugin 'jelera/vim-javascript-syntax' " Javascript syntax
 
-" Plugin 'vim-scripts/django.vim'
 Plugin 'tweekmonster/django-plus.vim' " Syntax highlighting for django html
-
-" Auto completion
-Plugin 'davidhalter/jedi-vim'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'deoplete-plugins/deoplete-jedi'
 
 " Note taking
 Plugin 'vimwiki/vimwiki' 
@@ -112,6 +127,8 @@ vnoremap <Leader>s :sort<CR>
 " Easier moving of code blocks
 vnoremap < <gv
 vnoremap > >gv
+
+let g:python3_host_prog = "$HOME/.neovim3/bin/python"
 
 " Some other stuff
 set mouse=a
@@ -155,8 +172,6 @@ if exists('+termguicolors')
   set termguicolors
 endif
 " Disable background highlight to use terminal's BG
-" au ColorScheme * hi Normal guibg=None
-" Color scheme
 colorscheme palenight
 hi Normal guibg=None
 
@@ -164,9 +179,6 @@ hi Normal guibg=None
 set rnu
 set number
 set nowrap
-
-" Show bad white space
-" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " Python indentation
 au BufNewFile,BufRead *.py
@@ -198,13 +210,42 @@ au TermOpen * setlocal nonumber norelativenumber
 
 " PLUGINS CONFIGURATION =======================================================
 
-" Git-fugitive -----------------------------------------------
-nmap <leader>gs :vertical Gstatus<cr>gg<C-n>
-nmap <leader>gd :vertical Gdiff<CR>
+" @1. Coc ---------------------------------------------------
+set hidden
+set nobackup
+set nowritebackup
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
 
-let g:SimpylFold_docstring_preview=1
+inoremap <silent><expr> <C-space> coc#refresh()
 
-" Lightline -------------------------------------------------
+nmap <silent> <leader>cd :CocList diagnostics<CR>
+nmap <silent> <leader>n <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>m <Plug>(coc-diagnostic-next)
+
+nmap <silent> <leader>dd :vs<CR><Plug>(coc-definition)
+nmap <silent> <leader>dr :vs<CR><Plug>(coc-references)
+nmap <silent> <leader>di :vs<CR><Plug>(coc-implementation)
+
+nmap <leader>rn <Plug>(coc-rename)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" @2. Lightline -------------------------------------------------
 highlight clear CursorLine " Removes the underline causes by enabling cursorline
 let g:lightline = {
   \ 'colorscheme': 'palenight',
@@ -244,7 +285,7 @@ function! LightlineFilename()
     return expand('%')
 endfunction
 
-" Wintabs ---------------------------------------
+" @3. Wintabs ---------------------------------------
 nmap <C-t> :enew<CR>
 map <C-s> <Plug>(wintabs_previous)
 map <C-d> <Plug>(wintabs_next)
@@ -269,8 +310,8 @@ highlight WintabsActiveNC guibg=#ffbc6b guifg=#3e4452
 highlight WintabsInactiveNC guibg=#ffbc6b guifg=#3e4452
 highlight WintabsEmpty guibg=#3e4452 guifg=None
 
-" NERDTRee ----------------------------------------------------
-let NERDTreeIgnore=['\.pyc$', '\~$']
+" @4. NERDTRee ----------------------------------------------------
+let NERDTreeIgnore=['\.pyc$', '\~$', '\.meta']
 let NERDTreeShowHidden = 1
 let NERDTreeDirArrows = 1
 let NERDTreeHijackNetrw = 1
@@ -290,95 +331,108 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHightlightFullName = 1
 
-" Syntastic ---------------------------------------------------
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_highlighting = 0
+" @5. Fzf.vim -----------------------------------------------
+nnoremap <C-p> :Files<CR>
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>h :History<CR>
+nnoremap <Leader>t :BTags<CR>
+nnoremap <Leader>T :Tags<CR>
 
-let g:syntastic_python_pylint_post_args="--rcfile=~/.pylintrc"
-let g:syntastic_javascript_checkers=['eslint']
-let g:syntastic_html_tidy_ignore_errors=["trimming empty <",
-                    \ "<img> escaping malformed URI reference",
-                    \ "plain text isn't allowed in <",
-                    \ "illegal characters found in URI",
-                    \ "unexpected <"]
+" @6. Tags -------------------------------------------------
+let g:gutentags_add_default_project_roots = 0
+let g:gutentags_project_root = ['package.json', '.git']
+let g:gutentags_cache_dir = expand('~/.cache/vim/ctags/')
+let g:gutentags_generate_on_new = 1
+let g:gutentags_generate_on_missing = 1
+let g:gutentags_generate_on_write = 1
+let g:gutentags_generate_on_empty_buffer = 0
+let g:gutentags_ctags_extra_args = [
+      \ '--tag-relative=yes',
+      \ '--fields=+ailmnS',
+      \ ]
+let g:gutentags_ctags_exclude = [
+      \ '*.git', '*.svg', '*.hg',
+      \ '*/tests/*',
+      \ 'build',
+      \ 'dist',
+      \ '*sites/*/files/*',
+      \ 'bin',
+      \ 'node_modules',
+      \ 'bower_components',
+      \ 'cache',
+      \ 'compiled',
+      \ 'docs',
+      \ 'example',
+      \ 'bundle',
+      \ 'vendor',
+      \ '*.md',
+      \ '*-lock.json',
+      \ '*.lock',
+      \ '*bundle*.js',
+      \ '*build*.js',
+      \ '.*rc*',
+      \ '*.json',
+      \ '*.min.*',
+      \ '*.map',
+      \ '*.bak',
+      \ '*.zip',
+      \ '*.pyc',
+      \ '*.class',
+      \ '*.sln',
+      \ '*.Master',
+      \ '*.csproj',
+      \ '*.tmp',
+      \ '*.csproj.user',
+      \ '*.cache',
+      \ '*.pdb',
+      \ 'tags*',
+      \ 'cscope.*',
+      \ '*.css',
+      \ '*.less',
+      \ '*.scss',
+      \ '*.exe', '*.dll',
+      \ '*.mp3', '*.ogg', '*.flac',
+      \ '*.swp', '*.swo',
+      \ '*.bmp', '*.gif', '*.ico', '*.jpg', '*.png',
+      \ '*.rar', '*.zip', '*.tar', '*.tar.gz', '*.tar.xz', '*.tar.bz2',
+      \ '*.pdf', '*.doc', '*.docx', '*.ppt', '*.pptx',
+      \ ]
 
-" Delay the execution of lightline#update() so that SyntasticCheck got executed
-" first, which avoid missing 'MODE' of lightline
-function! SyntasticCheckHook(errors)
-    call timer_start(10, {_->lightline#update()})
-endfunction
+command! -nargs=0 GutentagsClearCache call system('rm ' . g:gutentags_cache_dir . '/*')
 
-let python_highlight_all=1
+" @7. Ultisnips -------------------------------------------------
+let g:UltiSnipsExpandTrigger = '<C-z>'
+let g:UltiSnipsJumpForwardTrigger = '<C-z>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-b>'
 
-" Ctrlp --------------------------------------------------
-let g:ctrlp_max_height=30
-set wildignore+=*.pyc
-set wildignore+=*_build/*
-set wildignore+=*/coverage/*
-set wildignore+=*/node_modules/*
-
-" Jedi-vim ----------------------------------------------
-let g:jedi#completions_enabled = 0
-let g:jedi#use_splits_not_buffers = "right"
-let g:jedi#usages_command = "<leader>z"
-let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 0
-
-" Deoplete ----------------------------------------------
-let g:deoplete#enable_at_startup = 0
-
-" Emmet -------------------------------------------------
+" @0.1. Emmet ---------------------------------------------------
 let g:user_emmet_install_global = 0
 autocmd FileType html,htmldjango,css EmmetInstall
 let g:user_emmet_leader_key=','
 
-" Omnicomplete
-"set completeopt=longest,menuone
-"function! OmniPopup(action)
-"    if pumvisible()
-"        if a:action == 'j'
-"            return "\<C-N>"
-"        elseif a:action == 'k'
-"            return "\<C-P>"
-"        endif
-"    endif
-"    return a:action
-"endfunction
-"
-"inoremap <silent>j <C-R>=OmniPopup('j')<CR>
-"inoremap <silent>k <C-R>=OmniPopup('k')<CR>
+" @0.2. Vim-javascript ------------------------------------------
+let g:javascript_plugin_jsdoc = 1
 
-" Coc
-set hidden
-set nobackup
-set nowritebackup
-set cmdheight=2
-set updatetime=300
-set shortmess+=c
-set signcolumn=yes
+" @0.3. OmniSharp-vim
+let g:OmniSharp_server_stdio = 1
+let g:OmniSharp_highlighting = 2
+let g:omnicomplete_fetch_full_documentation = 1
 
-inoremap <silent><expr> <C-space> coc#refresh()
+" @0.4. Markdown ------------------------------------------------
+" Vim-instant-markdown 
+let g:instant_markdown_autostart = 1
+map <leader>md :InstantMarkdownPreview<CR>
+let g:instant_markdown_mathjax = 1
 
-nmap <silent> <leader>cd :CocList diagnostics<CR>
-nmap <silent> <leader>n <Plug>(coc-diagnostic-prev)
-nmap <silent> <leader>m <Plug>(coc-diagnostic-next)
+" Vim-markdown
+let g:vim_markdown_no_default_key_mappings = 0
+let g:vim_markdown_frontmatter = 1
 
-nmap <silent> <leader>dd :vs<CR><Plug>(coc-definition)
-nmap <silent> <leader>dr :vs<CR><Plug>(coc-references)
-nmap <silent> <leader>di :vs<CR><Plug>(coc-implementation)
+" Markdown-preview
+let g:mkdp_browser = 'firefox'
+let g:mkdp_auto_closer = 0
 
-" Vim-wiki
-let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-let g:vimwiki_table_mappings = 0
-let g:vimwiki_global_ext = 0
-nmap <leader>wf <Plug>VimwikiFollowLink
-nmap <leader>wb <Plug>VimwikiGoBackLink
-nmap <leader>wn <Plug>VimwikiNextLink
-nmap <leader>wp <Plug>VimwikiPrevLink
-
+" @0.0. Uncategorized -------------------------------------------
 " Tab completion
 inoremap <expr><TAB> 
     \ pumvisible() ? "\<C-n>" :
@@ -391,20 +445,18 @@ function! s:check_back_space() abort
     return !col || getline('.')[col - 1] =~# '\s'
 endfunction
 
-" Ultisnips
-let g:UltiSnipsExpandTrigger = '<C-z>'
-let g:UltiSnipsJumpForwardTrigger = '<C-z>'
-let g:UltiSnipsJumpBackwardTrigger = '<C-b>'
+" Vim-wiki
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+let g:vimwiki_table_mappings = 0
+let g:vimwiki_global_ext = 0
+nmap <leader>wf <Plug>VimwikiFollowLink
+nmap <leader>wb <Plug>VimwikiGoBackLink
+nmap <leader>wn <Plug>VimwikiNextLink
+nmap <leader>wp <Plug>VimwikiPrevLink
 
-" Vim-instant-markdown --------------------------------------
-let g:instant_markdown_autostart = 1
-map <leader>md :InstantMarkdownPreview<CR>
-let g:instant_markdown_mathjax = 1
+" Git-fugitive -----------------------------------------------
+nmap <leader>gs :vertical Gstatus<cr>gg<C-n>
+nmap <leader>gd :vertical Gdiff<CR>
 
-" Vim-markdown
-let g:vim_markdown_no_default_key_mappings = 0
-let g:vim_markdown_frontmatter = 1
+let g:SimpylFold_docstring_preview=1
 
-" Markdown-preview
-let g:mkdp_browser = 'firefox'
-let g:mkdp_auto_closer = 0

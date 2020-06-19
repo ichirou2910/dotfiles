@@ -12,6 +12,13 @@ export ZSH="/home/ichirou2910/.oh-my-zsh"
 # Set term
 export TERM="xterm-256color-italic"
 
+source $HOME/.local/bin/virtualenvwrapper.sh
+
+export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
+
+# For Unity-devs' sake
+export FrameworkPathOverride=/lib/mono/4.7.2-api
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
