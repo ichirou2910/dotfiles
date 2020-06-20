@@ -79,7 +79,6 @@ Plugin 'jiangmiao/auto-pairs' " Auto close
 Plugin 'tpope/vim-surround' " Handle pairs
 Plugin 'tpope/vim-repeat' " Enhance dot commands
 Plugin 'tpope/vim-commentary' " Code comments
-Plugin 'tmhedberg/SimpylFold' " Fold code
 Plugin 'nvie/vim-flake8' " Python PEP8 antidote
 
 Plugin 'digitaltoad/vim-pug' " HTML syntax hightlight
@@ -138,7 +137,7 @@ set cursorline
 
 set virtualedit=onemore
 set autoindent
-set foldmethod=indent
+set nofoldenable
 set wildmenu
 set confirm
 
@@ -323,7 +322,7 @@ autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | q | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-nmap <A-e> :NERDTreeFocus<cr>R<C-W><C-P>:CtrlPClearAllCaches<CR>
+nmap <A-e> :NERDTreeFocus<cr>R<C-W><C-P><CR>
 map <C-e> :NERDTreeTabsToggle<CR>
 
 " Nerd tree highlighting
@@ -415,6 +414,7 @@ let g:javascript_plugin_jsdoc = 1
 
 " @0.3. OmniSharp-vim
 let g:OmniSharp_server_stdio = 1
+let g:OmniSharp_server_use_mono = 1
 let g:OmniSharp_highlighting = 2
 let g:omnicomplete_fetch_full_documentation = 1
 
