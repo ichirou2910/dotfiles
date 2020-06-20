@@ -18,6 +18,7 @@ export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
 
 # For Unity-devs' sake
 export FrameworkPathOverride=/lib/mono/4.7.2-api
+export MSBuildSDKsPath=/usr/share/dotnet/sdk/$(dotnet --version)/Sdks
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

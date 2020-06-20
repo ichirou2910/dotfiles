@@ -362,7 +362,6 @@ type = internal/network
 interface = wlp5s0
 interval = 3.0
 
-; format-connected = %{A1:~/.config/polybar/network-speed.sh --wlan &:}<label-connected>%{A}
 format-connected = <label-connected>
 format-connected-underline = #9f78e1
 label-connected =  %essid:7% 
@@ -379,8 +378,6 @@ interval = 3.0
 
 format-connected-underline = #ffff00
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-; format-connected = %{A1:. ~/.config/polybar/network-speed.sh --eth &:}<label-connected>%{A}
 format-connected = <label-connected>
 label-connected = %local_ip%
 
