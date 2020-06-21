@@ -7,10 +7,12 @@ function run {
   fi
 }
 
-run sh $HOME/.config/polybar/launch.sh
+run ~/.fehbg
 
-run picom --config $HOME/.config/picom/picom.conf
+run dunst
 
-run python3 $HOME/.config/wallpaper/walltext.py
+run picom --config ~/.config/picom/picom.conf
+
+run python3 ~/.config/wallpaper/walltext.py
 
 run redshift-gtk

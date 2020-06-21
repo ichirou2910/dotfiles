@@ -7,8 +7,6 @@ super + i
     file-manager
 super + e							
 	$TERMINAL -e neomutt
-super + shift + w						
-	nm-connection-editor
 super + w					
 	$BROWSER
 super + s
@@ -25,25 +23,6 @@ alt + Tab
 	rofi -show window
 alt + q
     powermenu --popup
-
-# MEDIA BINDING
-# -------------
-XF86AudioRaiseVolume				
-	pactl set-sink-volume 0 +5%
-XF86AudioLowerVolume				
-	pactl set-sink-volume 0 -5%
-XF86AudioMute						
-	pactl set-sink-mute 0 toggle
-XF86AudioPlay						
-	playerctl play-pause
-XF86AudioNext						
-	playerctl next
-XF86AudioPrev						
-	playerctl previous
-XF86MonBrightnessUp					
-	sudo /usr/bin/light -A 10
-XF86MonBrightnessDown				
-	sudo /usr/bin/light -U 10
 
 # SCREEN CAPTURE + RECORDING
 # -------------------------
