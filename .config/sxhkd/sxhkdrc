@@ -27,13 +27,13 @@ alt + q
 # SCREEN CAPTURE + RECORDING
 # -------------------------
 Print								
-	maim | xclip -selection clipboard -t image/png && notify-send -i $HOME/.config/home/icons/screenshot.png -a maim "Screenshot saved."
+	maim | xclip -selection clipboard -t image/png && notify-send -i $HOME/.config/home/icons/screenshot.png "maim" "Screenshot copied."
 alt + shift + Print
-	maim -i $(xdotool getactivewindow) $SCREENSHOTDIR/$(date +%Y-%M-%d_%H:%M:%s).png && notify-send -i $HOME/.config/home/icons/screenshot.png -a maim "Active window captured."
+	maim -i $(xdotool getactivewindow) $SCREENSHOTDIR/$(date +%Y-%M-%d_%H:%M:%s).png && notify-send -i $HOME/.config/home/icons/screenshot.png "maim" "Active window captured."
 alt + Print
-	maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png && notify-send -i $HOME/.config/home/icons/screenshot.png -a maim "Active window copied."
+	maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png && notify-send -i $HOME/.config/home/icons/screenshot.png "maim" "Active window copied."
 ctrl + alt + a
-	maim -s | xclip -selection clipboard -t image/png && notify-send -i $HOME/.config/home/icons/screenshot.png -a maim "Selected region copied."
+	maim -s | xclip -selection clipboard -t image/png && notify-send -i $HOME/.config/home/icons/screenshot.png "maim" "Selected region copied."
 ctrl + shift + a
-	maim -s $SCREENSHOTDIR/`date +%Y-%m-%d_%H:%H:%S`.png && notify-send -i $HOME/.config/home/icons/screenshot.png -a maim "Selected region captured."
+	maim -s $SCREENSHOTDIR/`date +%Y-%m-%d_%H:%H:%S`.png && notify-send -i $HOME/.config/home/icons/screenshot.png "maim" "Selected region captured."
 
