@@ -18,8 +18,8 @@ if pgrep -c $TERMINAL >/dev/null 2>&1; then
         fi
     else
         notify-send -i $HOME/.config/home/icons/ranger.png -a Notice "File Manager" "Tmux not running. Opened in new window"
-        $TERMINAL -e $FILE
+        $TERMINAL -t "Ranger" -e $FILE
     fi
 else
-    $TERMINAL -e $FILE
+    $TERMINAL -t "Ranger" -e $FILE
 fi
