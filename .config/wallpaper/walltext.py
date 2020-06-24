@@ -74,11 +74,6 @@ def create_section(psize, text, layer):
                 + " caption:" + '"' + text + '" ' + layer)
 
 
-# def combine_sections(layers):
-#     run_command("convert " + image_1 +" " + image_2 + " " + "+append " + span_image)
-#     pass
-
-
 def set_overlay():
     boxes = slice_lines(read_text(notes), n_lines, columns)
     resolution = get_value('identify -format "%wx%h" ' + curr_wall).split("x")
