@@ -7,12 +7,4 @@ function run {
   fi
 }
 
-run ~/.fehbg
-
-run dunst
-
-run picom --config ~/.config/picom/picom.conf
-
-run python3 ~/.config/wallpaper/walltext.py
-
-run redshift-gtk
+run notify-send "Welcome to Awesome WM"

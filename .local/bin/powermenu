@@ -15,7 +15,6 @@ case "$1" in
         id=$(xdotool search --name "Powermenu")
 
         xdotool windowsize $id 350 350
-        xdotool windowmove $id 1570 40
         ;;
     *) break ;;
 esac
