@@ -1,5 +1,5 @@
 # Session
-export WM="i3"
+export WM="awesome"
 
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':')"
 
