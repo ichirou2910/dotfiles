@@ -5,10 +5,10 @@ export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 
 # If running in PC
-if [[ $(< /etc/hostname) == 'ArchLinux-PC' ]]; then
-    xrandr --output DP-1 --off
+# if [[ $(< /etc/hostname) == 'ArchLinux-PC' ]]; then
+#     xrandr --output DP-1 --off
 # If running in laptop
-elif [[ $(< /etc/hostname) == 'IK-arch' ]]; then
+if [[ $(< /etc/hostname) == 'IK-arch' ]]; then
     # setup screens
     xrandr --setprovideroutputsource modesetting NVIDIA -0
     xrandr --auto

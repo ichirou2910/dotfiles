@@ -54,7 +54,7 @@ theme.widget_clock                              = theme.confdir .. "/icons/clock
 theme.widget_vol                                = theme.confdir .. "/icons/spkr.png"
 theme.taglist_squares_sel                       = theme.confdir .. "/icons/square_a.png"
 theme.taglist_squares_unsel                     = theme.confdir .. "/icons/square_b.png"
-theme.tasklist_plain_task_name                  = false
+theme.tasklist_plain_task_name                  = true
 theme.tasklist_disable_icon                     = false
 theme.useless_gap                               = dpi(5)
 theme.layout_tile                               = theme.confdir .. "/icons/tile.png"
@@ -340,7 +340,7 @@ function theme.at_screen_connect(s)
             },
         },
         bottom = 4,
-        color = "#ffff00",
+        color = "#00b5b5",
         widget = wibox.container.margin,
     }
 
@@ -361,7 +361,7 @@ function theme.at_screen_connect(s)
             },
         },
         top = 4,
-        color = "#ffff00",
+        color = "#00b5b5",
         widget = wibox.container.margin,
     }
 end
