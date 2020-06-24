@@ -18,7 +18,7 @@ export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
 
 # For Unity-devs' sake
 export FrameworkPathOverride=/lib/mono/4.7.2-api
-export MSBuildSDKsPath=/usr/share/dotnet/sdk/$(dotnet --version)/Sdks
+export MSBuildSDKsPath=/opt/dotnet/sdk/$(dotnet --version)/Sdks
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -195,10 +195,11 @@ alias cdif="config diff"
 alias cstat="config status"
 alias cadd="config add"
 alias ccom="config commit -m"
-alias cpush="config push origin master"
-alias cpull="config pull origin master"
+alias cpush="config push"
+alias cpull="config pull"
 alias cres="config restore"
 alias cress="config restore --staged"
+alias cfet="config fetch"
 
 bindkey "^P" up-line-or-history
 bindkey "^[OA" up-line-or-history
