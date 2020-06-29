@@ -10,8 +10,7 @@
 " --------
 " 0.1 Emmet (HTML)
 " 0.2 vim-javascript (JS)
-" 0.3 OmniSharp (C#)
-" 0.4 Markdown (MD)
+" 0.3 Markdown (MD)
 " 0.0 Uncategorized
 
 " Vundle
@@ -70,9 +69,6 @@ Plugin 'ap/vim-css-color'
 " Javascript
 Plugin 'pangloss/vim-javascript'
 
-" CSharp
-Plugin 'omnisharp/OmniSharp-vim', { 'do': './install' }
-
 " Easy good-looking code
 Plugin 'sheerun/vim-polyglot' " Support multiple languages
 Plugin 'jiangmiao/auto-pairs' " Auto close
@@ -108,8 +104,8 @@ set dir=~/.swap-files
 
 " Bind :nohl <- removes highlight of last search
 noremap <C-n> :nohl<CR>
-vnoremap <C-n> :nohl<CR>
-inoremap <C-n> :nohl<CR>
+vnoremap <C-n> <Esc>:nohl<CR>
+inoremap <C-n> <Esc>:nohl<CR>
 
 " bind Ctrl + movement kets to move around the windows, instead of using Ctrl+w+movement
 nnoremap <A-j> <C-W><C-J>
@@ -412,13 +408,7 @@ let g:user_emmet_leader_key=','
 " @0.2. Vim-javascript ------------------------------------------
 let g:javascript_plugin_jsdoc = 1
 
-" @0.3. OmniSharp-vim
-let g:OmniSharp_server_stdio = 1
-let g:OmniSharp_server_use_mono = 1
-let g:OmniSharp_highlighting = 2
-let g:omnicomplete_fetch_full_documentation = 1
-
-" @0.4. Markdown ------------------------------------------------
+" @0.3. Markdown ------------------------------------------------
 " Vim-instant-markdown 
 let g:instant_markdown_autostart = 1
 map <leader>md :InstantMarkdownPreview<CR>
@@ -457,6 +447,4 @@ nmap <leader>wp <Plug>VimwikiPrevLink
 " Git-fugitive -----------------------------------------------
 nmap <leader>gs :vertical Gstatus<cr>gg<C-n>
 nmap <leader>gd :vertical Gdiff<CR>
-
-let g:SimpylFold_docstring_preview=1
 
