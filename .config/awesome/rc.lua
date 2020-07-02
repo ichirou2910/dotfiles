@@ -285,13 +285,13 @@ globalkeys = my_table.join(
               {description = "view  previous nonempty", group = "tag"}),
 
     -- Default client focus
-    awful.key({ modkey,           }, "]",
+    awful.key({ altkey,           }, "w",
         function ()
             awful.client.focus.byidx( 1)
         end,
         {description = "focus next by index", group = "client"}
     ),
-    awful.key({ modkey,           }, "[",
+    awful.key({ altkey,           }, "q",
         function ()
             awful.client.focus.byidx(-1)
         end,
@@ -420,12 +420,6 @@ globalkeys = my_table.join(
     -- Dropdown application
     awful.key({ modkey, }, "z", function () awful.screen.focused().quake:toggle() end,
               {description = "dropdown application", group = "launcher"}),
-
-    -- Widgets popups
-    awful.key({ altkey, }, "c", function () if beautiful.cal then beautiful.cal.show(7) end end,
-              {description = "show calendar", group = "widgets"}),
-    awful.key({ altkey, }, "w", function () if beautiful.weather then beautiful.weather.show(7) end end,
-              {description = "show weather", group = "widgets"}),
 
     -- Brightness
     awful.key({ }, "XF86MonBrightnessUp", function () os.execute("sudo /usr/bin/light -A 10") end,
