@@ -45,8 +45,8 @@ Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 
 " Tags
-Plugin 'universal-ctags/ctags'
-Plugin 'ludovicchabant/vim-gutentags'
+" Plugin 'universal-ctags/ctags'
+" Plugin 'ludovicchabant/vim-gutentags'
 
 " Tabs manager
 Plugin 'zefei/vim-wintabs'
