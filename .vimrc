@@ -83,10 +83,7 @@ Plugin 'jelera/vim-javascript-syntax' " Javascript syntax
 Plugin 'tweekmonster/django-plus.vim' " Syntax highlighting for django html
 
 " Note taking
-Plugin 'vimwiki/vimwiki' 
 Plugin 'iamcco/markdown-preview.nvim', {'do' : 'cd app && yarn install'}
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
 
 call vundle#end()
 
@@ -123,7 +120,7 @@ vnoremap <Leader>s :sort<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-let g:python3_host_prog = "$HOME/.neovim3/bin/python"
+let g:python3_host_prog = "$HOME/.virtualenvs/.neovim3/bin/python"
 
 " Some other stuff
 set mouse=a
@@ -192,8 +189,6 @@ au BufNewFile,BufRead *.js,*.html,*.css
 
 " Unfold all when open a file
 au BufWinEnter * normal zR
-
-au FileType vimwiki set syntax=markdown
 
 " Terminal
 command! -nargs=* T split | terminal <args>
@@ -409,15 +404,6 @@ let g:user_emmet_leader_key=','
 let g:javascript_plugin_jsdoc = 1
 
 " @0.3. Markdown ------------------------------------------------
-" Vim-instant-markdown 
-let g:instant_markdown_autostart = 1
-map <leader>md :InstantMarkdownPreview<CR>
-let g:instant_markdown_mathjax = 1
-
-" Vim-markdown
-let g:vim_markdown_no_default_key_mappings = 0
-let g:vim_markdown_frontmatter = 1
-
 " Markdown-preview
 let g:mkdp_browser = 'firefox'
 let g:mkdp_auto_closer = 0
@@ -434,15 +420,6 @@ function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1] =~# '\s'
 endfunction
-
-" Vim-wiki
-let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-let g:vimwiki_table_mappings = 0
-let g:vimwiki_global_ext = 0
-nmap <leader>wf <Plug>VimwikiFollowLink
-nmap <leader>wb <Plug>VimwikiGoBackLink
-nmap <leader>wn <Plug>VimwikiNextLink
-nmap <leader>wp <Plug>VimwikiPrevLink
 
 " Git-fugitive -----------------------------------------------
 nmap <leader>gs :vertical Gstatus<cr>gg<C-n>
