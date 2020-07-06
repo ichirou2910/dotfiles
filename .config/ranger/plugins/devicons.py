@@ -185,6 +185,7 @@ dir_node_exact_matches = {
     'Public'                           : '',
     'Templates'                        : '',
     'Videos'                           : '',
+    'Windows'                          : '',
     'Bluetooth'                        : '',
 # Spanish
     'Escritorio'                       : '',

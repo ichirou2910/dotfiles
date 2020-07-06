@@ -16,6 +16,8 @@ source $HOME/.local/bin/virtualenvwrapper.sh
 
 export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
 
+export LIBVIRT_DEFAULT_URI="qemu:///system"
+
 # For Unity-devs' sake
 export FrameworkPathOverride=/lib/mono/4.7.2-api
 export MSBuildSDKsPath=/opt/dotnet/sdk/$(dotnet --version)/Sdks
