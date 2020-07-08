@@ -44,6 +44,9 @@ Plugin 'tiagofumo/vim-nerdtree-syntax-highlight' " Syntax highlighting for nerd 
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 
+" Ssg Vim extension lord
+Plugin 'tpope/vim-eunuch'
+
 " Tags
 " Plugin 'universal-ctags/ctags'
 " Plugin 'ludovicchabant/vim-gutentags'
@@ -397,7 +400,7 @@ let g:UltiSnipsJumpBackwardTrigger = '<C-b>'
 
 " @0.1. Emmet ---------------------------------------------------
 let g:user_emmet_install_global = 0
-autocmd FileType html,htmldjango,css EmmetInstall
+autocmd FileType html,htmldjango,css,jst EmmetInstall
 let g:user_emmet_leader_key=','
 
 " @0.2. Vim-javascript ------------------------------------------
