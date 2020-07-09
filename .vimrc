@@ -66,6 +66,7 @@ Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'vim-scripts/indentpython.vim' " Python indentation
 
 " Web dev
+Plugin 'mattn/webapi-vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'ap/vim-css-color'
 
@@ -401,6 +402,7 @@ let g:UltiSnipsJumpBackwardTrigger = '<C-b>'
 " @0.1. Emmet ---------------------------------------------------
 let g:user_emmet_install_global = 0
 autocmd FileType html,htmldjango,css,jst EmmetInstall
+let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.config/nvim/emmet_snippets.json')), "\n"))
 let g:user_emmet_leader_key=','
 
 " @0.2. Vim-javascript ------------------------------------------

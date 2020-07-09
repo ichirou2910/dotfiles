@@ -1,0 +1,16 @@
+{
+    "jst": {
+        "filters": "jst",
+        "profile": "jst",
+        "snippets": {
+            "jst": "<%= | %>"
+        }
+    },
+    "htmldjango": {
+        "filters": "htmldjango",
+        "profile": "htmldjango",
+        "snippets": {
+            "djt": "{% | %}"
+        }
+    }
+}

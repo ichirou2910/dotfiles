@@ -9,9 +9,6 @@ export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/home/ichirou2910/.oh-my-zsh"
 
-# Set term
-export TERM="xterm-256color-italic"
-
 source $HOME/.local/bin/virtualenvwrapper.sh
 
 export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
