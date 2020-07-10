@@ -1,6 +1,6 @@
 # echo -e "********************************************"
 # echo -e "*                                          *"
-echo -e "\nHello \033[1mIchirou Keita\033[0m, have a nice day ~~~"
+echo -e "Hello \033[1mIchirou Keita\033[0m, have a nice day ~~~"
 # echo -e "*                                          *"
 # echo -e "********************************************"
 # If you come from bash you might have to change your $PATH.
@@ -117,9 +117,14 @@ source $ZSH/oh-my-zsh.sh
 #autoload -U promptinit; promptinit
 #prompt spaceship
 SPACESHIP_USER_SHOW=always
-SPACESHIP_USER_COLOR=cyan
+SPACESHIP_USER_COLOR=yellow
 SPACESHIP_USER_COLOR_ROOT=red
 SPACESHIP_DIR_COLOR=blue
+SPACESHIP_CHAR_SYMBOL=└►
+# SPACESHIP_CHAR_SYMBOL=╰►
+SPACESHIP_CHAR_COLOR_SUCCESS=cyan
+SPACESHIP_CHAR_SUFFIX=" "
+SPACESHIP_EXEC_TIME_COLOR=green
 SPACESHIP_PROMPT_ORDER=(
 	user
 	dir
