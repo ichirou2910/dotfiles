@@ -13,7 +13,12 @@ import os
 import time
 
 curr_dir = os.path.dirname(os.path.realpath(__file__))
-curr_wall = curr_dir + "/" + "wallpaper.jpg"
+
+if os.path.isfile(curr_dir + '/' + 'wallpaper.png'):
+    curr_wall = curr_dir + "/" + "wallpaper.png"
+elif os.path.isfile(curr_dir + '/' + 'wallpaper.jpg'):
+    curr_wall = curr_dir + "/" + "wallpaper.jpg"
+
 notes = curr_dir + "/" + "notes.txt"
 
 # -- CUSTOM PARAMETERS
@@ -22,11 +27,11 @@ shell = "/bin/zsh"              # your shell binary path, I use zsh
 # font = "Comic-Sans-MS-Bold"     # execute convert -list font for possible font choices
 font = "Choco-cooky"
 text_color = "black"            # text color
-size = "50"                     # text size (real size depends on the scale factor of your wallpaper)
+size = "25"                     # text size (real size depends on the scale factor of your wallpaper)
 tab = "    "                    # Imagemagick doesn't accept \t so just define it yourself
 done = "×"                      # Completed mark. Use whatever you want.
-borderX = 250                   # x offset
-borderY = 350                   # y offset
+borderX = 120                   # x offset
+borderY = 175                   # y offset
 columns = 1                     # (max) number of columns
 n_lines = 18                    # (max) number of lines per column
 set_bg_cmd = "feh --bg-scale "  # your command to change background goes here, but without the path to image
