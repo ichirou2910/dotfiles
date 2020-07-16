@@ -201,8 +201,9 @@ local myawesomemenu = {
     { "hotkeys", function() return false, hotkeys_popup.show_help end },
     { "manual", terminal .. " -e man awesome" },
     { "edit config", string.format("%s -e %s %s", terminal, editor, awesome.conffile) },
-    { "restart", awesome.restart },
-    { "quit", function() awesome.quit() end }
+    { "quit", function() awesome.quit() end },
+    { "reboot", "zsh -c -i 'reboot'" },
+    { "shutdown", "zsh -c -i 'poweroff'" }
 }
 awful.util.mymainmenu = freedesktop.menu.build({
     icon_size = beautiful.menu_height or dpi(16),
