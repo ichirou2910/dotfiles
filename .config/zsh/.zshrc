@@ -113,6 +113,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zaliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zaliasrc"
+
+_comp_options+=(globdots)		# Include hidden files.
 
 #autoload -U promptinit; promptinit
 #prompt spaceship
@@ -141,9 +144,6 @@ SPACESHIP_PROMPT_ORDER=(
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #export TERM=xterm-256color-italic
-
-# Configurations
-_comp_options+=(globdots)		# Include hidden files.
 
 # Vi mode
 bindkey -v
@@ -180,30 +180,6 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
-
-# Aliases -------------------------------------------------------------------
-#
-alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias vim="nvim"
-alias vi="nvim"
-alias oldvim="vim"
-alias mutt="TERM=xterm-256color neomutt"
-alias tas="tmux attach-session"
-alias ta="tmux attach || tmux new-session"
-alias td="tmux detach"
-alias cfz="nvim ~/.config/zsh/.zshrc"
-alias cfv="nvim ~/.vimrc"
-alias cft="nvim ~/.tmux.conf"
-alias rg="ranger"
-alias cdif="config diff"
-alias cstat="config status"
-alias cadd="config add"
-alias ccom="config commit -m"
-alias cpush="config push"
-alias cpull="config pull"
-alias cres="config restore"
-alias cress="config restore --staged"
-alias cfet="config fetch"
 
 bindkey "^P" up-line-or-history
 bindkey "^[OA" up-line-or-history

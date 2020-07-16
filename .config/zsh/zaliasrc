@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# Prefer neovim if available
+command -v nvim >/dev/null && alias vim="nvim" vi="nvim" vimdiff="nvim -d" oldvim="vim" oldvdiff="vimdiff"
+
+# Git aliases
+alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+alias \
+    cdif="config diff" \
+    cstat="config status" \
+    cadd="config add" \
+    ccom="config commit -m" \
+    cpush="config push" \
+    cpull="config pull" \
+    cres="config restore" \
+    cress="config restore --staged" \
+    cfet="config fetch" 
+
+alias \
+    gdif="git diff" \
+    gstat="git status" \
+    gadd="git add" \
+    gcom="git commit -m" \
+    gpush="git push" \
+    gpull="git pull" \
+    gres="git restore" \
+    gress="git restore --staged" \
+    gfet="git fetch"
+
+# Quick edit common config files
+alias \
+    cfz="nvim ~/.config/zsh/.zshrc" \
+    cfv="nvim ~/.vimrc" \
+    cft="nvim ~/.tmux.conf" \
+    cfa="nvim ~/.config/awesome/rc.lua" \
+    cfr="nvim ~/.config/ranger/rc.conf" \
+    cfs="nvim ~/.config/sxhkd/sxhkdrc" \
+    chx="nvim ~/.xinitrc" \
+    chp="nvim ~/.profile" \
+    chxp="nvim ~/.xprofile"
+
+# Common apps
+alias \
+    rg="ranger" \
+
+# Common commands
+alias \
+    ka="killall" \
+    upgr="yay -Syu" \
+    tas="tmux attach-session" \
+    ta="tmux attach || tmux new-session" \
+    td="tmux detach"
+
+alias mutt="TERM=xterm-256color neomutt"
