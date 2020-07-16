@@ -7,6 +7,7 @@
 " 5. Fzf-vim
 " 6. Tags
 " 7. Ultisnips
+" 8. VeBugger
 " --------
 " 0.1 Emmet (HTML)
 " 0.2 vim-javascript (JS)
@@ -61,6 +62,10 @@ Plugin 'junegunn/gv.vim'
 
 " Language support
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Debugger
+Plugin 'Shougo/vimproc.vim'
+Plugin 'idanarye/vim-vebugger'
 
 " Python
 Plugin 'vim-scripts/indentpython.vim' " Python indentation
@@ -187,9 +192,9 @@ au BufNewFile,BufRead *.py
 
 " For full stack dev
 au BufNewFile,BufRead *.js,*.html,*.css
-	\ set tabstop=4 |
-	\ set softtabstop=4 |
-	\ set shiftwidth=4 |
+	\ set tabstop=2 |
+	\ set softtabstop=2 |
+	\ set shiftwidth=2 |
 
 " Unfold all when open a file
 au BufWinEnter * normal zR
@@ -398,6 +403,9 @@ command! -nargs=0 GutentagsClearCache call system('rm ' . g:gutentags_cache_dir 
 let g:UltiSnipsExpandTrigger = '<C-z>'
 let g:UltiSnipsJumpForwardTrigger = '<C-z>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-b>'
+
+" @8. VeBugger --------------------------------------------------
+
 
 " @0.1. Emmet ---------------------------------------------------
 let g:user_emmet_install_global = 0
