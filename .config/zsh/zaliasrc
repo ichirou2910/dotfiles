@@ -31,6 +31,7 @@ alias \
 # Quick edit common config files
 alias \
     cfz="nvim ~/.config/zsh/.zshrc" \
+    cfza="nvim ~/.config/zsh/zaliasrc" \
     cfv="nvim ~/.vimrc" \
     cft="nvim ~/.tmux.conf" \
     cfa="nvim ~/.config/awesome/rc.lua" \
@@ -50,6 +51,9 @@ alias \
     upgr="yay -Syu" \
     tas="tmux attach-session" \
     ta="tmux attach || tmux new-session" \
-    td="tmux detach"
+    td="tmux detach" \
+    mnt="mount-drive" \
+    mntl="mount-drive --list"
 
 alias mutt="TERM=xterm-256color neomutt"
+alias yuzu="__GL_THREADED_OPTIMIZATIONS=1 gamemoderun mangohud /opt/yuzu/yuzu"

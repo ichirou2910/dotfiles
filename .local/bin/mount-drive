@@ -1,0 +1,53 @@
+#!/bin/sh
+
+if [ $# -eq 0 ]; then
+    echo "No arguments supplied"
+    exit 1;
+else
+    case $1 in
+    --list)
+        mount | grep --color=always "/mnt/drives/[a-z]" | cut -d " " -f1-3 | rev | sort | rev | awk '{ for (i=NF; i>1; i--) printf("%s ",$i); print $1; }'
+        exit 0;
+        ;;
+    *)
+        # Check if this drive is already mounted
+        if mount | grep $1 > /dev/null; then
+            location=$(mount | grep $1 | cut -d " " -f3)
+            echo "ERROR: Already mounted on $location"
+            exit 1;
+        else
+            # Find empty mount point to mount drive
+            for drive in {a..z}
+            do
+                if ! mount | grep /mnt/drives/$drive > /dev/null; then
+                    # Mount ISO
+                    if file -b --mime-type $1 | grep -q iso; then
+                        if sudo mount -o loop $1 /mnt/drives/$drive; then
+                            echo "ISO: $1 mounted to /mnt/drives/$drive"
+                            exit 0;
+                        else
+                            echo "ISO: $1 not mounted successfully"
+                            exit 1;
+                        fi
+                    # Mount normal drive
+                    else
+                        if sudo mount $1 /mnt/drives/$drive; then
+                            echo "Drive: $1 mounted to /mnt/drives/$drive"
+                            exit 0;
+                        else
+                            echo "Drive: $1 not mounted successfully"
+                            exit 1;
+                        fi
+                    fi
+                    break;
+                fi
+            done
+            # No empty mount point available
+            if ! mount | grep $1 > /dev/null; then
+                echo "No spare mount point available."
+                exit 1;
+            fi
+        fi
+        ;;
+    esac
+fi
