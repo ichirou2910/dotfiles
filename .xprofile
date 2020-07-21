@@ -16,6 +16,7 @@ if [[ $(< /etc/hostname) == 'IK-arch' ]]; then
     optimus-manager-qt &
 fi
 
+xset s off -dpms
 ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3
 python3 ~/.config/wallpaper/walltext.py &
 dunst &
