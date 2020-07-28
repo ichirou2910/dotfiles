@@ -17,7 +17,7 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 local theme                                     = {}
 theme.confdir                                   = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
 theme.wallpaper                                 = os.getenv("HOME") .. "/.config/wallpaper/walltext.jpg"
-theme.font                                      = "Noto Sans 15"
+theme.font                                      = "Cantarell 13"
 theme.menu_bg_normal                            = "#000000"
 theme.menu_bg_focus                             = "#000000"
 theme.bg_normal                                 = "#000000"
@@ -95,8 +95,7 @@ local markup = lain.util.markup
 
 -- Textclock
 os.setlocale(os.getenv("LANG")) -- to localize the clock
-local clockicon = wibox.widget.imagebox(theme.widget_clock)
-local mytextclock = wibox.widget.textclock(markup("#7788af", "%a %d %B %Y ") .. markup("#ab7367", "-") .. markup("#de5e1e", " %H:%M "))
+local mytextclock = wibox.widget.textclock(markup("#7788af", " ") .. markup("#7788af", "%a %d %B %Y    ") .. markup("#de5e1e", "") .. markup("#de5e1e", " %H:%M    "))
 mytextclock.font = theme.font
 
 -- Calendar
@@ -110,25 +109,23 @@ theme.cal = lain.widget.cal({
 })
 
 -- Weather
-local weathericon = wibox.widget.imagebox(theme.widget_weather)
 theme.weather = lain.widget.weather({
     city_id = 1581130, -- placeholder (London)
     notification_preset = { font = "Noto Sans 10", fg = theme.fg_normal },
     weather_na_markup = markup.fontfg(theme.font, "#eca4c4", "N/A "),
     settings = function()
         units = math.floor(weather_now["main"]["temp"])
-        widget:set_markup(markup.fontfg(theme.font, "#eca4c4", units .. "°C "))
+        widget:set_markup(markup.fontfg(theme.font, "#eca4c4", " " .. units .. "°C    "))
     end
 })
 
 -- / fs
-local fsicon = wibox.widget.imagebox(theme.widget_fs)
 theme.fs = lain.widget.fs({
     notification_preset = { font = "Consolas 10", fg = theme.fg_normal },
     settings  = function()
         -- widget:set_markup(markup.fontfg(theme.font, "#80d9d8", string.format("%.1f", fs_now["/"].used) .. "% "))
-        widget:set_markup(markup.fontfg(theme.font, "#80d9d8", "/: " .. fs_now["/"].percentage .. "%," ..
-            " /home: " .. fs_now["/home"].percentage .. "%"))
+        widget:set_markup(markup.fontfg(theme.font, "#80d9d8", " /: " .. fs_now["/"].percentage .. "%," ..
+            " /home: " .. fs_now["/home"].percentage .. "%    "))
     end
 })
 
@@ -156,15 +153,13 @@ theme.mail = lain.widget.imap({
 --]]
 
 -- CPU
-local cpuicon = wibox.widget.imagebox(theme.widget_cpu)
 local cpu = lain.widget.cpu({
     settings = function()
-        widget:set_markup(markup.fontfg(theme.font, "#e33a6e", cpu_now.usage .. "% "))
+        widget:set_markup(markup.fontfg(theme.font, "#e33a6e", " " .. cpu_now.usage .. "%     "))
     end
 })
 
 -- Coretemp
-local tempicon = wibox.widget.imagebox(theme.widget_temp)
 local temp = lain.widget.temp({
     settings = function()
         widget:set_markup(markup.fontfg(theme.font, "#f1af5f", coretemp_now .. "°C "))
@@ -172,18 +167,18 @@ local temp = lain.widget.temp({
 })
 
 -- Battery
-local baticon = wibox.widget.imagebox(theme.widget_batt)
 local bat = lain.widget.bat({
     settings = function()
         local perc = bat_now.perc ~= "N/A" and bat_now.perc .. "%" or bat_now.perc
-        local charge = ""
+        local icon = " "
 
         if bat_now.ac_status == 1 then
-            charge = "+ "
+            icon = " "
+
         end
 
-        widget:set_markup(markup.fontfg(theme.font, "#ffff00", perc) ..
-                        markup.fontfg(theme.font, "#ff0000", charge))
+        widget:set_markup(markup.fontfg(theme.font, "#ffff00", icon) ..
+                        markup.fontfg(theme.font, "#ffff00", perc .. "    "))
     end
 })
 
@@ -199,21 +194,18 @@ local bat = lain.widget.bat({
 -- })
 
 -- PulseAudio volume (based on multicolor theme)
-local volicon = wibox.widget.imagebox(theme.widget_vol)
 theme.volume = lain.widget.pulse {
     settings = function()
         vlevel = volume_now.left 
         if volume_now.muted == "yes" then
             vlevel = "M"
         end
-        widget:set_markup(markup.fontfg(theme.font, "#7493d2", vlevel))
+        widget:set_markup(markup.fontfg(theme.font, "#7493d2", "     " .. vlevel .. "    "))
     end
 }
 
 -- Net
-local netdownicon = wibox.widget.imagebox(theme.widget_netdown)
 local netdowninfo = wibox.widget.textbox()
-local netupicon = wibox.widget.imagebox(theme.widget_netup)
 local netupinfo = lain.widget.net({
     settings = function()
         if iface ~= "network off" and
@@ -222,16 +214,15 @@ local netupinfo = lain.widget.net({
             theme.weather.update()
         end
 
-        widget:set_markup(markup.fontfg(theme.font, "#e54c62", net_now.sent .. " "))
-        netdowninfo:set_markup(markup.fontfg(theme.font, "#87af5f", net_now.received .. " "))
+        widget:set_markup(markup.fontfg(theme.font, "#e54c62", " " .. net_now.sent .. "  "))
+        netdowninfo:set_markup(markup.fontfg(theme.font, "#87af5f", " " .. net_now.received .. "    "))
     end
 })
 
 -- MEM
-local memicon = wibox.widget.imagebox(theme.widget_mem)
 local memory = lain.widget.mem({
     settings = function()
-        widget:set_markup(markup.fontfg(theme.font, "#e0da37", mem_now.perc .. "% "))
+        widget:set_markup(markup.fontfg(theme.font, "#e0da37", "     " .. mem_now.perc .. "%    "))
     end
 })
 
@@ -301,40 +292,30 @@ function theme.at_screen_connect(s)
     s.mywibox:setup {
         {
             layout = wibox.layout.align.horizontal,
+            expand = "none",
             { -- Left widgets
                 layout = wibox.layout.fixed.horizontal,
                 mylauncher,
                 s.mytaglist,
                 s.mypromptbox,
-                volicon,
                 theme.volume.widget,
-                memicon,
-                memory.widget,
-                cpuicon,
-                cpu.widget,
-                netdownicon,
                 netdowninfo,
-                netupicon,
                 netupinfo.widget,
-                -- mpdicon,
                 -- theme.mpd.widget,
             },
             --s.mytasklist, -- Middle widget
-            nil,
+            {
+                layout = wibox.layout.fixed.horizontal,
+                mytextclock,
+                theme.weather.widget,
+            },
+            -- nil,
             { -- Right widgets
                 layout = wibox.layout.fixed.horizontal,
-                --mailicon,
-                --theme.mail.widget,
                 wibox.widget.systray(),
-                fsicon,
+                memory.widget,
+                cpu.widget,
                 theme.fs.widget,
-                weathericon,
-                theme.weather.widget,
-                -- tempicon,
-                -- temp.widget,
-                clockicon,
-                mytextclock,
-                baticon,
                 bat.widget,
                 s.mylayoutbox,
             },
