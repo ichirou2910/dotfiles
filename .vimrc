@@ -8,6 +8,7 @@
 " 6. Tags
 " 7. Ultisnips
 " 8. VeBugger
+" 9. Vim-session
 " --------
 " 0.1 Emmet (HTML)
 " 0.2 vim-javascript (JS)
@@ -67,16 +68,27 @@ Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'Shougo/vimproc.vim'
 Plugin 'idanarye/vim-vebugger'
 
+"" Vim-Session
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
+
 " Python
 Plugin 'vim-scripts/indentpython.vim' " Python indentation
+
+" C
+Plugin 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 
 " Web dev
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'ap/vim-css-color'
+Plugin 'tpope/vim-haml'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'gorodinskiy/vim-coloresque'
+Plugin 'tweekmonster/django-plus.vim' " Syntax highlighting for django html
 
 " Javascript
-Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
 
 " Easy good-looking code
 Plugin 'sheerun/vim-polyglot' " Support multiple languages
@@ -86,10 +98,7 @@ Plugin 'tpope/vim-repeat' " Enhance dot commands
 Plugin 'tpope/vim-commentary' " Code comments
 Plugin 'nvie/vim-flake8' " Python PEP8 antidote
 
-Plugin 'digitaltoad/vim-pug' " HTML syntax hightlight
-Plugin 'jelera/vim-javascript-syntax' " Javascript syntax
-
-Plugin 'tweekmonster/django-plus.vim' " Syntax highlighting for django html
+" Plugin 'digitaltoad/vim-pug' " HTML syntax hightlight
 
 " Note taking
 Plugin 'iamcco/markdown-preview.nvim', {'do' : 'cd app && yarn install'}
@@ -406,6 +415,14 @@ let g:UltiSnipsJumpBackwardTrigger = '<C-b>'
 
 " @8. VeBugger --------------------------------------------------
 
+
+" @9. Vim-session
+nnoremap <leader>so :OpenSession<Space>
+nnoremap <leader>ss :SaveSession<Space>
+nnoremap <leader>sd :DeleteSession<CR>
+nnoremap <leader>sc :CloseSession<CR>
+
+let g:session_autosave = 'no'
 
 " @0.1. Emmet ---------------------------------------------------
 let g:user_emmet_install_global = 0
