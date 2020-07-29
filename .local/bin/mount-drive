@@ -1,53 +1,151 @@
 #!/bin/sh
 
+print_help () {
+    echo "USAGE:"
+    echo "    -h, --help                : Print this help"
+    echo "    -l, --list                : List all mounted targets on /mnt/drives and /mnt/medium"
+    echo "    -u, --unmount-drive <a-z> : Unmount specified target in /mnt/drives"
+    echo "    -U, --unmount-media <a-z> : Unmount specified target in /mnt/medium"
+    echo "    -d, --drive <drive>       : Mount specified drive to /mnt/drives. Return mount location."
+    echo "    -m, --media <media>       : Mount specified media device to /mnt/medium. Return mount location"
+    echo "EXAMPLE:"
+    echo "    mount-drive --drive /dev/sdc1"
+    echo "        -> Mount /dev/sdc1"
+    echo "    mount-drive --media 1"
+    echo "        -> Mount 1st media"
+    echo "    mount-drive --unmount-drive a"
+    echo "        -> Unmount /mnt/drives/a"
+    echo "    mount-drive --unmount-media a"
+    echo "        -> Unmount /mnt/medium/a"
+}
+
 if [ $# -eq 0 ]; then
-    echo "No arguments supplied"
+    echo "No argument specified"
+    print_help
     exit 1;
 else
     case $1 in
-    --list)
-        mount | grep --color=always "/mnt/drives/[a-z]" | cut -d " " -f1-3 | rev | sort | rev | awk '{ for (i=NF; i>1; i--) printf("%s ",$i); print $1; }'
-        exit 0;
-        ;;
-    *)
-        # Check if this drive is already mounted
-        if mount | grep $1 > /dev/null; then
-            location=$(mount | grep $1 | cut -d " " -f3)
-            echo "ERROR: Already mounted on $location"
-            exit 1;
-        else
-            # Find empty mount point to mount drive
-            for drive in {a..z}
-            do
-                if ! mount | grep /mnt/drives/$drive > /dev/null; then
-                    # Mount ISO
-                    if file -b --mime-type $1 | grep -q iso; then
-                        if sudo mount -o loop $1 /mnt/drives/$drive; then
-                            echo "ISO: $1 mounted to /mnt/drives/$drive"
-                            exit 0;
+        -l | --list)
+            mount | grep --color=always "/mnt/drives/[a-z]" | cut -d " " -f1-3 | rev | sort | rev | awk '{ for (i=NF; i>1; i--) printf("%s ",$i); print $1; }'
+            mount | grep --color=always "/mnt/medium/[a-z]" | cut -d " " -f1-3 | rev | sort | rev | awk '{ for (i=NF; i>1; i--) printf("%s ",$i); print $1; }'
+            exit 0;
+            ;;
+        -u | --unmount-drive)
+            case $2 in
+                [a-z])
+                    target=$(mount | grep "/mnt/drives/$2" | cut -d " " -f1)
+                    if [ ! -z "$target" ]; then
+                        echo "Target: $target"
+                        if sudo umount /mnt/drives/$2 > /dev/null; then
+                            echo "Unmounted successfully"
+                            exit 0
                         else
-                            echo "ISO: $1 not mounted successfully"
-                            exit 1;
+                            echo "Failed to unmount"
+                            exit 1
                         fi
-                    # Mount normal drive
                     else
-                        if sudo mount $1 /mnt/drives/$drive; then
-                            echo "Drive: $1 mounted to /mnt/drives/$drive"
-                            exit 0;
+                        echo "Target not found"
+                        exit 1
+                    fi
+                    ;;
+                *)
+                    echo "Invalid target, please select a-z"
+                    exit 0
+                    ;;
+            esac
+            ;;
+        -U | --unmount-media)
+            case $2 in
+                [a-z])
+                    # target=$(mount | grep "/mnt/medium/$2" | cut -d " " -f1)
+                    if sudo umount /mnt/medium/$2 > /dev/null; then
+                        echo "Unmounted successfully"
+                        exit 0
+                    else
+                        echo "Failed to unmount"
+                        exit 1
+                    fi
+                    ;;
+                *)
+                    echo "Invalid target, please select a-z"
+                    exit 0
+                    ;;
+            esac
+            ;;
+        -d | --drive)
+            # Check valid argument
+            if ! [[ $2 =~ \/dev\/*[a-z] ]] && ! [[ $2 =~ [A-Za-z].*iso$ ]]; then
+                echo "Invalid argument"
+                exit 1;
+            fi
+
+            # Check if this drive is already mounted
+            if mount | grep $2 > /dev/null; then
+                location=$(mount | grep $2 | cut -d " " -f3)
+                echo "ERROR: Already mounted on $location"
+                exit 1;
+            else
+                # Find empty mount point to mount drive
+                for drive in {a..z}
+                do
+                    if ! mount | grep /mnt/drives/$drive > /dev/null; then
+                        # Mount ISO
+                        if file -b --mime-type $2 | grep -q iso; then
+                            if sudo mount -o loop $2 /mnt/drives/$drive; then
+                                echo "ISO: $2 mounted to /mnt/drives/$drive"
+                                exit 0;
+                            else
+                                echo "ISO: $2 failed to mount"
+                                exit 1;
+                            fi
+                        # Mount normal drive
                         else
-                            echo "Drive: $1 not mounted successfully"
-                            exit 1;
+                            if sudo mount $2 /mnt/drives/$drive; then
+                                echo "Drive: $2 mounted to /mnt/drives/$drive"
+                                exit 0;
+                            else
+                                echo "Drive: $2 failed to mount"
+                                exit 1;
+                            fi
                         fi
+                        break;
+                    fi
+                done
+                # No empty mount point available
+                if ! mount | grep $2 > /dev/null; then
+                    echo "No spare mount point available."
+                    exit 1;
+                fi
+            fi
+            ;;
+        -m | --media)
+            for media in {a..z}
+            do
+                if ! mount | grep /mnt/medium/$media > /dev/null; then
+                    if simple-mtpfs --device $2 /mnt/medium/$media; then
+                        echo "Media mounted to /mnt/medium/$media"
+                        exit 0;
+                    else
+                        echo "Media failed to mount"
+                        exit 1;
                     fi
                     break;
                 fi
             done
             # No empty mount point available
-            if ! mount | grep $1 > /dev/null; then
-                echo "No spare mount point available."
-                exit 1;
-            fi
-        fi
-        ;;
+            # if ! mount | grep $2 > /dev/null; then
+            #     echo "No spare mount point available."
+            #     exit 1;
+            # fi
+            ;;
+        -h | --help)
+            print_help
+            exit 0
+            ;;
+        *)
+            echo "Unrecognized option"
+            print_help
+            exit 1
+            ;;
     esac
 fi
