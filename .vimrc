@@ -138,6 +138,9 @@ vnoremap <Leader>s :sort<CR>
 vnoremap < <gv
 vnoremap > >gv
 
+" Search for visually selected text
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
 let g:python3_host_prog = "$HOME/.virtualenvs/.neovim3/bin/python"
 
 " Some other stuff
