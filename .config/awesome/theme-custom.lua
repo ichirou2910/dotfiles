@@ -274,7 +274,12 @@ function theme.at_screen_connect(s)
     s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, awful.util.taglist_buttons)
 
     -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
+    local function list_update(w, buttons, label, data, objects)
+        awful.widget.common.list_update(w, buttons, label, data, objects)
+        w:set_max_widget_size(dpi(250))
+    end
+
+    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons, nil, list_update, wibox.layout.flex.horizontal())
 
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(34), bg = theme.bg_normal, fg = theme.fg_normal })
@@ -285,6 +290,7 @@ function theme.at_screen_connect(s)
     local mybarmenu = awful.menu({
         { "Hotkeys", function() return false, hotkeys_popup.show_help end },
         { "Config", string.format("%s -e %s %s", terminal, editor, awesome.conffile) },
+        { "Theme config", string.format("%s -e %s %s", terminal, editor, "/home/ichirou2910/.config/awesome/theme-custom.lua") },
         { "Quit", function() awesome.quit() end },
         { "Reboot", "zsh -c -i 'reboot'" },
         { "Shutdown", "zsh -c -i 'poweroff'" }
@@ -306,7 +312,6 @@ function theme.at_screen_connect(s)
                 theme.volume.widget,
                 netdowninfo,
                 netupinfo.widget,
-                -- theme.mpd.widget,
             },
             {
                 layout = wibox.layout.fixed.horizontal,
@@ -334,19 +339,19 @@ function theme.at_screen_connect(s)
     -- Add widgets to the bottom wibox
     s.mybottomwibox:setup {
         {
-            expand = "none",
             layout = wibox.layout.align.horizontal,
             { -- Left widgets
                 layout = wibox.layout.fixed.horizontal,
                 mylauncher,
             },
             { -- Middle widgets
-                layout = wibox.layout.fixed.horizontal,
+                layout = wibox.layout.flex.horizontal,
                 s.mytasklist, 
             },
             { -- Right widgets
                 layout = wibox.layout.fixed.horizontal,
             },
+            -- nil,
         },
         top = dpi(4),
         color = "#00b5b5",
