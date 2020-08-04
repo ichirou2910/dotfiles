@@ -10,6 +10,7 @@
 local awesome, client, mouse, screen, tag = awesome, client, mouse, screen, tag
 local ipairs, string, os, table, tostring, tonumber, type = ipairs, string, os, table, tostring, tonumber, type
 
+local xrandr        = require("xrandr")
 local gears         = require("gears")
 local awful         = require("awful")
                       require("awful.autofocus")
@@ -259,6 +260,8 @@ root.buttons(my_table.join(
 
 -- {{{ Key bindings
 globalkeys = my_table.join(
+    awful.key({ modkey }, "r", function() xrandr.xrandr() end),
+
     -- Take a screenshot
     -- https://github.com/lcpz/dots/blob/master/bin/screenshot
     awful.key({ altkey }, "p", function() os.execute("screenshot") end,
@@ -606,6 +609,10 @@ awful.rules.rules = {
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen,
                      size_hints_honor = false
      }
+    },
+    { rule = { },
+      properties = { },
+      callback = awful.client.setslave
     },
 
     -- Titlebars
