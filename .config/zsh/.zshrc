@@ -10,6 +10,7 @@ export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 export ZSH="/home/ichirou2910/.oh-my-zsh"
 
 source $HOME/.local/bin/virtualenvwrapper.sh
+source $HOME/.local/bin/alacritty.sh
 
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 
