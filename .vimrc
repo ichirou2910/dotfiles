@@ -2,13 +2,12 @@
 " Quick jump: @ + index
 " 1. Coc.nvim
 " 2. Lightline
-" 3. Wintabs
-" 4. NERDTRee
-" 5. Fzf-vim
-" 6. Tags
-" 7. Ultisnips
-" 8. VeBugger
-" 9. Vim-session
+" 3. NERDTRee
+" 4. Fzf-vim
+" 5. Tags
+" 6. Ultisnips
+" 7. VeBugger
+" 8. Vim-session
 " --------
 " 0.1 Emmet (HTML)
 " 0.2 vim-javascript (JS)
@@ -19,7 +18,6 @@
 set nocompatible
 
 set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=~/.vim/plugged/syntastic
 set rtp+=~/.vim/plugged/lightline.vim
 call vundle#begin('~/.vim/plugged/vundle')
 
@@ -53,10 +51,6 @@ Plugin 'tpope/vim-eunuch'
 " Plugin 'universal-ctags/ctags'
 " Plugin 'ludovicchabant/vim-gutentags'
 
-" Tabs manager
-Plugin 'zefei/vim-wintabs'
-Plugin 'zefei/vim-wintabs-powerline'
-
 " Git
 Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/gv.vim'
@@ -78,7 +72,7 @@ Plugin 'vim-scripts/indentpython.vim' " Python indentation
 " C
 Plugin 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 
-" Web dev
+" HTML
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'ap/vim-css-color'
@@ -102,6 +96,9 @@ Plugin 'nvie/vim-flake8' " Python PEP8 antidote
 
 " Note taking
 Plugin 'iamcco/markdown-preview.nvim', {'do' : 'cd app && yarn install'}
+
+" Other
+Plugin 'Yggdroot/indentLine'
 
 call vundle#end()
 
@@ -138,6 +135,14 @@ vnoremap <Leader>s :sort<CR>
 vnoremap < <gv
 vnoremap > >gv
 
+" Tabs movement
+noremap <C-d> :tabnext<CR>
+noremap <C-s> :tabprevious<CR>
+noremap <C-t> :tabnew<CR>
+inoremap <C-d> <Esc>:tabnext<CR>
+inoremap <C-s> <Esc>:tabprevious<CR>
+inoremap <C-t> <Esc>:tabnew<CR>
+
 " Search for visually selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
@@ -156,22 +161,41 @@ set wildmenu
 set confirm
 
 set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8
 set clipboard=unnamed
 
 set history=700
 set undolevels=700
 
-set noequalalways
+set backspace=indent,eol,start
+
+set nofixendofline
+
+" Window title
+set title
+set titleold="Terminal"
+set titlestring=%F
 
 " Tabs
 set tabstop=4
-set softtabstop=4
+set softtabstop=0
 set shiftwidth=4
 set shiftround
 set expandtab
 set laststatus=2
 set splitright
 set splitbelow
+
+" Search
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+set fileformats=unix,dos
 
 " Enable syntax highlighting
 filetype off
@@ -193,20 +217,26 @@ set rnu
 set number
 set nowrap
 
+" C indentation
+au BufNewFile,BufRead *.c,*.cpp
+    \ set tabstop=4 |
+    \ set shiftwidth=4 |
+    \ set expandtab |
+
 " Python indentation
 au BufNewFile,BufRead *.py
-	\ set tabstop=4 |
+	\ set tabstop=8 |
 	\ set softtabstop=4 |
 	\ set shiftwidth=4 |
+    \ set colorcolumn=79 |
 	\ set expandtab |
 	\ set autoindent |
-	\ set fileformat=unix |
 
 " For full stack dev
-au BufNewFile,BufRead *.js,*.html,*.css
+au BufNewFile,BufRead *.html,*.css,*.js,*.json
 	\ set tabstop=2 |
-	\ set softtabstop=2 |
 	\ set shiftwidth=2 |
+    \ set expandtab |
 
 " Unfold all when open a file
 au BufWinEnter * normal zR
@@ -215,9 +245,12 @@ au BufWinEnter * normal zR
 command! -nargs=* T split | terminal <args>
 command! -nargs=* VT vsplit | terminal <args>
 tnoremap <Esc> <C-\><C-n>
-noremap <A-t> :split +term \| resize15<CR>
+noremap <A-t> :vsplit +terminal<CR>
 au TermOpen * setlocal nonumber norelativenumber
 
+" Single-file coding stuff
+autocmd filetype c nnoremap <F9> :w <bar> !gcc -Wall -Wextra -O2 % -o %:r -Wl,--stack,268435456<CR>
+autocmd filetype c nnoremap <F10> :!./%:r<CR>
 
 " PLUGINS CONFIGURATION =======================================================
 
@@ -296,39 +329,16 @@ function! LightlineFilename()
     return expand('%')
 endfunction
 
-" @3. Wintabs ---------------------------------------
-nmap <C-t> :enew<CR>
-map <C-s> <Plug>(wintabs_previous)
-map <C-d> <Plug>(wintabs_next)
-map <C-q> <Plug>(wintabs_close)
-" map <C-T>u <Plug>(wintabs_undo)
-" map <C-T>o <Plug>(wintabs_only)
-map <C-W>c <Plug>(wintabs_close_window)
-map <C-W>o <Plug>(wintabs_only_window)
-command! Tabc WintabsCloseVimtab
-command! Tabo WintabsOnlyVimtab
-
-" == Wintabs' tabline settings
-let g:wintabs_display = 'tabline' " take over lightline's tabline
-
-" Replicate lightline's palenight theme for tabline
-let g:wintabs_powerline_sep_buffer_transition = "\ue0b0"
-let g:wintabs_powerline_sep_buffer = "\ue0b1"
-highlight WintabsActive guibg=#ffbc6b guifg=#121212
-highlight WintabsInactive guibg=#3e4452 guifg=#ffbc6b
-highlight WintabsArrow guifg=#ffbc6b guibg=#ffbc6b
-highlight WintabsActiveNC guibg=#ffbc6b guifg=#3e4452
-highlight WintabsInactiveNC guibg=#ffbc6b guifg=#3e4452
-highlight WintabsEmpty guibg=#3e4452 guifg=None
-
-" @4. NERDTRee ----------------------------------------------------
-let NERDTreeIgnore=['\.pyc$', '\~$', '\.meta']
-let NERDTreeShowHidden = 1
-let NERDTreeDirArrows = 1
-let NERDTreeHijackNetrw = 1
+" @3. NERDTRee ----------------------------------------------------
+let g:NERDTreeChDirMode=2
+let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
+let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeHijackNetrw = 1
 let g:NERDTreeWinSize=40
-let NERDTreeMapOpenInTab='\r'
-"map <C-t> :NERDTreeToggle<CR>
+let g:NERDTreeMapOpenInTab='\r'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 
 autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -342,14 +352,25 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHightlightFullName = 1
 
-" @5. Fzf.vim -----------------------------------------------
+" @4. Fzf.vim -----------------------------------------------
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
+let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
+
+" The Silver Searcher
+if executable('ag')
+  let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore-dir .git --ignore-dir node_modules -g ""'
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
+
 nnoremap <C-p> :Files<CR>
+cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>h :History<CR>
 nnoremap <Leader>t :BTags<CR>
 nnoremap <Leader>T :Tags<CR>
 
-" @6. Tags -------------------------------------------------
+" @5. Tags -------------------------------------------------
 let g:gutentags_add_default_project_roots = 0
 let g:gutentags_project_root = ['package.json', '.git']
 let g:gutentags_cache_dir = expand('~/.cache/vim/ctags/')
@@ -411,21 +432,23 @@ let g:gutentags_ctags_exclude = [
 
 command! -nargs=0 GutentagsClearCache call system('rm ' . g:gutentags_cache_dir . '/*')
 
-" @7. Ultisnips -------------------------------------------------
+" @6. Ultisnips -------------------------------------------------
 let g:UltiSnipsExpandTrigger = '<C-z>'
 let g:UltiSnipsJumpForwardTrigger = '<C-z>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-b>'
 
-" @8. VeBugger --------------------------------------------------
+" @7. VeBugger --------------------------------------------------
 
 
-" @9. Vim-session
+" @8. Vim-session
 nnoremap <leader>so :OpenSession<Space>
 nnoremap <leader>ss :SaveSession<Space>
 nnoremap <leader>sd :DeleteSession<CR>
 nnoremap <leader>sc :CloseSession<CR>
 
+let g:session_directory = "~/.config/nvim/sessions"
 let g:session_autosave = 'no'
+let g:session_autoload = 'no'
 
 " @0.1. Emmet ---------------------------------------------------
 let g:user_emmet_install_global = 0
@@ -435,11 +458,22 @@ let g:user_emmet_leader_key=','
 
 " @0.2. Vim-javascript ------------------------------------------
 let g:javascript_plugin_jsdoc = 1
+let g:javascript_enable_domhtmlcss = 1
 
 " @0.3. Markdown ------------------------------------------------
 " Markdown-preview
 let g:mkdp_browser = 'firefox'
 let g:mkdp_auto_closer = 0
+
+" @0.4. Indentline ----------------------------------------------
+let g:indentLine_enabled = 1
+" let g:indentLine_setColors = 0
+let g:indentLine_color_term = 239
+let g:indentLine_concealcursor = 0
+let g:indentLine_char = '┆' 
+let g:indentLine_faster = 1
+set conceallevel=1
+let g:indentLine_conceallevel = 1
 
 " @0.0. Uncategorized -------------------------------------------
 " Tab completion
@@ -457,4 +491,8 @@ endfunction
 " Git-fugitive -----------------------------------------------
 nmap <leader>gs :vertical Gstatus<cr>gg<C-n>
 nmap <leader>gd :vertical Gdiff<CR>
+
+" Polyglot ---------------------------------------------------
+let g:polyglot_disabled = ['python']
+let python_highlight_all = 1
 
