@@ -11,8 +11,6 @@ export ZSH="/home/ichirou2910/.oh-my-zsh"
 
 source $HOME/.local/bin/virtualenvwrapper.sh
 
-export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
-
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 
 # For Unity-devs' sake
@@ -123,11 +121,11 @@ SPACESHIP_USER_SHOW=always
 SPACESHIP_USER_COLOR=yellow
 SPACESHIP_USER_COLOR_ROOT=red
 SPACESHIP_DIR_COLOR=blue
-SPACESHIP_CHAR_SYMBOL=└►
-# SPACESHIP_CHAR_SYMBOL=╰►
+# SPACESHIP_CHAR_SYMBOL=└►
+SPACESHIP_CHAR_SYMBOL=╰►
 SPACESHIP_CHAR_COLOR_SUCCESS=cyan
 SPACESHIP_CHAR_SUFFIX=" "
-SPACESHIP_EXEC_TIME_COLOR=green
+SPACESHIP_EXEC_TIME_COLOR=magenta
 SPACESHIP_PROMPT_ORDER=(
 	user
 	dir
@@ -143,7 +141,7 @@ SPACESHIP_PROMPT_ORDER=(
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#export TERM=xterm-256color-italic
+export TERM=xterm
 
 # Vi mode
 bindkey -v
