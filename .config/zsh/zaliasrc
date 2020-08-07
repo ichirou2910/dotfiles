@@ -49,6 +49,7 @@ alias \
 alias \
     ka="killall" \
     upgr="yay -Syu" \
+    se="sudo -e" \
     tas="tmux attach-session" \
     ta="tmux attach || tmux new-session" \
     td="tmux detach" \
@@ -58,5 +59,4 @@ alias \
     mntu="mount-drive --unmount-drive" \
     mntU="mount-drive --unmount-media"
 
-alias mutt="TERM=xterm-256color neomutt"
 alias yuzu="__GL_THREADED_OPTIMIZATIONS=1 gamemoderun mangohud /opt/yuzu/yuzu"

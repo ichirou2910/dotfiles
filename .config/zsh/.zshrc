@@ -1,11 +1,3 @@
-# echo -e "********************************************"
-# echo -e "*                                          *"
-echo -e "Hello \033[1mIchirou Keita\033[0m, have a nice day ~~~"
-# echo -e "*                                          *"
-# echo -e "********************************************"
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="/home/ichirou2910/.oh-my-zsh"
 
@@ -117,36 +109,30 @@ source $ZSH/oh-my-zsh.sh
 _comp_options+=(globdots)		# Include hidden files.
 
 #autoload -U promptinit; promptinit
+autoload -Uz compinit
+
+for dump in ~/.config/zsh/.zcompdump(N.mh+24); do
+    compinit
+done
+
+compinit -C
 #prompt spaceship
 SPACESHIP_USER_SHOW=always
 SPACESHIP_USER_COLOR=yellow
 SPACESHIP_USER_COLOR_ROOT=red
 SPACESHIP_DIR_COLOR=blue
-# SPACESHIP_CHAR_SYMBOL=└►
-SPACESHIP_CHAR_SYMBOL=╰►
 SPACESHIP_CHAR_COLOR_SUCCESS=cyan
-SPACESHIP_CHAR_SUFFIX=" "
+SPACESHIP_CHAR_SUFFIX="  "
+SPACESHIP_CHAR_SYMBOL="▶"
+SPACESHIP_VI_MODE_SUFFIX=""
+SPACESHIP_JOBS_PREFIX=" "
+SPACESHIP_JOBS_SUFFIX=" "
+SPACESHIP_JOBS_AMOUNT_PREFIX=" "
 SPACESHIP_EXEC_TIME_COLOR=magenta
-SPACESHIP_PROMPT_ORDER=(
-	user
-	dir
-	host
-	git
-    package
-    node
-    venv
-    exec_time
-	line_sep
-	char
-)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export TERM=xterm
-
-# Vi mode
-bindkey -v
-export KEYTIMEOUT=1
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
@@ -166,6 +152,8 @@ function zle-keymap-select {
        [[ $1 = 'beam' ]]; then
     echo -ne '\e[5 q'
   fi
+  zle reset-prompt
+  zle -R
 }
 zle -N zle-keymap-select
 zle-line-init() {
@@ -175,6 +163,10 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+# Vi mode
+bindkey -v
+export KEYTIMEOUT=1
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
