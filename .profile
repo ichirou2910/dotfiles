@@ -17,7 +17,6 @@ export APPLAUNCHER="rofi"
 export ZDOTDIR="$HOME/.config/zsh"
 export SCREENSHOTDIR="$HOME/Pictures/Screenshots"
 export BG_NOTES="$HOME/.config/wallpaper/notes.txt"
-export BARRIER_CFG="$HOME/.config/barrier.sgc"
 
 # PATH
 export JAVA_HOME=/usr/lib/jvm/jdk-11.0.4
