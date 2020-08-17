@@ -30,15 +30,16 @@ Plugin 'honza/vim-snippets'
 
 " Visual theme
 Plugin 'drewtempelmeyer/palenight.vim'
+Plugin 'mhartington/oceanic-next'
 
 " Visual status line
 Plugin 'itchyny/lightline.vim'
-Plugin 'ryanoasis/vim-devicons'
 
 " File handlers
-Plugin 'scrooloose/nerdtree' " file viewer
+Plugin 'preservim/nerdtree' | " file viewer
+    Plugin 'Xuyuanp/nerdtree-git-plugin' |
+    Plugin 'ryanoasis/vim-devicons'
 Plugin 'jistr/vim-nerdtree-tabs' " make nerd tree feel like a panel
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight' " Syntax highlighting for nerd tree
 
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -62,9 +63,12 @@ Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'Shougo/vimproc.vim'
 Plugin 'idanarye/vim-vebugger'
 
-"" Vim-Session
+" Vim-Session
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
+
+" Tmux
+Plugin 'christoomey/vim-tmux-navigator'
 
 " Python
 Plugin 'vim-scripts/indentpython.vim' " Python indentation
@@ -82,7 +86,8 @@ Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'tweekmonster/django-plus.vim' " Syntax highlighting for django html
 
 " Javascript
-Plugin 'jelera/vim-javascript-syntax'
+Plugin 'othree/yajs.vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
 
 " Easy good-looking code
 Plugin 'sheerun/vim-polyglot' " Support multiple languages
@@ -99,6 +104,7 @@ Plugin 'iamcco/markdown-preview.nvim', {'do' : 'cd app && yarn install'}
 
 " Other
 Plugin 'Yggdroot/indentLine'
+Plugin 'raghur/vim-ghost', {'do': ':GhostInstall'}
 
 call vundle#end()
 
@@ -120,10 +126,14 @@ vnoremap <C-n> <Esc>:nohl<CR>
 inoremap <C-n> <Esc>:nohl<CR>
 
 " bind Ctrl + movement kets to move around the windows, instead of using Ctrl+w+movement
-nnoremap <A-j> <C-W><C-J>
-nnoremap <A-k> <C-W><C-K>
-nnoremap <A-l> <C-W><C-L>
-nnoremap <A-h> <C-W><C-H>
+" nnoremap <A-j> <C-W><C-J>
+" nnoremap <A-k> <C-W><C-K>
+" nnoremap <A-l> <C-W><C-L>
+" nnoremap <A-h> <C-W><C-H>
+nnoremap <C-j> <C-W><C-J>
+nnoremap <C-k> <C-W><C-K>
+nnoremap <C-l> <C-W><C-L>
+nnoremap <C-h> <C-W><C-H>
 
 " Insert only a character without switching to insert mode
 nnoremap <Space> i_<Esc>r
@@ -203,14 +213,28 @@ filetype plugin on
 syntax enable
 
 " Enable true color support
+" if &term =~# '256color' && ( &term =~# '^screen'  || &term =~# '^tmux' )
 if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
 endif
 " Disable background highlight to use terminal's BG
-colorscheme palenight
-hi Normal guibg=None
+" colorscheme palenight
+let g:oceanic_next_terminal_italic = 1
+let g:oceanic_next_terminal_bold = 1
+colorscheme OceanicNext
+hi! Normal ctermbg=None guibg=None
+hi! NonText ctermbg=None guibg=None
+hi! VertSplit ctermbg=NONE ctermfg=NONE guibg=#18ace5 guifg=#000000
+hi! Comment cterm=italic ctermbg=NONE guibg=NONE
+hi! LineNr guibg=NONE
+hi! CursorLineNr ctermbg=236 ctermfg=NONE guibg=#303030
+hi! CursorLine ctermbg=236 ctermfg=NONE guibg=#303030
+hi! SignColumn ctermbg=NONE guibg=NONE
+hi! Folded ctermbg=NONE guibg=NONE
+hi! EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=NONE guifg=#080808
+hi! WildMenu ctermfg=226 ctermbg=0 guifg=#ffff00 guibg=#000000
 
 " Show line numbers and length
 set rnu
@@ -250,7 +274,9 @@ au TermOpen * setlocal nonumber norelativenumber
 
 " Single-file coding stuff
 autocmd filetype c nnoremap <F9> :w <bar> !gcc -Wall -Wextra -O2 % -o %:r -Wl,--stack,268435456<CR>
-autocmd filetype c nnoremap <F10> :!./%:r<CR>
+autocmd filetype c nnoremap <F10> :!alacritty -e ./%:r<CR>
+autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++14 % -o %:r -Wl,--stack,268435456<CR>
+autocmd filetype cpp nnoremap <F10> :!alacritty -e ./%:r<CR>
 
 " PLUGINS CONFIGURATION =======================================================
 
@@ -274,6 +300,9 @@ nmap <silent> <leader>dr :vs<CR><Plug>(coc-references)
 nmap <silent> <leader>di :vs<CR><Plug>(coc-implementation)
 
 nmap <leader>rn <Plug>(coc-rename)
+
+nmap <leader>ca <Plug>(coc-codeaction)
+nmap <leader>qf <Plug>(coc-fix-current)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -344,6 +373,7 @@ autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | q | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd BufWritePost * NERDTreeFocus | execute 'normal R' | wincmd p
 nmap <A-e> :NERDTreeFocus<cr>R<C-W><C-P><CR>
 map <C-e> :NERDTreeTabsToggle<CR>
 
@@ -452,13 +482,14 @@ let g:session_autoload = 'no'
 
 " @0.1. Emmet ---------------------------------------------------
 let g:user_emmet_install_global = 0
-autocmd FileType html,htmldjango,css,jst EmmetInstall
+autocmd FileType html,htmldjango,css,jst,javascript,jsx EmmetInstall
 let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.config/nvim/emmet_snippets.json')), "\n"))
 let g:user_emmet_leader_key=','
 
 " @0.2. Vim-javascript ------------------------------------------
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_enable_domhtmlcss = 1
+" let g:javascript_plugin_jsdoc = 1
+" let g:javascript_enable_domhtmlcss = 1
+let g:used_javascript_libs = 'jquery,react,vue'
 
 " @0.3. Markdown ------------------------------------------------
 " Markdown-preview
@@ -493,6 +524,54 @@ nmap <leader>gs :vertical Gstatus<cr>gg<C-n>
 nmap <leader>gd :vertical Gdiff<CR>
 
 " Polyglot ---------------------------------------------------
-let g:polyglot_disabled = ['python']
+let g:polyglot_disabled = ['python', 'javascript']
 let python_highlight_all = 1
 
+" Ibus settings
+function! IBusOff()
+    " Save current engine
+    let g:ibus_prev_engine = system('ibus engine')
+    " Change to English engine
+    execute 'silent !ibus engine xkb:us::eng'
+endfunction
+function! IBusOn()
+    let l:current_engine = system('ibus engine')
+    " If change engine in Normal mode, use it
+    if l:current_engine !~? 'xkb:us::eng'
+        let g:ibus_prev_engine = l:current_engine
+    endif
+    " Restore engine
+    execute 'silent !' . 'ibus engine ' . g:ibus_prev_engine
+endfunction
+augroup IBusHandler
+    autocmd CmdLineEnter [/?] call IBusOn()
+    autocmd CmdLineLeave [/?] call IBusOff()
+    autocmd InsertEnter * call IBusOn()
+    autocmd InsertLeave * call IBusOff()
+augroup END
+call IBusOff()
+
+" Vim Devicons
+let g:webdevicons_conceal_nerdtree_brackets = 0
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {} " needed
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['node_modules'] = ''
+if exists('g:loaded_webdevicons')
+    call webdevicons#refresh()
+endif
+
+" NERDTree Git Plugin
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'!',
+                \ 'Staged'    :'+',
+                \ 'Untracked' :'?',
+                \ 'Renamed'   :'»',
+                \ 'Unmerged'  :'═',
+                \ 'Deleted'   :'✕',
+                \ 'Dirty'     :'X',
+                \ 'Ignored'   :'/',
+                \ 'Clean'     :'✓',
+                \ 'Unknown'   :'?',
+                \ }
