@@ -1,16 +1,22 @@
 {
-    "jst": {
-        "filters": "jst",
-        "profile": "jst",
-        "snippets": {
-            "jst": "<%= | %>"
-        }
-    },
-    "htmldjango": {
-        "filters": "htmldjango",
-        "profile": "htmldjango",
-        "snippets": {
-            "djt": "{% | %}"
-        }
-    }
+	"javascript": {
+		"extends": "jsx"
+	},
+	"jst": {
+		"extends": "html",
+		"filters": "jst",
+		"profile": "jst",
+		"snippets": {
+			"jst": "<%= | %>"
+		}
+	},
+	"htmldjango": {
+		"extends": "html",
+		"filters": "htmldjango",
+		"profile": "htmldjango",
+		"snippets": {
+			"djt": "{% | %}"
+		}
+	}
 }
+
