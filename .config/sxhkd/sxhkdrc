@@ -4,7 +4,7 @@
 super + Return						
 	$TERMINAL
 super + i								
-    file-manager
+    $TERMINAL -e $FILE
 super + e							
 	$TERMINAL -e neomutt
 super + w					
