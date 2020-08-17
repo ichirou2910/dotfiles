@@ -58,5 +58,3 @@ alias \
     mntl="mount-drive --list" \
     mntu="mount-drive --unmount-drive" \
     mntU="mount-drive --unmount-media"
-
-alias yuzu="__GL_THREADED_OPTIMIZATIONS=1 gamemoderun mangohud /opt/yuzu/yuzu"

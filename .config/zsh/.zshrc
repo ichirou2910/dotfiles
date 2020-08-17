@@ -132,7 +132,7 @@ SPACESHIP_EXEC_TIME_COLOR=magenta
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export TERM=xterm
+export TERM=xterm-256color
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
