@@ -4,7 +4,7 @@
 super + Return						
 	$TERMINAL
 super + i								
-    $TERMINAL -e $FILE
+    $TERMINAL --title "Ranger" -e $FILE
 super + e							
 	$TERMINAL -e neomutt
 super + w					
