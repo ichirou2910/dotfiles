@@ -25,7 +25,10 @@ sxhkd -m 1 &
 redshift-gtk &
 picom --config ~/.config/picom/picom.conf &
 setxkbmap -option caps:swapescape
+pulseeffects --gapplication-service &
 notify-send -i $HOME/.config/home/icons/Ichirou2910.jpg -a  "Welcome" "Have a nice day, Ichirou Keita!"
+
+(time /bin/zsh -i -c exit) &> zsh_startup.txt 2>&1
 
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
