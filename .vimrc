@@ -45,19 +45,28 @@ Plugin 'tiagofumo/vim-nerdtree-syntax-highlight' " Syntax highlighting for nerd 
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 
-" Ssg Vim extension lord
+" SSG LORD TPOPE!!!!
 Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround' " Handle pairs
+Plugin 'tpope/vim-repeat' " Enhance dot commands
+Plugin 'tpope/vim-commentary' " Code comments
+
+" Git
+Plugin 'junegunn/gv.vim'
 
 " Tags
 " Plugin 'universal-ctags/ctags'
 " Plugin 'ludovicchabant/vim-gutentags'
-
-" Git
-Plugin 'tpope/vim-fugitive'
-Plugin 'junegunn/gv.vim'
+Plugin 'majutsushi/tagbar'
 
 " Language support
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Code formatter
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+Plugin 'google/vim-glaive'
 
 " Debugger
 Plugin 'Shougo/vimproc.vim'
@@ -73,8 +82,9 @@ Plugin 'christoomey/vim-tmux-navigator'
 " Python
 Plugin 'vim-scripts/indentpython.vim' " Python indentation
 
-" C
+" C, C++
 Plugin 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " HTML
 Plugin 'mattn/webapi-vim'
@@ -89,15 +99,17 @@ Plugin 'tweekmonster/django-plus.vim' " Syntax highlighting for django html
 Plugin 'othree/yajs.vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 
+" PHP
+Plugin 'arnaud-lb/vim-php-namespace'
+
+" Databases
+Plugin 'tpope/vim-dadbod'
+Plugin 'kristijanhusak/vim-dadbod-ui'
+
 " Easy good-looking code
 Plugin 'sheerun/vim-polyglot' " Support multiple languages
 Plugin 'jiangmiao/auto-pairs' " Auto close
-Plugin 'tpope/vim-surround' " Handle pairs
-Plugin 'tpope/vim-repeat' " Enhance dot commands
-Plugin 'tpope/vim-commentary' " Code comments
 Plugin 'nvie/vim-flake8' " Python PEP8 antidote
-
-" Plugin 'digitaltoad/vim-pug' " HTML syntax hightlight
 
 " Note taking
 Plugin 'iamcco/markdown-preview.nvim', {'do' : 'cd app && yarn install'}
@@ -105,8 +117,10 @@ Plugin 'iamcco/markdown-preview.nvim', {'do' : 'cd app && yarn install'}
 " Other
 Plugin 'Yggdroot/indentLine'
 Plugin 'raghur/vim-ghost', {'do': ':GhostInstall'}
+Plugin 'moll/vim-bbye'
 
 call vundle#end()
+call glaive#Install()
 
 " BASIC CONFIGURATION ========================================================
 "
@@ -114,7 +128,7 @@ call vundle#end()
 let mapleader = ","
 
 " Auto reload vimrc when saved
-autocmd! bufwritepost .vimrc source %
+autocmd! bufwritepost .vimrc ++nested source %
 
 " Enable swap files
 set swapfile
@@ -126,10 +140,6 @@ vnoremap <C-n> <Esc>:nohl<CR>
 inoremap <C-n> <Esc>:nohl<CR>
 
 " bind Ctrl + movement kets to move around the windows, instead of using Ctrl+w+movement
-" nnoremap <A-j> <C-W><C-J>
-" nnoremap <A-k> <C-W><C-K>
-" nnoremap <A-l> <C-W><C-L>
-" nnoremap <A-h> <C-W><C-H>
 nnoremap <C-j> <C-W><C-J>
 nnoremap <C-k> <C-W><C-K>
 nnoremap <C-l> <C-W><C-L>
@@ -152,6 +162,10 @@ noremap <C-t> :tabnew<CR>
 inoremap <C-d> <Esc>:tabnext<CR>
 inoremap <C-s> <Esc>:tabprevious<CR>
 inoremap <C-t> <Esc>:tabnew<CR>
+
+" Buffers movement
+nnoremap <leader>] :bn<CR>
+nnoremap <leader>[ :bp<CR>
 
 " Search for visually selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
@@ -202,6 +216,7 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+" display matched at the middle of the screen
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
@@ -213,7 +228,6 @@ filetype plugin on
 syntax enable
 
 " Enable true color support
-" if &term =~# '256color' && ( &term =~# '^screen'  || &term =~# '^tmux' )
 if exists('+termguicolors')
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -226,7 +240,7 @@ let g:oceanic_next_terminal_bold = 1
 colorscheme OceanicNext
 hi! Normal ctermbg=None guibg=None
 hi! NonText ctermbg=None guibg=None
-hi! VertSplit ctermbg=NONE ctermfg=NONE guibg=#18ace5 guifg=#000000
+hi! VertSplit ctermbg=NONE ctermfg=NONE guibg=#00afff guifg=#000000
 hi! Comment cterm=italic ctermbg=NONE guibg=NONE
 hi! LineNr guibg=NONE
 hi! CursorLineNr ctermbg=236 ctermfg=NONE guibg=#303030
@@ -242,10 +256,12 @@ set number
 set nowrap
 
 " C indentation
-au BufNewFile,BufRead *.c,*.cpp
+au BufNewFile,BufRead *.c,*.cpp,*.h,*.hpp,*.php
     \ set tabstop=4 |
+    \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    \ set expandtab |
+    \ set noexpandtab |
+    \ set colorcolumn=110 |
 
 " Python indentation
 au BufNewFile,BufRead *.py
@@ -266,17 +282,16 @@ au BufNewFile,BufRead *.html,*.css,*.js,*.json
 au BufWinEnter * normal zR
 
 " Terminal
-command! -nargs=* T split | terminal <args>
-command! -nargs=* VT vsplit | terminal <args>
-tnoremap <Esc> <C-\><C-n>
-noremap <A-t> :vsplit +terminal<CR>
-au TermOpen * setlocal nonumber norelativenumber
+if has("nvim")
+    au TermOpen * tnoremap <buffer> <Esc> <C-\><C-n>
+    au FileType fzf tunmap <buffer> <Esc>
+endif
 
 " Single-file coding stuff
-autocmd filetype c nnoremap <F9> :w <bar> !gcc -Wall -Wextra -O2 % -o %:r -Wl,--stack,268435456<CR>
-autocmd filetype c nnoremap <F10> :!alacritty -e ./%:r<CR>
-autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++14 % -o %:r -Wl,--stack,268435456<CR>
-autocmd filetype cpp nnoremap <F10> :!alacritty -e ./%:r<CR>
+" autocmd filetype c nnoremap <F9> :w <bar> !gcc -Wall -Wextra -O2 % -o %:r -Wl,--stack,268435456<CR>
+" autocmd filetype c nnoremap <F10> :!alacritty -e ./%:r<CR>
+" autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++14 % -o %:r -Wl,--stack,268435456<CR>
+" autocmd filetype cpp nnoremap <F10> :!alacritty -e ./%:r<CR>
 
 " PLUGINS CONFIGURATION =======================================================
 
@@ -319,35 +334,51 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " @2. Lightline -------------------------------------------------
+set noshowmode
 highlight clear CursorLine " Removes the underline causes by enabling cursorline
 let g:lightline = {
-  \ 'colorscheme': 'palenight',
+  \ 'colorscheme': 'selenized_black',
   \   'active': {
-  \     'left':[ [ 'mode', 'paste' ],
-  \              [ 'gitbranch', 'readonly', 'filename', 'modified', 'cocstatus' ]
+  \     'left': [ [ 'mode', 'paste' ],
+  \               [ 'fugitive', 'readonly', 'filename', 'modified', 'tagbar' ]
   \     ]
   \   },
-	\   'component': {
-	\     'lineinfo': ' %3l:%-2v',
-	\   },
+  \   'tabline': {
+  \     'left': [ ['tabs'] ],
+  \     'right': [ [ 'close' ] ]
+  \   },
+  \   'component': {
+  \     'lineinfo': '%3l:%-2v',
+  \     'tagbar': '%{tagbar#currenttag(" %s", "")}',
+  \   },
   \   'component_function': {
-  \     'gitbranch': 'fugitive#head',
+  \     'fugitive': 'LightlineFugitive',
   \     'cocstatus': 'coc#status',
   \     'filename': 'LightlineFilename',
-  \   }
+  \   },
   \ }
+" let g:lightline.separator = {
+" 	\   'left': '', 'right': ''
+"   \}
+" let g:lightline.subseparator = {
+" 	\   'left': '', 'right': '' 
+"   \}
 let g:lightline.separator = {
-	\   'left': '', 'right': ''
+	\   'left': ' ', 'right': ' '
   \}
 let g:lightline.subseparator = {
-	\   'left': '', 'right': '' 
+	\   'left': '|', 'right': '|' 
   \}
-let g:lightline.tabline = {
-  \   'left': [ ['tabs'] ],
-  \   'right': [ ['close'] ]
-  \ }
 set showtabline=2  " Show tabline
 set guioptions-=e  " Don't use GUI tabline
+
+function! LightlineFugitive() 
+ 	if exists('*FugitiveHead') 
+ 		let branch = FugitiveHead() 
+ 		return branch !=# '' ? ' '.branch : '' 
+ 	endif 
+	return '' 
+endfunction
 
 function! LightlineFilename()
     let root = fnamemodify(get(b:, 'git_dir'), ':h')
@@ -358,29 +389,58 @@ function! LightlineFilename()
     return expand('%')
 endfunction
 
+" function! LightlineTabname(n) abort
+"   let bufnr = tabpagebuflist(a:n)[tabpagewinnr(a:n) - 1]
+"   let fname = expand('#' . bufnr . ':t')
+"   return fname =~ '__Tagbar__' ? 'Tagbar' :
+"         \ fname =~ 'NERD_tree' ? 'NERDTree' : 
+"         \ ('' != fname ? fname : '[No Name]')
+" endfunction
+
 " @3. NERDTRee ----------------------------------------------------
 let g:NERDTreeChDirMode=2
-let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
+let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__', '^node_modules']
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeDirArrows = 1
-let g:NERDTreeHijackNetrw = 1
+let g:NERDTreeHijackNetrw = 0
 let g:NERDTreeWinSize=40
 let g:NERDTreeMapOpenInTab='\r'
+" let g:NERDTreeCustomOpenArgs = {'file':{'where':'t'}}
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 
 autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | q | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-autocmd BufWritePost * NERDTreeFocus | execute 'normal R' | wincmd p
+" Refresh NERDTree on write event ONLY when NERDTree is opened
+autocmd BufWritePost * if exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1 | NERDTreeFocus | execute 'normal R' | wincmd p | endif
 nmap <A-e> :NERDTreeFocus<cr>R<C-W><C-P><CR>
 map <C-e> :NERDTreeTabsToggle<CR>
+
+" Prevent opening files on NERDTree window
+autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
 
 " Nerd tree highlighting
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHightlightFullName = 1
+
+" Check if NERDTree is open or active
+function! IsNERDTreeOpen()
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+function! SyncTree()
+  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+" Highlight currently open buffer in NERDTree
+autocmd BufRead * call SyncTree()
 
 " @4. Fzf.vim -----------------------------------------------
 set wildmode=list:longest,list:full
@@ -393,6 +453,13 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 endif
 
+" ripgrep
+if executable('rg')
+  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+  set grepprg=rg\ --vimgrep
+  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+endif
+
 nnoremap <C-p> :Files<CR>
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <Leader>b :Buffers<CR>
@@ -401,6 +468,7 @@ nnoremap <Leader>t :BTags<CR>
 nnoremap <Leader>T :Tags<CR>
 
 " @5. Tags -------------------------------------------------
+nmap <F8> :TagbarToggle<CR>
 let g:gutentags_add_default_project_roots = 0
 let g:gutentags_project_root = ['package.json', '.git']
 let g:gutentags_cache_dir = expand('~/.cache/vim/ctags/')
@@ -482,13 +550,11 @@ let g:session_autoload = 'no'
 
 " @0.1. Emmet ---------------------------------------------------
 let g:user_emmet_install_global = 0
-autocmd FileType html,htmldjango,css,jst,javascript,jsx EmmetInstall
+autocmd FileType html,php,htmldjango,css,jst,javascript,javascriptreact EmmetInstall
 let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.config/nvim/emmet_snippets.json')), "\n"))
 let g:user_emmet_leader_key=','
 
 " @0.2. Vim-javascript ------------------------------------------
-" let g:javascript_plugin_jsdoc = 1
-" let g:javascript_enable_domhtmlcss = 1
 let g:used_javascript_libs = 'jquery,react,vue'
 
 " @0.3. Markdown ------------------------------------------------
@@ -498,7 +564,6 @@ let g:mkdp_auto_closer = 0
 
 " @0.4. Indentline ----------------------------------------------
 let g:indentLine_enabled = 1
-" let g:indentLine_setColors = 0
 let g:indentLine_color_term = 239
 let g:indentLine_concealcursor = 0
 let g:indentLine_char = '┆' 
@@ -522,6 +587,7 @@ endfunction
 " Git-fugitive -----------------------------------------------
 nmap <leader>gs :vertical Gstatus<cr>gg<C-n>
 nmap <leader>gd :vertical Gdiff<CR>
+nmap <leader>gm :Gcommit<CR>
 
 " Polyglot ---------------------------------------------------
 let g:polyglot_disabled = ['python', 'javascript']
@@ -536,7 +602,7 @@ function! IBusOff()
 endfunction
 function! IBusOn()
     let l:current_engine = system('ibus engine')
-    " If change engine in Normal mode, use it
+    " If engine was changed in Normal mode, use it instead
     if l:current_engine !~? 'xkb:us::eng'
         let g:ibus_prev_engine = l:current_engine
     endif
@@ -558,6 +624,7 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {} " needed
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['node_modules'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.git'] = ''
 if exists('g:loaded_webdevicons')
     call webdevicons#refresh()
 endif
@@ -575,3 +642,37 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Clean'     :'✓',
                 \ 'Unknown'   :'?',
                 \ }
+
+" Vim Bbye
+nmap <leader>q :Bdelete<CR>
+
+" C.vim
+let g:C_Ctrl_j = 'off' 
+
+" vim-codefmt
+augroup autoformat_settings
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cpp,proto,arduino AutoFormatBuffer clang-format
+  autocmd FileType dart AutoFormatBuffer dartfmt
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType gn AutoFormatBuffer gn
+  " autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType python AutoFormatBuffer yapf
+  " Alternative: autocmd FileType python AutoFormatBuffer autopep8
+  autocmd FileType rust AutoFormatBuffer rustfmt
+  autocmd FileType vue AutoFormatBuffer prettier
+augroup END
+
+" vim c++ highlight
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+let g:cpp_experimental_template_highlight = 1
+let g:cpp_concepts_highlight = 1
+
+" vim-dadbod-ui
+let g:db_ui_execute_on_save = 0
+" let g:db_ui_tmp_query_location = '~/dbui'
+let g:db_ui_debug = 1
