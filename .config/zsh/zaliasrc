@@ -33,7 +33,7 @@ alias \
     cfz="nvim ~/.config/zsh/.zshrc" \
     cfza="nvim ~/.config/zsh/zaliasrc" \
     cfv="nvim ~/.vimrc" \
-    cft="nvim ~/.tmux.conf" \
+    cft="nvim ~/.tmux.conf.local" \
     cfa="nvim ~/.config/awesome/rc.lua" \
     cfr="nvim ~/.config/ranger/rc.conf" \
     cfs="nvim ~/.config/sxhkd/sxhkdrc" \
@@ -44,10 +44,14 @@ alias \
 # Common apps
 alias \
     rg="ranger" \
+    dbui="nvim -c DBUI" \
+    pj="tmux-vim" \
 
 # Common commands
 alias \
+    q="exit"\
     ka="killall" \
+    yt="youtube-dl" \
     upgr="yay -Syu" \
     se="sudo -e" \
     tas="tmux attach-session" \

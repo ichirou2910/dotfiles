@@ -1,0 +1,10 @@
+#!/bin/sh
+
+DIR=${PWD}/$1
+NAME=${DIR##*/}
+
+cd ${DIR}
+tmux new-session -d -s $NAME 'nvim'
+tmux split-window -v
+tmux select-pane -U
+tmux attach-session -t $NAME
