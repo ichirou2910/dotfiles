@@ -32,7 +32,7 @@ alias \
 alias \
     cfz="nvim ~/.config/zsh/.zshrc" \
     cfza="nvim ~/.config/zsh/zaliasrc" \
-    cfv="nvim ~/.vimrc" \
+    cfv="nvim ~/.config/nvim/init.vim" \
     cft="nvim ~/.tmux.conf.local" \
     cfa="nvim ~/.config/awesome/rc.lua" \
     cfr="nvim ~/.config/ranger/rc.conf" \

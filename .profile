@@ -1,6 +1,4 @@
 # Session
-export WM="awesome"
-
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':')"
 
 # Default programs
