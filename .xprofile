@@ -5,10 +5,10 @@ export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 
 #If running in PC
-if [[ $(< /etc/hostname) == 'ArchLinux-PC' ]]; then
-    xrandr --output HDMI-1-1 --auto --right-of HDMI-0
+# if [[ $(< /etc/hostname) == 'ArchLinux-PC' ]]; then
+#     xrandr --output HDMI-1-1 --auto --right-of HDMI-0
 #If running in laptop
-elif [[ $(< /etc/hostname) == 'IK-arch' ]]; then
+if [[ $(< /etc/hostname) == 'IK-arch' ]]; then
     # setup screens
     xrandr --setprovideroutputsource modesetting NVIDIA -0
     xrandr --auto
@@ -16,20 +16,9 @@ elif [[ $(< /etc/hostname) == 'IK-arch' ]]; then
     optimus-manager-qt &
 fi
 
-xset s off -dpms
 ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3
-python3 ~/.config/wallpaper/walltext.py &
-dunst &
-~/.fehbg &
 sxhkd -m 1 &
-redshift-gtk &
-picom --config ~/.config/picom/picom.conf &
 setxkbmap -option caps:swapescape
 pulseeffects --gapplication-service &
-notify-send -i $HOME/.config/home/icons/Ichirou2910.jpg -a  "Welcome" "Have a nice day, Ichirou Keita!"
 
 (time /bin/zsh -i -c exit) &> zsh_startup.txt 2>&1
-
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
-dbus-update-activation-environment --systemd DISPLAY
