@@ -1,13 +1,11 @@
 " LIST OF CONFIGURED EXTENSIONS ==============================================
 " Quick jump: @ + index
 " 1. Coc.nvim
-" 2. Lightline
+" 2. Airline
 " 3. NERDTRee
 " 4. Fzf-vim
 " 5. Tags
-" 6. Ultisnips
-" 7. VeBugger
-" 8. Vim-session
+" 6. Vim-session
 " --------
 " 0.1 Emmet (HTML)
 " 0.2 vim-javascript (JS)
@@ -21,14 +19,12 @@ let &packpath = &runtimepath
 set nocompatible
 
 set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=~/.vim/plugged/lightline.vim
 call vundle#begin('~/.vim/plugged/vundle')
 
 " PLUGINS LIST ===============================================================
 Plugin 'VundleVim/Vundle.vim'
 
 " Snippets
-Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
 " Visual theme
@@ -36,12 +32,13 @@ Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'mhartington/oceanic-next'
 
 " Visual status line
-Plugin 'itchyny/lightline.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " File handlers
 Plugin 'preservim/nerdtree' | " file viewer
-    Plugin 'Xuyuanp/nerdtree-git-plugin' |
-    Plugin 'ryanoasis/vim-devicons'
+	Plugin 'Xuyuanp/nerdtree-git-plugin' |
+	Plugin 'ryanoasis/vim-devicons'
 Plugin 'jistr/vim-nerdtree-tabs' " make nerd tree feel like a panel
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight' " Syntax highlighting for nerd tree
 
@@ -59,8 +56,6 @@ Plugin 'tpope/vim-commentary' " Code comments
 Plugin 'junegunn/gv.vim'
 
 " Tags
-" Plugin 'universal-ctags/ctags'
-" Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'majutsushi/tagbar'
 
 " Language support
@@ -92,15 +87,17 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 " HTML
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/emmet-vim'
-Plugin 'ap/vim-css-color'
 Plugin 'tpope/vim-haml'
 Plugin 'hail2u/vim-css3-syntax'
-Plugin 'gorodinskiy/vim-coloresque'
+Plugin 'gko/vim-coloresque'
 Plugin 'tweekmonster/django-plus.vim' " Syntax highlighting for django html
 
 " Javascript
 Plugin 'othree/yajs.vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
+
+" Dart
+Plugin 'dart-lang/dart-vim-plugin'
 
 " PHP
 Plugin 'arnaud-lb/vim-php-namespace'
@@ -232,12 +229,12 @@ syntax enable
 
 " Enable true color support
 if exists('+termguicolors')
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    set termguicolors
+	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+	set termguicolors
 endif
-" Disable background highlight to use terminal's BG
-" colorscheme palenight
+
+" Colorscheme
 let g:oceanic_next_terminal_italic = 1
 let g:oceanic_next_terminal_bold = 1
 colorscheme OceanicNext
@@ -258,36 +255,45 @@ set rnu
 set number
 set nowrap
 
+au FileType vim
+	\ set tabstop=2 |
+	\ set softtabstop=2 |
+	\ set shiftwidth=2 |
+	\ set noexpandtab |
+
 " C indentation
 au BufNewFile,BufRead *.c,*.cpp,*.h,*.hpp,*.php
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set noexpandtab |
-    \ set colorcolumn=110 |
+	\ set tabstop=4 |
+	\ set softtabstop=4 |
+	\ set shiftwidth=4 |
+	\ set noexpandtab |
+	\ set colorcolumn=110 |
 
 " Python indentation
 au BufNewFile,BufRead *.py
 	\ set tabstop=8 |
 	\ set softtabstop=4 |
 	\ set shiftwidth=4 |
-    \ set colorcolumn=79 |
+	\ set colorcolumn=79 |
 	\ set expandtab |
 	\ set autoindent |
 
 " For full stack dev
-au BufNewFile,BufRead *.html,*.css,*.js,*.json
+au BufNewFile,BufRead *.html,*.css,*.js,*.json,*.dart
 	\ set tabstop=2 |
 	\ set shiftwidth=2 |
-    \ set expandtab |
+	\ set expandtab |
+
+au FileType dart nmap <F5> :CocCommand flutter.run<CR>
+au FileType dart nmap <F6> :CocList --input=flutter commands<CR>
 
 " Unfold all when open a file
 au BufWinEnter * normal zR
 
 " Terminal
 if has("nvim")
-    au TermOpen * tnoremap <buffer> <Esc> <C-\><C-n>
-    au FileType fzf tunmap <buffer> <Esc>
+	au TermOpen * tnoremap <buffer> <Esc> <C-\><C-n>
+	au FileType fzf tunmap <buffer> <Esc>
 endif
 
 " Single-file coding stuff
@@ -336,79 +342,66 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" @2. Lightline -------------------------------------------------
+command! -nargs=0 Format :call CocAction('format')
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
+"
+" Tab completion
+inoremap <silent><expr> <Tab>
+	\ pumvisible() ? coc#_select_confirm() :
+	\ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+	\ <SID>check_back_space() ? "\<TAB>" :
+	\ coc#refresh()
+
+inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<C-l>'
+let g:coc_snippet_prev = '<C-h>'
+
+" @2. Airline ---------------------------------------------------
 set noshowmode
-highlight clear CursorLine " Removes the underline causes by enabling cursorline
-let g:lightline = {
-  \ 'colorscheme': 'selenized_black',
-  \   'active': {
-  \     'left': [ [ 'mode', 'paste' ],
-  \               [ 'fugitive', 'readonly', 'filename', 'modified', 'tagbar' ]
-  \     ]
-  \   },
-  \   'tabline': {
-  \     'left': [ ['tabs'] ],
-  \     'right': [ [ 'close' ] ]
-  \   },
-  \   'component': {
-  \     'lineinfo': '%3l:%-2v',
-  \     'tagbar': '%{tagbar#currenttag(" %s", "")}',
-  \   },
-  \   'component_function': {
-  \     'filetype': 'LightlineFiletype',
-  \     'fileformat': 'LightlineFileformat',
-  \     'fugitive': 'LightlineFugitive',
-  \     'cocstatus': 'coc#status',
-  \     'filename': 'LightlineFilename',
-  \   },
-  \ }
-" let g:lightline.separator = {
-" 	\   'left': '', 'right': ''
-"   \}
-" let g:lightline.subseparator = {
-" 	\   'left': '', 'right': '' 
-"   \}
-let g:lightline.separator = {
-	\   'left': ' ', 'right': ' '
-  \}
-let g:lightline.subseparator = {
-	\   'left': '|', 'right': '|' 
-  \}
-set showtabline=2  " Show tabline
-set guioptions-=e  " Don't use GUI tabline
+let g:airline_theme = 'behelit'
+let g:airline_powerline_fonts = 1
+let g:airline_skip_empty_sections = 1
 
-function! LightlineFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
-endfunction
+let g:airline#extensions#fzf#enabled = 1
 
-function! LightlineFileformat()
-  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
-endfunction
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
-function! LightlineFugitive() 
- 	if exists('*FugitiveHead') 
- 		let branch = FugitiveHead() 
- 		return branch !=# '' ? ' '.branch : '' 
- 	endif 
-	return '' 
-endfunction
+let g:airline#extensions#coc#enabled = 1
+let airline#extensions#coc#error_symbol = 'E:'
+let airline#extensions#coc#warning_symbol = 'W:'
+let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
+let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
 
-function! LightlineFilename()
-    let root = fnamemodify(get(b:, 'git_dir'), ':h')
-    let path = expand('%:p')
-    if path[:len(root)-1] ==# root
-        return path[len(root)+1:]
-    endif
-    return expand('%')
-endfunction
+let g:airline#extensions#hunks#enabled = 1
+let g:airline#extensions#hunks#non_zero_only = 0
+let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
+let g:airline#extensions#hunks#coc_git = 1
 
-" function! LightlineTabname(n) abort
-"   let bufnr = tabpagebuflist(a:n)[tabpagewinnr(a:n) - 1]
-"   let fname = expand('#' . bufnr . ':t')
-"   return fname =~ '__Tagbar__' ? 'Tagbar' :
-"         \ fname =~ 'NERD_tree' ? 'NERDTree' : 
-"         \ ('' != fname ? fname : '[No Name]')
-" endfunction
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = '|'
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = '|'
+
+let g:airline_section_error= ''
+let g:airline_section_warning= ''
+
+let g:airline#extensions#coc#enabled = 1
+let g:airline#extensions#fzf#enabled = 1
 
 " @3. NERDTRee ----------------------------------------------------
 let g:NERDTreeChDirMode=2
@@ -479,6 +472,7 @@ nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>h :History<CR>
 nnoremap <Leader>t :BTags<CR>
 nnoremap <Leader>T :Tags<CR>
+nnoremap <silent> <Leader>f :Rg<CR>
 
 " @5. Tags -------------------------------------------------
 nmap <F8> :TagbarToggle<CR>
@@ -543,15 +537,7 @@ let g:gutentags_ctags_exclude = [
 
 command! -nargs=0 GutentagsClearCache call system('rm ' . g:gutentags_cache_dir . '/*')
 
-" @6. Ultisnips -------------------------------------------------
-let g:UltiSnipsExpandTrigger = '<C-z>'
-let g:UltiSnipsJumpForwardTrigger = '<C-z>'
-let g:UltiSnipsJumpBackwardTrigger = '<C-b>'
-
-" @7. VeBugger --------------------------------------------------
-
-
-" @8. Vim-session
+" @6. Vim-session
 nnoremap <leader>so :OpenSession<Space>
 nnoremap <leader>ss :SaveSession<Space>
 nnoremap <leader>sd :DeleteSession<CR>
@@ -579,24 +565,12 @@ let g:mkdp_auto_closer = 0
 let g:indentLine_enabled = 1
 let g:indentLine_color_term = 239
 let g:indentLine_concealcursor = 0
-let g:indentLine_char = '┆' 
+let g:indentLine_char = '┆'
 let g:indentLine_faster = 1
 set conceallevel=1
 let g:indentLine_conceallevel = 1
 
 " @0.0. Uncategorized -------------------------------------------
-" Tab completion
-inoremap <expr><TAB> 
-    \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
-    \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1] =~# '\s'
-endfunction
-
 " Git-fugitive -----------------------------------------------
 nmap <leader>gs :vertical Gstatus<cr>gg<C-n>
 nmap <leader>gd :vertical Gdiff<CR>
@@ -608,25 +582,25 @@ let python_highlight_all = 1
 
 " Ibus settings
 function! IBusOff()
-    " Save current engine
-    let g:ibus_prev_engine = system('ibus engine')
-    " Change to English engine
-    execute 'silent !ibus engine xkb:us::eng'
+	" Save current engine
+	let g:ibus_prev_engine = system('ibus engine')
+	" Change to English engine
+	execute 'silent !ibus engine xkb:us::eng'
 endfunction
 function! IBusOn()
-    let l:current_engine = system('ibus engine')
-    " If engine was changed in Normal mode, use it instead
-    if l:current_engine !~? 'xkb:us::eng'
-        let g:ibus_prev_engine = l:current_engine
-    endif
-    " Restore engine
-    execute 'silent !' . 'ibus engine ' . g:ibus_prev_engine
+	let l:current_engine = system('ibus engine')
+	" If engine was changed in Normal mode, use it instead
+	if l:current_engine !~? 'xkb:us::eng'
+			let g:ibus_prev_engine = l:current_engine
+	endif
+	" Restore engine
+	execute 'silent !' . 'ibus engine ' . g:ibus_prev_engine
 endfunction
 augroup IBusHandler
-    autocmd CmdLineEnter [/?] call IBusOn()
-    autocmd CmdLineLeave [/?] call IBusOff()
-    autocmd InsertEnter * call IBusOn()
-    autocmd InsertLeave * call IBusOff()
+	autocmd CmdLineEnter [/?] call IBusOn()
+	autocmd CmdLineLeave [/?] call IBusOff()
+	autocmd InsertEnter * call IBusOn()
+	autocmd InsertLeave * call IBusOff()
 augroup END
 call IBusOff()
 
@@ -670,7 +644,7 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
 let g:WebDevIconsDefaultFolderSymbolColor = s:green
 
 if exists('g:loaded_webdevicons')
-    call webdevicons#refresh()
+	call webdevicons#refresh()
 endif
 " Vim-nerdtree-syntax-highlighting
 let g:NERDTreeFileExtensionHighlightFullName = 0
@@ -684,23 +658,23 @@ let g:NERDTreeExactMatchHighlightColor['.gitattributes'] = s:git_orange
 
 " NERDTree Git Plugin
 let g:NERDTreeGitStatusIndicatorMapCustom = {
-                \ 'Modified'  :'!',
-                \ 'Staged'    :'+',
-                \ 'Untracked' :'?',
-                \ 'Renamed'   :'»',
-                \ 'Unmerged'  :'═',
-                \ 'Deleted'   :'✕',
-                \ 'Dirty'     :'X',
-                \ 'Ignored'   :'/',
-                \ 'Clean'     :'✓',
-                \ 'Unknown'   :'?',
-                \ }
+	\ 'Modified'  :'!',
+	\ 'Staged'    :'+',
+	\ 'Untracked' :'?',
+	\ 'Renamed'   :'»',
+	\ 'Unmerged'  :'═',
+	\ 'Deleted'   :'✕',
+	\ 'Dirty'     :'X',
+	\ 'Ignored'   :'/',
+	\ 'Clean'     :'✓',
+	\ 'Unknown'   :'?',
+	\ }
 
 " Vim Bbye
 nmap <leader>q :Bdelete<CR>
 
 " C.vim
-let g:C_Ctrl_j = 'off' 
+let g:C_Ctrl_j = 'off'
 
 " vim-codefmt
 augroup autoformat_settings
