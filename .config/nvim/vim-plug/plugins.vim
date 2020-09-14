@@ -46,8 +46,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Closetags
     Plug 'alvan/vim-closetag'
     " Themes
-    Plug 'christianchiarulli/nvcode.vim'
-    Plug 'mhartington/oceanic-next'
+    Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+
     " Plug 'ChristianChiarulli/nv-code'
     " Plug 'kyazdani42/blue-moon'
     " Intellisense

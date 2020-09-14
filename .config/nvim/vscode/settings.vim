@@ -69,7 +69,7 @@ xnoremap <silent> <C-l> :call VSCodeNotify('workbench.action.navigateRight')<CR>
 xnoremap <silent> <C-/> :call Comment()<CR>
 nnoremap <silent> <C-/> :call Comment()<CR>
 
-nnoremap <silent> <C-w>_ :<C-u>call VSCodeNotify('workbench.action.toggleEditorWidths')<CR>
+nnoremap <silent> , :call VSCodeNotify('whichkey.show')<CR>
+xnoremap <silent> , :call VSCodeNotify('whichkey.show')<CR>
 
-nnoremap <silent> <Space> :call VSCodeNotify('whichkey.show')<CR>
-xnoremap <silent> <Space> :call VSCodeNotify('whichkey.show')<CR>
+nnoremap <silent> K :call VSCodeNotify('editor.action.showHover')<CR>
