@@ -1,32 +1,35 @@
 configuration {
-/*	modi: "window,run,ssh";*/
-    width: 18;
-	lines: 15;
+	modi: "window,run,drun,ssh";
+	width: 50;
+	lines: 10;
 	columns: 1;
-    font: "Noto sans 11";
+	font: "Noto sans 10.5";
 /*	bw: 1;*/
-	location: 1;
-/*	padding: 5;*/
-	yoffset: 50;
-	xoffset: 10;
-/*	fixed-num-lines: true;*/
-    show-icons: true;
+	location: 2;
+	padding: 50;
+    /* opacity: 85; */
+	yoffset: 40;
+/*	xoffset: 0;*/
+	fixed-num-lines: false;
+	show-icons: true;
 	terminal: "alacritty";
 	ssh-client: "ssh";
-/*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
-/*	run-command: "{cmd}";*/
+	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";
+	run-command: "{cmd}";
 /*	run-list-command: "";*/
 /*	run-shell-command: "{terminal} -e {cmd}";*/
 /*	window-command: "wmctrl -i -R {window}";*/
 /*	window-match-fields: "all";*/
-/*	icon-theme: ;*/
-/*	drun-match-fields: "name,generic,exec,categories";*/
+	icon-theme: "Papirus-Dark";
+/*	drun-match-fields: "name,generic,exec,categories,keywords";*/
+/*	drun-categories: ;*/
 /*	drun-show-actions: false;*/
 /*	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
+/*	drun-url-launcher: "xdg-open";*/
 /*	disable-history: false;*/
 /*	ignored-prefixes: "";*/
 /*	sort: false;*/
-/*	sorting-method: ;*/
+/*	sorting-method: "normal";*/
 /*	case-sensitive: false;*/
 /*	cycle: true;*/
 /*	sidebar-mode: false;*/
@@ -38,36 +41,39 @@ configuration {
 /*	matching: "normal";*/
 /*	tokenize: true;*/
 /*	m: "-5";*/
-	line-margin: 2;
-	line-padding: 2;
+/*	line-margin: 2;*/
+/*	line-padding: 1;*/
 /*	filter: ;*/
-	separator-style: "line";
-	hide-scrollbar: true;
-/*	fullscreen: false;*/
+/*	separator-style: "dash";*/
+/*	hide-scrollbar: false;*/
+	/* fullscreen: true; */
 /*	fake-transparency: false;*/
 /*	dpi: -1;*/
 /*	threads: 0;*/
-/*	scrollbar-width: 8;*/
-/*	scroll-method: 0;*/
+	scrollbar-width: 8;
+	scroll-method: 1;
 /*	fake-background: "screenshot";*/
 /*	window-format: "{w}    {c}   {t}";*/
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
-/*	theme: "theme";*/	
-	color-normal: "#bcbcbc";
-	color-urgent: "#bcbcbc";
-	color-active: "#bcbcbc";
-	color-window: "#bcbcbc";
+	theme: "slate";
+/*	color-normal: ;*/
+/*	color-urgent: ;*/
+/*	color-active: ;*/
+/*	color-window: ;*/
 /*	max-history-size: 25;*/
 /*	combi-hide-mode-prefix: false;*/
 /*	matching-negate-char: '-' /* unsupported */;*/
 /*	cache-dir: ;*/
+/*	window-thumbnail: false;*/
+/*	drun-use-desktop-cache: false;*/
+/*	drun-reload-desktop-cache: false;*/
 /*	pid: "/run/user/1000/rofi.pid";*/
-/*	display-window: ;*/
+    display-window: " Window";
 /*	display-windowcd: ;*/
-/*	display-run: ;*/
+	display-run: "  Command";
 /*	display-ssh: ;*/
-/*	display-drun: ;*/
+	display-drun: " Apps";
 /*	display-combi: ;*/
 /*	display-keys: ;*/
 /*	kb-primary-paste: "Control+V,Shift+Insert";*/
@@ -82,19 +88,19 @@ configuration {
 /*	kb-remove-word-back: "Control+Alt+h,Control+BackSpace";*/
 /*	kb-remove-word-forward: "Control+Alt+d";*/
 /*	kb-remove-char-forward: "Delete,Control+d";*/
-/*	kb-remove-char-back: "BackSpace,Shift+BackSpace,Control+h";*/
-/*	kb-remove-to-eol: "Control+k";*/
-/*	kb-remove-to-sol: "Control+u";*/
-	kb-accept-entry: "Control+j,Control+m,Return,grave";
+	kb-remove-char-back: "BackSpace,Shift+BackSpace";
+	kb-remove-to-eol: "Control+Page_Down";
+	kb-remove-to-sol: "Control+Page_Up";
+	kb-accept-entry: "!Alt-Tab,!Alt-ISO_Left_Tab,!Alt+Alt_L,!Alt_L,Return";
 /*	kb-accept-custom: "Control+Return";*/
 /*	kb-accept-alt: "Shift+Return";*/
 /*	kb-delete-entry: "Shift+Delete";*/
 /*	kb-mode-next: "Shift+Right,Control+Tab";*/
 /*	kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab";*/
-/*	kb-row-left: "Control+Page_Up";*/
-/*	kb-row-right: "Control+Page_Down";*/
-/*	kb-row-up: "Up,Control+p,ISO_Left_Tab";*/
-/*	kb-row-down: "Down,Control+n";*/
+	kb-row-left: "Control+h";
+	kb-row-right: "Control+l";
+	kb-row-up: "Control+k,Alt+ISO_Left_Tab";
+	kb-row-down: "Control+j,Alt+Tab";
 /*	kb-row-tab: "Tab";*/
 /*	kb-page-prev: "Page_Up";*/
 /*	kb-page-next: "Page_Down";*/
@@ -103,7 +109,7 @@ configuration {
 /*	kb-row-select: "Control+space";*/
 /*	kb-screenshot: "Alt+S";*/
 /*	kb-ellipsize: "Alt+period";*/
-	kb-toggle-case-sensitivity: "dead_grave";
+/*	kb-toggle-case-sensitivity: "grave,dead_grave";*/
 /*	kb-toggle-sort: "Alt+grave";*/
 /*	kb-cancel: "Escape,Control+g,Control+bracketleft";*/
 /*	kb-custom-1: "Alt+1";*/
@@ -143,7 +149,3 @@ configuration {
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
-/* vim:ft=css
-
-
-

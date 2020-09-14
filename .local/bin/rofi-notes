@@ -1,0 +1,108 @@
+#!/bin/bash
+
+set -u
+set -e
+
+readonly NOTES_FILE=~/.config/home/notes/rofi-notes
+readonly TMP_NOTES=~/.config/home/notes/.tmp-notes
+
+all_notes="$(cat ${NOTES_FILE})"
+tmp_notes="$(cat ${TMP_NOTES})"
+
+# Configuration
+WIDTH="50"
+THEME="~/.config/rofi/slate_note.rasi"
+
+if [[ ! -a "${TMP_NOTES}" ]]; then
+    echo "empty" >> "${NOTES_FILE}"
+fi
+
+function rofi_cmd() {
+    [ -n "$THEME" ] && params+=(-theme "$THEME")
+    [ -n "$WIDTH" ] && params+=(-width "$WIDTH")
+    params+=(-no-show-match)
+
+    rofi -dmenu -p " Notes" "${params[@]}" "$@"
+}
+
+function get_tmp() {
+    cat ${TMP_NOTES}
+}
+
+function upd_note() {
+    echo "$(awk '{print NR  " > " $s}' ~/.config/home/notes/.tmp-notes)" > ~/.config/home/notes/rofi-notes
+    all_notes="$(cat ${NOTES_FILE})"
+}
+
+function print_msg() {
+    echo "<span color='$1'>"
+}
+
+function print_notes() {
+    echo "${all_notes}"
+}
+
+function print_help() {
+    cat <<EOF
+<span foreground="cyan"><b>:e</b> <i>number</i></span> : Edit Note
+<span foreground="cyan"><b>:cp</b> <i>number</i></span> : Copy Note
+<span foreground="orange"><b>:d</b> <i>number</i></span> : Delete Note
+<span foreground="#ffff00"><i>(other)</i></span> : Regarded as new Note
+EOF
+}
+
+input="$(print_notes | rofi_cmd -dmenu -mesg "<span color='cyan'>Input <span color='orange'><b>?</b></span> for available commands</span>")"
+
+while [ -n "$input" ]; do
+    case "$input" in
+        "?")
+            input="$(print_notes | rofi_cmd -mesg "<b> Help</b>&#x0a;$(print_help)")"
+            ;;
+        :cp*)
+            line=$(echo "$input" | cut -d ' ' -f2-)
+            # Wrong syntax
+            if [[ "$line" =~ ^:cp ]]; then
+                input="$(print_notes | rofi_cmd -mesg "<span color='orange'> No line specified</span>")"
+            # Edit note
+            else
+                # Copy note
+                line=$(echo "$input" | cut -d ' ' -f2-)
+                sed -n "${line}p" "${TMP_NOTES}" | xclip -sel clip
+                input="$(print_notes | rofi_cmd -mesg "<span color='cyan'> Copied Note #${line}</span>")"
+            fi
+            ;;
+        :e*)
+            line=$(echo "$input" | cut -d ' ' -f2-)
+            # Wrong syntax
+            if [[ "$line" =~ ^:e ]]; then
+                input="$(print_notes | rofi_cmd -mesg "<span color='orange'> No line specified</span>")"
+            # Edit note
+            else
+                old_note=$(sed -n "${line}p" "${TMP_NOTES}")
+                input="$(rofi_cmd -mesg "<span color='cyan'> Editing Note #${line}</span>&#x0a;$old_note")"
+                if [ "$input" != ":q" ]; then
+                    sed -i "${line}s/.*/${input}/" "${TMP_NOTES}"
+                    upd_note
+                    input="$(print_notes | rofi_cmd -mesg "<span color='cyan'> Edited Note #${line}</span>")"
+                else
+                    input="$(print_notes | rofi_cmd -mesg "<span color='orange'> Canceled</span>")"
+                fi
+            fi
+            ;;
+        :d*)
+            line=$(echo "$input" | cut -d ' ' -f2-)
+            if [[ "$line" =~ ^:d ]]; then
+                input="$(print_notes | rofi_cmd -mesg "<span color='orange'> No line specified</span>")"
+            # Delete note
+            else
+                sed -i "${line}d" "${TMP_NOTES}"
+                upd_note
+                input="$(print_notes | rofi_cmd -mesg "<span color='cyan'> Deleted Note #${line}</span>")"
+            fi
+            ;;
+        *)
+            echo "${input}" >> "${TMP_NOTES}"
+            upd_note
+            input="$(print_notes | rofi_cmd -mesg "<span color='cyan'> Added new Note</span>")"
+    esac
+done
