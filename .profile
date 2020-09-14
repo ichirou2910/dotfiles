@@ -20,6 +20,6 @@ export BG_NOTES="$HOME/.config/wallpaper/notes.txt"
 export JAVA_HOME=/usr/lib/jvm/jdk-11.0.4
 export PATH=$JAVA_HOME/bin:$PATH
 
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-	exec startx
-fi
+# if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+# 	exec startx
+# fi
