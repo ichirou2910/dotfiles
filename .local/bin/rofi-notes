@@ -3,8 +3,8 @@
 set -u
 set -e
 
-readonly NOTES_FILE=~/.config/home/notes/rofi-notes
-readonly TMP_NOTES=~/.config/home/notes/.tmp-notes
+readonly NOTES_FILE=/mnt/sync/home/ichirou2910/Notes/rofi-notes
+readonly TMP_NOTES=/mnt/sync/home/ichirou2910/Notes/.tmp-notes
 
 all_notes="$(cat ${NOTES_FILE})"
 tmp_notes="$(cat ${TMP_NOTES})"
@@ -30,7 +30,7 @@ function get_tmp() {
 }
 
 function upd_note() {
-    echo "$(awk '{print NR  " > " $s}' ~/.config/home/notes/.tmp-notes)" > ~/.config/home/notes/rofi-notes
+    echo "$(awk '{print NR  " > " $s}' $TMP_NOTES)" > $NOTES_FILE
     all_notes="$(cat ${NOTES_FILE})"
 }
 
