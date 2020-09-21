@@ -17,7 +17,7 @@ export SCREENSHOTDIR="$HOME/Pictures/Screenshots"
 export BG_NOTES="$HOME/.config/wallpaper/notes.txt"
 
 # PATH
-export JAVA_HOME=/usr/lib/jvm/jdk-11.0.4
+export JAVA_HOME=/usr/lib/jvm/java-14-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 
 # if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then

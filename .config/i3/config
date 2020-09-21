@@ -222,11 +222,14 @@ client.background        $transparent
 # BashTOP
 # exec --no-startup-id $TERMINAL -e bashtop
 
+# sxhkd
+exec --no-startup-id sxhkd
+
 # Polybar
 # exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh
 
 # picom
-exec --no-startup-id picom --config ~/.config/picom/picom.conf
+# exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Wallpaper
 # exec --no-startup-id python ~/.config/wallpaper/walltext.py
@@ -240,6 +243,7 @@ for_window [window_role="task_dialog"] floating enable
 
 for_window [class="Spotify"] move workspace $ws6
 
+for_window [class="feh"] floating enable
 for_window [title="Desktop — Plasma"] kill; floating enable; border none
 for_window [class="plasmashell"] floating enable;
 for_window [class="Plasma"] floating enable; border none

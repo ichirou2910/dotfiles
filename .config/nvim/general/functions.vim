@@ -17,9 +17,9 @@ function! IBusOn()
 endfunction
 
 " Turn spellcheck on for markdown files
-augroup auto_spellcheck
-  autocmd BufNewFile,BufRead *.md setlocal spell
-augroup END
+" augroup auto_spellcheck
+"   autocmd BufNewFile,BufRead *.md setlocal spell
+" augroup END
 
 augroup IBusHandler
   autocmd CmdLineEnter [/?] call IBusOn()

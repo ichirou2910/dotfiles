@@ -5,9 +5,9 @@ imap <C-j> <C-w>j
 imap <C-k> <C-w>k
 imap <C-l> <C-w>l
 " g Leader key
-let mapleader=","
+let mapleader=" "
 " let localleader=" "
-nnoremap <,> <Nop>
+nnoremap <space> <Nop>
 
 " Better indenting
 vnoremap < <gv
