@@ -1,8 +1,19 @@
 * {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(29, 29, 29, 0.7);
   border-color: #2e343f;
-  text-color: #fff;
+  text-color: #ccffffff;
   spacing: 0;
+}
+
+window {
+  location: west;
+  anchor: west;
+  height: 70%;
+  width: 25%;
+  orientation: vertical;
+  border: 2px 2px 2px 0px;
+  border-color: @border-color;
+  hide-scrollbar: true;
 }
 
 inputbar {

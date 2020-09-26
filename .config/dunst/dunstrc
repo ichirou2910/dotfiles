@@ -3,14 +3,14 @@
     follow = keyboard
     geometry = "350x5-10+50"
     indicate_hidden = yes
-    shrink = yes
-    transparency = 20
+    shrink = no
+    transparency = 0
     notification_height = 0
     separator_height = 2
-    padding = 0
-    horizontal_padding = 8
-    frame_width = 3
-    frame_color = "#282828"
+    padding = 10
+    horizontal_padding = 10
+    frame_width = 1
+    frame_color = "#232323"
 
     # Define a color for the separator.
     # possible values are:
@@ -38,23 +38,25 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-	allow_markup = yes
-    format = "%a\n<b>%s</b>\n%b"
+    allow_markup = yes
+    format = "%a\n<span foreground='#f3f4f5'><b>%s %p</b></span>\n%b"
 
     alignment = left
+    vertical_alignment = center
     show_age_threshold = 60
     word_wrap = yes
     ellipsize = middle
     ignore_newline = no
     stack_duplicates = true
-    hide_duplicate_count = true
+    hide_duplicate_count = flase
     show_indicators = yes
     icon_position = left
-    max_icon_size = 40
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/:/usr/share/icons/Adwaita/256x256/status/
+    max_icon_size = 32
+    icon_path = /usr/share/icons/Paper/16x16/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/16x16/apps/
     sticky_history = yes
     history_length = 20
-    dmenu = /usr/bin/dmenu -p dunst:
+    verbosity = mesg
+    dmenu = /usr/bin/rofi -dmenu -p Dunst:
     browser = /usr/bin/brave -new-tab
 
     # Always run rule-defined scripts, even if the notification is suppressed
@@ -64,8 +66,8 @@
     class = Dunst
     startup_notification = false
     force_xinerama = false
-
-	mouse_left_click = do_action
+	  
+    mouse_left_click = do_action
 
 [experimental]
     per_monitor_dpi = false
@@ -79,21 +81,21 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#222222"
-    foreground = "#ffffff"
+    background = "#232323"
+    foreground = "#a8a8a8"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#222222"
-    foreground = "#ffffff"
+    background = "#232323"
+    foreground = "#a8a8a8"
     timeout = 5
 
 [urgency_critical]
-    background = "#cc2421"
-    foreground = "#ebdbb2"
-    frame_color = "#fabd2f"
+    background = "#d64e4e"
+    foreground = "#f0e0e0"
+    frame_color = "#d64e4e"
     timeout = 0
 
 # Every section that isn't one of the above is interpreted as a rules to

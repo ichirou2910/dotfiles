@@ -22,20 +22,20 @@ font pango:Roboto Condensed 11
 
 set $black       #212121
 set $darkblack   #000000
-set $red         #fb4934
+set $red         #e53935
 set $darkred     #cc241d
-set $green       #b8bb26
+set $green       #43a047
 set $darkgreen   #98971a
-set $yellow      #fabd2f
-set $darkyellow  #d79921
-set $blue        #83a598
+set $yellow      #fdd835
+set $darkyellow  #ffb300
+set $blue        #1e88e5
 set $darkblue    #458588
 set $magenta     #d3869b
 set $darkmagenta #b16286
-set $cyan        #8ec07c
-set $darkcyan    #689d6a
-set $white       #00BCD4
-set $darkwhite   #a89984
+set $cyan        #00acc1
+set $darkcyan    #00897b
+set $white       #ffffff
+set $darkwhite   #ccffffff
 set $background  #000000
 # set $transparent #000000FF
 set $transparent #333333
@@ -192,7 +192,7 @@ bindsym $mod+r mode "resize"
 # bindsym $mod+i exec --no-startup-id file-manager
 
 # border on all windows
-for_window [class=.*] border pixel 1
+for_window [class=.*] border pixel 2
 
 default_floating_border pixel 0
 
@@ -205,19 +205,16 @@ gaps inner 10
 # Only enable gaps on a workspace when there is at least one container
 #smart_gaps on
 
-# #CLASS                   BORDER   BACKGROUND  TEXT     INDICATOR
-# client.focused           #4c7899  $blue       #eff1f5  #2e9ef4
-# client.unfocused         #333333  #2b303b     #888888  #292d2e
-# client.focused_inactive  #333333  $violet     #eff1f5  #484e50
-# client.urgent            #2f343a  $red        #eff1f5  #900000
-# client.background        $black
-
 #CLASS                   BORDER         BACKGROUND        TEXT      INDICATOR      CHILD BORDER
-client.focused           $transparent   $transparent      $white    $darkwhite     $white
-client.focused_inactive  $transparent   $transparent      $white    $transparent
+client.focused           $transparent   $transparent      $blue     $darkwhite     $blue
+client.focused_inactive  $transparent   $transparent      $blue     $transparent
 client.unfocused         $transparent   #2b303b           #888888   #292d2e
 client.urgent            $transparent   $transparent      $red      $transparent
 client.background        $transparent
+
+# Kill plasma
+exec --no-startup-id wmctrl -c Plasma
+for_window [title="Desktop — Plasma"] kill; floating enable; border none
 
 # BashTOP
 # exec --no-startup-id $TERMINAL -e bashtop
@@ -226,7 +223,10 @@ client.background        $transparent
 exec --no-startup-id sxhkd
 
 # Polybar
-# exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Dunst
+exec_always --no-startup-id dunst
 
 # picom
 # exec --no-startup-id picom --config ~/.config/picom/picom.conf
@@ -244,7 +244,6 @@ for_window [window_role="task_dialog"] floating enable
 for_window [class="Spotify"] move workspace $ws6
 
 for_window [class="feh"] floating enable
-for_window [title="Desktop — Plasma"] kill; floating enable; border none
 for_window [class="plasmashell"] floating enable;
 for_window [class="Plasma"] floating enable; border none
 for_window [title="plasma-desktop"] floating enable; border none
@@ -256,3 +255,4 @@ for_window [class="Plasmoidviewer"] floating enable; border none
 for_window [class="(?i)*nextcloud*"] floating disable
 for_window [class="plasmashell" window_type="notification"] floating enable, border none, move position 1575px 40px
 no_focus [class="plasmashell" window_type="notification"]
+no_focus [class="plasmashell" window_type="on_screen_display"]
