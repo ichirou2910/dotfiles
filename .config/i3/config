@@ -117,9 +117,9 @@ set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
-# set $ws8 "8"
-# set $ws9 "9"
-# set $ws10 "10"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace
 # bindsym $mod+1 workspace $ws1
@@ -199,22 +199,18 @@ default_floating_border pixel 0
 focus_follows_mouse no
 
 # Gaps (i3-gaps)
-gaps inner 10
-# gaps top 10
+gaps inner 12
+gaps top 15
 
 # Only enable gaps on a workspace when there is at least one container
 #smart_gaps on
 
 #CLASS                   BORDER         BACKGROUND        TEXT      INDICATOR      CHILD BORDER
-client.focused           $transparent   $transparent      $blue     $darkwhite     $blue
+client.focused           $transparent   $transparent      $blue     #ff0000     $red
 client.focused_inactive  $transparent   $transparent      $blue     $transparent
 client.unfocused         $transparent   #2b303b           #888888   #292d2e
 client.urgent            $transparent   $transparent      $red      $transparent
 client.background        $transparent
-
-# Kill plasma
-exec --no-startup-id wmctrl -c Plasma
-for_window [title="Desktop — Plasma"] kill; floating enable; border none
 
 # BashTOP
 # exec --no-startup-id $TERMINAL -e bashtop
@@ -229,7 +225,7 @@ exec --no-startup-id sxhkd
 exec_always --no-startup-id dunst
 
 # picom
-# exec --no-startup-id picom --config ~/.config/picom/picom.conf
+exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Wallpaper
 # exec --no-startup-id python ~/.config/wallpaper/walltext.py
@@ -238,16 +234,19 @@ exec --no-startup-id ~/.fehbg
 # Redshift
 # exec --no-startup-id redshift-gtk
 
+# Kill plasma
+for_window [title="Desktop — Plasma"] kill; floating enable; border none
+
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 
 for_window [class="Spotify"] move workspace $ws6
 
 for_window [class="feh"] floating enable
-for_window [class="plasmashell"] floating enable;
+for_window [class="plasmashell"] floating enable
 for_window [class="Plasma"] floating enable; border none
 for_window [title="plasma-desktop"] floating enable; border none
-# for_window [title="win7"] floating enable; border none
+for_window [title="win7"] floating enable; border none
 for_window [class="krunner"] floating enable; border none
 for_window [class="Kmix"] floating enable; border none
 for_window [class="Klipper"] floating enable; border none
@@ -255,4 +254,3 @@ for_window [class="Plasmoidviewer"] floating enable; border none
 for_window [class="(?i)*nextcloud*"] floating disable
 for_window [class="plasmashell" window_type="notification"] floating enable, border none, move position 1575px 40px
 no_focus [class="plasmashell" window_type="notification"]
-no_focus [class="plasmashell" window_type="on_screen_display"]
