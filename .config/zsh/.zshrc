@@ -79,6 +79,8 @@ plugins=(git zsh-syntax-highlighting)
 ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
+source /usr/share/z/z.sh
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
