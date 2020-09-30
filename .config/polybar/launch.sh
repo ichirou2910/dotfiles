@@ -1,4 +1,6 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
+
+## Add this to your wm startup file.
 
 # Terminate already running bar instances
 killall -q polybar
@@ -6,29 +8,5 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-# Launch polybar
-echo "---" | tee /tmp/polybar_log
-
-if type "xrandr"; then
-    echo "Monitor found" >> /tmp/polybar_log
-	for m in $(xrandr --query | grep " connected" | cut -d " " -f1); do
-        if [ $m == 'DP-1' ]
-        then
-            MONITOR=$m polybar -c $HOME/.config/polybar/config -r sub-right 2> /tmp/polybar_log &
-            MONITOR=$m polybar -c $HOME/.config/polybar/config -r sub-left 2> /tmp/polybar_log &
-            MONITOR=$m polybar -c $HOME/.config/polybar/config -r sub-center 2> /tmp/polybar_log &
-        elif [ $m == 'HDMI-1' ]
-        then
-            MONITOR=$m polybar -c $HOME/.config/polybar/config -r main-right 2> /tmp/polybar_log &
-            MONITOR=$m polybar -c $HOME/.config/polybar/config -r main-left 2> /tmp/polybar_log &
-            MONITOR=$m polybar -c $HOME/.config/polybar/config -r main-center 2> /tmp/polybar_log &
-        else
-            MONITOR=$m polybar -c $HOME/.config/polybar/config -r laptop-right 2> /tmp/polybar_log &
-            MONITOR=$m polybar -c $HOME/.config/polybar/config -r laptop-center 2> /tmp/polybar_log &
-            MONITOR=$m polybar -c $HOME/.config/polybar/config -r laptop-left 2> /tmp/polybar_log &
-        fi
-	done
-else
-    echo "No monitor returned" | tee /tmp/polybar_log
-fi
-
+# Launch bar1 and bar2
+polybar main -c ~/.config/polybar/config.ini &
