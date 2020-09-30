@@ -184,7 +184,13 @@ bindsym $mod+r mode "resize"
 
 # Other function bindings
 
-# bindsym $mod+i exec --no-startup-id file-manager
+bindsym $mod+Return exec --no-startup-id $TERMINAL
+
+bindsym $mod+i exec --no-startup-id $TERMINAL --title "Ranger" -e $FILE
+
+bindsym $mod+w exec --no-startup-id $BROWSER
+
+bindsym $mod+s exec --no-startup-id spotify
 
 # border on all windows
 for_window [class=.*] border pixel 2
@@ -214,7 +220,7 @@ client.background        $transparent
 exec --no-startup-id sxhkd
 
 # Polybar
-# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Dunst
 exec_always --no-startup-id dunst

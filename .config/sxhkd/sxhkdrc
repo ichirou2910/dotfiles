@@ -1,14 +1,14 @@
 
 # BASIC BINDING
 # -------------
-super + Return						
-	$TERMINAL
-super + i								
-    $TERMINAL --title "Ranger" -e $FILE
-super + w					
-	$BROWSER
-super + s
-	spotify
+#super + Return						
+#	$TERMINAL
+#super + i								
+#    $TERMINAL --title "Ranger" -e $FILE
+#super + w					
+#	$BROWSER
+#super + s
+#	spotify
 alt + shift + q
     powermenu --popup
 
