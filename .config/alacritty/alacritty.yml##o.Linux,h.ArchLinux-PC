@@ -79,6 +79,7 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 
+
   # Faux Scrolling
   #
   # The `faux_multiplier` setting controls the number of lines the terminal
@@ -111,6 +112,7 @@ font:
     # value specified for the normal font.
     family: Consolas
 
+
     # The `style` can be specified to pick a specific face.
     #style: Bold
 
@@ -132,7 +134,7 @@ font:
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: 0
-    y: 0
+    y: 1
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
