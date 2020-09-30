@@ -7,15 +7,16 @@ command -v nvim >/dev/null && alias vim="nvim" vi="nvim" vimdiff="nvim -d" oldvi
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 alias \
-    cdif="config diff" \
-    cstat="config status" \
-    cadd="config add" \
-    ccom="config commit -m" \
-    cpush="config push" \
-    cpull="config pull" \
-    cres="config restore" \
-    cress="config restore --staged" \
-    cfet="config fetch" 
+    cdif="yadm diff" \
+    cstat="yadm status" \
+    cadd="yadm add" \
+    ccom="yadm commit -m" \
+    cpush="yadm push" \
+    cpull="yadm pull" \
+    cres="yadm restore" \
+    cress="yadm restore --staged" \
+    cfet="yadm fetch" \
+    calt="yadm alt"
 
 alias \
     gdif="git diff" \
