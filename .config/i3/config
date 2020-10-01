@@ -207,7 +207,7 @@ gaps top 15
 #smart_gaps on
 
 #CLASS                   BORDER         BACKGROUND        TEXT      INDICATOR      CHILD BORDER
-client.focused           $transparent   $transparent      $blue     #ff0000     $red
+client.focused           $transparent   $transparent      $blue     $blue          $blue
 client.focused_inactive  $transparent   $transparent      $blue     $transparent
 client.unfocused         $transparent   #2b303b           #888888   #292d2e
 client.urgent            $transparent   $transparent      $red      $transparent
