@@ -3,7 +3,7 @@ configuration {
 	width: 50;
 	lines: 10;
 	columns: 1;
-	font: "Noto sans 10.5";
+	font: "Noto sans 12";
 /*	bw: 1;*/
 	location: 2;
 	padding: 50;
@@ -55,7 +55,7 @@ configuration {
 /*	fake-background: "screenshot";*/
 /*	window-format: "{w}    {c}   {t}";*/
 /*	click-to-exit: true;*/
-/*	show-match: true;*/
+	show-match: false;
 	theme: "sidetab";
 /*	color-normal: ;*/
 /*	color-urgent: ;*/

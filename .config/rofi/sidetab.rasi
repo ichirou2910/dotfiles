@@ -17,7 +17,7 @@ configuration {
 	selbg:                       #215d9c;
 	actbg:                       #262626;
 	urgbg:                       #e53935;
-	winbg:			     #26c6da;
+  winbg:			                 #26c6da;
 
 	selected-normal-foreground:  @winbg;
 	normal-foreground:           @text-color;
@@ -43,17 +43,17 @@ configuration {
 }
 
 window {
-  transparency: "real";
-	location:	 northwest;
-	anchor:		 northwest;
-	height:		 calc(100% - 70px);
-	width:		 100%;
-  padding: 0 78% 0 0;
-  background-color: #1d1d1d60;
-	orientation: horizontal;
-	children:	 [mainbox];
-	border:           2px 0 solid 0 0;
-	border-color:	    @actbg;
+  transparency:                "real";
+	location:	                   northwest;
+	anchor:		                   northwest;
+	height:		                   calc(100% - 70px);
+	width:		                   100%;
+  padding:                     0 78% 0 0;
+  background-color:            #26c6da20;
+	orientation:                 horizontal;
+	children:	                   [mainbox];
+	border:                      2px 0 solid 0 0;
+	border-color:	               @actbg;
 }
 
 mainbox {
@@ -133,4 +133,8 @@ element alternate.urgent {
 element alternate.active {
 	background-color: @active-background;
 	text-color:       @active-foreground;
+}
+
+element-icon {
+  size: 2ch;
 }
