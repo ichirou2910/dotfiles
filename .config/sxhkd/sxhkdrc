@@ -15,7 +15,7 @@ alt + shift + q
 # Rofi
 # -------------------------
 alt + Tab							
-    rofi --syncsleep 10 -fullscreen -show window -selected-row 1
+    rofi --syncsleep 10 -show window -selected-row 1
 super + d							
 	rofi -show drun
 super + shift + c							
