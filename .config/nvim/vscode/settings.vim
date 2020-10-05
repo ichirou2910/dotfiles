@@ -1,4 +1,5 @@
 " TODO there is a more contemporary version of this file
+" TODO Also some of it is redundant
 "VSCode
 function! s:split(...) abort
     let direction = a:1
@@ -68,6 +69,7 @@ function! s:openWhichKeyInVisualMode()
     endif
 endfunction
 
+
 command! -complete=file -nargs=? Split call <SID>split('h', <q-args>)
 command! -complete=file -nargs=? Vsplit call <SID>split('v', <q-args>)
 command! -complete=file -nargs=? New call <SID>split('h', '__vscode_new__')
@@ -92,7 +94,7 @@ nnoremap <expr> <C-/> <SID>vscodeCommentary() . '_'
 
 nnoremap <silent> <C-w>_ :<C-u>call VSCodeNotify('workbench.action.toggleEditorWidths')<CR>
 
-nnoremap <silent> <space> :call VSCodeNotify('whichkey.show')<CR>
+nnoremap <silent> <Space> :call VSCodeNotify('whichkey.show')<CR>
 xnoremap <silent> <Space> :<C-u>call <SID>openWhichKeyInVisualMode()<CR>
 
 xnoremap <silent> <C-P> :<C-u>call <SID>openVSCodeCommandsInVisualMode()<CR>

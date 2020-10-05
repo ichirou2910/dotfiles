@@ -26,8 +26,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   if exists('g:vscode')
     " Easy motion for VSCode
     Plug 'asvetliakov/vim-easymotion'
+    Plug 'machakann/vim-highlightedyank'
   else
 
+    " Sneak
+    Plug 'justinmk/vim-sneak'
     " Surround
     Plug 'tpope/vim-surround'
     " Files
@@ -47,7 +50,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'alvan/vim-closetag'
     " Themes
     Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-
+    " Plug 'christianchiarulli/nvcode.vim'
     " Plug 'ChristianChiarulli/nv-code'
     " Plug 'kyazdani42/blue-moon'
     " Intellisense
