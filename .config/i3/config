@@ -192,6 +192,27 @@ bindsym $mod+w exec --no-startup-id $BROWSER
 
 bindsym $mod+s exec --no-startup-id spotify
 
+bindsym $alt+Tab exec --no-startup-id rofi --syncsleep 10 -show window -selected-row 1
+
+bindsym $mod+d exec --no-startup-id rofi -show drun
+
+bindsym $mod+c exec --no-startup-id rofi-code
+bindsym $mod+n exec --no-startup-id rofi-notes
+bindsym $mod+t exec --no-startup-id rofi-translate
+
+# capture whole screen -> clipboard
+bindsym Print exec maim -u | xclip -selection clipboard -t image/png && notify-send -i $HOME/.config/home/icons/screenshot.png -a "maim" "Full Window" "Screenshot copied."
+# capture whole screen -> save
+bindsym $mod+Print exec maim -u $SCREENSHOTDIR/$(date +%Y-%M-%d_%H:%M:%s).png && notify-send -i $HOME/.config/home/icons/screenshot.png -a "maim" "Full Window" "Screenshot saved."
+# capture active window -> clipboard
+bindsym $alt+Print exec maim -u -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png && notify-send -i $HOME/.config/home/icons/screenshot.png -a "maim" "Active window " "Screenshot copied."
+# capture active window -> save
+bindsym $alt+Shift+Print exec maim -u -i $(xdotool getactivewindow) $SCREENSHOTDIR/$(date +%Y-%M-%d_%H:%M:%s).png && notify-send -i $HOME/.config/home/icons/screenshot.png -a "maim" "Active window " "Screenshot saved."
+# capture selected region -> clipboard
+bindsym Control+$alt+a exec maim -u -s | xclip -selection clipboard -t image/png && notify-send -i $HOME/.config/home/icons/screenshot.png -a "maim" "Selected Region" "Screenshot copied."
+# capture selected region -> save
+bindsym Control+Shift+a exec maim -u -s $SCREENSHOTDIR/`date +%Y-%m-%d_%H:%H:%S`.png && notify-send -i $HOME/.config/home/icons/screenshot.png -a "maim" "Selected Region" "Screenshot saved."
+
 # border on all windows
 for_window [class=.*] border pixel 2
 
@@ -217,7 +238,7 @@ client.background        $transparent
 # exec --no-startup-id $TERMINAL -e bashtop
 
 # sxhkd
-exec --no-startup-id sxhkd
+# exec --no-startup-id sxhkd
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
