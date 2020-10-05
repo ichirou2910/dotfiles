@@ -44,7 +44,7 @@ alias \
 
 # Common apps
 alias \
-    rg="ranger" \
+    di="ranger" \
     dbui="nvim -c DBUI" \
     pj="tmux-vim" \
 
