@@ -223,8 +223,7 @@ default_floating_border pixel 0
 focus_follows_mouse no
 
 # Gaps (i3-gaps)
-gaps inner 12
-gaps top 15
+gaps inner 15
 
 # Only enable gaps on a workspace when there is at least one container
 #smart_gaps on
