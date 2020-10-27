@@ -49,7 +49,7 @@ window {
 	height:		                   calc(100% - 70px);
 	width:		                   100%;
   padding:                     0 78% 0 0;
-  background-color:            #26c6da20;
+  background-color:            #215d9c20;
 	orientation:                 horizontal;
 	children:	                   [mainbox];
 	border:                      2px 0 solid 0 0;
