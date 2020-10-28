@@ -13,6 +13,9 @@ nnoremap <Space> <Nop>
 vnoremap < <gv
 vnoremap > >gv
 
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
+
 if exists('g:vscode')
 
   " Simulate same TAB behavior in VSCode
