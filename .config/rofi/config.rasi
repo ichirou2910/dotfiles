@@ -3,7 +3,7 @@ configuration {
 	width: 50;
 	lines: 10;
 	columns: 1;
-	font: "Noto sans 12";
+	font: "Segoe UI 13";
 /*	bw: 1;*/
 	location: 2;
 	padding: 50;
@@ -55,7 +55,7 @@ configuration {
 /*	fake-background: "screenshot";*/
 /*	window-format: "{w}    {c}   {t}";*/
 /*	click-to-exit: true;*/
-	show-match: false;
+	show-match: true;
 	theme: "sidetab";
 /*	color-normal: ;*/
 /*	color-urgent: ;*/
@@ -99,8 +99,8 @@ configuration {
 /*	kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab";*/
 	kb-row-left: "Control+h";
 	kb-row-right: "Control+l";
-	kb-row-up: "Control+k,Alt+ISO_Left_Tab";
-	kb-row-down: "Control+j,Alt+Tab";
+	kb-row-up: "Control+k,Alt+ISO_Left_Tab,Up";
+	kb-row-down: "Control+j,Alt+Tab,Down";
 /*	kb-row-tab: "Tab";*/
 /*	kb-page-prev: "Page_Up";*/
 /*	kb-page-next: "Page_Down";*/
