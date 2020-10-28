@@ -35,7 +35,7 @@ window:
   # by DPI and the specified value is always added at both opposing sides.
   padding:
     x: 15
-    y: 15
+    y: 0
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: false
@@ -79,7 +79,6 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 
-
   # Faux Scrolling
   #
   # The `faux_multiplier` setting controls the number of lines the terminal
@@ -99,7 +98,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux) monospace
     #   - (Windows) Consolas
-    family: Consolas
+    family: Cascadia Code
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -110,8 +109,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Consolas
-
+    family: Cascadia Code
 
     # The `style` can be specified to pick a specific face.
     #style: Bold
@@ -122,19 +120,19 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Consolas
+    family: Cascadia Code
 
     # The `style` can be specified to pick a specific face.
     style: Italic
 
   # Point size
-  size: 10
+  size: 12
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: 0
-    y: 1
+    y: 2
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
