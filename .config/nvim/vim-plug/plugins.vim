@@ -22,6 +22,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'suy/vim-context-commentstring'
     " highlight all matches under cursor
     " Plug 'RRethy/vim-illuminate'
+    " Embed nvim for browser
+    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
   if exists('g:vscode')
     " Easy motion for VSCode
@@ -50,6 +52,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'alvan/vim-closetag'
     " Themes
     Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+    Plug 'joshdick/onedark.vim'
     " Plug 'christianchiarulli/nvcode.vim'
     " Plug 'ChristianChiarulli/nv-code'
     " Plug 'kyazdani42/blue-moon'

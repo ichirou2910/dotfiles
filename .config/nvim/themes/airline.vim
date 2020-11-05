@@ -38,7 +38,7 @@ let g:airline_section_c = airline#section#create([''])
 " let g:airline_section_z = airline#section#create(['linenr'])
 
 " Switch to your current theme
-let g:airline_theme = 'behelit'
+let g:airline_theme = 'onedark'
 
 " Always show tabs
 set showtabline=2
