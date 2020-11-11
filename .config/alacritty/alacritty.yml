@@ -79,6 +79,7 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 
+
   # Faux Scrolling
   #
   # The `faux_multiplier` setting controls the number of lines the terminal
@@ -110,6 +111,7 @@ font:
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
     family: Cascadia Code
+
 
     # The `style` can be specified to pick a specific face.
     #style: Bold
