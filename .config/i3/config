@@ -200,8 +200,6 @@ bindsym $mod+c exec --no-startup-id rofi-code
 bindsym $mod+n exec --no-startup-id rofi-notes
 bindsym $mod+t exec --no-startup-id rofi-translate
 
-bindsym $mod+e scratchpad show
-
 # capture whole screen -> clipboard
 bindsym Print exec maim -u | xclip -selection clipboard -t image/png && notify-send -i $HOME/.config/home/icons/screenshot.png -a "maim" "Full Window" "Screenshot copied."
 # capture whole screen -> save
@@ -216,14 +214,15 @@ bindsym Control+$alt+a exec maim -u -s | xclip -selection clipboard -t image/png
 bindsym Control+Shift+a exec maim -u -s $SCREENSHOTDIR/`date +%Y-%m-%d_%H:%H:%S`.png && notify-send -i $HOME/.config/home/icons/screenshot.png -a "maim" "Selected Region" "Screenshot saved."
 
 # border on all windows
-for_window [class=.*] border pixel 2
+for_window [class=.*] border pixel 1
 
 default_floating_border pixel 0
+hide_edge_borders smart
 
 focus_follows_mouse no
 
 # Gaps (i3-gaps)
-gaps inner 10
+gaps inner 0
 gaps outer 0
 
 # Only enable gaps on a workspace when there is at least one container
@@ -271,7 +270,7 @@ for_window [class="Spotify"] move workspace $ws6
 for_window [title="^Explorer$"] move scratchpad
 
 for_window [class="feh"] floating enable
-for_window [class="plasmashell"] floating enable
+for_window [class="plasmashell"] floating enable, border none
 for_window [class="Plasma"] floating enable, border none
 for_window [title="plasma-desktop"] floating enable, border none
 for_window [title="win7"] floating enable, border none
