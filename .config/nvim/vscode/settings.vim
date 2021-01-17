@@ -96,9 +96,7 @@ nnoremap <silent> <C-w>_ :<C-u>call VSCodeNotify('workbench.action.toggleEditorW
 
 nnoremap <silent> <Space> :call VSCodeNotify('whichkey.show')<CR>
 xnoremap <silent> <Space> :<C-u>call <SID>openWhichKeyInVisualMode()<CR>
-
 xnoremap <silent> <C-P> :<C-u>call <SID>openVSCodeCommandsInVisualMode()<CR>
-
 xmap gc  <Plug>VSCodeCommentary
 nmap gc  <Plug>VSCodeCommentary
 omap gc  <Plug>VSCodeCommentary

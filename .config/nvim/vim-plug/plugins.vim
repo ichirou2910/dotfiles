@@ -22,6 +22,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'suy/vim-context-commentstring'
     " highlight all matches under cursor
     " Plug 'RRethy/vim-illuminate'
+    " Embed nvim for browser
+    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
   if exists('g:vscode')
     " Easy motion for VSCode
@@ -29,6 +31,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'machakann/vim-highlightedyank'
   else
 
+    " Sneak
+    Plug 'justinmk/vim-sneak'
     " Surround
     Plug 'tpope/vim-surround'
     " Files

@@ -14,6 +14,8 @@
   "diagnostic.infoSign": "i>",
   "diagnostic.hintSign": "?> ",
   "diagnostic.virtualText": true,
+  // "diagnostic.displayByAle": true,
+  // "diagnostic.virtualText": true, // this won't work with codelens when error on same line
 
   // list
   "list.indicator": ">",
