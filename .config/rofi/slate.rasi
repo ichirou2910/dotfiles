@@ -1,19 +1,8 @@
 * {
-  background-color: rgba(29, 29, 29, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   border-color: #2e343f;
-  text-color: #ccffffff;
+  text-color: #fff;
   spacing: 0;
-}
-
-window {
-  location: west;
-  anchor: west;
-  height: 70%;
-  width: 25%;
-  orientation: vertical;
-  border: 2px 2px 2px 0px;
-  border-color: @border-color;
-  hide-scrollbar: true;
 }
 
 inputbar {
@@ -49,10 +38,10 @@ element {
   padding: 16px;
 }
 
-element-icon {
-  size: 2.0ch;
+element selected {
+  background-color: #2e343f;
 }
 
-element selected {
-  background-color: rgba(0, 127, 255, 0.3);
+element-icon {
+  size: 2.0ch;
 }

@@ -1,21 +1,21 @@
 
 # BASIC BINDING
 # -------------
-super + Return						
-	$TERMINAL
-super + i								
-    $TERMINAL --title "Ranger" -e $FILE
-super + w					
-	$BROWSER
-super + s
-	spotify
+#super + Return						
+#	$TERMINAL
+#super + i								
+#    $TERMINAL --title "Ranger" -e $FILE
+#super + w					
+#	$BROWSER
+#super + s
+#	spotify
 alt + shift + q
     powermenu --popup
 
 # Rofi
 # -------------------------
 alt + Tab							
-    rofi --syncsleep 10 -fullscreen -show window -selected-row 1
+    rofi --syncsleep 10 -show window -selected-row 1
 super + d							
 	rofi -show drun
 super + shift + c							
@@ -31,66 +31,6 @@ super + t
 # -------------------------
 #super + {1,2,3,4,5,6,7}
 #    qdbus org.kde.KWin /KWin setCurrentDesktop {1,2,3,4,5,6,7}
-
-# i3
-# -------------------------
-# kill focused window
-super + shift + q
-	i3-msg kill
-
-# change focus
-super + {h,j,k,l}
-	i3-msg focus {left,down,up,right}
-
-# alternatively, you can use the cursor keys:
-super + {Left,Down,Up,Right}
-	i3-msg focus {left,down,up,right}
-
-# move focused window
-super + shift + {h,j,k,l}
-	i3-msg move {left,down,up,right}
-
-# alternatively, you can use the cursor keys:
-super + shift + {Left,Down,Up,Right}
-	i3-msg move {left,down,up,right}
-
-# split in horizontal/vertical orientation or toggle fullscreen
-super + f
-	i3-msg {fullscreen toggle}
-super + {-,\}
-	i3-msg {split h, split v}
-
-# change container layout (stacked, tabbed, toggle split)
-super + shift + {s,w,e}
-	i3-msg layout {stacking,tabbed,toggle split}
-
-# toggle tiling / floating
-super + shift + f
-	i3-msg floating toggle
-
-# change focus between tiling / floating windows
-super + space
-	i3-msg focus mode_toggle
-
-# focus the parent container
-super + a
-	i3-msg focus parent
-
-# switch to workspace
-super + {1,2,3,4,5,6,7,8,9,0}
-	i3-msg workspace number {1,2,3,4,5,6,7,8,9,10}
-
-# move focused container to workspace
-super + shift + {1,2,3,4,5,6,7,8,9,0}
-	i3-msg move container to workspace number {1,2,3,4,5,6,7,8,9,0}
-
-# reload the configuration file / restart i3 inplace
-super + shift + {c,r}
-	i3-msg {reload,restart}
-
-# next and previous workspaces
-super + {Left,Right}
-	i3-msg workspace {prev,next}
 
 # SCREEN CAPTURE + RECORDING
 # -------------------------

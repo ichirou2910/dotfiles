@@ -79,6 +79,8 @@ plugins=(git zsh-syntax-highlighting)
 ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
+source /usr/share/z/z.sh
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -105,6 +107,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zaliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zaliasrc"
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zfuncs" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zfuncs"
 
 _comp_options+=(globdots)		# Include hidden files.
 
@@ -117,17 +120,20 @@ done
 
 compinit -C
 #prompt spaceship
-SPACESHIP_USER_SHOW=always
-SPACESHIP_USER_COLOR=yellow
-SPACESHIP_USER_COLOR_ROOT=red
-SPACESHIP_DIR_COLOR=blue
-SPACESHIP_CHAR_COLOR_SUCCESS=cyan
-SPACESHIP_CHAR_SUFFIX="  "
-SPACESHIP_CHAR_SYMBOL="▶"
-SPACESHIP_VI_MODE_SUFFIX=""
+  # char
+SPACESHIP_CHAR_SYMBOL="$ "
+SPACESHIP_CHAR_SYMBOL_SECONDARY="> "
+SPACESHIP_VI_MODE_SHOW=false
+  # git prompt
+SPACESHIP_GIT_STATUS_DELETED="X"
+SPACESHIP_GIT_STATUS_BEHIND=""
+SPACESHIP_GIT_STATUS_AHEAD=""
+SPACESHIP_GIT_STATUS_DIVERGED=""
+  # jobs
 SPACESHIP_JOBS_PREFIX=" "
 SPACESHIP_JOBS_SUFFIX=" "
 SPACESHIP_JOBS_AMOUNT_PREFIX=" "
+  # misc
 SPACESHIP_EXEC_TIME_COLOR=magenta
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

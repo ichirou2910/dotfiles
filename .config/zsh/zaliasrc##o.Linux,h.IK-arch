@@ -1,0 +1,65 @@
+#!/bin/sh
+
+# Prefer neovim if available
+command -v nvim >/dev/null && alias vim="nvim" vi="nvim" vimdiff="nvim -d" oldvim="vim" oldvdiff="vimdiff"
+
+# Git aliases
+alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+alias \
+    cdif="yadm diff" \
+    cstat="yadm status" \
+    cadd="yadm add" \
+    ccom="yadm commit -m" \
+    cpush="yadm push" \
+    cpull="yadm pull" \
+    cres="yadm restore" \
+    cress="yadm restore --staged" \
+    cfet="yadm fetch" \
+    calt="yadm alt"
+
+alias \
+    gdif="git diff" \
+    gstat="git status" \
+    gadd="git add" \
+    gcom="git commit -m" \
+    gpush="git push" \
+    gpull="git pull" \
+    gres="git restore" \
+    gress="git restore --staged" \
+    gfet="git fetch"
+
+# Quick edit common config files
+alias \
+    cfz="nvim ~/.config/zsh/.zshrc" \
+    cfza="nvim ~/.config/zsh/zaliasrc" \
+    cfv="nvim ~/.config/nvim/init.vim" \
+    cft="nvim ~/.tmux.conf.local" \
+    cfa="nvim ~/.config/awesome/rc.lua" \
+    cfr="nvim ~/.config/ranger/rc.conf" \
+    cfs="nvim ~/.config/sxhkd/sxhkdrc" \
+    chx="nvim ~/.xinitrc" \
+    chp="nvim ~/.profile" \
+    chxp="nvim ~/.xprofile"
+
+# Common apps
+alias \
+    di="ranger" \
+    dbui="nvim -c DBUI" \
+    pj="tmux-vim" \
+
+# Common commands
+alias \
+    q="exit"\
+    ka="killall" \
+    yt="youtube-dl" \
+    upgr="yay -Syu" \
+    se="sudo -e" \
+    tas="tmux attach-session" \
+    ta="tmux attach || tmux new-session" \
+    td="tmux detach" \
+    mnt="mount-drive --drive" \
+    mntm="mount-drive --media" \
+    mntl="mount-drive --list" \
+    mntu="mount-drive --unmount-drive" \
+    mntU="mount-drive --unmount-media"
