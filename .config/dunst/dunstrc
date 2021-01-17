@@ -1,16 +1,16 @@
 [global]
     monitor = 0
     follow = keyboard
-    geometry = "350x5-10+50"
+    geometry = "350x5-20+60"
     indicate_hidden = yes
     shrink = no
     transparency = 0
     notification_height = 0
-    separator_height = 10
+    separator_height = 1
     padding = 10
     horizontal_padding = 10
-    frame_width = 0
-    frame_color = "#232323"
+    frame_width = 1
+    frame_color = "#000000"
 
     # Define a color for the separator.
     # possible values are:
@@ -18,7 +18,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = "#00000000"
+    separator_color = "#000000"
 
     # Sort messages by urgency.
     sort = yes

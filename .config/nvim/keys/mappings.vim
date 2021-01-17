@@ -7,11 +7,16 @@ imap <C-l> <C-w>l
 " g Leader key
 let mapleader=" "
 " let localleader=" "
-nnoremap <space> <Nop>
+nnoremap <Space> <Nop>
 
 " Better indenting
 vnoremap < <gv
 vnoremap > >gv
+
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
+
+nnoremap <C-p> :Files<CR>
 
 if exists('g:vscode')
 
@@ -39,11 +44,6 @@ else
   " shift + j to move down
   xnoremap K :move '<-2<CR>gv-gv
   xnoremap J :move '>+1<CR>gv-gv
-
-	" Bind :nohl <- removes highlight of last search
-	noremap <C-n> :nohl<CR>
-	vnoremap <C-n> <Esc>:nohl<CR>
-	inoremap <C-n> <Esc>:nohl<CR>
 
   " Alternate way to save
   nnoremap <silent> <C-s> :w<CR>

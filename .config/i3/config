@@ -51,30 +51,25 @@ set $transparent #333333
 floating_modifier $mod
 
 # kill focused window
-# bindsym $mod+Shift+q kill
+bindsym $mod+Shift+q kill
 
 # change focus
-#bindsym $mod+h focus left
-#bindsym $mod+j focus down
-#bindsym $mod+k focus up
-#bindsym $mod+l focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-# bindsym $mod+Left focus left
-# bindsym $mod+Down focus down
-# bindsym $mod+Up focus up
-# bindsym $mod+Right focus right
-
-# bindsym $mod+h focus left
-# bindsym $mod+j focus down
-# bindsym $mod+k focus up
-# bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 # move focused window
-# bindsym $mod+Shift+j move left
-# bindsym $mod+Shift+k move down
-# bindsym $mod+Shift+l move up
-# bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 # bindsym $mod+Shift+Left move left
@@ -89,21 +84,21 @@ floating_modifier $mod
 # bindsym $mod+Shift+v split v
 
 # enter fullscreen mode for the focused container
-# bindsym $mod+f fullscreen toggle
+bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+s layout stacking
-#bindsym $mod+w layout tabbed
-#bindsym $mod+e layout toggle split
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+Shift+w layout tabbed
+bindsym $mod+Shift+e layout toggle split
 
 # toggle tiling / floating
-# bindsym $mod+Shift+f floating toggle
+bindsym $mod+Shift+f floating toggle
 
 # change focus between tiling / floating windows
-# bindsym $mod+Shift+t focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-# bindsym $mod+a focus parent
+bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -122,33 +117,39 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-# bindsym $mod+1 workspace $ws1
-# bindsym $mod+2 workspace $ws2
-# bindsym $mod+3 workspace $ws3
-# bindsym $mod+4 workspace $ws4
-# bindsym $mod+5 workspace $ws5
-# bindsym $mod+6 workspace $ws6
-# bindsym $mod+7 workspace $ws7
-# bindsym $mod+8 workspace $ws8
-# bindsym $mod+9 workspace $ws9
-# bindsym $mod+0 workspace $ws10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-# bindsym $mod+Shift+1 move container to workspace $ws1
-# bindsym $mod+Shift+2 move container to workspace $ws2
-# bindsym $mod+Shift+3 move container to workspace $ws3
-# bindsym $mod+Shift+4 move container to workspace $ws4
-# bindsym $mod+Shift+5 move container to workspace $ws5
-# bindsym $mod+Shift+6 move container to workspace $ws6
-# bindsym $mod+Shift+7 move container to workspace $ws7
-# bindsym $mod+Shift+8 move container to workspace $ws8
-# bindsym $mod+Shift+9 move container to workspace $ws9
-# bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# move to next workspace
+bindsym $mod+Tab exec ~/.cargo/bin/i3switcher next
+bindsym $mod+Shift+Tab exec ~/.cargo/bin/i3switcher prev
+bindsym $mod+Shift+Left workspace prev_on_output
+bindsym $mod+Shift+Right workspace next_on_output
 
 # reload the configuration file
-# bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-# bindsym $mod+F2 restart
+bindsym $mod+Shift+r restart
 # lockscreen
 
 # move window to randr output
@@ -189,24 +190,52 @@ bindsym $mod+r mode "resize"
 
 # Other function bindings
 
-# bindsym $mod+i exec --no-startup-id file-manager
+bindsym $mod+Return exec --no-startup-id $TERMINAL
+
+bindsym $mod+i exec --no-startup-id $TERMINAL --title "Ranger" -e $FILE
+
+bindsym $mod+w exec --no-startup-id $BROWSER
+
+bindsym $mod+s exec --no-startup-id spotify
+
+bindsym $alt+Tab exec --no-startup-id rofi --syncsleep 10 -show window -selected-row 1
+
+bindsym $mod+d exec --no-startup-id rofi -show drun
+
+bindsym $mod+c exec --no-startup-id code
+bindsym $mod+n exec --no-startup-id rofi-notes
+bindsym $mod+t exec --no-startup-id rofi-translate
+
+# capture whole screen -> clipboard
+bindsym Print exec maim -u | xclip -selection clipboard -t image/png && notify-send -i $HOME/.config/home/icons/screenshot.png -a "maim" "Full Window" "Screenshot copied."
+# capture whole screen -> save
+bindsym $mod+Print exec maim -u $SCREENSHOTDIR/$(date +%Y-%M-%d_%H:%M:%s).png && notify-send -i $HOME/.config/home/icons/screenshot.png -a "maim" "Full Window" "Screenshot saved."
+# capture active window -> clipboard
+bindsym $alt+Print exec maim -u -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png && notify-send -i $HOME/.config/home/icons/screenshot.png -a "maim" "Active window " "Screenshot copied."
+# capture active window -> save
+bindsym $alt+Shift+Print exec maim -u -i $(xdotool getactivewindow) $SCREENSHOTDIR/$(date +%Y-%M-%d_%H:%M:%s).png && notify-send -i $HOME/.config/home/icons/screenshot.png -a "maim" "Active window " "Screenshot saved."
+# capture selected region -> clipboard
+bindsym Control+$alt+a exec maim -u -s | xclip -selection clipboard -t image/png && notify-send -i $HOME/.config/home/icons/screenshot.png -a "maim" "Selected Region" "Screenshot copied."
+# capture selected region -> save
+bindsym Control+Shift+a exec maim -u -s $SCREENSHOTDIR/`date +%Y-%m-%d_%H:%H:%S`.png && notify-send -i $HOME/.config/home/icons/screenshot.png -a "maim" "Selected Region" "Screenshot saved."
 
 # border on all windows
-for_window [class=.*] border pixel 2
+for_window [class=.*] border pixel 0
 
 default_floating_border pixel 0
+hide_edge_borders smart
 
 focus_follows_mouse no
 
 # Gaps (i3-gaps)
-gaps inner 12
-gaps top 15
+gaps inner 10
+gaps outer 10
 
 # Only enable gaps on a workspace when there is at least one container
-#smart_gaps on
+# smart_gaps on
 
 #CLASS                   BORDER         BACKGROUND        TEXT      INDICATOR      CHILD BORDER
-client.focused           $transparent   $transparent      $blue     #ff0000     $red
+client.focused           $transparent   $transparent      $blue     $blue          $blue
 client.focused_inactive  $transparent   $transparent      $blue     $transparent
 client.unfocused         $transparent   #2b303b           #888888   #292d2e
 client.urgent            $transparent   $transparent      $red      $transparent
@@ -216,13 +245,16 @@ client.background        $transparent
 # exec --no-startup-id $TERMINAL -e bashtop
 
 # sxhkd
-exec --no-startup-id sxhkd
+# exec --no-startup-id sxhkd
 
 # Polybar
-# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Dunst
 exec_always --no-startup-id dunst
+
+# Ranger in scratch
+# exec --no-startup-id $TERMINAL --title "Explorer" -e ranger &
 
 # picom
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
@@ -235,22 +267,26 @@ exec --no-startup-id ~/.fehbg
 # exec --no-startup-id redshift-gtk
 
 # Kill plasma
-for_window [title="Desktop — Plasma"] kill; floating enable; border none
+for_window [title="Desktop — Plasma"] floating enable, border none, move scratchpad
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 
 for_window [class="Spotify"] move workspace $ws6
+for_window [title="^Explorer$"] move scratchpad
 
 for_window [class="feh"] floating enable
-for_window [class="plasmashell"] floating enable
-for_window [class="Plasma"] floating enable; border none
-for_window [title="plasma-desktop"] floating enable; border none
-for_window [title="win7"] floating enable; border none
-for_window [class="krunner"] floating enable; border none
-for_window [class="Kmix"] floating enable; border none
-for_window [class="Klipper"] floating enable; border none
-for_window [class="Plasmoidviewer"] floating enable; border none
+for_window [class="plasmashell"] floating enable, border none
+for_window [class="Plasma"] floating enable, border none
+for_window [title="plasma-desktop"] floating enable, border none
+for_window [title="win7"] floating enable, border none
+for_window [class="krunner"] floating enable, border none
+for_window [class="Guake"] floating enable, border none
+for_window [class="Kmix"] floating enable, border none
+for_window [class="Klipper"] floating enable, border none
+for_window [class="Plasmoidviewer"] floating enable, border none
 for_window [class="(?i)*nextcloud*"] floating disable
-for_window [class="plasmashell" window_type="notification"] floating enable, border none, move position 1575px 40px
+for_window [class="plasmashell" window_type="notification"] floating enable, border none
 no_focus [class="plasmashell" window_type="notification"]
+
+for_window [title="^WindowsVM$"] fullscreen enable, move workspace $ws4

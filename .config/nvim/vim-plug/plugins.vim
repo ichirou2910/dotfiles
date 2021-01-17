@@ -26,6 +26,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   if exists('g:vscode')
     " Easy motion for VSCode
     Plug 'asvetliakov/vim-easymotion'
+    Plug 'machakann/vim-highlightedyank'
   else
 
     " Surround
@@ -37,8 +38,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " auto set indent settings
     Plug 'tpope/vim-sleuth'
     " Better Syntax Support
-    " Plug 'nvim-treesitter/nvim-treesitter'
+    Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'sheerun/vim-polyglot'
+    Plug 'jackguo380/vim-lsp-cxx-highlight'
     " Cool Icons
     Plug 'ryanoasis/vim-devicons'
     " Auto pairs for '(' '[' '{'
@@ -47,14 +49,18 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'alvan/vim-closetag'
     " Themes
     Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-
-    " Plug 'ChristianChiarulli/nv-code'
-    " Plug 'kyazdani42/blue-moon'
+    Plug 'joshdick/onedark.vim'
+    Plug 'frankier/neovim-colors-solarized-truecolor-only'
+    Plug 'bluz71/vim-nightfly-guicolors'
+    Plug 'nanotech/jellybeans.vim', { 'tag': 'v1.7' }
     " Intellisense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Cmake
+    Plug 'vhdirk/vim-cmake'
     " Status Line
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    " Plug 'vim-airline/vim-airline'
+    " Plug 'vim-airline/vim-airline-themes'
+    Plug 'ap/vim-buftabline'
     Plug 'kevinhwang91/rnvimr'
     " FZF
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -81,9 +87,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Interactive code
     Plug 'metakirby5/codi.vim'
     " Debugging
-    " Plug 'puremourning/vimspector'
-    " Better tabline
-    Plug 'mg979/vim-xtabline'
+    Plug 'puremourning/vimspector'
     " undo time travel
     Plug 'mbbill/undotree'
     " Find and replace
@@ -108,49 +112,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Colorizer
     Plug 'norcalli/nvim-colorizer.lua'
     " Rainbow brackets
-    " Plug 'luochen1990/rainbow'
-    " Async Linting Engine
-    " TODO make sure to add ale config before plugin
-    " Plug 'dense-analysis/ale'
+    Plug 'luochen1990/rainbow'
     " Better Whitespace
     Plug 'ntpeters/vim-better-whitespace'
-    " Multiple Cursors
-    " TODO add this back in change from C-n
-    " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+    " Buffer delete
     Plug 'moll/vim-bbye'
-    " Plug 'yuezk/vim-js'
-    " Plug 'maxmellon/vim-jsx-pretty'
-    " Plug 'jelera/vim-javascript-syntax'
-    " Plugin Graveyard
-
-    " jsx syntax support
-    " Typescript syntax
-    " Plug 'HerringtonDarkholme/yats.vim'
-    " Multiple Cursors
-    " Plug 'terryma/vim-multiple-cursors'
-    " Plug 'kaicataldo/material.vim'
-    " Plug 'NLKNguyen/papercolor-theme'
-    " Plug 'tomasiser/vim-code-dark'
-    " Vim Wiki
-    " Plug 'https://github.com/vimwiki/vimwiki.git'
-    " Better Comments
-    " Plug 'jbgutierrez/vim-better-comments'
-    " Echo doc
-    " Plug 'Shougo/echodoc.vim'
-    " Plug 'hardcoreplayers/spaceline.vim'
-    " Plug 'vim-airline/vim-airline-themes'
-    " Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-    " Plug 'arcticicestudio/nord-vim'
-    " Ranger
-    " Plug 'francoiscabrol/ranger.vim'
-    " Plug 'rbgrouleff/bclose.vim'
-    " Making stuff
-    " Plug 'neomake/neomake'
-    " Plug 'mhinz/vim-signify'
-    " Plug 'easymotion/vim-easymotion'
-    " Plug 'preservim/nerdcommenter'
-    " Plug 'brooth/far.vim'
-    " Plug 'atishay/far.vim'
+    " Seamless navigation with tmux
+    Plug 'christoomey/vim-tmux-navigator'
   endif
 
 call plug#end()

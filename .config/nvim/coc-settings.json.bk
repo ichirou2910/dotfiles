@@ -1,5 +1,0 @@
-{
-    "python.jediEnabled": false,
-    "eslint.nodePath": "~/.vim/plugged/vundle/coc.nvim/node_modules",
-    "coc.preferences.formatOnSaveFiletypes": ["*"]
-}
