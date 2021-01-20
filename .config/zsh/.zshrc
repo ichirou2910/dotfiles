@@ -107,6 +107,7 @@ source /usr/share/z/z.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zaliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zaliasrc"
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zfuncs" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zfuncs"
 
 _comp_options+=(globdots)		# Include hidden files.
 

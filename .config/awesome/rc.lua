@@ -103,7 +103,7 @@ local browser      = os.getenv("BROWSER") or "firefox"
 local scrlocker    = "slock"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "1", "2", "3", "", "", "", "", "8", "9", "" }
+awful.util.tagnames = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" }
 awful.layout.layouts = {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
@@ -275,6 +275,20 @@ globalkeys = my_table.join(
     -- Tag browsing
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
+        -- View next tag.
+        awful.key({ modkey }, "Tab",
+                  function ()
+                        local screen = awful.screen.focused()
+                        local focus = client.focus and client.focus.first_tag or nil
+                        if focus == nil then
+                          return
+                        end
+                        local tag = screen.tags[(focus.name + 1) % 9]
+                        if tag then
+                           tag:view_only()
+                        end
+                  end,
+              {description = "view next tag", group = "tag"}),
 
     -- Non-empty tag browsing
     awful.key({ modkey }, "Left", function () lain.util.tag_view_nonempty(-1) end,
@@ -333,22 +347,20 @@ globalkeys = my_table.join(
               {description = "focus the previous screen", group = "screen"}),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
-    awful.key({ modkey,           }, "Tab",
-        function ()
-            if cycle_prev then
-                awful.client.focus.history.previous()
-            else
-                awful.client.focus.byidx(-1)
-            end
-            if client.focus then
-                client.focus:raise()
-            end
-        end,
-        {description = "cycle with previous/go back", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "Tab",
+    awful.key({ altkey,           }, "Tab",
         function ()
             if cycle_prev then
                 awful.client.focus.byidx(1)
+              if client.focus then
+                  client.focus:raise()
+              end
+            end
+        end,
+        {description = "cycle with previous/go back", group = "client"}),
+    awful.key({ altkey, "Shift"   }, "Tab",
+        function ()
+            if cycle_prev then
+                awful.client.focus.byidx(-1)
                 if client.focus then
                     client.focus:raise()
                 end
@@ -491,7 +503,7 @@ clientkeys = my_table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "q",      function (c) c:kill()                         end,
+    awful.key({ modkey,           }, "q",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
     awful.key({ modkey, "Shift"   }, "f",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
@@ -697,9 +709,9 @@ client.connect_signal("request::titlebars", function(c)
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
-client.connect_signal("mouse::enter", function(c)
-    c:emit_signal("request::activate", "mouse_enter", {raise = vi_focus})
-end)
+-- client.connect_signal("mouse::enter", function(c)
+--     c:emit_signal("request::activate", "mouse_enter", {raise = vi_focus})
+-- end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)

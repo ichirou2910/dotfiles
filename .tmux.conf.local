@@ -133,7 +133,7 @@ tmux_conf_theme_window_status_current_format='#I #W'
 # window activity status style
 tmux_conf_theme_window_status_activity_fg='default'
 tmux_conf_theme_window_status_activity_bg='default'
-tmux_conf_theme_window_status_activity_attr='underscore'
+tmux_conf_theme_window_status_activity_attr='none'
 
 # window bell status style
 tmux_conf_theme_window_status_bell_fg='#ffff00'         # yellow
@@ -304,10 +304,6 @@ unbind '"'
 unbind %
 
 # Pane selection
-bind-key -n C-h select-pane -L
-bind-key -n C-j select-pane -D
-bind-key -n C-k select-pane -U
-bind-key -n C-l select-pane -R
 
 # Smart pane switching when using with Vim
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
@@ -347,3 +343,4 @@ set -s command-alias[7] ns='new-session'
 set -s command-alias[8] vs='split-window -h'
 set -s command-alias[9] db='new-window -n Database nvim -c DBUI'
 
+# vim:ft=tmux

@@ -60,4 +60,6 @@ alias \
     mntm="mount-drive --media" \
     mntl="mount-drive --list" \
     mntu="mount-drive --unmount-drive" \
-    mntU="mount-drive --unmount-media"
+    mntU="mount-drive --unmount-media" \
+    wset="win10-setmem" \
+    wres="xrandr --output DP1 --auto --primary --left-of HDMI1"
