@@ -6,10 +6,6 @@ source $HOME/.local/bin/alacritty.sh
 
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 
-# For Unity-devs' sake
-export FrameworkPathOverride=/lib/mono/4.7.2-api
-export MSBuildSDKsPath=/opt/dotnet/sdk/$(dotnet --version)/Sdks
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -106,6 +102,7 @@ source /usr/share/z/z.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zpaths" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zpaths"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zaliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zaliasrc"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zfuncs" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zfuncs"
 
@@ -121,8 +118,9 @@ done
 compinit -C
 #prompt spaceship
   # char
-SPACESHIP_CHAR_SYMBOL="$ "
-SPACESHIP_CHAR_SYMBOL_SECONDARY="> "
+SPACESHIP_CHAR_SYMBOL="❯ "
+SPACESHIP_CHAR_SYMBOL_SECONDARY="⋮ "
+SPACESHIP_CHAR_COLOR_SUCCESS="#9b59b6"
 SPACESHIP_VI_MODE_SHOW=false
   # git prompt
 SPACESHIP_GIT_STATUS_DELETED="X"
@@ -135,6 +133,18 @@ SPACESHIP_JOBS_SUFFIX=" "
 SPACESHIP_JOBS_AMOUNT_PREFIX=" "
   # misc
 SPACESHIP_EXEC_TIME_COLOR=magenta
+SPACESHIP_DIR_COLOR=blue
+SPACESHIP_PACKAGE_SHOW=false
+  # prefix
+SPACESHIP_PROMPT_DEFAULT_PREFIX="· "
+SPACESHIP_HOST_PREFIX="· "
+SPACESHIP_DIR_PREFIX="· "
+SPACESHIP_GIT_PREFIX="· "
+SPACESHIP_DOCKER_PREFIX="· "
+SPACESHIP_PACKAGE_PREFIX="· "
+SPACESHIP_NODE_PREFIX="· "
+SPACESHIP_DOTNET_PREFIX="· "
+SPACESHIP_EXEC_TIME_PREFIX="· "
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
