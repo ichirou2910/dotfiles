@@ -8,7 +8,7 @@ alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 alias \
     cdif="yadm diff" \
-    cstat="yadm status" \
+    cst="yadm status" \
     cadd="yadm add" \
     ccom="yadm commit -m" \
     cpush="yadm push" \
@@ -20,8 +20,6 @@ alias \
 
 alias \
     gdif="git diff" \
-    gstat="git status" \
-    gadd="git add" \
     gcom="git commit -m" \
     gpush="git push" \
     gpull="git pull" \

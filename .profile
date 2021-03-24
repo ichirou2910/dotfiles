@@ -1,5 +1,5 @@
 # Session
-export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':')"
+export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
 
 # Default programs
 export EDITOR="/usr/bin/nvim"
