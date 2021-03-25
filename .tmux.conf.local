@@ -77,7 +77,7 @@ tmux_conf_theme_message_attr='bold'
 
 # status line command style (<prefix> : Escape)
 tmux_conf_theme_message_command_fg='#ffff00'            # yellow
-tmux_conf_theme_message_command_bg='#000000'            # black
+tmux_conf_theme_message_command_bg='#0b0b0b'            # black
 tmux_conf_theme_message_command_attr='bold'
 
 # window modes style
@@ -87,7 +87,7 @@ tmux_conf_theme_mode_attr='bold'
 
 # status line style
 tmux_conf_theme_status_fg='#8a8a8a'                     # light gray
-tmux_conf_theme_status_bg='#080808'                     # dark gray
+tmux_conf_theme_status_bg='#0b0b0b'                     # dark gray
 tmux_conf_theme_status_attr='none'
 
 # terminal title
@@ -109,7 +109,7 @@ tmux_conf_theme_terminal_title='❐ #S ● #I #W'
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_window_status_fg='#8a8a8a'              # light gray
-tmux_conf_theme_window_status_bg='#080808'              # dark gray
+tmux_conf_theme_window_status_bg='#0a0a0a'              # dark gray
 tmux_conf_theme_window_status_attr='none'
 tmux_conf_theme_window_status_format='#I #W'
 #tmux_conf_theme_window_status_format='#{circled_window_index} #W'
@@ -123,17 +123,17 @@ tmux_conf_theme_window_status_format='#I #W'
 #     - #{hostname_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_window_status_current_fg='#000000'      # black
-tmux_conf_theme_window_status_current_bg='#00afff'      # light blue
+tmux_conf_theme_window_status_current_fg='#0a0a0a'      # black
+tmux_conf_theme_window_status_current_bg='#2ecc71'      # light blue
 tmux_conf_theme_window_status_current_attr='bold'
 tmux_conf_theme_window_status_current_format='#I #W'
 #tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
-#tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}'
+# tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}'
 
 # window activity status style
 tmux_conf_theme_window_status_activity_fg='default'
 tmux_conf_theme_window_status_activity_bg='default'
-tmux_conf_theme_window_status_activity_attr='underscore'
+tmux_conf_theme_window_status_activity_attr='none'
 
 # window bell status style
 tmux_conf_theme_window_status_bell_fg='#ffff00'         # yellow
@@ -141,7 +141,7 @@ tmux_conf_theme_window_status_bell_bg='default'
 tmux_conf_theme_window_status_bell_attr='blink,bold'
 
 # window last status style
-tmux_conf_theme_window_status_last_fg='#00afff'         # light blue
+tmux_conf_theme_window_status_last_fg='#ffffff'         # light blue
 tmux_conf_theme_window_status_last_bg='default'
 tmux_conf_theme_window_status_last_attr='none'
 
@@ -181,16 +181,16 @@ tmux_conf_theme_right_separator_sub='|'
 #     - #{username_ssh}
 #     uptime format: ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,}
 tmux_conf_theme_status_left=' ❐ #S '
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} , %R , %d %b %Y | #{username}#{root} | #{hostname} '
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} %a %d/%m/%Y , %I:%M %p | #{username}#{root} | #{hostname} '
 
 # status left style
-tmux_conf_theme_status_left_fg='#000000,#e4e4e4'  # black, white , white
+tmux_conf_theme_status_left_fg='#0b0b0b,#e4e4e4'  # black, white , white
 tmux_conf_theme_status_left_bg='#ffff00,#00afff'  # yellow, pink, white blue
 tmux_conf_theme_status_left_attr='bold,none,none'
 
 # status right style
-tmux_conf_theme_status_right_fg='#8a8a8a,#e4e4e4,#000000' # light gray, white, black
-tmux_conf_theme_status_right_bg='#080808,#d70000,#e4e4e4' # dark gray, red, white
+tmux_conf_theme_status_right_fg='#e4e4e4,#ffffff,#0b0b0b' # light gray, white, black
+tmux_conf_theme_status_right_bg='#0b0b0b,#db2021,#ae81ff' # dark gray, red, white
 tmux_conf_theme_status_right_attr='none,none,bold'
 
 # pairing indicator
@@ -303,11 +303,22 @@ bind C-a send-prefix
 unbind '"'
 unbind %
 
+# split current window horizontally
+bind _ split-window -v
+# split current window vertically
+bind - split-window -h
+
+# copy mode
+bind v copy-mode
+
+# maximize current pane
+unbind +
+bind m run 'cut -c3- ~/.tmux.conf | sh -s _maximize_pane "#{session_name}" #D'
+
+# toggle mouse
+bind M run "cut -c3- ~/.tmux.conf | sh -s _toggle_mouse"
+
 # Pane selection
-bind-key -n C-h select-pane -L
-bind-key -n C-j select-pane -D
-bind-key -n C-k select-pane -U
-bind-key -n C-l select-pane -R
 
 # Smart pane switching when using with Vim
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
@@ -323,8 +334,10 @@ if-shell -b '[ "$(echo "$tmux_version >= 3.0" | bc)" = 1 ]' \
     "bind-key -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\\\'  'select-pane -l'"
 
 # Windows
-bind C-x new-window
-bind x new-window -c "#{pane_current_path}"
+bind x new-window -c "$HOME"
+bind C-x new-window -c "#{pane_current_path}"
+bind a choose-tree -Zw
+bind C-a choose-tree -Zw
 bind-key -r h prev
 bind-key -r j next
 bind-key -r k prev
@@ -343,7 +356,25 @@ set -s command-alias[3] rw='rename-window'
 set -s command-alias[4] rs='rename-session'
 set -s command-alias[5] np='new-pane'
 set -s command-alias[6] nw='new-window'
-set -s command-alias[7] ns='new-session'
+set -s command-alias[7] ns='new-session -c $HOME'
 set -s command-alias[8] vs='split-window -h'
 set -s command-alias[9] db='new-window -n Database nvim -c DBUI'
 
+#-----------------------------
+# plugins config
+set -g @resurrect-strategy-nvim 'session'
+set -g @continuum-restore 'on'
+unbind z
+set -g @fzf-url-bind 'z'
+
+#-----------------------------
+# plugins 
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-sessionist'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'tmux-plugins/tmux-copycat'
+set -g @plugin 'wfxr/tmux-fzf-url'
+
+# vim:ft=tmux

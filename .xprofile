@@ -7,5 +7,3 @@ export QT_IM_MODULE=ibus
 ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3
 setxkbmap -option caps:swapescape
 pulseeffects --gapplication-service &
-
-(time /bin/zsh -i -c exit) &> zsh_startup.txt 2>&1
