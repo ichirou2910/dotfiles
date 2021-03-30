@@ -1,16 +1,16 @@
 [global]
     monitor = 0
-    follow = keyboard
-    geometry = "350x5-20+60"
+    follow = none
+    geometry = "350x6-20+60"
     indicate_hidden = yes
-    shrink = no
-    transparency = 0
+    shrink = yes
+    transparency = 5
     notification_height = 0
-    separator_height = 1
-    padding = 10
-    horizontal_padding = 10
-    frame_width = 1
-    frame_color = "#000000"
+    separator_height = 2
+    padding = 8
+    horizontal_padding = 11
+    frame_width = 6
+    frame_color = "#3b4252"
 
     # Define a color for the separator.
     # possible values are:
@@ -18,13 +18,13 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = "#000000"
+    separator_color = "#404859"
 
     # Sort messages by urgency.
     sort = yes
 
     idle_threshold = 120
-    font = Noto sans 12
+    font = Ubuntu 12
     line_height = 0
     markup = full
 
@@ -39,7 +39,7 @@
     #   %%  Literal %
     # Markup is allowed
     markup = full
-    format = "%a\n<span foreground='#f3f4f5'><b>%s %p</b></span>\n%b"
+    format = "<span font_desc='Ubuntu 12' weight='bold' foreground='#f9f9f9'>%s</span>\n%b"
 
     alignment = left
     vertical_alignment = center
@@ -52,12 +52,12 @@
     show_indicators = yes
     icon_position = left
     max_icon_size = 32
-    icon_path = /usr/share/icons/Paper/16x16/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/16x16/apps/
+    icon_path = /usr/share/icons/Papirus-Dark-Custom/48x48/actions/:/usr/share/icons/Papirus-Dark-Custom/48x48/apps/:/usr/share/icons/Papirus-Dark-Custom/48x48/devices/:/usr/share/icons/Papirus-Dark-Custom/48x48/emblems/:/usr/share/icons/Papirus-Dark-Custom/48x48/emotes/:/usr/share/icons/Papirus-Dark-Custom/48x48/mimetypes/:/usr/share/icons/Papirus-Dark-Custom/48x48/places/:/usr/share/icons/Papirus-Dark-Custom/48x48/status/
     sticky_history = yes
     history_length = 20
     verbosity = mesg
     dmenu = /usr/bin/rofi -dmenu -p Dunst:
-    browser = /usr/bin/brave -new-tab
+    browser = brave-bin
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
@@ -79,24 +79,22 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    # IMPORTANT: colors have to be defined in quotation marks.
-    # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#232323"
-    foreground = "#a8a8a8"
-    timeout = 5
-    # Icon for notifications with low urgency, uncomment to enable
-    #icon = /path/to/icon
+timeout = 3
+background = "#3b4252"
+foreground = "#f9f9f9"
+highlight = "#f48ee8"
 
 [urgency_normal]
-    background = "#232323"
-    foreground = "#a8a8a8"
-    timeout = 5
+timeout = 6
+background = "#3b4252"
+foreground = "#f9f9f9"
+highlight = "#f48ee8"
 
 [urgency_critical]
-    background = "#d64e4e"
-    foreground = "#f0e0e0"
-    frame_color = "#d64e4e"
-    timeout = 0
+timeout = 0
+background = "#3b4252"
+foreground = "#f9f9f9"
+highlight = "#f48ee8"
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.

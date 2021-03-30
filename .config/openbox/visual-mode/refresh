@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+source $HOME/.owl4ce_var
+
+kill() { { killall tint2; killall dunst; [[ "$1" = "also_tray" ]] && killall $CHK_TRAY || :; } &> /dev/null; }
+
+xrdb $HOME/.Xresources && kill
+"$VISMOD_DIR/UI"
