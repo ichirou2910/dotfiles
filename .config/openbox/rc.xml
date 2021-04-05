@@ -458,6 +458,11 @@
         <command>bash -c '~/.scripts/shot-seldraw'</command>
       </action>
     </keybind>
+    <keybind key="C-S-s">
+      <action name="Execute">
+        <command>bash -c '~/.scripts/shot-seldraw save'</command>
+      </action>
+    </keybind>
     <keybind key="W-Print">
       <action name="Execute">
         <command>bash -c '~/.config/rofi/scripts/screenshot.sh'</command>
@@ -720,16 +725,6 @@
       </mousebind>
     </context>
     <context name="Desktop">
-      <mousebind button="Up" action="Click">
-        <action name="GoToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="Down" action="Click">
-        <action name="GoToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
       <mousebind button="W-Up" action="Click">
         <action name="GoToDesktop">
           <to>previous</to>

@@ -5,6 +5,8 @@ configuration {
   disable-history:      true;
   sidebar-mode:         false;
   modi:                 "drun,run,window,file-browser";
+  sort:                 true;
+  sorting-method:       "fzf";
   display-drun:         "";
   display-run:          "";
   display-window:       "";

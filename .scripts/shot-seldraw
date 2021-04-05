@@ -3,11 +3,12 @@ source $HOME/.owl4ce_var
 
 noterr() { $EXNOTIFY_SEND -u low -r 12 "Install scrot!"; exit 1; }
 type -p "scrot" &> /dev/null || noterr
+OUTPUT=""
 
 {
     [[ ! -d "$SAVE_DIR/Screenshots" ]] && mkdir -p "$SAVE_DIR/Screenshots"; read -rt ".1" <> <(:) || :
     rm -f /tmp/*_scrot*.png &> /dev/null
-    scrot -q "$QUALITY" -sfbe 'mv $f /tmp/' -l style=dash,width=3,color="#2be491" &> /dev/null && \
+    scrot -q "$QUALITY" -sfbe 'mv $f /tmp/' -l style=dash,width=1,color="#2be491" &> /dev/null && \
     $EXNOTIFY_SEND -r 12 -t 750 -i "$NOTIF_SS_ICON" -u low "" "Processing captured image .." || \
     ( $EXNOTIFY_SEND -r 12 -t 500 -i "$NOTIF_SS_ICON" -u low "" "Screenshot canceled!" && exit 1 )
     
@@ -20,11 +21,19 @@ type -p "scrot" &> /dev/null || noterr
     \( +clone -flip \) -compose Multiply -composite \( +clone -flop \) -compose Multiply -composite \) \
     -alpha off -compose CopyOpacity -composite /tmp/"$CURRENT"-rounded.png &> /dev/null
 
-    convert /tmp/"$CURRENT"-rounded.png \( +clone -background black -shadow "$FRAMED_SHADOW_OPACITY"x10+0+5 \) \
+    convert /tmp/"$CURRENT"-rounded.png \( +clone -background black -shadow "$FRAMED_SHADOW_OPACITY"x5+0+5 \) \
     +swap -background none -layers merge +repage /tmp/"$CURRENT"-shadow.png &> /dev/null
 
+    if [ $1 = "save" ]; then
+        OUTPUT="$SAVE_DIR/Screenshots/$CURRENT.png"
+    else
+        OUTPUT="/tmp/$CURRENT-border.png"
+    fi
+
     convert /tmp/"$CURRENT"-shadow.png -bordercolor "$FRAME_COLOR" \
-    -border 5 "$SAVE_DIR/Screenshots/$CURRENT.png" &> /dev/null
+    -border 3 "$OUTPUT" &> /dev/null
+
+    xclip -selection clipboard -target image/png -i "$OUTPUT"
 
     rm -f /tmp/*_scrot*.png &> /dev/null
     if [[ -f "$SAVE_DIR/Screenshots/$CURRENT.png" ]]; then
