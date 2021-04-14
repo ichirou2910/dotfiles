@@ -337,7 +337,7 @@ if-shell -b '[ "$(echo "$tmux_version >= 3.0" | bc)" = 1 ]' \
 bind x new-window -c "$HOME"
 bind C-x new-window -c "#{pane_current_path}"
 bind a choose-tree -Zw
-bind C-a choose-tree -Zw
+bind C-a choose-tree -Zs
 bind-key -r h prev
 bind-key -r j next
 bind-key -r k prev
