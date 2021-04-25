@@ -128,7 +128,7 @@ border_color_pressed = #a1a8b9 0
 
 #-------------------------------------
 # Panel
-panel_items = PTSPEPPBC
+panel_items = PTSPEPC
 panel_size = 100% 45
 panel_margin = 0 0
 panel_padding = 7 7 7
@@ -204,7 +204,7 @@ systray_background_id = 8
 systray_sort = ascending
 systray_icon_size = 16
 systray_icon_asb = 100 0 10
-systray_monitor = 1
+systray_monitor = primary
 systray_name_filter = 
 
 #-------------------------------------
@@ -295,8 +295,8 @@ execp_icon_h = 0
 button = new
 button_text = 
 button_tooltip = Right click to open File Manager
-button_lclick_command = ~/.config/rofi/scripts/appsmenu.sh
-button_rclick_command = ~/.scripts/default-apps/launch filemanager
+button_lclick_command = ~/.config/rofi/scripts/powermenu.sh
+button_rclick_command = 
 button_mclick_command = 
 button_uwheel_command = 
 button_dwheel_command = 
@@ -330,23 +330,6 @@ button = new
 button_text = 
 button_tooltip = Screenshot Menu
 button_lclick_command = ~/.config/rofi/scripts/screenshot.sh
-button_rclick_command = 
-button_mclick_command = 
-button_uwheel_command = 
-button_dwheel_command = 
-button_font = Material 17
-button_font_color = #f9f9f9 100
-button_padding = 4 0
-button_background_id = 6
-button_centered = 1
-button_max_icon_size = 0
-
-#-------------------------------------
-# Button 4
-button = new
-button_text = 
-button_tooltip = Power Menu
-button_lclick_command = ~/.config/rofi/scripts/powermenu.sh
 button_rclick_command = 
 button_mclick_command = 
 button_uwheel_command = 
