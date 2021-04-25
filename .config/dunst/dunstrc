@@ -56,7 +56,7 @@
     sticky_history = yes
     history_length = 20
     verbosity = mesg
-    dmenu = /usr/bin/rofi -dmenu -p Dunst:
+    dmenu = /usr/bin/rofi -dmenu -no-fixed-num-lines -theme themes/context.rasi -p Actions
     browser = brave-bin
 
     # Always run rule-defined scripts, even if the notification is suppressed
