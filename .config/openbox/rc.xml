@@ -124,8 +124,8 @@
   <margins>
     <top>55</top>
     <bottom>10</bottom>
-    <left>0</left>
-    <right>0</right>
+    <left>10</left>
+    <right>10</right>
   </margins>
   <dock>
     <position>Bottom</position>
