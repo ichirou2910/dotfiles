@@ -17,7 +17,8 @@ To use:
 }
 
 /* Link hint boxes */
-div > .vimiumHintMarker {
+#vimiumHintMarkerContainer .vimiumHintMarker {
+  font-family: var(--font);
   background: #2e343f;
   font-size: 12px;
   border: 0.25em solid #2e343f;
@@ -26,15 +27,15 @@ div > .vimiumHintMarker {
 }
 
 /* Link hint text */
-div > .vimiumHintMarker span {
+#vimiumHintMarkerContainer > .vimiumHintMarker span {
   color: #f9f9f9;
   font-size: inherit;
   text-shadow: none;
 }
 
 /* Link hint matching characters */
-div > .vimiumHintMarker > .matchingCharacter {
-  color: #6272a4;
+#vimiumHintMarkerContainer > .vimiumHintMarker > .matchingCharacter {
+  color: #6272a4 !important;
 }
 
 /* HUD ("heads-up display") bar */
