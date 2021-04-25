@@ -128,7 +128,7 @@ border_color_pressed = #a1a8b9 0
 
 #-------------------------------------
 # Panel
-panel_items = PTSPEPPC
+panel_items = PTSPEPPBC
 panel_size = 100% 45
 panel_margin = 0 0
 panel_padding = 7 7 7
@@ -244,7 +244,7 @@ battery_tooltip = 1
 battery_low_status = 0
 battery_low_cmd = 
 battery_full_cmd = 
-battery_font_color = #000000 100
+battery_font_color = #f9f9f9 100
 bat1_format = 
 bat2_format = 
 battery_padding = 0 0
