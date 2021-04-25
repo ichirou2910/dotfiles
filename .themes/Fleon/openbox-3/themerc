@@ -23,7 +23,7 @@ window.active.border.color: #373e4d
 window.inactive.border.color: #373e4d
 
 ## Handle
-window.handle.width: 4
+window.handle.width: 0
 window.active.handle.bg: flat
 window.active.handle.bg.color: #3c4454
 window.inactive.handle.bg: flat
