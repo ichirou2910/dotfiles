@@ -2,7 +2,7 @@
 
 * {
   /* General */
-  text-font:                            "Comfortaa 18";
+  text-font:                            "FontAwesome 17";
   icon-font:                            "feather 24";
   
   option-6-listview-spacing:            5px;
@@ -11,7 +11,7 @@
 }
 
 #window {
-  width: 223px;
+  width: 212px;
   height: 79px;
   anchor: south;
   location: south;
