@@ -5,6 +5,21 @@ command -v nvim >/dev/null && alias vim="nvim" vi="nvim" vimdiff="nvim -d" oldvi
 
 # Git aliases
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias g="git"
+
+# Verbosity
+alias \
+    cp="cp -iv" \
+    mv="mv -iv" \
+    rm="rm -vI" \
+    bc="bc -ql" \
+    mkd="mkdir -pv" \
+
+if [ -x "$(command -v exa)" ]
+then
+    alias ll="exa -l -g --icons"
+    alias lla="ll -a"
+fi
 
 alias \
     cdif="yadm diff" \
@@ -62,4 +77,4 @@ alias \
     mntu="mount-drive --unmount-drive" \
     mntU="mount-drive --unmount-media" \
     wset="win10-setmem" \
-    wres="xrandr --output DP1 --auto --primary --left-of HDMI1"
+    wres="xrandr --output DP1 --auto --primary --left-of HDMI1" \
