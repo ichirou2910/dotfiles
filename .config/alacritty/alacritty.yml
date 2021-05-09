@@ -98,8 +98,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux) monospace
     #   - (Windows) Consolas
-    # family: Cascadia Code
-    family: LigaUbuntuMono Nerd Font
+    family: monospace
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -110,8 +109,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    # family: Cascadia Code
-    family: LigaUbuntuMono Nerd Font
+    family: monospace
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -122,27 +120,26 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    # family: Cascadia Code
-    family: LigaUbuntuMono Nerd Font
+    family: monospace
 
     # The `style` can be specified to pick a specific face.
     style: Italic
 
   # Point size
-  size: 10.5
+  size: 10.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: 0
-    y: 3
+    y: 4
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
   # increasing `y` moves the glyph upwards.
   glyph_offset:
     x: 0
-    y: 0
+    y: -1
 
   # Thin stroke font rendering (macOS only)
   #
@@ -158,14 +155,15 @@ font:
   #
   # This is a global setting and will require a log out or restart to take
   # effect.
-  use_thin_strokes: true
+  use_thin_strokes: false
 
 #+begin_theme
 # Colors (Snazzy)
 colors:
   # Default colors
   primary:
-    background: "0x0f1014"
+    # background: "0x0f1014"
+    background: "0x121212"
     foreground: "0xeff0eb"
 
   # Normal colors
@@ -248,7 +246,7 @@ bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.9
+background_opacity: 0.95
 
 # Mouse bindings
 #
