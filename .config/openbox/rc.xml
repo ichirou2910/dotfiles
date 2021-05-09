@@ -465,7 +465,7 @@
     </keybind>
     <keybind key="W-Print">
       <action name="Execute">
-        <command>bash -c '~/.config/rofi/scripts/screenshot.sh'</command>
+        <command>bash -c '~/.scripts/shot-now save'</command>
       </action>
     </keybind>
   </keyboard>
