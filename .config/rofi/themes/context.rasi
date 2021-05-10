@@ -4,6 +4,7 @@
   text-color: #f9f9f9;
   spacing: 0;
   width: 512px;
+  font: "Ubuntu 15px";
 }
 
 window {
