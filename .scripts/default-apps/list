@@ -1,5 +1,5 @@
 terminal="alacritty"
 lockscreen="slimlock"
 musicpl="mpd"
-filemanager="ranger"
-browser="brave"
+filemanager="thunar"
+browser="google-chrome-stable"
