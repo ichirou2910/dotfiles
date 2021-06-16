@@ -104,7 +104,6 @@
       <name>5</name>
       <name>6</name>
       <name>7</name>
-      <name>8</name>
     </names>
     <popupTime>0</popupTime>
     <!-- The number of milliseconds to show the popup for when switching desktops. Set this to 0 to disable the popup. -->
@@ -303,6 +302,11 @@
         <to>7</to>
       </action>
     </keybind>
+    <keybind key="W-grave">
+      <action name="GoToDesktop">
+        <to>7</to>
+      </action>
+    </keybind>
     <keybind key="W-8">
       <action name="GoToDesktop">
         <to>8</to>
@@ -339,6 +343,11 @@
       </action>
     </keybind>
     <keybind key="W-S-7">
+      <action name="SendToDesktop">
+        <to>7</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-grave">
       <action name="SendToDesktop">
         <to>7</to>
       </action>
@@ -815,6 +824,9 @@
     </application>
     <application class="mpv" type="normal">
       <maximized>true</maximized>
+    </application>
+    <application class="clipstudiopaint.exe">
+      <layer>above</layer>
     </application>
   </applications>
 </openbox_config>
