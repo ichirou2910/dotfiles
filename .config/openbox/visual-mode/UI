@@ -42,7 +42,7 @@ case $1 in
     *)          # Notification Daemon
                 NOTIFYD
                 # Wallpaper Setter
-                nitrogen --set-tiled --save "$WALL_DIR/$CHK_VISMOD_WALL" &> /dev/null
+                nitrogen --set-zoom-fill --save "$WALL_DIR/$CHK_VISMOD_WALL" &> /dev/null
                 # Panel
                 PANEL
     ;;
