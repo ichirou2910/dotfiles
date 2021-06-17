@@ -281,29 +281,6 @@ separator_size = 0
 separator_padding = 1 0
 
 #-------------------------------------
-# Executor 1
-execp = new
-execp_command = ~/.scripts/music-controller icon
-execp_interval = 1
-execp_has_icon = 0
-execp_cache_icon = 0
-execp_continuous = 0
-execp_markup = 0
-execp_tooltip = Toggle play/pause │Switch music player between mpd and spotify │Open Menu │Scroll to change current song
-execp_lclick_command = ~/.scripts/music-controller toggle
-execp_rclick_command = ~/.config/rofi/scripts/$(~/.scripts/default-apps/launch -g musicpl).sh
-execp_mclick_command = ~/.scripts/music-controller switchpl
-execp_uwheel_command = ~/.scripts/music-controller prev
-execp_dwheel_command = ~/.scripts/music-controller next
-execp_font = Material 17
-execp_font_color = #f9f9f9 100
-execp_padding = 4 0
-execp_background_id = 6
-execp_centered = 1
-execp_icon_w = 0
-execp_icon_h = 0
-
-#-------------------------------------
 # Button 1
 button = new
 button_text = 
@@ -313,7 +290,7 @@ button_rclick_command =
 button_mclick_command = 
 button_uwheel_command = 
 button_dwheel_command = 
-button_font = Material 20
+button_font = Iosevka 15
 button_font_color = #3b4252 100
 button_padding = 10 0
 button_background_id = 5
