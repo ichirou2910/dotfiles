@@ -284,6 +284,10 @@ set -g history-limit 10000
 # start with mouse mode enabled
 set -g mouse on
 
+# disable status bar
+set -g status off
+bind up set status
+
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
 #set -g status-keys vi
@@ -366,6 +370,7 @@ set -g @resurrect-strategy-nvim 'session'
 set -g @continuum-restore 'on'
 unbind z
 set -g @fzf-url-bind 'z'
+set -g @scroll-down-exit-copy-mode "off"
 
 #-----------------------------
 # plugins 
@@ -376,5 +381,6 @@ set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @plugin 'tmux-plugins/tmux-yank'
 set -g @plugin 'tmux-plugins/tmux-copycat'
 set -g @plugin 'wfxr/tmux-fzf-url'
+set -g @plugin 'nhdaly/tmux-better-mouse-mode'
 
 # vim:ft=tmux
