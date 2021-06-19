@@ -17,7 +17,8 @@ NOTIFYD() {
     sed -s -i "s_transparency = .*_transparency = $((100 - $DUNST))_" "$DUNST_CONF"
     sed -s -i "s_browser =.*_browser = ${WEB_BROWSER}_" "$DUNST_CONF"
     # Run Notification Daemon
-    dunst -config "$DUNST_CONF" &> /dev/null &
+    # dunst -config "$DUNST_CONF" &> /dev/null &
+    deadd-notification-center &> /dev/null &
 }
     
 PANEL() {

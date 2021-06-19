@@ -477,6 +477,12 @@
         <command>bash -c '~/.scripts/shot-now save'</command>
       </action>
     </keybind>
+    <!-- Notification center -->
+    <keybind key="C-grave">
+      <action name="Execute">
+        <command>bash -c 'kill -s USR1 $(pidof deadd-notification-center)'</command>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>

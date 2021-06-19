@@ -21,7 +21,12 @@ notify() {
         icon_name="notification-audio-volume-high"
     fi
     
-    $EXNOTIFY_SEND -i "$icon_name" -t 700 -r 123 "$VOLUME " -h int:value:"$VOLUME"
+    # $EXNOTIFY_SEND -i "$icon_name" -t 700 -r 123 "$VOLUME " -h int:value:"$VOLUME"
+    notify-send.py "Volume: $VOLUME/100" \
+                        -t 700 \
+                         --hint string:image-path:"$icon_name" boolean:transient:true \
+                                int:has-percentage:"$VOLUME" \
+                        --replaces-process "volume-popup"
 }
 
 case $1 in
