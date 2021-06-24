@@ -6,7 +6,7 @@ type -p "scrot" &> /dev/null || noterr
 OUTPUT=""
 
 {
-    [[ ! -d "$SAVE_DIR/Screenshots" ]] && mkdir -p "$SAVE_DIR/Screenshots"; read -rt ".1" <> <(:) || :
+    [[ ! -d "$SAVE_DIR/Screenshots" ]] && mkdir -p "$SAVE_DIR/Screenshots"; read -rt ".12" <> <(:) || :
     rm -f /tmp/*_scrot*.png &> /dev/null
     scrot -q "$QUALITY" -sfbe 'mv $f /tmp/' -l style=dash,width=1,color="#2be491" &> /dev/null && \
     $EXNOTIFY_SEND -r 12 -t 750 -i "$NOTIF_SS_ICON" -u low "" "Processing captured image .." || \

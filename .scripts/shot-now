@@ -7,7 +7,7 @@ OUTPUT=""
 
 {
     [[ ! -d "$SAVE_DIR/Screenshots" ]] && mkdir -p "$SAVE_DIR/Screenshots" || :
-    [[ "$1" = "delay" ]] && read -rt ".1" <> <(:) || :
+    [[ "$1" = "delay" ]] && read -rt ".12" <> <(:) || :
     # scrot -q "$QUALITY" -e "mv '\$f' \"$SAVE_DIR/Screenshots\"" &> /dev/null
 
     scrot -q "$QUALITY" -e 'mv $f /tmp/' &> /dev/null && \
