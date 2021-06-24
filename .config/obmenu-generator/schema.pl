@@ -33,58 +33,47 @@ our $SCHEMA = [
     #         COMMAND                                                     LABEL                     ICON
     {beg  => ["Launch Apps",                                                                        "$ENV{HOME}/.icons/gladient/search.png"]},
     {cat  => ["utility",                                                  "Accessories",            "applications-utilities"]},
+    {sep  => undef},
     {cat  => ["development",                                              "Development",            "applications-development"]},
+    {sep  => undef},
     {cat  => ["education",                                                "Education",              "applications-science"]},
+    {sep  => undef},
     {cat  => ["game",                                                     "Games",                  "applications-games"]},
+    {sep  => undef},
     {cat  => ["graphics",                                                 "Graphics",               "applications-graphics"]},
+    {sep  => undef},
     {cat  => ["audiovideo",                                               "Multimedia",             "applications-multimedia"]},
+    {sep  => undef},
     {cat  => ["network",                                                  "Network",                "applications-internet"]},
+    {sep  => undef},
     {cat  => ["office",                                                   "Office",                 "applications-office"]},
+    {sep  => undef},
     {cat  => ["other",                                                    "Other",                  "applications-other"]},
+    {sep  => undef},
     {cat  => ["settings",                                                 "Settings",               "applications-accessories"]},
+    {sep  => undef},
     {cat  => ["system",                                                   "System",                 "applications-system"]},
     {end  => undef},
     
     {sep  => undef},
     
     {item => ["~/.scripts/default-apps/launch terminal",                  "Open Terminal",          "$ENV{HOME}/.icons/gladient/term.png"]},
+
+    {sep  => undef},
+    
     {item => ["~/.scripts/default-apps/launch filemanager",               "Open File Manager",      "$ENV{HOME}/.icons/gladient/file-manager.png"]},
     
     {sep  => undef},
     
-    {beg  => ["Screenshot",                                                                         "$ENV{HOME}/.icons/gladient/shot.png"]},
-    {item => ["~/.scripts/shot-now delay",                                "Now",                    "$ENV{HOME}/.icons/gladient/shot.png"]},
-    {item => ["~/.scripts/shot-timer",                                    "After ..s",              "$ENV{HOME}/.icons/gladient/shot.png"]},
-    {item => ["~/.scripts/shot-seldraw",                                  "Select window or draw",  "$ENV{HOME}/.icons/gladient/shot.png"]},
-    {end  => undef},
-    
-    {sep  => undef},
-    
     {pipe => ["~/.config/openbox/pipe-menu/ob-randr.py",                  "Monitor Settings",       "$ENV{HOME}/.icons/gladient/mon-settings.png"]},
-    {obgenmenu => ["Advanced Settings",                                                             "$ENV{HOME}/.icons/gladient/settings.png"]},
     
     {sep  => undef},
     
     {sep => "SESSIONS"},
     
-    {beg  => ["Theme Styling",                                                                      "$ENV{HOME}/.icons/gladient/themer.png"]},
-    {item => ["~/.scripts/default-apps/launch terminal -e ~/.config/openbox/visual-mode/wally","Change Wallpaper","$ENV{HOME}/.icons/gladient/wally.png"]},
-    {item => ["~/.config/openbox/visual-mode/termody",                    "Reverse Terminal B/F",   "$ENV{HOME}/.icons/gladient/term.png"]},
-    {sep  => undef},
-    {item => ["urxvt -e ~/.config/openbox/visual-mode/ob-button",         "Change Button Style",    "$ENV{HOME}/.icons/gladient/obt-c.png"]},
-    {item => ["~/.config/openbox/visual-mode/ob-button swap",             "Swap Button L/R",        "$ENV{HOME}/.icons/gladient/obt-s.png"]},
-    {sep  => undef},
-    {item => ["~/.config/openbox/visual-mode/mode-toggle minimal",        "E/D Minimal Mode",       "$ENV{HOME}/.icons/gladient/minimal.png"]},
-    {item => ["~/.config/openbox/visual-mode/mode-toggle",                "Switch Visual Mode",     "$ENV{HOME}/.icons/gladient/visual.png"]},
-    {end  => undef},
-    
-    {sep  => undef},
-    
-    {item => ["bash -c '~/.config/openbox/visual-mode/mode-toggle just_ui'","Restart UI","$ENV{HOME}/.icons/gladient/re-ui.png"]},
-    
-    {sep  => undef},
-    
     {item => ["~/.scripts/default-apps/launch lockscreen",                "Lockscreen",             "$ENV{HOME}/.icons/gladient/lock.png"]},
     
+    {sep  => undef},
+
     {exit => ["Exit Openbox",                                                                       "$ENV{HOME}/.icons/gladient/logout.png"]},
 ]
