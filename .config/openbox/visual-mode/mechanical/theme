@@ -20,7 +20,7 @@ ALL() {
     sed -i '1s_Net/IconThemeName.*_Net/IconThemeName "Papirus-Dark-Custom"_' $XSETTINGSD_CONFIG
     sed -i '2s_Net/ThemeName.*_Net/ThemeName "Fleon"_' $XSETTINGSD_CONFIG
     xsettingsd &> /dev/null &
-    read -rt "3" <> <(:) || killall xsettingsd &
+    read -rt "3" <> <(:) || killall -9 "xsettingsd" &
     
     # Set Openbox Margin, Dunst, and Rofi Sidebar
     # sed -i "3s_horizontal=\".*\"_horizontal=\"${CHK_ORT_H}\"_" $ORT_FILE

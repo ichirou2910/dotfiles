@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 # These things are run when an Openbox X Session is started.
 # You may place a similar script in $HOME/.config/openbox/autostart
 # to run user-specific things.
@@ -12,10 +12,14 @@ source $HOME/.owl4ce_var
 ( "$VISMOD_DIR/refresh" && "$OB_TRAY" ) &> /dev/null
 
 # Compositor
-picom --experimental-backends --config ~/.config/picom/picom.conf &
+picom --experimental-backends --config ~/.config/picom/picom.conf > /dev/null 2>&1
 
 # Authentication Agent - PolicyKit
-lxpolkit &> /dev/null &
+if command -v lxpolkit &> /dev/null; then
+    lxpolkit &> /dev/null &
+elif [ -x "/usr/libexec/polkit-gnome-authentication-agent-1" ]; then
+    /usr/libexec/polkit-gnome-authentication-agent-1 &> /dev/null &
+fi
 
 # Start MPD player (+notification-sender)
 "$MPD_TCD"
