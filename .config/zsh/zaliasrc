@@ -43,6 +43,7 @@ alias \
     di="ranger" \
     dbui="nvim -c DBUI" \
     pj="tmux-vim" \
+    ml="neomutt" # ml = mail
 
 # Common commands
 alias \
@@ -53,4 +54,4 @@ alias \
     se="sudo -e" \
     tas="tmux attach-session" \
     ta="tmux attach || tmux new-session" \
-    td="tmux detach" \
+    td="tmux detach"
