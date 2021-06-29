@@ -7,7 +7,8 @@ set mailcap_path = /usr/share/mutt-wizard/mailcap:$mailcap_path
 set mime_type_query_command = "file --mime-type -b %s"
 set date_format="%I:%M%p %d/%m/%y"
 set index_format="%5C %Z %?X?A& ? %-15.15F %s %*  %D"
-set sort = 'reverse-date'
+set sort = 'threads'
+set sort_aux = 'reverse-date'
 set smtp_authenticators = 'gssapi:login'
 set query_command = "abook --mutt-query '%s'"
 set rfc2047_parameters = yes
@@ -23,6 +24,7 @@ set forward_quote		# include message in forwards
 set reverse_name		# reply as whomever it was to
 set include			# include message in replies
 set mail_check=60 # to avoid lags using IMAP with some email providers (yahoo for example)
+set pager_stop = true
 auto_view text/html		# automatically show html (mailcap uses lynx)
 auto_view application/pgp-encrypted
 #set display_filter = "tac | sed '/\\\[-- Autoview/,+1d' | tac" # Suppress autoview messages.
@@ -53,8 +55,10 @@ bind index,query <space> tag-entry
 macro browser h '<change-dir><kill-line>..<enter>' "Go to parent folder"
 bind index,pager H view-raw-message
 bind browser l select-entry
-bind pager,browser gg top-page
-bind pager,browser G bottom-page
+bind pager gg top
+bind pager G bottom
+bind browser gg top-page
+bind browser G bottom-page
 bind index,pager,browser d half-down
 bind index,pager,browser D half-up
 bind index,pager S sync-mailbox
@@ -75,6 +79,8 @@ macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "ma
 macro index O "<shell-escape>mw -Y<enter>" "run mw -Y to sync all mail"
 macro index \Cf "<enter-command>unset wait_key<enter><shell-escape>printf 'Enter a search term to find with notmuch: '; read x; echo \$x >~/.cache/mutt_terms<enter><limit>~i \"\`notmuch search --output=messages \$(cat ~/.cache/mutt_terms) | head -n 600 | perl -le '@a=<>;s/\^id:// for@a;$,=\"|\";print@a' | perl -le '@a=<>; chomp@a; s/\\+/\\\\+/ for@a;print@a' \`\"<enter>" "show only messages matching a notmuch pattern"
 macro index A "<limit>all\n" "show all messages (undo limit)"
+macro index \Cb |urlscan\n
+macro pager \Cb |urlscan\n
 
 # Status
 set status_format = '-%r-NeoMutt: %D [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]-%>-(%P)---'
