@@ -12,7 +12,7 @@ source $HOME/.owl4ce_var
 ( "$VISMOD_DIR/refresh" && "$OB_TRAY" ) &> /dev/null
 
 # Compositor
-picom --experimental-backends --config ~/.config/picom/picom.conf &
+picom --config ~/.config/picom/picom.conf &
 
 # Authentication Agent - PolicyKit
 lxpolkit &> /dev/null &
