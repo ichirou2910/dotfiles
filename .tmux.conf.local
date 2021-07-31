@@ -3,7 +3,6 @@
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
-
 # -- navigation ----------------------------------------------------------------
 
 # if you're running tmux within iTerm2
@@ -312,6 +311,9 @@ bind _ split-window -v
 # split current window vertically
 bind - split-window -h
 
+# zoom
+bind z resize-pane -Z
+
 # copy mode
 bind v copy-mode
 
@@ -368,8 +370,8 @@ set -s command-alias[9] db='new-window -n Database nvim -c DBUI'
 # plugins config
 set -g @resurrect-strategy-nvim 'session'
 set -g @continuum-restore 'on'
-unbind z
-set -g @fzf-url-bind 'z'
+unbind f
+set -g @fzf-url-bind 'f'
 set -g @scroll-down-exit-copy-mode "off"
 
 #-----------------------------
