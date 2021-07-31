@@ -5,13 +5,13 @@
 # Gradients
 # Gradient 1
 gradient = horizontal
-start_color = #f48ee8 100
-end_color = #fa74b2 100
+start_color = #27c3fe 100
+end_color = #1199ee 100
 
 # Gradient 2
 gradient = vertical
-start_color = #f48ee8 82
-end_color = #fa74b2 82
+start_color = #27c3fe 100
+end_color = #1199ee 100
 
 #-------------------------------------
 # Backgrounds
@@ -141,7 +141,7 @@ border_color_pressed = #000000 0
 
 #-------------------------------------
 # Panel
-panel_items = PTSBC
+panel_items = TSBC
 panel_size = 100% 45
 panel_margin = 0 0
 panel_padding = 7 7 7
@@ -291,7 +291,7 @@ button_mclick_command =
 button_uwheel_command = 
 button_dwheel_command = 
 button_font = Iosevka 15
-button_font_color = #3b4252 100
+button_font_color = #4c566a 100
 button_padding = 10 0
 button_background_id = 5
 button_centered = 1
