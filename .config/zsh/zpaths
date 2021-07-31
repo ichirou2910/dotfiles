@@ -12,3 +12,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 # C#
 export DOTNET_ROOT=/usr/share/dotnet
 export PATH="$PATH:/home/ichirou2910/.dotnet/tools"
+
+export DEVKITPRO=/opt/devkitpro
+export DEVKITARM=/opt/devkitpro/devkitARM
+export DEVKITPPC=/opt/devkitpro/devkitPPC
