@@ -8,39 +8,23 @@ OUTPUT=""
 {
     [[ ! -d "$SAVE_DIR/Screenshots" ]] && mkdir -p "$SAVE_DIR/Screenshots"; read -rt ".12" <> <(:) || :
     rm -f /tmp/*_scrot*.png &> /dev/null
-    scrot -q "$QUALITY" -sfbe 'mv $f /tmp/' -l style=dash,width=1,color="#2be491" &> /dev/null && \
-    $EXNOTIFY_SEND -r 12 -t 750 -i "$NOTIF_SS_ICON" -u low "" "Processing captured image .." || \
+    scrot -q "$QUALITY" -sfbe 'mv $f /tmp/' -l style=dash,width=1,color="#2be491" &> /dev/null || \
     ( $EXNOTIFY_SEND -r 12 -t 500 -i "$NOTIF_SS_ICON" -u low "" "Screenshot canceled!" && exit 1 )
     
     for CURRENT in /tmp/*_scrot*.png; do
         CURRENT="$(echo $CURRENT | awk -F'/tmp/' '{print $2}' | awk -F'.png' '{print $1}')"
     done
     
-    convert /tmp/"$CURRENT".png \
-    \( +clone -alpha extract -draw 'fill black polygon 0,0 0,8 8,0 fill white circle 8,8 8,0' \
-    \( +clone -flip \) -compose Multiply -composite \( +clone -flop \) -compose Multiply -composite \) \
-    -alpha off -compose CopyOpacity -composite /tmp/"$CURRENT"-rounded.png &> /dev/null
-
-    convert /tmp/"$CURRENT"-rounded.png \( +clone -background black -shadow "$FRAMED_SHADOW_OPACITY"x5+0+5 \) \
-    +swap -background none -layers merge +repage /tmp/"$CURRENT"-shadow.png &> /dev/null
-
     if [ $1 = "save" ]; then
+        mv /tmp/$CURRENT.png $SAVE_DIR/Screenshots 
         OUTPUT="$SAVE_DIR/Screenshots/$CURRENT.png"
     else
-        OUTPUT="/tmp/$CURRENT-border.png"
+        OUTPUT="/tmp/$CURRENT.png"
     fi
-
-    convert /tmp/"$CURRENT"-shadow.png -bordercolor "$FRAME_COLOR" \
-    -border 3 "$OUTPUT" &> /dev/null
 
     xclip -selection clipboard -target image/png -i "$OUTPUT"
 
     rm -f /tmp/*_scrot*.png &> /dev/null
-    if [[ -f "$SAVE_DIR/Screenshots/$CURRENT.png" ]]; then
-        $EXNOTIFY_SEND -r 12 -i "$NOTIF_SS_ICON" -u low "" "<span size='small'><u>$(echo $SAVE_DIR | grep -oE '[^/]+$' $1)/Screenshots</u></span>\nPicture acquired!"
-        [[ "$COPY_FRAMED" = "yes" ]] && [[ "$(type -p "xclip")" ]] && \
-        xclip -selection clipboard -target image/png -i "$SAVE_DIR/Screenshots/$CURRENT.png"
-        [[ "$OPEN_FRAMED" = "yes" ]] && [[ "$(type -p "viewnior")" ]] && \
-        viewnior "$SAVE_DIR/Screenshots/$CURRENT.png" &> /dev/null
-    fi
+
+    $EXNOTIFY_SEND -r 11 -i "$NOTIF_SS_ICON" -u low "Screenshot" "Picture acquired!"
 } &
