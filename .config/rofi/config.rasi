@@ -11,6 +11,5 @@ configuration {
   display-run:          "";
   display-window:       "";
   display-file-browser: "";
-  display-calc:         "";
   columns: 3;
 }
