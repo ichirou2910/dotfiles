@@ -86,10 +86,11 @@ XRESOURCES_CONFIG="$HOME/.Xresources"
 OB_TRAY="$OB_DIR/tray"
 DEFAPPS_FILE="$SCRIPTS_DIR/default-apps/list"
 
-CHK_TRAY="$(awk -F' &' '/ &/{print $1}' $OB_DIR/tray | grep -v '#')"
-
 WALL_DIR="$HOME/.wallpaper"
 WALL_FILE="$VISMOD_DIR/wall"
+
+CHK_TRAY="$(awk -F' &' '/ &/{print $1}' $OB_DIR/tray | grep -v '#')"
+CHK_WALL="$(cat $WALL_FILE)"
 
 BUTTON_DIR="$THEME_DIR/Fleon/openbox-3"
 
