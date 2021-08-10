@@ -4,10 +4,9 @@
 #
 # ---
 
-parcellite &
 #nm-applet &
 #xfce4-power-manager &
 
 # Optimus Manager
-optimus-manager-qt &
+# optimus-manager-qt &
 

@@ -9,7 +9,7 @@ source $HOME/.ik_var
 # there was once a pulseaudio here
 
 # UI Appearance
-( "$VISMOD_DIR/refresh" && "$OB_TRAY" ) &> /dev/null
+( "$VISMOD_DIR/refresh" ) &> /dev/null
 
 # Compositor
 picom --config ~/.config/picom/picom.conf &
