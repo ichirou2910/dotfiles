@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source $HOME/.owl4ce_var
+source $HOME/.ik_var
 
 rofi_command="rofi -theme themes/sidebar/three.rasi"
 

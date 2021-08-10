@@ -1,50 +1,19 @@
 #!/usr/bin/env bash
-source $HOME/.owl4ce_var
-
-# Set Partial Accent Color and Opacity Level from owl4ce_var
-"$VISMOD_DIR/mechanical/theme" partially &> /dev/null
-
-# ? Mode Variables
-PANEL_COL1="$MECH_TINT2_GRAD1"
-PANEL_COL2="$MECH_TINT2_GRAD2"
-PANEL_BTN="$MECH_START_BTN"
-NOTIFYD_FG="$MECH_DUNST_SMMRY" NOTIFYD_PB="$MECH_DUNST_PRGBR"
-
-NOTIFYD() { 
-    # Set Notification Daemon Summary Color, Opacity Level, and Web Browser from owl4ce_var
-    sed -i "s_foreground='.*'_foreground='$NOTIFYD_FG'_" "$DUNST_CONF"
-    sed -i "s_highlight = \".*\"_highlight = \"$NOTIFYD_PB\"_" "$DUNST_CONF"
-    sed -s -i "s_transparency = .*_transparency = $((100 - $DUNST))_" "$DUNST_CONF"
-    sed -s -i "s_browser =.*_browser = ${WEB_BROWSER}_" "$DUNST_CONF"
-    # Run Notification Daemon
-    # dunst -config "$DUNST_CONF" &> /dev/null &
-    deadd-notification-center &> /dev/null &
-}
-    
-PANEL() {
-    # Set Panel Start Button Color and Glyphs from owl4ce_var
-    sed -s -i "s/start_color = STARTCOLOR1/start_color = $PANEL_COL1/" "$TINT2_CONF"
-    sed -s -i "s/end_color = STARTCOLOR2/end_color = $PANEL_COL2/" "$TINT2_CONF"
-    sed -s -i "s/button_text = STARTMENU/button_text = $PANEL_BTN/" "$TINT2_CONF"
-    # Run Panel
-  { tint2 -c "$TINT2_CONF" &> /dev/null
-    # Rollback Panel Start Button Color and Glyphs from owl4ce_var
-    sed -s -i "s/button_text = $PANEL_BTN/button_text = STARTMENU/" "$TINT2_CONF"
-    sed -s -i "s/start_color = $PANEL_COL1/start_color = STARTCOLOR1/" "$TINT2_CONF"
-    sed -s -i "s/end_color = $PANEL_COL2/end_color = STARTCOLOR2/" "$TINT2_CONF"; } &
-}
+source $HOME/.ik_var
 
 case $1 in
-    partially)  # Notification Daemon
-                NOTIFYD
-                # Panel
-                PANEL
+    partially)  
+      # Notification Daemon
+      deadd-notification-center &> /dev/null &
+      # Panel
+      tint2 -c "$TINT2_CONF" &> /dev/null
     ;;
-    *)          # Notification Daemon
-                NOTIFYD
-                # Wallpaper Setter
-                nitrogen --set-zoom-fill --save "$WALL_DIR/$CHK_VISMOD_WALL" &> /dev/null
-                # Panel
-                PANEL
+    *)
+      # Notification Daemon
+      deadd-notification-center &> /dev/null &
+      # Wallpaper Setter
+      nitrogen --set-zoom-fill --save "$WALL_DIR/$CHK_WALL" &> /dev/null
+      # Panel
+      tint2 -c "$TINT2_CONF" &> /dev/null
     ;;
 esac
