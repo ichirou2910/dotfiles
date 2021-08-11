@@ -1,19 +1,9 @@
 #!/usr/bin/env bash
 source $HOME/.ik_var
 
-case $1 in
-    partially)  
-      # Notification Daemon
-      deadd-notification-center &> /dev/null &
-      # Panel
-      tint2 -c "$TINT2_CONF" &> /dev/null
-    ;;
-    *)
-      # Notification Daemon
-      deadd-notification-center &> /dev/null &
-      # Wallpaper Setter
-      nitrogen --set-zoom-fill --save "$WALL_DIR/$CHK_WALL" &> /dev/null
-      # Panel
-      tint2 -c "$TINT2_CONF" &> /dev/null
-    ;;
-esac
+# Notification Daemon
+deadd-notification-center &> /dev/null &
+# Wallpaper Setter
+nitrogen --set-zoom-fill --save "$WALL_DIR/$CHK_WALL" &> /dev/null
+# Panel
+tint2 -c "$TINT2_CONF" &> /dev/null &

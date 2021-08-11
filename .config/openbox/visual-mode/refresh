@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source $HOME/.ik_var
 
-kill() { { killall tint2; killall deadd-notification-center; [[ "$1" = "also_tray" ]] && killall $CHK_TRAY || :; } &> /dev/null; }
+kill() { { killall tint2; killall deadd-notification-center; } &> /dev/null; }
 
 xrdb $HOME/.Xresources && kill
 "$VISMOD_DIR/UI"
