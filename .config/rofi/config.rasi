@@ -1,5 +1,6 @@
 configuration {
   show-icons:           true;
+  icon-theme:           "Papirus-Dark-Custom";
   cycle:                true;
   hide-scrollbar:       true;
   disable-history:      true;
