@@ -452,6 +452,11 @@
         <command>bash -c '~/.scripts/default-apps/launch filemanager'</command>
       </action>
     </keybind>
+    <keybind key="W-p">
+      <action name="Execute">
+        <command>bash -c '~/.scripts/default-apps/launch audiomanager'</command>
+      </action>
+    </keybind>
     <!-- <keybind key="W-m"> -->
     <!--   <action name="Execute"> -->
     <!--     <command>bash -c '~/.config/rofi/scripts/$(~/.scripts/default-apps/launch -g musicpl).sh'</command> -->
