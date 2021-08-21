@@ -1,0 +1,12 @@
+* {
+    background-color:               transparent;
+    secondary:                      #3B4252;
+    urgent:                         #BF616A;
+
+    BG:   #2E3440;
+    BGA:  #2E3440A0;
+    FG:   #D8DEE9;
+    FGA:  #D8DEE999;
+    MAIN: #61AFEF;
+}
+

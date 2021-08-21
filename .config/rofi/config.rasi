@@ -22,3 +22,4 @@ configuration {
 	kb-accept-entry: "Control+m,Return,KP_Enter";
   columns: 3;
 }
+
