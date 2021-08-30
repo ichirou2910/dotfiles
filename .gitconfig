@@ -2,7 +2,7 @@
 	name = Ichirou2910
 	email = ichiroukeita2910@gmail.com
 [core]
-	excludesfile = ~/.gitignore
+	excludesFile = ~/.gitignore
 	editor = nvim
   default = simple
 [color]
@@ -16,6 +16,7 @@
   a = "!git status --short | fzf -m | awk '{print $2}' | xargs git add"
   d = diff
   f = fetch
+  m = merge
   co = checkout
   ci = commit
   ca = commit -a
