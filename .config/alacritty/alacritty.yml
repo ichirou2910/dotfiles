@@ -70,6 +70,12 @@ window:
   # Allow terminal applications to change Alacritty's window title.
   dynamic_title: true
 
+  # Background opacity
+  #
+  # Window opacity as a floating point number from `0.0` to `1.0`.
+  # The value `0.0` is completely transparent and `1.0` is opaque.
+  opacity: 0.8
+
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
@@ -101,7 +107,7 @@ font:
     family: monospace
 
     # The `style` can be specified to pick a specific face.
-    style: Regular
+    style: Medium
 
   # Bold font face
   bold:
@@ -112,7 +118,7 @@ font:
     family: monospace
 
     # The `style` can be specified to pick a specific face.
-    style: Bold
+    style: ExtraBold
 
   # Italic font face
   italic:
@@ -123,7 +129,7 @@ font:
     family: monospace
 
     # The `style` can be specified to pick a specific face.
-    style: Italic
+    style: MediumItalic
 
   # Point size
   size: 9.0
@@ -132,7 +138,7 @@ font:
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: 0
-    y: 1
+    y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
@@ -242,12 +248,6 @@ bell:
   animation: EaseOutExpo
   duration: 0
   color: "0xffffff"
-
-# Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.8
 
 # Mouse bindings
 #
