@@ -70,7 +70,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting zsh-vi-mode)
 
 ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
@@ -102,9 +102,12 @@ source /usr/share/z/z.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zpaths" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zpaths"
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zaliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zaliasrc"
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zfuncs" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zfuncs"
+
+# Extras files
+extras=("zpaths" "zaliasrc" "zfuncs" "zvars")
+for e in "${extras[@]}"; do
+  [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/$e" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/$e"
+done
 
 _comp_options+=(globdots)		# Include hidden files.
 
@@ -185,7 +188,7 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # Vi mode
-bindkey -v
+# bindkey -v
 export KEYTIMEOUT=1
 
 # Edit line in vim with ctrl-e:
