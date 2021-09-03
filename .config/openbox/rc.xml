@@ -388,6 +388,11 @@
     <keybind key="W-q">
       <action name="Close"/>
     </keybind>
+    <keybind key="W-b">
+      <action name="Execute">
+        <command>bash -c '~/.scripts/toggle-panel.sh'</command>
+      </action>
+    </keybind>
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
       <action name="NextWindow">
@@ -420,6 +425,11 @@
     <keybind key="W-g">
       <action name="Execute">
         <command>bash -c '~/.config/rofi/scripts/games.sh'</command>
+      </action>
+    </keybind>
+    <keybind key="W-s">
+      <action name="Execute">
+        <command>bash -c '~/.config/rofi/scripts/search.sh'</command>
       </action>
     </keybind>
     <keybind key="W-Prior">
