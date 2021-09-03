@@ -15,7 +15,7 @@ window.label.text.justify: center
 window.active.label.bg: parentrelative
 window.active.label.text.color: #f9f9f9
 window.inactive.label.bg: parentrelative
-window.inactive.label.text.color: #f9f9f9
+window.inactive.label.text.color: #aeaeae
 
 ## Borders
 border.width: 0
