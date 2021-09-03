@@ -7,6 +7,7 @@ command -v nvim >/dev/null && alias vim="nvim" vi="nvim" vimdiff="nvim -d" oldvi
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias g="git"
 alias y="yadm"
+alias dfe="yadm enter nvim"
 
 # Verbosity
 alias \
@@ -40,7 +41,7 @@ alias \
 
 # Common apps
 alias \
-    di="ranger" \
+    di="nnn -e" \
     dbui="nvim -c DBUI" \
     pj="tmux-vim" \
     ml="neomutt" # ml = mail
