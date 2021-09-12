@@ -74,7 +74,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.8
+  opacity: 1.0
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -169,7 +169,7 @@ font:
 colors:
   # Default colors
   primary:
-    background: "0x1c1c1a"
+    background: "0x1b1f27"
     # background: "0x1e222a"
     foreground: "0xc8ccd4"
 
