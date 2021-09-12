@@ -15,7 +15,19 @@
   menu-element-padding:                 27px 16px 21px 0px;
 }
 
-#window {
+element-text, 
+element-icon {
+  background-color: inherit;
+  highlight:        inherit;
+  cursor:           inherit;
+  text-color: inherit;
+}
+
+textbox-prompt-colon {
+  text-color: inherit;
+}
+
+window {
   width: 230px;
   height: 147px;
   location: center;
@@ -28,24 +40,25 @@
   font: @icon-font;
 }
 
-#horibox {
+horibox {
   children: [ listview ];
+  horizontal-align: 0.5;
 }
 
-#listview {
+listview {
   layout: horizontal;
 }
 
-#element {
+element {
   border: 0px;
   padding: @option-element-padding;
   background-color: @background-light;
   border-radius: 8px;
 }
 
-#element.selected {
+element.selected {
   background-color: @accent;
-  text-color: @background;
+  text-color: @foreground;
 }
 
 * {
@@ -53,17 +66,17 @@
   location: center;
 }
 
-#window {
+window {
   padding: @menu-window-padding;
   children: [ inputbar, horibox ];
 }
 
-#inputbar {
+inputbar {
   children: [ prompt ];
   margin: @menu-inputbar-margin;
 }
 
-#listview {
+listview {
   spacing: @option-6-listview-spacing;
   lines: 2;
 }
@@ -72,20 +85,20 @@ prompt {
   padding: @menu-prompt-padding;
 }
 
-#prompt {
+prompt {
   margin: @menu-prompt-margin;
   background-color: @background;
   text-color: @accent;
 }
 
-#element {
+element {
   font: @icon-font;
   border: @menu-element-border;
   padding: @menu-element-padding;
   border-color: @background-light;
 }
 
-#element.selected {
+element.selected {
   border-color: @accent;
 }
 

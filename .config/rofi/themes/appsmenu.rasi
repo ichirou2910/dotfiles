@@ -13,6 +13,18 @@ configuration {
   font: "Segoe UI 10";
 }
 
+element-text, 
+element-icon {
+  background-color: inherit;
+  highlight:        inherit;
+  cursor:           inherit;
+  text-color: inherit;
+}
+
+textbox-prompt-colon {
+  text-color: inherit;
+}
+
 @import "shared/colors.rasi" 
 
 window {
@@ -107,6 +119,7 @@ element {
 element-icon {
   size: 40px;
   border: 0px;
+  horizontal-align: 0.5;
 }
 
 element-text {

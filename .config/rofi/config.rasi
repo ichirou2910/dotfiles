@@ -2,16 +2,14 @@ configuration {
   show-icons:           true;
   icon-theme:           "Papirus-Dark-Custom";
   cycle:                true;
-  hide-scrollbar:       true;
   disable-history:      true;
   sidebar-mode:         false;
-  modi:                 "drun,run,window,file-browser";
+  modi:                 "drun";
   sort:                 true;
   sorting-method:       "fzf";
   display-drun:         "";
   display-run:          "";
   display-window:       "";
-  display-file-browser: "";
 	kb-row-left: "Control+h";
 	kb-row-right: "Control+l";
 	kb-row-up: "Control+k";
@@ -20,6 +18,6 @@ configuration {
 	kb-remove-char-back: "BackSpace,Shift+BackSpace";
 	kb-remove-to-eol: "";
 	kb-accept-entry: "Control+m,Return,KP_Enter";
-  columns: 3;
+  kb-mode-complete: "";
 }
 

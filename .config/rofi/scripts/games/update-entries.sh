@@ -20,12 +20,24 @@ steam-libraries() {
 
 # Generate the contents of a .desktop file for a Steam game.
 # Expects appid, title, and box art file to be given as arguments
-desktop-entry() {
+steam-entry() {
 	cat <<EOF
 [Desktop Entry]
 Name=$2
 Exec=$ROFI_SCRIPT_DIR/games/splash.sh $1
 Icon=$3
+Terminal=false
+Type=Application
+Categories=SteamLibrary;
+EOF
+}
+
+non-steam-entry() {
+	cat <<EOF
+[Desktop Entry]
+Name=$1
+Exec=$2
+Icon=$ROFI_SCRIPT_DIR/games/nonsteam.jpg
 Terminal=false
 Type=Application
 Categories=SteamLibrary;
@@ -76,9 +88,36 @@ update-entries() {
 				continue
 			fi
 			[ -z $quiet ] && echo -e "Generating $entry\t($title)"
-			desktop-entry "$appid" "$title" "$boxart" >"$entry"
+			steam-entry "$appid" "$title" "$boxart" >"$entry"
 		done
 	done
 }
 
-update-entries $@
+# update-non-entries() {
+# 	IFS=$'\n'
+# 	mkdir -p "$APP_PATH"
+
+# 	# iterate through all accounts
+# 	userdatadirs=$STEAM_ROOT/userdata
+# 	for userdir in $userdatadirs/*/ ; do
+# 		# this file contains info about non-steam apps
+# 		shortcutfile=$userdir/config/shortcuts.vdf
+
+# 		# ns = non-steam
+# 		nsAppNames=($(grep -a -o -P '(?<=AppName).*?(?=Exe)' $shortcutfile))
+# 		nsExecs=($(grep -a -o -P '(?<=Exe).*?(?=StartDir)' $shortcutfile))
+
+# 		for i in "${!nsAppNames[@]}"; do
+# 				# trim last non-printable characters
+# 				appName=${nsAppNames[i]::-1}
+# 				appExec=${nsExecs[i]::-1}
+				
+# 				# create desktop entry
+# 				entry=$APP_PATH/${appName}.desktop
+# 				non-steam-entry "${appName}" ${appExec} >"$entry"
+# 		done
+# 	done
+# }
+
+update-entries "$@"
+# update-non-entries

@@ -38,6 +38,7 @@ element-icon {
   border-color:                   transparent;
   border-radius:                  16;
   size:                           240;
+  horizontal-align:               0.5;
 }
 
 element-icon selected {
