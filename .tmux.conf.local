@@ -405,6 +405,7 @@ unbind f
 set -g @fzf-url-bind 'f'
 set -g @scroll-down-exit-copy-mode "off"
 set -g @resurrect-strategy-nvim 'session'
+set -g @resurrect-processes 'ssh psql mysql sqlite3 "~yadm enter nvim->dfe"'
 set -g @continuum-restore 'on'
 set -g @continuum-restore-max-delay '10'
 
