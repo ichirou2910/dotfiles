@@ -6,14 +6,11 @@
 
 window {
   height:                         240;
-  width:                          calc(100% - 10px);
+  width:                          calc(100% + 10px);
   location:                       south;
   anchor:                         south;
   transparency:                   "real";
   background-color:               @BGA;
-  border:                         2px;
-  border-color:                   @BG;
-  y-offset:                       -5px;
 }
 
 mainbox {

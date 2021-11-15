@@ -10,7 +10,6 @@ OPTIONS=""
 LIBRARY=""
 ACHIEVEMENTS=""
 NEWS=""
-BACK=""
 
 APPID=$1
 
@@ -19,7 +18,6 @@ list-icons() {
 	echo $LIBRARY Open in library
 	echo $ACHIEVEMENTS Achievements
 	echo $NEWS News
-	echo $BACK Back
 }
 
 # See https://developer.valvesoftware.com/wiki/Steam_browser_protocol
@@ -31,7 +29,6 @@ handle-option() {
 		"$LIBRARY") steam steam://nav/games/details/$APPID ;;
 		"$ACHIEVEMENTS") steam steam://url/SteamIDAchievementsPage/$APPID ;;
 		"$NEWS") steam steam://appnews/$APPID ;;
-		"$BACK") ./games.sh ;;
 	esac
 }
 
@@ -39,9 +36,9 @@ handle-option() {
 # TODO: Handle case of multimonitor setups with monitors of different widths
 # Currently, this just returns the width of the widest connected monitor
 get-display-width() {
-	xrandr | grep -e " connected " \
-		| grep -oP "[[:digit:]]+(?=x[[:digit:]]+)" \
-		| sort -nr | head -n 1
+	xrandr | grep -e " connected " |
+		grep -oP "[[:digit:]]+(?=x[[:digit:]]+)" |
+		sort -nr | head -n 1
 }
 
 $ROFI_SCRIPT_DIR/games/update-banner.sh -w $(get-display-width) -h $HEIGHT -a $APPID
