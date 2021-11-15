@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-source $HOME/.ik_var
+export LC_ALL=POSIX LANG=POSIX;
+. "${HOME}/.ik_var"
 
 noterr() { $EXNOTIFY_SEND -u low -r 12 "Install scrot!"; exit 1; }
 type -p "scrot" &> /dev/null || noterr
@@ -8,15 +9,18 @@ OUTPUT=""
 {
     [[ ! -d "$SAVE_DIR/Screenshots" ]] && mkdir -p "$SAVE_DIR/Screenshots"; read -rt ".12" <> <(:) || :
     rm -f /tmp/*_scrot*.png &> /dev/null
-    scrot -q "$QUALITY" -sfbe 'mv $f /tmp/' -l style=dash,width=1,color="#2be491" &> /dev/null || \
-    ( $EXNOTIFY_SEND -r 12 -t 500 -i "$NOTIF_SS_ICON" -u low "" "Screenshot canceled!" && exit 1 )
+    if scrot -q 75 -s -f -b -e "mv -f $f /tmp/" -l style=dash,width=1,color="#2be491"; then
+        $EXNOTIFY_SEND -r 11 -i "$NOTIF_SS_ICON" -u low "Screenshot" "Picture acquired!"
+    else
+        $EXNOTIFY_SEND -r 12 -t 500 -i "$NOTIF_SS_ICON" -u low "Screenshot" "Screenshot canceled!" && exit 1
+    fi
     
     for CURRENT in /tmp/*_scrot*.png; do
-        CURRENT="$(echo $CURRENT | awk -F'/tmp/' '{print $2}' | awk -F'.png' '{print $1}')"
+        CURRENT="$(echo "$CURRENT" | awk -F'/tmp/' '{print $2}' | awk -F'.png' '{print $1}')"
     done
     
-    if [ $1 = "save" ]; then
-        mv /tmp/$CURRENT.png $SAVE_DIR/Screenshots 
+    if [[ "$1" = "save" ]]; then
+        mv /tmp/"$CURRENT".png "$SAVE_DIR"/Screenshots 
         OUTPUT="$SAVE_DIR/Screenshots/$CURRENT.png"
     else
         OUTPUT="/tmp/$CURRENT.png"
@@ -25,6 +29,4 @@ OUTPUT=""
     xclip -selection clipboard -target image/png -i "$OUTPUT"
 
     rm -f /tmp/*_scrot*.png &> /dev/null
-
-    $EXNOTIFY_SEND -r 11 -i "$NOTIF_SS_ICON" -u low "Screenshot" "Picture acquired!"
 } &
