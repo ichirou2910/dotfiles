@@ -1,9 +1,6 @@
 /* Notification center */
 
-.blurredBG,
-#main_window,
-.blurredBG.low,
-.blurredBG.normal {
+window {
   background: rgba(55, 66, 82, 0.5);
 }
 

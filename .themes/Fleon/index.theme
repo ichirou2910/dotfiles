@@ -6,6 +6,6 @@ Encoding=UTF-8
 
 [X-GNOME-Metatheme]
 GtkTheme=Fleon
-IconTheme=Adwaita
-CursorTheme=Adwaita
+IconTheme=Papirus-Dark-Custom
+CursorTheme=Sweet-cursors
 CursorSize=24
