@@ -9,7 +9,7 @@ OUTPUT=""
 {
     [[ ! -d "$SAVE_DIR/Screenshots" ]] && mkdir -p "$SAVE_DIR/Screenshots"; read -rt ".12" <> <(:) || :
     rm -f /tmp/*_scrot*.png &> /dev/null
-    if scrot -q 75 -s -f -b -e "mv -f $f /tmp/" -l style=dash,width=1,color="#2be491"; then
+    if scrot -q 75 -s -fbe 'mv -f $f /tmp/' -l style=dash,width=1,color="#2be491"; then
         $EXNOTIFY_SEND -r 11 -i "$NOTIF_SS_ICON" -u low "Screenshot" "Picture acquired!"
     else
         $EXNOTIFY_SEND -r 12 -t 500 -i "$NOTIF_SS_ICON" -u low "Screenshot" "Screenshot canceled!" && exit 1
