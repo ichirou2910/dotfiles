@@ -1,49 +1,59 @@
 #!/usr/bin/env bash
 source $HOME/.ik_var
 
-noterr() { $EXNOTIFY_SEND -u low -r 15 "Install alsa-utils!"; exit 1; }
-type -p "amixer" &> /dev/null || noterr
+noterr() {
+	$EXNOTIFY_SEND -u low -r 15 "Install alsa-utils!"
+	exit 1
+}
+type -p "amixer" &>/dev/null || noterr
 
 CHK_MUTE() { amixer -D pulse get Master | grep '%' | grep -oE '[^ ]+$' | grep off; }
 
 notify() {
-    VOLUME="$(amixer -D pulse get Master | grep '%' | head -n 1 | awk -F'[' '{print $2}' | awk -F'%' '{print $1}')"
-    
-    if [[ "$VOLUME" = "0" ]]; then
-        icon_name="notification-audio-volume-muted"
-    elif [[ "$VOLUME" -lt "10" ]]; then
-        icon_name="notification-audio-volume-low"
-    elif [[ "$VOLUME" -lt "30" ]]; then
-        icon_name="notification-audio-volume-low"
-    elif [[ "$VOLUME" -lt "70" ]]; then
-        icon_name="notification-audio-volume-medium"
-    else
-        icon_name="notification-audio-volume-high"
-    fi
-    
-    # $EXNOTIFY_SEND -i "$icon_name" -t 700 -r 123 "$VOLUME " -h int:value:"$VOLUME"
-    notify-send.py "Volume: $VOLUME/100" \
-                        -t 700 \
-                         --hint string:image-path:"$icon_name" boolean:transient:true \
-                                int:has-percentage:"$VOLUME" \
-                        --replaces-process "volume-popup"
+	VOLUME="$(amixer -D pulse get Master | grep '%' | head -n 1 | awk -F'[' '{print $2}' | awk -F'%' '{print $1}')"
+
+	if [[ "$VOLUME" = "0" ]]; then
+		icon_name="notification-audio-volume-muted"
+	elif [[ "$VOLUME" -lt "10" ]]; then
+		icon_name="notification-audio-volume-low"
+	elif [[ "$VOLUME" -lt "30" ]]; then
+		icon_name="notification-audio-volume-low"
+	elif [[ "$VOLUME" -lt "70" ]]; then
+		icon_name="notification-audio-volume-medium"
+	else
+		icon_name="notification-audio-volume-high"
+	fi
+
+	# $EXNOTIFY_SEND -i "$icon_name" -t 700 -r 123 "$VOLUME " -h int:value:"$VOLUME"
+	notify-send.py "$VOLUME" \
+		-t 700 \
+		--hint string:image-path:"$icon_name" boolean:transient:true \
+		int:has-percentage:"$VOLUME" \
+		--replaces-process "volume-popup"
 }
 
 case $1 in
-    up)     amixer -D pulse set Master on -q
-            amixer -D pulse sset Master "$AUDIO_STEPS"%+ -q
-            notify
+up)
+	amixer -D pulse set Master on -q
+	amixer -D pulse sset Master "$AUDIO_STEPS"%+ -q
+	notify
 	;;
-    down)   amixer -D pulse set Master on -q
-            amixer -D pulse sset Master "$AUDIO_STEPS"%- -q
-            notify
+down)
+	amixer -D pulse set Master on -q
+	amixer -D pulse sset Master "$AUDIO_STEPS"%- -q
+	notify
 	;;
-    mute)   amixer -D pulse set Master 1+ toggle -q
-            if CHK_MUTE &> /dev/null; then
-                icon_name="notification-audio-volume-muted"
-                $EXNOTIFY_SEND -i "$icon_name" -t 700 -r 123 "Muted "
-            else
-                notify
-            fi
+mute)
+	amixer -D pulse set Master 1+ toggle -q
+	if CHK_MUTE &>/dev/null; then
+		icon_name="notification-audio-volume-muted"
+		notify-send.py "Muted" \
+			-t 700 \
+			--hint string:image-path:"$icon_name" boolean:transient:true \
+			int:has-percentage:"0" \
+			--replaces-process "volume-popup"
+	else
+		notify
+	fi
 	;;
-esac    
+esac

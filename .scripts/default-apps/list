@@ -1,6 +1,6 @@
 terminal="kitty"
 lockscreen="slimlock"
 musicpl="mpd"
-filemanager="thunar"
+filemanager="pcmanfm"
 audiomanager="pavucontrol"
 browser="brave"
