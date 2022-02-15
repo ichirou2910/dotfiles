@@ -94,7 +94,7 @@
   <desktops>
     <!-- this stuff is only used at startup, pagers allow you to change them during a session these are default values to use when other ones are not already set by other applications, or saved in your session use obconf if you want to change these
     without having to log out and back in -->
-    <number>7</number>
+    <number>5</number>
     <firstdesk>1</firstdesk>
     <names>
       <name>1</name>
@@ -102,8 +102,6 @@
       <name>3</name>
       <name>4</name>
       <name>5</name>
-      <name>6</name>
-      <name>7</name>
     </names>
     <popupTime>0</popupTime>
     <!-- The number of milliseconds to show the popup for when switching desktops. Set this to 0 to disable the popup. -->
@@ -121,10 +119,10 @@
   </resize>
   <!-- You can reserve a portion of your screen where windows will not cover when they are maximized, or when they are initially placed. Many programs reserve space automatically, but you can use this in other cases. -->
   <margins>
-    <top>55</top>
-    <bottom>10</bottom>
-    <left>10</left>
-    <right>10</right>
+    <top>45</top>
+    <bottom>0</bottom>
+    <left>0</left>
+    <right>0</right>
   </margins>
   <dock>
     <position>Bottom</position>
@@ -224,44 +222,14 @@
       </action>
     </keybind>
     <!-- split/tile window -->
-    <keybind key="W-S-C">
-      <action name="MoveResizeTo">
-        <x>center</x>
-        <y>0</y>
-        <width>1/2</width>
-        <height>1/1</height>
-      </action>
-    </keybind>
-    <keybind key="W-S-H">
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
-        <width>1/2</width>
-        <height>1/1</height>
-      </action>
-    </keybind>
-    <keybind key="W-S-L">
-      <action name="MoveResizeTo">
-        <x>-0</x>
-        <y>0</y>
-        <width>1/2</width>
-        <height>1/1</height>
-      </action>
-    </keybind>
-    <keybind key="W-S-K">
-      <action name="MoveResizeTo">
-        <y>0</y>
-        <width>1/2</width>
-        <height>1/2</height>
-      </action>
-    </keybind>
-    <keybind key="W-S-J">
-      <action name="MoveResizeTo">
-        <y>-0</y>
-        <width>1/2</width>
-        <height>1/2</height>
-      </action>
-    </keybind>
+    <!-- <keybind key="W-S-C"> -->
+    <!--   <action name="MoveResizeTo"> -->
+    <!--     <x>center</x> -->
+    <!--     <y>0</y> -->
+    <!--     <width>1/2</width> -->
+    <!--     <height>1/1</height> -->
+    <!--   </action> -->
+    <!-- </keybind> -->
     <!-- desktop switching -->
     <keybind key="W-Tab">
       <action name="GoToDesktop">
@@ -300,19 +268,9 @@
         <to>5</to>
       </action>
     </keybind>
-    <keybind key="W-6">
-      <action name="GoToDesktop">
-        <to>6</to>
-      </action>
-    </keybind>
-    <keybind key="W-7">
-      <action name="GoToDesktop">
-        <to>7</to>
-      </action>
-    </keybind>
     <keybind key="W-grave">
       <action name="GoToDesktop">
-        <to>7</to>
+        <to>5</to>
       </action>
     </keybind>
     <keybind key="W-8">
@@ -477,6 +435,11 @@
     </keybind>
     <keybind key="W-p">
       <action name="Execute">
+        <command>bash -c '~/.scripts/notify/change-output'</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-p">
+      <action name="Execute">
         <command>bash -c '~/.scripts/default-apps/launch audiomanager'</command>
       </action>
     </keybind>
@@ -509,6 +472,113 @@
     <keybind key="C-grave">
       <action name="Execute">
         <command>bash -c 'kill -s USR1 $(pidof deadd-notification-center)'</command>
+      </action>
+    </keybind>
+    <!-- Tiling -->
+    <keybind key="W-S-T">
+      <action name="Execute">
+        <command>rtile --all</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-K">
+      <action name="Execute">
+        <command>rtile t</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-J">
+      <action name="Execute">
+        <command>rtile b</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-H">
+      <action name="Execute">
+        <command>rtile l</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-L">
+      <action name="Execute">
+        <command>rtile r</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-F">
+      <action name="Execute">
+        <command>rtile</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-B">
+      <action name="Execute">
+        <command>rtile --binary</command>
+      </action>
+    </keybind>
+    <keybind key="W-C-K">
+      <action name="Execute">
+        <command>rtile --grow-up</command>
+      </action>
+    </keybind>
+    <keybind key="W-C-J">
+      <action name="Execute">
+        <command>rtile --grow-down</command>
+      </action>
+    </keybind>
+    <keybind key="W-C-H">
+      <action name="Execute">
+        <command>rtile --grow-left</command>
+      </action>
+    </keybind>
+    <keybind key="W-C-L">
+      <action name="Execute">
+        <command>rtile --grow-right</command>
+      </action>
+    </keybind>
+
+    <keybind key="S-W-KP_8">
+      <action name="Execute">
+        <command>rtile --grow-up</command>
+      </action>
+    </keybind>
+    <keybind key="S-W-KP_2">
+      <action name="Execute">
+        <command>rtile --grow-down</command>
+      </action>
+    </keybind>
+    <keybind key="S-W-KP_4">
+      <action name="Execute">
+        <command>rtile --grow-left</command>
+      </action>
+    </keybind>
+    <keybind key="S-W-KP_6">
+      <action name="Execute">
+        <command>rtile --grow-right</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-C">
+      <action name="Execute">
+        <command>rtile --cycle</command>
+      </action>
+    </keybind>
+    <keybind key="S-W-KP_5">
+      <action name="Execute">
+        <command>rtile --cycle-monitors</command>
+      </action>
+    </keybind>
+    <keybind key="W-KP_7">
+      <action name="Execute">
+        <command>rtile tl</command>
+      </action>
+    </keybind>
+    <keybind key="W-KP_1">
+      <action name="Execute">
+        <command>rtile bl</command>
+      </action>
+    </keybind>
+    <keybind key="W-KP_9">
+      <action name="Execute">
+        <command>rtile tr</command>
+      </action>
+    </keybind>
+    <keybind key="W-KP_3">
+      <action name="Execute">
+        <command>rtile br</command>
       </action>
     </keybind>
   </keyboard>

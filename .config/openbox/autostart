@@ -9,13 +9,19 @@ source $HOME/.ik_var
 # there was once a pulseaudio here
 
 # UI Appearance
-( "$VISMOD_DIR/refresh" ) &> /dev/null
+("$VISMOD_DIR/refresh") &>/dev/null
 
 # Compositor
 picom --config ~/.config/picom/picom.conf &
 
+# Power Manager
+xfce4-power-manager --daemon &
+
+# KDE Connect
+kdeconnect-indicator &
+
 # Authentication Agent - PolicyKit
-lxpolkit &> /dev/null &
+lxpolkit &>/dev/null &
 
 # Start MPD player (+notification-sender)
 "$MPD_TCD"

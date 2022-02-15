@@ -2,8 +2,8 @@
 source $HOME/.ik_var
 
 # Notification Daemon
-deadd-notification-center &> /dev/null &
+deadd-notification-center &>/dev/null &
 # Wallpaper Setter
-nitrogen --set-zoom-fill --save "$WALL_DIR/$CHK_WALL" &> /dev/null
+nitrogen --restore &>/dev/null
 # Panel
-tint2 -c "$TINT2_CONF" &> /dev/null &
+tint2 -c "$TINT2_CONF" &>/dev/null &
