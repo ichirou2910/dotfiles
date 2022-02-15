@@ -1,4 +1,3 @@
-# Session
 export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
 
 # Default programs
@@ -16,6 +15,6 @@ export ZDOTDIR="$HOME/.config/zsh"
 export SCREENSHOTDIR="$HOME/Pictures/Screenshots"
 export BG_NOTES="$HOME/.config/wallpaper/notes.txt"
 
-# if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-# 	exec startx
-# fi
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+	exec startx
+fi

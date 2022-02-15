@@ -1,18 +1,12 @@
 # For Unity-devs' sake
 export FrameworkPathOverride=/lib/mono/4.7.2-api
-export MSBuildSDKsPath=/usr/share/dotnet/sdk/$(dotnet --version)/Sdks
 
 # Android
 export ANDROID_SDK_ROOT=/home/ichirou2910/.local/share/android/Sdk
 
 # Java
-export JAVA_HOME=/usr/lib/jvm/java-15-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 
 # C#
 export DOTNET_ROOT=/usr/share/dotnet
-export PATH="$PATH:/home/ichirou2910/.dotnet/tools"
-
-export DEVKITPRO=/opt/devkitpro
-export DEVKITARM=/opt/devkitpro/devkitARM
-export DEVKITPPC=/opt/devkitpro/devkitPPC

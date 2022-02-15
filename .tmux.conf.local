@@ -54,7 +54,7 @@ tmux_conf_theme_highlight_focused_pane=false
 
 # focused pane colours:
 tmux_conf_theme_focused_pane_fg='default'
-tmux_conf_theme_focused_pane_bg='#0087d7'               # light blue
+tmux_conf_theme_focused_pane_bg='#0087d7'
 
 # pane border style, possible values are:
 #   - thin (default)
@@ -62,31 +62,31 @@ tmux_conf_theme_focused_pane_bg='#0087d7'               # light blue
 tmux_conf_theme_pane_border_style=thin
 
 # pane borders colours:
-tmux_conf_theme_pane_border='#444444'                   # gray
-tmux_conf_theme_pane_active_border='#00afff'            # light blue
+tmux_conf_theme_pane_border='#444444'
+tmux_conf_theme_pane_active_border='#37cc7c'
 
 # pane indicator colours
-tmux_conf_theme_pane_indicator='#00afff'                # light blue
-tmux_conf_theme_pane_active_indicator='#00afff'         # light blue
+tmux_conf_theme_pane_indicator='#37cc7c'
+tmux_conf_theme_pane_active_indicator='#37cc7c'
 
 # status line style
-tmux_conf_theme_message_fg='#121212'                    # black
-tmux_conf_theme_message_bg='#ffff00'                    # yellow
+tmux_conf_theme_message_fg='#121212'
+tmux_conf_theme_message_bg='#37cc7c'
 tmux_conf_theme_message_attr='bold'
 
 # status line command style (<prefix> : Escape)
-tmux_conf_theme_message_command_fg='#ffff00'            # yellow
-tmux_conf_theme_message_command_bg='#0b0b0b'            # black
+tmux_conf_theme_message_command_fg='#37cc7c'
+tmux_conf_theme_message_command_bg='#434755'
 tmux_conf_theme_message_command_attr='bold'
 
 # window modes style
-tmux_conf_theme_mode_fg='#121212'                       # black
-tmux_conf_theme_mode_bg='#ffff00'                       # yellow
+tmux_conf_theme_mode_fg='#121212'
+tmux_conf_theme_mode_bg='#37cc7c'
 tmux_conf_theme_mode_attr='bold'
 
 # status line style
-tmux_conf_theme_status_fg='#8a8a8a'                     # light gray
-tmux_conf_theme_status_bg='#0b0b0b'                     # dark gray
+tmux_conf_theme_status_fg='#8a8a8a'
+tmux_conf_theme_status_bg='#434755'
 tmux_conf_theme_status_attr='none'
 
 # terminal title
@@ -107,8 +107,8 @@ tmux_conf_theme_terminal_title=' #S ● #I. #W'
 #     - #{hostname_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_window_status_fg='#8a8a8a'              # light gray
-tmux_conf_theme_window_status_bg='#0a0a0a'              # dark gray
+tmux_conf_theme_window_status_fg='#8a8a8a'
+tmux_conf_theme_window_status_bg='#434755'
 tmux_conf_theme_window_status_attr='none'
 tmux_conf_theme_window_status_format='#I\ue0b1 #W'
 #tmux_conf_theme_window_status_format='#{circled_window_index} #W'
@@ -122,8 +122,8 @@ tmux_conf_theme_window_status_format='#I\ue0b1 #W'
 #     - #{hostname_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_window_status_current_fg='#0a0a0a'      # black
-tmux_conf_theme_window_status_current_bg='#00afff'      # light blue
+tmux_conf_theme_window_status_current_fg='#434755'
+tmux_conf_theme_window_status_current_bg='#00afff'
 tmux_conf_theme_window_status_current_attr='bold'
 tmux_conf_theme_window_status_current_format='#I\ue0b1 #W'
 #tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
@@ -135,12 +135,12 @@ tmux_conf_theme_window_status_activity_bg='default'
 tmux_conf_theme_window_status_activity_attr='none'
 
 # window bell status style
-tmux_conf_theme_window_status_bell_fg='#ffff00'         # yellow
+tmux_conf_theme_window_status_bell_fg='#37cc7c'
 tmux_conf_theme_window_status_bell_bg='default'
 tmux_conf_theme_window_status_bell_attr='blink,bold'
 
 # window last status style
-tmux_conf_theme_window_status_last_fg='#ffffff'         # light blue
+tmux_conf_theme_window_status_last_fg='#ffffff'
 tmux_conf_theme_window_status_last_bg='default'
 tmux_conf_theme_window_status_last_attr='none'
 
@@ -183,13 +183,13 @@ tmux_conf_theme_status_left='  #S '
 tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} %a %d/%m/%Y , %I:%M %p | #{username}#{root} | #{hostname} '
 
 # status left style
-tmux_conf_theme_status_left_fg='#0b0b0b,#e4e4e4'  # black, white , white
-tmux_conf_theme_status_left_bg='#ffff00,#00afff'  # yellow, pink, white blue
+tmux_conf_theme_status_left_fg='#434755,#e4e4e4'
+tmux_conf_theme_status_left_bg='#37cc7c,#00afff'
 tmux_conf_theme_status_left_attr='bold,none'
 
 # status right style
-tmux_conf_theme_status_right_fg='#e4e4e4,#ffffff,#0b0b0b' # light gray, white, black
-tmux_conf_theme_status_right_bg='#0b0b0b,#db2021,#ae81ff' # dark gray, red, white
+tmux_conf_theme_status_right_fg='#e4e4e4,#ffffff,#e4e4e4'
+tmux_conf_theme_status_right_bg='#434755,#db2021,#5e72a1'
 tmux_conf_theme_status_right_attr='none,none,bold'
 
 # pairing indicator
@@ -216,48 +216,9 @@ tmux_conf_theme_synchronized_fg='none'
 tmux_conf_theme_synchronized_bg='none'
 tmux_conf_theme_synchronized_attr='none'
 
-# battery bar symbols
-tmux_conf_battery_bar_symbol_full='◼'
-tmux_conf_battery_bar_symbol_empty='◻'
-#tmux_conf_battery_bar_symbol_full='♥'
-#tmux_conf_battery_bar_symbol_empty='·'
-
-# battery bar length (in number of symbols), possible values are:
-#   - auto
-#   - a number, e.g. 5
-tmux_conf_battery_bar_length='auto'
-
-# battery bar palette, possible values are:
-#   - gradient (default)
-#   - heat
-#   - 'colour_full_fg,colour_empty_fg,colour_bg'
-tmux_conf_battery_bar_palette='gradient'
-#tmux_conf_battery_bar_palette='#d70000,#e4e4e4,#121212'   # red, white, black
-
-# battery hbar palette, possible values are:
-#   - gradient (default)
-#   - heat
-#   - 'colour_low,colour_half,colour_full'
-tmux_conf_battery_hbar_palette='gradient'
-#tmux_conf_battery_hbar_palette='#d70000,#ff5f00,#5fff00'  # red, orange, green
-
-# battery vbar palette, possible values are:
-#   - gradient (default)
-#   - heat
-#   - 'colour_low,colour_half,colour_full'
-tmux_conf_battery_vbar_palette='gradient'
-#tmux_conf_battery_vbar_palette='#d70000,#ff5f00,#5fff00'  # red, orange, green
-
-# symbols used to indicate whether battery is charging or discharging
-tmux_conf_battery_status_charging='↑'       # U+2191
-tmux_conf_battery_status_discharging='↓'    # U+2193
-#tmux_conf_battery_status_charging='⚡ '    # U+26A1
-#tmux_conf_battery_status_charging='🔌 '    # U+1F50C
-#tmux_conf_battery_status_discharging='🔋 ' # U+1F50B
-
 # clock style (when you hit <prefix> + t)
 # you may want to use %I:%M %p in place of %R in tmux_conf_theme_status_right
-tmux_conf_theme_clock_colour='#00afff'  # light blue
+tmux_conf_theme_clock_colour='#00afff'
 tmux_conf_theme_clock_style='24'
 
 
@@ -275,7 +236,10 @@ tmux_conf_copy_to_os_clipboard=false
 # this is the place to override or undo settings
 
 set -g default-terminal "xterm-256color"
-set -ga terminal-overrides ",xterm-256col*:Tc"
+set-option -sa terminal-overrides ',XXX:RGB'
+
+set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'  # undercurl support
+set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m' # underscore colours - needs tmux-3.0
 
 # increase history size
 set -g history-limit 10000
@@ -284,7 +248,7 @@ set -g history-limit 10000
 set -g mouse on
 
 # disable status bar
-set -g status off
+# set -g status off
 bind up set status
 
 # force Vi mode
@@ -300,7 +264,7 @@ set -g prefix C-a
 bind C-a send-prefix
 
 # move status line to top
-#set -g status-position top
+set -g status-position top
 
 # remap split keys
 unbind '"'
@@ -345,8 +309,6 @@ bind C-x new-window -c "#{pane_current_path}"
 bind a choose-tree -Zw
 bind C-a choose-tree -Zs
 bind-key -r h prev
-bind-key -r j next
-bind-key -r k prev
 bind-key -r l next
 bind-key -n C-up prev
 bind-key -n C-left prev

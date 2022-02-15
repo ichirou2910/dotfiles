@@ -8,6 +8,3 @@ export CLUTTER_IM_MODULE=ibus
 export GLFW_IM_MODULE=ibus
 
 ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3
-setxkbmap -option caps:swapescape
-
-xrandr --output DP1 --primary --left-of HDMI1

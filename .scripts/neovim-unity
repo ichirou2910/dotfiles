@@ -1,2 +1,2 @@
 #!/bin/bash
-alacritty -e nvr --servername unity $@
+kitty -e nvr --servername unity "$@"
