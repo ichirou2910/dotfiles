@@ -303,24 +303,9 @@
         <to>5</to>
       </action>
     </keybind>
-    <keybind key="W-S-6">
-      <action name="SendToDesktop">
-        <to>6</to>
-      </action>
-    </keybind>
-    <keybind key="W-S-7">
-      <action name="SendToDesktop">
-        <to>7</to>
-      </action>
-    </keybind>
     <keybind key="W-S-grave">
       <action name="SendToDesktop">
-        <to>7</to>
-      </action>
-    </keybind>
-    <keybind key="W-S-8">
-      <action name="SendToDesktop">
-        <to>8</to>
+        <to>5</to>
       </action>
     </keybind>
     <!-- windows -->
