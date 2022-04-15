@@ -368,6 +368,11 @@
       </action>
     </keybind>
     <!-- run apps -->
+    <keybind key="A-grave">
+      <action name="Execute">
+        <command>bash -c '~/.scripts/dropdown-terminal.sh'</command>
+      </action>
+    </keybind>
     <keybind key="W-d">
       <action name="Execute">
         <command>bash -c '~/.config/rofi/scripts/appsmenu.sh'</command>
@@ -910,6 +915,9 @@
   <applications>
     <application class="*" type="normal">
       <decor>yes</decor>
+    </application>
+    <application class="kitty" type="normal">
+      <decor>no</decor>
     </application>
     <application class="mpv" type="normal">
       <maximized>true</maximized>
