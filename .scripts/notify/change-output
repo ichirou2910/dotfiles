@@ -1,0 +1,35 @@
+#!/bin/env bash
+source $HOME/.ik_var
+source $HOME/.ik_active_var
+
+active_sink=$ACTIVE_OUTPUT_SINK
+
+output=$(pactl list sinks)
+names=$(echo "$output" | grep "Description")
+ids=$(echo "$output" | grep "Sink #" | awk -F '#' '{print $2}')
+
+sink_count=$(echo "$ids" | wc -l)
+next_sink_id=$(echo "$active_sink % $sink_count + 1" | bc)
+next_sink_name=$(echo "$names" | awk -v line="$next_sink_id" -F ': ' 'NR==line {print $2}')
+
+pactl set-default-sink "$(echo "$ids" | awk -v line="$next_sink_id" -F '\t' 'NR==line {print $1}')"
+
+sed -e "/ACTIVE_OUTPUT_SINK/s/=.*/=$next_sink_id/" -i "$HOME/.ik_active_var"
+
+VOLUME="$(amixer -D pulse get Master | grep '%' | head -n 1 | awk -F'[' '{print $2}' | awk -F'%' '{print $1}')"
+
+if [[ "$VOLUME" = "0" ]]; then
+	icon_name="notification-audio-volume-muted"
+elif [[ "$VOLUME" -lt "10" ]]; then
+	icon_name="notification-audio-volume-low"
+elif [[ "$VOLUME" -lt "30" ]]; then
+	icon_name="notification-audio-volume-low"
+elif [[ "$VOLUME" -lt "70" ]]; then
+	icon_name="notification-audio-volume-medium"
+else
+	icon_name="notification-audio-volume-high"
+fi
+
+notify-send.py -a "System" "Output" "$next_sink_name" \
+	--hint string:image-path:"$icon_name" boolean:transient:true \
+	--replaces-process "volume-popup"
