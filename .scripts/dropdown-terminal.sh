@@ -8,4 +8,4 @@ noterr() {
 }
 type -p "tdrop" &>/dev/null || noterr
 
-tdrop -ma -w 50% -h 35% -y 50 -x 25% -s dropdown kitty
+tdrop -ma -w 50% -h 35% -y 50 -x 25% kitty
