@@ -326,7 +326,6 @@ set -s command-alias[5] np='new-pane'
 set -s command-alias[6] nw='new-window'
 set -s command-alias[7] ns='new-session -c $HOME'
 set -s command-alias[8] vs='split-window -h'
-set -s command-alias[9] db='new-window -n Database nvim -c DBUI'
 
 # -- tpm -----------------------------------------------------------------------
 
