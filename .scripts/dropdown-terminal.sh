@@ -8,4 +8,4 @@ noterr() {
 }
 type -p "tdrop" &>/dev/null || noterr
 
-tdrop -ma -w 50% -h 35% -y 50 -x 25% kitty
+tdrop -P 'wmctrl -i -r $wid -b add,above' -ma -w 50% -h 35% -y 50 -x 25% kitty
