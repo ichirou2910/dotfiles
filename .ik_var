@@ -94,7 +94,7 @@ CHK_WALL="$(cat $WALL_FILE)"
 BUTTON_DIR="$THEME_DIR/Fleon/openbox-3"
 
 DEFAPPS_EXEC="$SCRIPTS_DIR/default-apps/launch"
-EXNOTIFY_SEND="$SCRIPTS_DIR/notify/notify-send.sh"
+EXNOTIFY_SEND="$HOME/.local/bin/notify-send.py"
 BRIGHTNESS_HANDLER="$NOTIFY_DIR/change-brightness"
 AVOLUME_CHANGER="$NOTIFY_DIR/change-volume"
 MUSIC_CONTROLLER="$SCRIPTS_DIR/music-controller"
@@ -104,3 +104,8 @@ MPD_TCD="$NCMPCPP_SCRIPTS_DIR/track-change-detector"
 
 GAME_LAUNCHER_CACHE_DIR="$HOME/.cache/rofi-game-launcher"
 GAME_LAUNCHER_TMP_DIR="/tmp/rofi-game-launcher"
+
+DROPDOWN_TERM_WIDTH="50%"
+DROPDOWN_TERM_HEIGHT="40%"
+
+CAMERA_ICON="file://$HOME/.icons/camera.png"

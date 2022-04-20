@@ -25,7 +25,7 @@ notify() {
 	fi
 
 	# $EXNOTIFY_SEND -i "$icon_name" -t 700 -r 123 "$VOLUME " -h int:value:"$VOLUME"
-	notify-send.py "$VOLUME" \
+	$EXNOTIFY_SEND "$VOLUME" \
 		-t 700 \
 		--hint string:image-path:"$icon_name" boolean:transient:true \
 		int:has-percentage:"$VOLUME" \
@@ -47,7 +47,7 @@ mute)
 	amixer -D pulse set Master 1+ toggle -q
 	if CHK_MUTE &>/dev/null; then
 		icon_name="notification-audio-volume-muted"
-		notify-send.py "Muted" \
+		$EXNOTIFY_SEND "Muted" \
 			-t 700 \
 			--hint string:image-path:"$icon_name" boolean:transient:true \
 			int:has-percentage:"0" \

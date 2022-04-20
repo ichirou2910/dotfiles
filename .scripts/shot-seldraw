@@ -1,32 +1,42 @@
 #!/usr/bin/env bash
-export LC_ALL=POSIX LANG=POSIX;
+export LC_ALL=POSIX LANG=POSIX
 . "${HOME}/.ik_var"
 
-noterr() { $EXNOTIFY_SEND -u low -r 12 "Install scrot!"; exit 1; }
-type -p "scrot" &> /dev/null || noterr
+noterr() {
+	$EXNOTIFY_SEND -u low -r 12 "Install scrot!"
+	exit 1
+}
+type -p "scrot" &>/dev/null || noterr
 OUTPUT=""
 
 {
-    [[ ! -d "$SAVE_DIR/Screenshots" ]] && mkdir -p "$SAVE_DIR/Screenshots"; read -rt ".12" <> <(:) || :
-    rm -f /tmp/*_scrot*.png &> /dev/null
-    if scrot -q 75 -s -fbe 'mv -f $f /tmp/' -l style=dash,width=1,color="#2be491"; then
-        $EXNOTIFY_SEND -r 11 -i "$NOTIF_SS_ICON" -u low "Screenshot" "Picture acquired!"
-    else
-        $EXNOTIFY_SEND -r 12 -t 500 -i "$NOTIF_SS_ICON" -u low "Screenshot" "Screenshot canceled!" && exit 1
-    fi
-    
-    for CURRENT in /tmp/*_scrot*.png; do
-        CURRENT="$(echo "$CURRENT" | awk -F'/tmp/' '{print $2}' | awk -F'.png' '{print $1}')"
-    done
-    
-    if [[ "$1" = "save" ]]; then
-        mv /tmp/"$CURRENT".png "$SAVE_DIR"/Screenshots 
-        OUTPUT="$SAVE_DIR/Screenshots/$CURRENT.png"
-    else
-        OUTPUT="/tmp/$CURRENT.png"
-    fi
+	[[ ! -d "$SAVE_DIR/Screenshots" ]] && mkdir -p "$SAVE_DIR/Screenshots"
+	read -rt ".12" <> <(:) || :
+	rm -f /tmp/*_scrot*.png &>/dev/null
+	if scrot -q 75 -s -fbe 'mv -f $f /tmp/' -l style=dash,width=1,color="#2be491"; then
+		$EXNOTIFY_SEND "Screenshot" "Picture acquired!" \
+			-t 1500 -u low \
+			--hint string:image-path:"$CAMERA_ICON" boolean:transient:true \
+			--replaces-process "screenshot"
+	else
+		$EXNOTIFY_SEND "Screenshot" "Screenshot canceled!" \
+			-t 1000 -u low \
+			--hint string:image-path:"$CAMERA_ICON" boolean:transient:true \
+			--replaces-process "screenshot" && exit 1
+	fi
 
-    xclip -selection clipboard -target image/png -i "$OUTPUT"
+	for CURRENT in /tmp/*_scrot*.png; do
+		CURRENT="$(echo "$CURRENT" | awk -F'/tmp/' '{print $2}' | awk -F'.png' '{print $1}')"
+	done
 
-    rm -f /tmp/*_scrot*.png &> /dev/null
+	if [[ "$1" = "save" ]]; then
+		mv /tmp/"$CURRENT".png "$SAVE_DIR"/Screenshots
+		OUTPUT="$SAVE_DIR/Screenshots/$CURRENT.png"
+	else
+		OUTPUT="/tmp/$CURRENT.png"
+	fi
+
+	xclip -selection clipboard -target image/png -i "$OUTPUT"
+
+	rm -f /tmp/*_scrot*.png &>/dev/null
 } &

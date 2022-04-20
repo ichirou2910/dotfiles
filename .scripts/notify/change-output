@@ -30,6 +30,6 @@ else
 	icon_name="notification-audio-volume-high"
 fi
 
-notify-send.py -a "System" "Output" "$next_sink_name" \
+$EXNOTIFY_SEND "Output" "$next_sink_name" \
 	--hint string:image-path:"$icon_name" boolean:transient:true \
 	--replaces-process "volume-popup"
