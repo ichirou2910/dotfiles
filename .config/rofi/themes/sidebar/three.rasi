@@ -6,8 +6,8 @@
   icon-font:                            "feather 24";
   
   option-6-listview-spacing:            5px;
-  menu-window-padding:                  5px 9px;
-  menu-element-padding:                 23px 23px 18px 0px;
+  menu-window-padding:                  5px 5px;
+  menu-element-padding:                 23px 21px 14px 0px;
 }
 
 element-text, 
@@ -22,8 +22,8 @@ textbox-prompt-colon {
   text-color: inherit;
 }
 
-window {
-  width: 212px;
+#window {
+  width: 213px;
   height: 79px;
   anchor: south;
   location: south;
@@ -38,21 +38,21 @@ window {
   font: @icon-font;
 }
 
-horibox {
+#horibox {
   children: [ listview ];
 }
 
-listview {
+#listview {
   layout: horizontal;
 }
 
-element {
+#element {
   border: 0px;
   background-color: @background-light;
   border-radius: 8px;
 }
 
-element.selected {
+#element.selected {
   background-color: @accent;
 }
 
@@ -60,30 +60,30 @@ element.selected {
   font: @text-font;
 }
 
-window {
+#window {
   padding: @menu-window-padding;
   children: [ inputbar, horibox ];
 }
 
-inputbar {
+#inputbar {
   enabled: false;
   children: [ textbox-prompt-colon, prompt ];
   margin: @menu-inputbar-margin;
 }
 
-listview {
+#listview {
   spacing: @option-6-listview-spacing;
   lines: 3;
 }
 
-element {
+#element {
   font: @icon-font;
   border: @menu-element-border;
   padding: @menu-element-padding;
   border-color: @background-light;
 }
 
-element.selected {
+#element.selected {
   border-color: @accent;
   text-color: @foreground;
 }

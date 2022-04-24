@@ -8,6 +8,7 @@ return {
 	freetype_load_target = "Light",
 	freetype_render_target = "HorizontalLcd",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=1" },
+	use_cap_height_to_scale_fallback_fonts = false,
 	font_size = 10.0,
 	line_height = 1.2,
 	custom_block_glyphs = true,
