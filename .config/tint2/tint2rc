@@ -21,7 +21,7 @@ border_width = 1
 border_sides = TBLR
 border_content_tint_weight = 0
 background_content_tint_weight = 0
-background_color = #f9f9f9 70
+background_color = #ffffff 30
 border_color = #ffffff 0
 background_color_hover = #f9f9f9 78
 border_color_hover = #f9f9f9 78
@@ -62,7 +62,7 @@ border_width = 0
 border_sides = 
 border_content_tint_weight = 0
 background_content_tint_weight = 0
-background_color = #1b1f27 70
+background_color = #1b1f27 60
 border_color = #000000 0
 background_color_hover = #000000 0
 border_color_hover = #000000 0
@@ -142,7 +142,7 @@ border_color_pressed = #000000 0
 # Background 10: Active Taskbar
 rounded = 0
 border_width = 2
-border_sides = B
+border_sides = 
 border_content_tint_weight = 0
 background_content_tint_weight = 0
 background_color = #000000 0
@@ -157,7 +157,7 @@ border_color_pressed = #000000 0
 panel_items = TSBCP
 panel_size = 100% 45
 panel_margin = 0 0
-panel_padding = 7 5 7
+panel_padding = 7 1 7
 panel_background_id = 4
 wm_menu = 1
 panel_dock = 0
@@ -182,9 +182,9 @@ scale_relative_to_screen_height = 0
 
 #-------------------------------------
 # Taskbar
-taskbar_mode = multi_desktop
+taskbar_mode = single_desktop
 taskbar_hide_if_empty = 0
-taskbar_padding = 1 2 8
+taskbar_padding = 2 2 2
 taskbar_background_id = 9
 taskbar_active_background_id = 9
 taskbar_name = 1
@@ -192,10 +192,10 @@ taskbar_hide_inactive_tasks = 0
 taskbar_hide_different_monitor = 0
 taskbar_hide_different_desktop = 0
 taskbar_always_show_all_desktop_tasks = 0
-taskbar_name_padding = 8 10
-taskbar_name_background_id = 2
+taskbar_name_padding = 10
+taskbar_name_background_id = 10
 taskbar_name_active_background_id = 10
-taskbar_name_font = Segoe UI 10
+taskbar_name_font = Iosevka 12
 taskbar_name_font_color = #e5e5e5 100
 taskbar_name_active_font_color = #ffffff 100
 taskbar_distribute_size = 0
@@ -206,10 +206,10 @@ task_align = left
 # Task
 task_text = 0
 task_icon = 1
-task_centered = 0
+task_centered = 1
 urgent_nb_of_blink = 3
-task_maximum_size = 30
-task_padding = 3 3 3
+task_maximum_size = 41
+task_padding = 5 5 5
 task_font = Sans 8
 task_tooltip = 1
 task_thumbnail = 1
@@ -225,7 +225,7 @@ mouse_scroll_down = none
 
 #-------------------------------------
 # System tray (notification area)
-systray_padding = 8 0 10
+systray_padding = 8 1 10
 systray_background_id = 8
 systray_sort = ascending
 systray_icon_size = 16
