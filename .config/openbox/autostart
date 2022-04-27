@@ -12,7 +12,7 @@ source $HOME/.ik_var
 ("$VISMOD_DIR/refresh") &>/dev/null
 
 # Compositor
-picom --config ~/.config/picom/picom.conf &
+picom --config ~/.config/picom/picom.conf --experimental-backends &
 
 # Power Manager
 xfce4-power-manager --daemon &

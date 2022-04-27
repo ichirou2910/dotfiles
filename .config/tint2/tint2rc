@@ -16,26 +16,26 @@ end_color = #1199ee 100
 #-------------------------------------
 # Backgrounds
 # Background 1: Active task
-rounded = 5
+rounded = 3
 border_width = 1
 border_sides = TBLR
 border_content_tint_weight = 0
 background_content_tint_weight = 0
-background_color = #a1a8b9 0
-border_color = #ffffff 100
+background_color = #f9f9f9 70
+border_color = #ffffff 0
 background_color_hover = #f9f9f9 78
 border_color_hover = #f9f9f9 78
 background_color_pressed = #f9f9f9 100
 border_color_pressed = #f9f9f9 100
 
 # Background 2: Default task
-rounded = 5
+rounded = 3
 border_width = 1
 border_sides = TBLR
 border_content_tint_weight = 0
 background_content_tint_weight = 0
 background_color = #4c566a 0
-border_color = #a1a8b9 40
+border_color = #a1a8b9 0
 gradient_id = 0
 background_color_hover = #ededed 82
 border_color_hover = #ededed 82
@@ -43,7 +43,7 @@ background_color_pressed = #4c566a 100
 border_color_pressed = #4c566a 100
 
 # Background 3: Active desktop name, Inactive desktop name, Urgent task
-rounded = 5
+rounded = 3
 border_width = 1
 border_sides = LRTB
 border_content_tint_weight = 0
@@ -86,7 +86,7 @@ border_color_pressed = #a1a8b9 0
 gradient_id_pressed = 1
 
 # Background 6: Button, Executor
-rounded = 6
+rounded = 3
 border_width = 0
 border_sides = 
 border_content_tint_weight = 0
@@ -126,7 +126,7 @@ border_color_hover = #a1a8b9 0
 background_color_pressed = #434c5e 100
 border_color_pressed = #a1a8b9 0
 
-# Background 9: Transparency
+# Background 9: Transparent
 rounded = 0
 border_width = 0
 border_sides = 
@@ -139,17 +139,30 @@ border_color_hover = #000000 0
 background_color_pressed = #000000 0
 border_color_pressed = #000000 0
 
+# Background 10: Active Taskbar
+rounded = 0
+border_width = 2
+border_sides = B
+border_content_tint_weight = 0
+background_content_tint_weight = 0
+background_color = #000000 0
+border_color = #ffffff 60
+background_color_hover = #000000 0
+border_color_hover = #000000 0
+background_color_pressed = #000000 0
+border_color_pressed = #000000 0
+
 #-------------------------------------
 # Panel
 panel_items = TSBCP
 panel_size = 100% 45
 panel_margin = 0 0
-panel_padding = 7 7 7
+panel_padding = 7 5 7
 panel_background_id = 4
 wm_menu = 1
 panel_dock = 0
 panel_pivot_struts = 0
-panel_position = top center horizontal
+panel_position = bottom center horizontal
 panel_layer = normal
 panel_monitor = all
 panel_shrink = 0
@@ -171,7 +184,7 @@ scale_relative_to_screen_height = 0
 # Taskbar
 taskbar_mode = multi_desktop
 taskbar_hide_if_empty = 0
-taskbar_padding = 1 1 8
+taskbar_padding = 1 2 8
 taskbar_background_id = 9
 taskbar_active_background_id = 9
 taskbar_name = 1
@@ -181,8 +194,8 @@ taskbar_hide_different_desktop = 0
 taskbar_always_show_all_desktop_tasks = 0
 taskbar_name_padding = 8 10
 taskbar_name_background_id = 2
-taskbar_name_active_background_id = 3
-taskbar_name_font = Iosevka 10
+taskbar_name_active_background_id = 10
+taskbar_name_font = Segoe UI 10
 taskbar_name_font_color = #e5e5e5 100
 taskbar_name_active_font_color = #ffffff 100
 taskbar_distribute_size = 0
@@ -195,7 +208,7 @@ task_text = 0
 task_icon = 1
 task_centered = 0
 urgent_nb_of_blink = 3
-task_maximum_size = 29
+task_maximum_size = 30
 task_padding = 3 3 3
 task_font = Sans 8
 task_tooltip = 1
@@ -234,12 +247,12 @@ launcher_tooltip = 0
 
 #-------------------------------------
 # Clock
-time1_format = %a, %b %d, %Y  %I:%M %p
-time2_format = 
-time1_font = Segoe UI 12.5
+time1_format = %I:%M %p
+time2_format = %a, %b %d, %Y
+time1_font = Segoe UI 10.5
+time2_font = Segoe UI 9
 time1_timezone = 
 time2_timezone = 
-time2_font = Segoe UI 10
 clock_font_color = #f9f9f9 100
 clock_padding = 0 0
 clock_background_id = 9
@@ -260,6 +273,8 @@ battery_full_cmd =
 battery_font_color = #f9f9f9 100
 bat1_format = 
 bat2_format = 
+bat1_font = Segoe UI 10.5
+bat2_font = Segoe UI 9
 battery_padding = 0 0
 battery_background_id = 0
 battery_hide = 101
@@ -284,13 +299,13 @@ separator_padding = 1 0
 # Button 1
 button = new
 button_text = 
-button_tooltip = Notification
+button_tooltip = 
 button_lclick_command = kill -s USR1 $(pidof deadd-notification-center)
 button_rclick_command = 
 button_mclick_command = 
 button_uwheel_command = 
 button_dwheel_command = 
-button_font = Iosevka 15
+button_font = Segoe UI 15
 button_font_color = #f9f9f9 100
 button_padding = 10 0
 button_background_id = 6

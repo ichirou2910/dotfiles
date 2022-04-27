@@ -8,4 +8,4 @@ noterr() {
 }
 type -p "tdrop" &>/dev/null || noterr
 
-tdrop -P 'wmctrl -i -r $wid -b add,above' -ma -w "$DROPDOWN_TERM_WIDTH" -h "$DROPDOWN_TERM_HEIGHT" -y 50 -x 25% kitty
+tdrop -P 'wmctrl -i -r $wid -b add,above' -ma -w "$DROPDOWN_TERM_WIDTH" -h "$DROPDOWN_TERM_HEIGHT" -y 5 -x 25% kitty

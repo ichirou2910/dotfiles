@@ -2,6 +2,7 @@
 
 window {
   background: rgba(55, 66, 82, 0.5);
+  border-radius: 5px;
 }
 
 .noti-center.time {

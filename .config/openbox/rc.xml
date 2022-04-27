@@ -119,8 +119,8 @@
   </resize>
   <!-- You can reserve a portion of your screen where windows will not cover when they are maximized, or when they are initially placed. Many programs reserve space automatically, but you can use this in other cases. -->
   <margins>
-    <top>45</top>
-    <bottom>0</bottom>
+    <top>0</top>
+    <bottom>45</bottom>
     <left>0</left>
     <right>0</right>
   </margins>
