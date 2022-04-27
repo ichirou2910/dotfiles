@@ -9,9 +9,8 @@ return {
 	freetype_render_target = "HorizontalLcd",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=1" },
 	use_cap_height_to_scale_fallback_fonts = false,
-	font_size = 10.0,
+	font_size = 9.0,
 	line_height = 1.2,
-	custom_block_glyphs = true,
 
 	-- Window
 	window_decorations = "NONE",
@@ -19,15 +18,28 @@ return {
 		left = 10,
 		right = 10,
 		top = 10,
-		bottom = 10,
+		bottom = 5,
 	},
 
 	-- Theme
 	colors = {
-		foreground = "#c8ccd4",
-		background = "#1b1f27",
-		ansi = { "#1e222a", "#e06c75", "#98c379", "#e5c07b", "#61afef", "#c678dd", "#56b6c2", "#abb2bf" },
-		brights = { "#545862", "#e06c75", "#98c379", "#e5c07b", "#61afef", "#c678dd", "#56b6c2", "#abb2bf" },
+		-- Onedark
+		-- foreground = "#c8ccd4",
+		-- background = "#1b1f27",
+		-- ansi = { "#1e222a", "#e06c75", "#98c379", "#e5c07b", "#61afef", "#c678dd", "#56b6c2", "#abb2bf" },
+		-- brights = { "#545862", "#e06c75", "#98c379", "#e5c07b", "#61afef", "#c678dd", "#56b6c2", "#abb2bf" },
+
+		-- Tokyonight
+		foreground = "#c0caf5",
+		background = "#1a1b26",
+		cursor_bg = "#c0caf5",
+		cursor_border = "#c0caf5",
+		cursor_fg = "#1a1b26",
+		selection_bg = "#33467C",
+		selection_fg = "#c0caf5",
+
+		ansi = { "#15161E", "#f7768e", "#9ece6a", "#e0af68", "#7aa2f7", "#bb9af7", "#7dcfff", "#a9b1d6" },
+		brights = { "#414868", "#f7768e", "#9ece6a", "#e0af68", "#7aa2f7", "#bb9af7", "#7dcfff", "#c0caf5" },
 	},
 
 	-- Misc
