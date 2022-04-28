@@ -319,5 +319,5 @@ tooltip_hide_timeout = 0.2
 tooltip_padding = 8 6
 tooltip_background_id = 7
 tooltip_font_color = #f9f9f9 100
-tooltip_font = Cantarell 9
+tooltip_font = Segoe UI 9
 

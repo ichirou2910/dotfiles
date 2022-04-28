@@ -4,7 +4,7 @@ configuration {
   cycle:                true;
   disable-history:      true;
   sidebar-mode:         false;
-  modi:                 "drun,run,window,file-browser";
+  modi:                 "drun";
   sort:                 true;
   sorting-method:       "fzf";
   display-drun:         "";
