@@ -34,14 +34,14 @@ window {
   background: rgba(255, 0, 0, 0.5);
 }
 
-.notificationInCenter.low,
-.notificationInCenter.normal {
-  /* background: rgba(27, 31, 39, 0.4); */
-  border: 1px solid #f9f9f9;
+.notificationInCenter {
+  margin: 3px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1.95px 2.5px;
   border-radius: 5px;
 }
 
 .notificationInCenter.critical {
+  margin: 2px;
   background: rgba(155, 0, 20, 0.5);
   border-radius: 5px;
 }
