@@ -3,7 +3,7 @@
 
 include "/home/ichirou2910/.gtkrc-2.0.mine"
 gtk-theme-name="Dracula"
-gtk-icon-theme-name="Papirus-Dark-Custom"
+gtk-icon-theme-name="Papirus-Dark"
 gtk-font-name="Segoe UI,  10"
 gtk-cursor-theme-name="Sweet-cursors"
 gtk-cursor-theme-size=0
