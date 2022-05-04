@@ -63,30 +63,30 @@ tmux_conf_theme_pane_border_style=thin
 
 # pane borders colours:
 tmux_conf_theme_pane_border='#444444'
-tmux_conf_theme_pane_active_border='#37cc7c'
+tmux_conf_theme_pane_active_border='#3b4261'
 
 # pane indicator colours
-tmux_conf_theme_pane_indicator='#37cc7c'
-tmux_conf_theme_pane_active_indicator='#37cc7c'
+tmux_conf_theme_pane_indicator='#3b4261'
+tmux_conf_theme_pane_active_indicator='#3b4261'
 
 # status line style
-tmux_conf_theme_message_fg='#121212'
-tmux_conf_theme_message_bg='#37cc7c'
+tmux_conf_theme_message_fg='#c0cac5'
+tmux_conf_theme_message_bg='#3b4261'
 tmux_conf_theme_message_attr='bold'
 
 # status line command style (<prefix> : Escape)
-tmux_conf_theme_message_command_fg='#37cc7c'
-tmux_conf_theme_message_command_bg='#434755'
+tmux_conf_theme_message_command_fg='#3b4261'
+tmux_conf_theme_message_command_bg='#c0cac5'
 tmux_conf_theme_message_command_attr='bold'
 
 # window modes style
-tmux_conf_theme_mode_fg='#121212'
-tmux_conf_theme_mode_bg='#37cc7c'
+tmux_conf_theme_mode_fg='#c0cac5'
+tmux_conf_theme_mode_bg='#3b4261'
 tmux_conf_theme_mode_attr='bold'
 
 # status line style
 tmux_conf_theme_status_fg='#8a8a8a'
-tmux_conf_theme_status_bg='#434755'
+tmux_conf_theme_status_bg='#16161e'
 tmux_conf_theme_status_attr='none'
 
 # terminal title
@@ -108,9 +108,9 @@ tmux_conf_theme_terminal_title=' #S ● #I. #W'
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_window_status_fg='#8a8a8a'
-tmux_conf_theme_window_status_bg='#434755'
+tmux_conf_theme_window_status_bg='#16161e'
 tmux_conf_theme_window_status_attr='none'
-tmux_conf_theme_window_status_format='#I\ue0b1 #W'
+tmux_conf_theme_window_status_format='#I #W'
 #tmux_conf_theme_window_status_format='#{circled_window_index} #W'
 #tmux_conf_theme_window_status_format='#I #W#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🔍,}'
 
@@ -122,10 +122,10 @@ tmux_conf_theme_window_status_format='#I\ue0b1 #W'
 #     - #{hostname_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_window_status_current_fg='#434755'
-tmux_conf_theme_window_status_current_bg='#00afff'
+tmux_conf_theme_window_status_current_fg='#16161e'
+tmux_conf_theme_window_status_current_bg='#7aa2f7'
 tmux_conf_theme_window_status_current_attr='bold'
-tmux_conf_theme_window_status_current_format='#I\ue0b1 #W'
+tmux_conf_theme_window_status_current_format='#I #W'
 #tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
 # tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}'
 
@@ -135,7 +135,7 @@ tmux_conf_theme_window_status_activity_bg='default'
 tmux_conf_theme_window_status_activity_attr='none'
 
 # window bell status style
-tmux_conf_theme_window_status_bell_fg='#37cc7c'
+tmux_conf_theme_window_status_bell_fg='#3b4261'
 tmux_conf_theme_window_status_bell_bg='default'
 tmux_conf_theme_window_status_bell_attr='blink,bold'
 
@@ -183,13 +183,13 @@ tmux_conf_theme_status_left='  #S '
 tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} %a %d/%m/%Y , %I:%M %p | #{username}#{root} | #{hostname} '
 
 # status left style
-tmux_conf_theme_status_left_fg='#434755,#e4e4e4'
-tmux_conf_theme_status_left_bg='#37cc7c,#00afff'
+tmux_conf_theme_status_left_fg='#c0cac5,#e4e4e4'
+tmux_conf_theme_status_left_bg='#3b4261,#00afff'
 tmux_conf_theme_status_left_attr='bold,none'
 
 # status right style
-tmux_conf_theme_status_right_fg='#e4e4e4,#ffffff,#e4e4e4'
-tmux_conf_theme_status_right_bg='#434755,#db2021,#5e72a1'
+tmux_conf_theme_status_right_fg='#e4e4e4,#161616,#e4e4e4'
+tmux_conf_theme_status_right_bg='#16161e,#f7768e,#5e72a1'
 tmux_conf_theme_status_right_attr='none,none,bold'
 
 # pairing indicator
