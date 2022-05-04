@@ -11,18 +11,6 @@ configuration {
   font: "Segoe UI 10";
 }
 
-element-text, 
-element-icon {
-  background-color: inherit;
-  highlight:        inherit;
-  cursor:           inherit;
-  text-color: inherit;
-}
-
-textbox-prompt-colon {
-  text-color: inherit;
-}
-
 @import "shared/colors.rasi" 
 
 window {
@@ -55,7 +43,7 @@ textbox-prompt-colon {
 
 entry {
   background-color: @BGA;
-  text-color: @FG;
+  text-color: @IMG;
   placeholder-color: @IMG;
   expand: true;
   horizontal-align: 0;
@@ -157,7 +145,3 @@ element selected.active {
   background-color: @BGA;
   color: @FG;
 }
-
-/*
-vim:ft=css
-*/

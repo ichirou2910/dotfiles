@@ -1,13 +1,25 @@
 /* Color-Scheme */
 
+/* * { */
+/* BG:    #1C1C1A99; */
+/* BGA:   #1C1C1Aff; */
+/* FG:    #FFFFFFff; */
+/* BDR:   #EBEBEBff; */
+/* SEL:   #0061B7ff; */
+/* UGT:   #CB3F21ff; */
+/* IMG:   #606060ff; */
+/* ON:    #1F6E42ff; */
+/* OFF:   #CB3F21ff; */
+/* } */
+
 * {
-BG:    #1C1C1A99;
-BGA:   #1C1C1Aff;
-FG:    #FFFFFFff;
-BDR:   #EBEBEBff;
-SEL:   #0061B7ff;
-UGT:   #CB3F21ff;
-IMG:   #606060ff;
-ON:    #1F6E42ff;
-OFF:   #CB3F21ff;
+  BG:    #00000073;
+  BGA:   #000000A6;
+  FG:    #F5F5F5ff;
+  BDR:   #151515ff;
+  SEL:   #29A0FFff;
+  UGT:   #D77F6Dff;
+  IMG:   #909090ff;
+  ON:    #38C878ff;
+  OFF:   #D77F6Dff;
 }
