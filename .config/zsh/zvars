@@ -1,0 +1,10 @@
+# NNN
+BLK="c1"; CHR="b4"; DIR="27"; EXE="72"; REG="00"; HARDLINK="60"; SYMLINK="26"; MISSING="3b"; ORPHAN="c6"; FIFO="ad"; SOCK="aa"; OTHER="cc";
+export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
+export NNN_COLORS="1234"
+export NNN_PLUG='d:dragdrop;e:edit;g:goto;p:preview-tui;v:imgview;x:extract;z:autojump'
+export NNN_FIFO="/tmp/nnn.fifo"
+
+export npm_config_prefix="$HOME/.local"
+
+# vim:ft=zsh
