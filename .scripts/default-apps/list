@@ -1,4 +1,4 @@
-terminal="wezterm"
+terminal="kitty"
 lockscreen="slimlock"
 musicpl="mpd"
 filemanager="pcmanfm"
