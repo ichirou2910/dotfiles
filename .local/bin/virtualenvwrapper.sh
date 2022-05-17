@@ -509,20 +509,6 @@ function mkvirtualenv {
     done
 
     virtualenvwrapper_run_hook "post_mkvirtualenv"
-    
-    MY_PATH="`dirname \"$0\"`"              # relative
-    MY_PATH="`( cd \"$MY_PATH\" && pwd )`"  # absolutized and normalized
-    
-    echo "$MY_PATH/$envname"
-
-    mkdir -p $MY_PATH/$envname/.vim
-
-    cat >> $MY_PATH/$envname/.vim/coc-settings.json <<- EOF
-    {
-        "python.pythonPath": "~/.virtualenvs/$envname/bin/python"
-    }
-EOF
-
 }
 
 #:help:rmvirtualenv: Remove a virtualenv
