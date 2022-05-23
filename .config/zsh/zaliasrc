@@ -9,6 +9,10 @@ alias g="git"
 alias y="yadm"
 alias dfe="yadm enter nvim"
 
+# AWS fool proof
+alias aws=cowsay
+alias awss=aws
+
 # Verbosity
 alias \
 	cp="cp -iv" \
