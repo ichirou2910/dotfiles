@@ -2,17 +2,17 @@
 
 * {
   /* General */
-  text-font:                            "Comfortaa 18";
+  text-font:                            "FontAwesome 17";
   icon-font:                            "feather 24";
   
   option-6-listview-spacing:            5px;
   menu-window-padding:                  5px 5px;
-  menu-element-padding:                 22px 23px 18px 0px;
+  menu-element-padding:                 23px 21px 14px 0px;
 }
 
 #window {
-  width: 300px;
-  height: 78px;
+  width: 283px;
+  height: 79px;
   anchor: south;
   location: south;
   x-offset: 0%;
