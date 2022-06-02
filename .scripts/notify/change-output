@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/bin/bash
 source $HOME/.ik_var
 source $HOME/.ik_active_var
 
