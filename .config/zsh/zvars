@@ -1,9 +1,11 @@
 # NNN
-BLK="c1"; CHR="b4"; DIR="27"; EXE="72"; REG="00"; HARDLINK="60"; SYMLINK="26"; MISSING="3b"; ORPHAN="c6"; FIFO="ad"; SOCK="aa"; OTHER="cc";
+BLK="c1"; CHR="e2"; DIR="27"; EXE="2e"; REG="00"; HARDLINK="60"; SYMLINK="33"; MISSING="f7"; ORPHAN="c6"; FIFO="d6"; SOCK="ab"; OTHER="c4";
 export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
-export NNN_COLORS="1234"
+export NNN_ARCHIVE="\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$"
+export NNN_COLORS="12345678"
 export NNN_PLUG='d:dragdrop;e:edit;g:goto;p:preview-tui;v:imgview;x:extract;z:autojump'
 export NNN_FIFO="/tmp/nnn.fifo"
+export NNN_OPTS="ioerU"
 
 export npm_config_prefix="$HOME/.local"
 
