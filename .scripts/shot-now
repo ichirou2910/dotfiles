@@ -25,11 +25,11 @@ OUTPUT=""
 			--replaces-process "screenshot" && exit 1
 	fi
 
+	xclip -selection clipboard -target image/png -i "/tmp/maim.png"
+
 	if [[ "$1" = "save" ]]; then
 		mv /tmp/maim.png "$SAVE_DIR/Screenshots/$(date +%s).png"
 	fi
-
-	xclip -selection clipboard -target image/png -i "$OUTPUT"
 
 	rm -f /tmp/maim.png &>/dev/null
 } &
