@@ -28,10 +28,7 @@ OUTPUT=""
 	fi
 
 	if [[ "$1" = "save" ]]; then
-		mv /tmp/maim.png "$SAVE_DIR"/Screenshots
-		OUTPUT="$SAVE_DIR/Screenshots/$(date +%s).png"
-	else
-		OUTPUT="/tmp/maim.png"
+		mv /tmp/maim.png "$SAVE_DIR/Screenshots/$(date +%s).png"
 	fi
 
 	xclip -selection clipboard -target image/png -i "$OUTPUT"
