@@ -7,3 +7,5 @@ deadd-notification-center &>/dev/null &
 nitrogen --restore &>/dev/null
 # Panel
 tint2 -c "$TINT2_CONF" &>/dev/null &
+# Compositor
+# picom --config /home/ichirou2910/.config/picom/picom.conf --experimental-backends &>/dev/null &
