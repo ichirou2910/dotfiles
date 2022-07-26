@@ -3,19 +3,15 @@ export LC_ALL=POSIX LANG=POSIX
 . "${HOME}/.ik_var"
 
 noterr() {
-	$EXNOTIFY_SEND -u low -r 12 "Install maim!"
+	$EXNOTIFY_SEND -u low -r 12 "Install scrot!"
 	exit 1
 }
-type -p "maim" &>/dev/null || noterr
-OUTPUT=""
+type -p "scrot" &>/dev/null || noterr
 
 {
-	[[ ! -d "$SAVE_DIR/Screenshots" ]] && mkdir -p "$SAVE_DIR/Screenshots"
 	read -rt ".12" <> <(:) || :
 
-	rm -f /tmp/maim.png &>/dev/null
-
-	if maim -s '/tmp/maim.png'; then
+	if scrot -q 75 -s -fbe 'xclip -sel clip -target image/png -i $f && mv -f $f /tmp/' -l width=1,color="#2be491"; then
 		$EXNOTIFY_SEND "Screenshot" "Picture acquired!" \
 			-t 1500 -u low \
 			--hint string:image-path:"$CAMERA_ICON" boolean:transient:true \
@@ -27,11 +23,15 @@ OUTPUT=""
 			--replaces-process "screenshot" && exit 1
 	fi
 
-	xclip -selection clipboard -target image/png -i "/tmp/maim.png"
-
 	if [[ "$1" = "save" ]]; then
-		mv /tmp/maim.png "$SAVE_DIR/Screenshots/$(date +%s).png"
+		[[ ! -d "$SAVE_DIR/Screenshots" ]] && mkdir -p "$SAVE_DIR/Screenshots"
+
+		for CURRENT in /tmp/*_scrot*.png; do
+			CURRENT="$(echo "$CURRENT" | awk -F'/tmp/' '{print $2}' | awk -F'.png' '{print $1}')"
+		done
+
+		mv /tmp/"$CURRENT".png "$SAVE_DIR/Screenshots/$(date +%s).png"
 	fi
 
-	rm -f /tmp/maim.png &>/dev/null
+	rm -f /tmp/*_scrot*.png &>/dev/null
 } &
