@@ -235,8 +235,8 @@ tmux_conf_copy_to_os_clipboard=false
 # -- user customizations -------------------------------------------------------
 # this is the place to override or undo settings
 
-set -g default-terminal "xterm-256color"
-set-option -sa terminal-overrides ',XXX:RGB'
+set-option -g default-terminal "tmux-256color"
+set-option -sa terminal-overrides ',xterm-256color:RGB'
 
 set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'  # undercurl support
 set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m' # underscore colours - needs tmux-3.0
@@ -335,7 +335,6 @@ set -s command-alias[4] rs='rename-session'
 set -s command-alias[5] np='new-pane'
 set -s command-alias[6] nw='new-window'
 set -s command-alias[7] ns='new-session -c $HOME'
-set -s command-alias[8] vs='split-window -h'
 
 # -- tpm -----------------------------------------------------------------------
 
