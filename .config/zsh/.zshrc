@@ -154,7 +154,7 @@ ZSH_HIGHLIGHT_STYLES[alias]="fg=#88c0d0"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export TERM=xterm-256color
+export TERM=xterm-kitty
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
