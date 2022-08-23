@@ -4,6 +4,7 @@ export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
 export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
 export TERMINAL="alacritty"
+export TERM=xterm-kitty
 export READER="zathura"
 export FILE="ranger"
 export STATUSBAR="polybar"
@@ -18,7 +19,6 @@ export BG_NOTES="$HOME/.config/wallpaper/notes.txt"
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
 	exec startx
 fi
-
 
 # Added by Toolbox App
 export PATH="$PATH:/home/ichirou2910/.local/share/JetBrains/Toolbox/scripts"
