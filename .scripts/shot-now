@@ -3,35 +3,17 @@ export LC_ALL=POSIX LANG=POSIX
 . "${HOME}/.ik_var"
 
 noterr() {
-	$EXNOTIFY_SEND -u low -r 11 "Install scrot!"
+	$EXNOTIFY_SEND -u low -r 11 "Install flameshot!"
 	exit 1
 }
-type -p "scrot" &>/dev/null || noterr
+type -p "flameshot" &>/dev/null || noterr
 
 {
-	read -rt ".12" <> <(:) || :
-
-	if scrot -q "$QUALITY" -e 'xclip -sel clip -target image/png -i $f && mv -f $f /tmp/'; then
-		$EXNOTIFY_SEND "Screenshot" "Picture acquired!" \
-			-t 1500 -u low \
-			--hint string:image-path:"$CAMERA_ICON" boolean:transient:true \
-			--replaces-process "screenshot"
-	else
-		$EXNOTIFY_SEND "Screenshot" "Screenshot canceled!" \
-			-t 1000 -u low \
-			--hint string:image-path:"$CAMERA_ICON" boolean:transient:true \
-			--replaces-process "screenshot" && exit 1
-	fi
+	[[ ! -d "$SAVE_DIR/Screenshots" ]] && mkdir -p "$SAVE_DIR/Screenshots"
 
 	if [[ "$1" = "save" ]]; then
-		[[ ! -d "$SAVE_DIR/Screenshots" ]] && mkdir -p "$SAVE_DIR/Screenshots"
-
-		for CURRENT in /tmp/*_scrot*.png; do
-			CURRENT="$(echo "$CURRENT" | awk -F'/tmp/' '{print $2}' | awk -F'.png' '{print $1}')"
-		done
-
-		mv /tmp/"$CURRENT".png "$SAVE_DIR/Screenshots/$(date +%s).png"
+		flameshot screen -r -p "$SAVE_DIR/Screenshots"
+	else
+		flameshot screen -r -c
 	fi
-
-	rm -f /tmp/*_scrot*.png &>/dev/null
 } &
