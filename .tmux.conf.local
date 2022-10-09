@@ -368,6 +368,7 @@ set -g @plugin 'wfxr/tmux-fzf-url'
 set -g @plugin 'nhdaly/tmux-better-mouse-mode'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'ichirou2910/catppuccin-tmux'
 
 #-----------------------------
 # plugins config
@@ -377,5 +378,6 @@ set -g @scroll-down-exit-copy-mode "off"
 set -g @resurrect-processes 'ssh psql mysql sqlite3'
 set -g @continuum-restore 'on'
 set -g @continuum-restore-max-delay '10'
+set -g @catppuccin_flavour 'mocha'
 
 # vim:ft=tmux
