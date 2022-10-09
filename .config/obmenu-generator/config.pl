@@ -71,5 +71,5 @@ our $CONFIG = {
   "locale_support"      => 1,
   "missing_icon"        => "gtk-missing-image",
   "terminal"            => "urxvt",
-  "VERSION"             => "0.90",
+  "VERSION"             => 0.91,
 }
