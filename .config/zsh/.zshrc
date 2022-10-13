@@ -1,9 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/ichirou2910/.oh-my-zsh"
 
-source $HOME/.local/bin/virtualenvwrapper.sh
-source $HOME/.local/bin/alacritty.sh
-
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 
 # Set name of the theme to load --- if set to "random", it will
