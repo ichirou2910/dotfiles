@@ -43,7 +43,8 @@ alias \
 
 # Common apps
 alias \
-	di="nnn" \
+	n="n -Ax" \
+	ls="n -de" \
 	dbui="nvim -c DBUI" \
 	pj="tmux-vim" \
 	ml="neomutt" # ml = mail
