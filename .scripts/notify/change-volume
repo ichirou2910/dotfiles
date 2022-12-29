@@ -26,10 +26,11 @@ notify() {
 
 	# $EXNOTIFY_SEND -i "$icon_name" -t 700 -r 123 "$VOLUME " -h int:value:"$VOLUME"
 	$EXNOTIFY_SEND "$VOLUME" \
+		-a "System" \
 		-t 700 \
-		--hint string:image-path:"$icon_name" boolean:transient:true \
-		int:has-percentage:"$VOLUME" \
-		--replaces-process "volume-popup"
+		--hint string:image-path:"$icon_name" \
+		--hint int:has-percentage:"$VOLUME" \
+		--replace-file=/tmp/volume_notify
 }
 
 case $1 in
@@ -48,10 +49,11 @@ mute)
 	if CHK_MUTE &>/dev/null; then
 		icon_name="notification-audio-volume-muted"
 		$EXNOTIFY_SEND "Muted" \
+			-a "System" \
 			-t 700 \
 			--hint string:image-path:"$icon_name" boolean:transient:true \
-			int:has-percentage:"0" \
-			--replaces-process "volume-popup"
+			--hint int:has-percentage:"0" \
+			--replace-file=/tmp/volume_notify
 	else
 		notify
 	fi

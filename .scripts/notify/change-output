@@ -31,5 +31,7 @@ else
 fi
 
 $EXNOTIFY_SEND "Output" "$next_sink_name" \
-	--hint string:image-path:"$icon_name" boolean:transient:true \
-	--replaces-process "volume-popup"
+	-a "System" \
+	-t 700 \
+	--hint string:image-path:"$icon_name" \
+	--replace-file=/tmp/volume_notify

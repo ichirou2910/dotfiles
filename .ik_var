@@ -94,7 +94,7 @@ CHK_WALL="$(cat $WALL_FILE)"
 BUTTON_DIR="$THEME_DIR/Fleon/openbox-3"
 
 DEFAPPS_EXEC="$SCRIPTS_DIR/default-apps/launch"
-EXNOTIFY_SEND="$HOME/.local/bin/notify-send.py"
+EXNOTIFY_SEND="/usr/bin/notify-send.sh"
 BRIGHTNESS_HANDLER="$NOTIFY_DIR/change-brightness"
 AVOLUME_CHANGER="$NOTIFY_DIR/change-volume"
 MUSIC_CONTROLLER="$SCRIPTS_DIR/music-controller"
