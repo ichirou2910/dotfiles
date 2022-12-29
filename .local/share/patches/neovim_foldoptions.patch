@@ -160,10 +160,11 @@ diff --git a/src/nvim/optionstr.c b/src/nvim/optionstr.c
 index 9d2160375..4e3c1853c 100644
 --- a/src/nvim/optionstr.c
 +++ b/src/nvim/optionstr.c
-@@ -112,6 +112,7 @@ static char *(p_icm_values[]) = { "nosplit", "split", NULL };
+@@ -125,7 +125,8 @@ static char *(p_icm_values[]) = { "nosplit", "split", NULL };
  static char *(p_jop_values[]) = { "stack", "view", NULL };
  static char *(p_tpf_values[]) = { "BS", "HT", "FF", "ESC", "DEL", "C0", "C1", NULL };
  static char *(p_rdb_values[]) = { "compositor", "nothrottle", "invalid", "nodelta", NULL };
+ static char *(p_sloc_values[]) = { "last", "statusline", "tabline", NULL };
 +static char *(p_fop_values[]) = { "nodigits", NULL };
  
  /// All possible flags for 'shm'.
