@@ -54,26 +54,30 @@ our $SCHEMA = [
     {sep  => undef},
     {cat  => ["system",                                                   "System",                 "applications-system"]},
     {end  => undef},
-    
+
     {sep  => undef},
-    
+
     {item => ["~/.scripts/default-apps/launch terminal",                  "Open Terminal",          "$ENV{HOME}/.icons/gladient/term.png"]},
 
     {sep  => undef},
-    
+
     {item => ["~/.scripts/default-apps/launch filemanager",               "Open File Manager",      "$ENV{HOME}/.icons/gladient/file-manager.png"]},
-    
-    {sep  => undef},
-    
-    {pipe => ["~/.config/openbox/pipe-menu/ob-randr.py",                  "Monitor Settings",       "$ENV{HOME}/.icons/gladient/mon-settings.png"]},
-    
-    {sep  => undef},
-    
-    {sep => "SESSIONS"},
-    
-    {item => ["~/.scripts/default-apps/launch lockscreen",                "Lockscreen",             "$ENV{HOME}/.icons/gladient/lock.png"]},
-    
+
     {sep  => undef},
 
-    {exit => ["Exit Openbox",                                                                       "$ENV{HOME}/.icons/gladient/logout.png"]},
+    {pipe => ["~/.config/openbox/pipe-menu/ob-randr.py",                  "Monitor Settings",       "$ENV{HOME}/.icons/gladient/mon-settings.png"]},
+
+    {sep  => undef},
+
+    {sep => "SESSIONS"},
+
+    {sep  => undef},
+
+    {beg  => ["Power Menu",                                                                        "$ENV{HOME}/.icons/gladient/logout.png"]},
+    {item => ["poweroff",                      "Shut down"]},
+    {sep  => undef},
+    {item => ["reboot",                      "Restart"]},
+    {sep  => undef},
+    {item => ["pkull -KILL -u $(whoami)",                      "Logout"]},
+    {end  => undef},
 ]
