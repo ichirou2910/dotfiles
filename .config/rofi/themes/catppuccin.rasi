@@ -1,0 +1,113 @@
+* {
+  transparent: #00000000;
+  bg-col:  #1E1D2F77;
+  bg-col-light: #1E1D2F77;
+  border-col: #1E1D2F77;
+  selected-col: #1E1D2F;
+  blue: #7aa2f7;
+  blue-transparent: #7aa2f733;
+  fg-col: #D9E0EE;
+  fg-col2: #F28FAD;
+  grey: #D9E0EE;
+  font: "Segoe UI 11";
+}
+
+element-text, element-icon , mode-switcher {
+  background-color: @transparent;
+  text-color:       inherit;
+}
+
+window {
+  transparency: "real";
+  location: center;
+  anchor: center;
+  orientation: vertical;
+  height: 500px;
+  width: 960px;
+  border-color: @border-col;
+  background-color: @bg-col;
+  border-radius: 12px;
+}
+
+mainbox {
+  background-color: @transparent;
+  children: [message, inputbar, listview];
+}
+
+mode-switcher {
+  spacing: 0;
+}
+
+button selected {
+  background-color: @blue;
+  text-color: @selected-col;
+}
+
+message {
+  background-color: @blue-transparent;
+  padding: 8px 0px 8px;
+}
+textbox {
+  /* left-padding = 25px + 5px. 25px is the icon size. */
+  padding: 5px 5px 5px 5px;
+  background-color: @transparent;
+  text-color: @fg-col;
+}
+
+inputbar {
+  children: [entry];
+  background-color: @transparent;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+prompt {
+  background-color: @blue;
+  padding: 6px;
+  text-color: @bg-col;
+  border-radius: 3px;
+  margin: 20px 0px 0px 20px;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: ":";
+}
+
+entry {
+  padding: 6px;
+  margin: 20px 0px 0px 20px;
+  text-color: @fg-col;
+  background-color: @transparent;
+}
+
+listview {
+  border: 0px 0px 0px;
+  padding: 8px 0;
+  margin: 8px 0 0 0;
+  columns: 1;
+  background-color: @transparent;
+}
+
+element {
+  padding: 5px;
+  background-color: @transparent;
+  text-color: @fg-col  ;
+}
+
+element-icon {
+  size: 25px;
+}
+
+element selected {
+  background-color: @selected-col ;
+  text-color: @fg-col2  ;
+}
+
+button {
+  padding: 10px;
+  background-color: @transparent;
+  text-color: @grey;
+  vertical-align: 0.5;
+  horizontal-align: 0.5;
+}
