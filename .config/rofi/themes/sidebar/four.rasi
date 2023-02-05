@@ -1,4 +1,5 @@
 @import "colors.rasi"
+@import "themes/shared/fix-1_6.rasi"
 
 * {
   /* General */

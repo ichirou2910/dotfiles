@@ -13,9 +13,14 @@ configuration {
 
 @import "shared/colors.rasi" 
 
+element-text, element-icon {
+  text-color: inherit;
+}
+
 window {
   transparency: "real";
-  background-color: #1e222a00;
+  background-color: #1e1d2f77;
+  /* background-color: #00000000; */
   text-color: @FG;
   border: 0px;
   border-color: @BGA;
@@ -102,12 +107,14 @@ element {
 }
 
 element-icon {
+  background-color: #00000000;
   size: 40px;
   border: 0px;
   horizontal-align: 0.5;
 }
 
 element-text {
+  background-color: #00000000;
   font: "Segoe UI 8";
   expand: true;
   horizontal-align: 0.5;

@@ -13,9 +13,9 @@ steam-libraries() {
 
 	# Additional library folders are recorded in libraryfolders.vdf
 	libraryfolders=$STEAM_ROOT/steamapps/libraryfolders.vdf
-	if [ -e "$libraryfolders" ]; then
-		awk -F\" '/^[[:space:]]*"[[:digit:]]+"/ {print $4}' "$libraryfolders"
-	fi
+	# Match directories listed in libraryfolders.vdf (or at least all strings
+	# that look like directories)
+	grep -oP "(?<=\")/.*(?=\")" $libraryfolders
 }
 
 # Generate the contents of a .desktop file for a Steam game.
@@ -50,19 +50,28 @@ update-entries() {
 
 	while getopts 'qf' arg; do
 		case ${arg} in
-			f) update=1 ;;
-			q) quiet=1 ;;
-			*)
-				echo "Usage: $0 [-f] [-q]"
-				echo "  -f: Full refresh; update existing entries"
-				echo "  -q: Quiet; Turn off diagnostic output"
-				exit
-				;;
+		f) update=1 ;;
+		q) quiet=1 ;;
+		*)
+			echo "Usage: $0 [-f] [-q]"
+			echo "  -f: Full refresh; update existing entries"
+			echo "  -q: Quiet; Turn off diagnostic output"
+			exit
+			;;
 		esac
 	done
 
 	mkdir -p "$APP_PATH"
 	for library in $(steam-libraries); do
+		# All installed Steam games correspond with an appmanifest_<appid>.acf file
+		if [ -z "$(
+			shopt -s nullglob
+			echo "$library"/steamapps/appmanifest_*.acf
+		)" ]; then
+			# Skip empty library folders
+			continue
+		fi
+
 		# All installed Steam games correspond with an appmanifest_<appid>.acf file
 		for manifest in "$library"/steamapps/appmanifest_*.acf; do
 			appid=$(basename "$manifest" | tr -dc "[0-9]")
@@ -93,31 +102,4 @@ update-entries() {
 	done
 }
 
-# update-non-entries() {
-# 	IFS=$'\n'
-# 	mkdir -p "$APP_PATH"
-
-# 	# iterate through all accounts
-# 	userdatadirs=$STEAM_ROOT/userdata
-# 	for userdir in $userdatadirs/*/ ; do
-# 		# this file contains info about non-steam apps
-# 		shortcutfile=$userdir/config/shortcuts.vdf
-
-# 		# ns = non-steam
-# 		nsAppNames=($(grep -a -o -P '(?<=AppName).*?(?=Exe)' $shortcutfile))
-# 		nsExecs=($(grep -a -o -P '(?<=Exe).*?(?=StartDir)' $shortcutfile))
-
-# 		for i in "${!nsAppNames[@]}"; do
-# 				# trim last non-printable characters
-# 				appName=${nsAppNames[i]::-1}
-# 				appExec=${nsExecs[i]::-1}
-				
-# 				# create desktop entry
-# 				entry=$APP_PATH/${appName}.desktop
-# 				non-steam-entry "${appName}" ${appExec} >"$entry"
-# 		done
-# 	done
-# }
-
 update-entries "$@"
-# update-non-entries
