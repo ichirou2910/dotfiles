@@ -21,6 +21,10 @@ window {
   font-size: 12px;
 }
 
+.notificationInCenter .appname {
+  margin-right: 10px;
+}
+
 .time {
   font-size: 12px;
 }
