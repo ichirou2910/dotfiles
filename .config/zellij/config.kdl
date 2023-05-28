@@ -4,7 +4,7 @@ keybinds clear-defaults=true {
     }
 
     pane {
-        bind "Ctrl p" { SwitchToMode "Normal"; }
+        bind "Ctrl a" { SwitchToMode "Normal"; }
 
         bind "h" "Left" { MoveFocus "Left"; SwitchToMode "Normal"; }
         bind "l" "Right" { MoveFocus "Right"; SwitchToMode "Normal"; }
@@ -140,7 +140,7 @@ keybinds clear-defaults=true {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
     }
     shared_except "pane" "locked" {
-        bind "Ctrl p" { SwitchToMode "Pane"; }
+        bind "Ctrl a" { SwitchToMode "Pane"; }
     }
     shared_except "scroll" "locked" {
         bind "Ctrl s" { SwitchToMode "Scroll"; }
@@ -243,7 +243,7 @@ theme "tokyo-night-dark"
 
 // The name of the default layout to load on startup
 // Default: "default"
-// default_layout "compact"
+default_layout "basic"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
