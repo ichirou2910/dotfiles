@@ -1,17 +1,12 @@
 #!/bin/sh
 
 # Prefer neovim if available
-command -v nvim >/dev/null && alias vim="nvim" vi="nvim" vimdiff="nvim -d" oldvim="vim" oldvdiff="vimdiff"
+command -v nvim >/dev/null && alias vim="nvim" vi="nvim" vimdiff="nvim -d" oldvim="/usr/bin/vim" oldvdiff="/usr/bin/vimdiff"
 
 # Git aliases
-alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias g="git"
 alias y="yadm"
 alias dfe="yadm enter nvim"
-
-# AWS fool proof
-alias aws=cowsay
-alias awss=aws
 
 # Verbosity
 alias \
@@ -26,17 +21,12 @@ if [ -x "$(command -v exa)" ]; then
 	alias lla="ll -a"
 fi
 
-# selective cd
-alias j="cd \"\$(find . -maxdepth 1 -type d | awk '{print substr(\$1, 3)}' | fzf )\""
-
 # Quick edit common config files
 alias \
 	cfz="nvim ~/.config/zsh/.zshrc" \
 	cfza="nvim ~/.config/zsh/zaliasrc" \
 	cfv="nvim ~/.config/nvim/init.vim" \
 	cft="nvim ~/.tmux.conf.local" \
-	cfa="nvim ~/.config/awesome/rc.lua" \
-	cfr="nvim ~/.config/ranger/rc.conf" \
 	chx="nvim ~/.xinitrc" \
 	chp="nvim ~/.profile" \
 	chxp="nvim ~/.xprofile"
@@ -44,9 +34,7 @@ alias \
 # Common apps
 alias \
 	n="n -Ax" \
-	ls="n -de" \
-	dbui="nvim -c DBUI" \
-	pj="tmux-vim" \
+	ls="exa" \
 	ml="neomutt" # ml = mail
 
 # Common commands
@@ -59,3 +47,8 @@ alias \
 	tas="tmux attach-session" \
 	ta="tmux attach || tmux new-session" \
 	td="tmux detach"
+
+# zellij
+alias \
+	zl="zellij" \
+	za="zellij_attach" # zfuncs

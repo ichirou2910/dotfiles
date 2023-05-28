@@ -210,7 +210,7 @@ bindkey "^[[6~" down-line-or-history
 bindkey "^[[B" down-line-or-search
 
 # Extras files
-extras=("zpaths" "zaliasrc" "zfuncs" "zvars")
+extras=("zpaths" "zfuncs" "zvars" "zaliasrc")
 for e in "${extras[@]}"; do
   [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/$e" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/$e"
 done
