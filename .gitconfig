@@ -1,9 +1,9 @@
 [user]
-	name = Ichirou2910
-	email = ichiroukeita2910@gmail.com
+  name = ichirou2910
+  email = ichiroukeita2910@gmail.com
 [core]
-	excludesFile = ~/.gitignore
-	editor = nvim
+  excludesFile = ~/.gitignore
+  editor = nvim
   default = simple
 [color]
   status = auto
@@ -41,13 +41,12 @@
   edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
   # add conflicted file on merge
   add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
-
-[hub]
-  protocol = https
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[protocol "file"]
+  allow = always
