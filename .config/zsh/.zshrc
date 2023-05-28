@@ -67,8 +67,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins+=(zsh-vi-mode)
-plugins=(git zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting zsh-vi-mode)
 
 ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
@@ -187,14 +186,14 @@ n()
     fi
 }
 
-# Change cursor shape for different vi modes.
-function zle-line-init zle-keymap-select {
-  RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-  RPS2=$RPS1
-  zle reset-prompt
-}
-zle -N zle-keymap-select
-zle -N zle-line-init
+# # Change cursor shape for different vi modes.
+# function zle-line-init zle-keymap-select {
+#   RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+#   RPS2=$RPS1
+#   zle reset-prompt
+# }
+# zle -N zle-keymap-select
+# zle -N zle-line-init
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
