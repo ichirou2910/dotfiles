@@ -67,7 +67,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-vi-mode fast-syntax-highlighting zsh-autosuggestions)
+plugins=(git fast-syntax-highlighting zsh-autosuggestions zsh-vi-mode)
 
 ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
@@ -139,8 +139,6 @@ SPACESHIP_PACKAGE_PREFIX="· "
 SPACESHIP_NODE_PREFIX="· "
 SPACESHIP_DOTNET_PREFIX="· "
 SPACESHIP_EXEC_TIME_PREFIX="· "
-
-# ZSH_HIGHLIGHT_STYLES[alias]="fg=#88c0d0"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

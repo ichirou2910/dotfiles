@@ -17,7 +17,7 @@ alias \
 
 # ls replacement
 if [ -x "$(command -v exa)" ]; then
-	alias ll="exa -l -g --icons"
+	alias ll="exa -lh -g --icons"
 	alias lla="ll -a"
 fi
 
