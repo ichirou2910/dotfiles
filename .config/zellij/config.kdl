@@ -6,6 +6,7 @@ keybinds clear-defaults=true {
     pane {
         bind "Ctrl a" { SwitchToMode "Normal"; }
 
+
         bind "h" "Left" { MoveFocus "Left"; SwitchToMode "Normal"; }
         bind "l" "Right" { MoveFocus "Right"; SwitchToMode "Normal"; }
         bind "j" "Down" { MoveFocus "Down"; SwitchToMode "Normal"; }
@@ -15,9 +16,8 @@ keybinds clear-defaults=true {
         bind "J" { MoveFocus "Down"; }
         bind "K" { MoveFocus "Up"; }
 
-        bind "n" { NewPane; SwitchToMode "Normal"; }
-        bind "d" { NewPane "Down"; SwitchToMode "Normal"; }
-        bind "r" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "_" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "-" { NewPane "Right"; SwitchToMode "Normal"; }
 
         bind "p" { SwitchFocus; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
@@ -54,7 +54,7 @@ keybinds clear-defaults=true {
         bind "7" { GoToTab 7; SwitchToMode "Normal"; }
         bind "8" { GoToTab 8; SwitchToMode "Normal"; }
         bind "9" { GoToTab 9; SwitchToMode "Normal"; }
-        bind "Tab" { ToggleTab; }
+        bind "Tab" { ToggleTab; SwitchToMode "Normal"; }
     }
     renametab {
         bind "Ctrl c" { SwitchToMode "Normal"; }
@@ -97,6 +97,7 @@ keybinds clear-defaults=true {
         bind "Ctrl o" { SwitchToMode "Normal"; }
         bind "Ctrl s" { SwitchToMode "Scroll"; }
         bind "d" { Detach; }
+        bind "q" { Quit; }
     }
 
     shared_except "locked" {
@@ -115,6 +116,31 @@ keybinds clear-defaults=true {
 
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
+
+        // bind "Ctrl h" {
+        //     SwitchToMode "Normal";
+        //     Run "bash" "-c" "[ -z $VIMRUNTIME ] && zellij action close-pane & zellij action move-focus left || zellij action close-pane &" {
+        //         direction "Left"
+        //     }
+        // }
+        // bind "Ctrl j" {
+        //     SwitchToMode "Normal";
+        //     Run "bash" "-c" "[ -z $VIMRUNTIME ] && zellij action close-pane & zellij action move-focus down || zellij action close-pane &" {
+        //         direction "Down"
+        //     }
+        // }
+        // bind "Ctrl k" {
+        //     SwitchToMode "Normal";
+        //     Run "bash" "-c" "[ -z $VIMRUNTIME ] && zellij action close-pane & zellij action move-focus up || zellij action close-pane &" {
+        //         direction "Up"
+        //     }
+        // }
+        // bind "Ctrl l" {
+        //     SwitchToMode "Normal";
+        //     Run "bash" "-c" "[ -z $VIMRUNTIME ] && zellij action close-pane & zellij action move-focus right || zellij action close-pane &" {
+        //         direction "Right"
+        //     }
+        // }
     }
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }

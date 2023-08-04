@@ -1,0 +1,42 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    pane_template name="editor_with_right_sidebar" {
+        pane split_direction="vertical" {
+            pane borderless=true size="70%" command="nvim" name="Editor"
+            children
+        }
+    }
+
+    tab name="Backend" cwd="/home/ichirou2910/IT/CS/MasterCloud.BE" {
+        editor_with_right_sidebar split_direction="horizontal" {
+            pane size="60%" command="dotnet" name="Log" cwd="./MasterCloud" {
+                args "run"
+            }
+            pane name="Shell"
+        }
+    }
+
+    tab name="Frontend" cwd="/home/ichirou2910/IT/Web/MasterCloud.FE" {
+        editor_with_right_sidebar split_direction="horizontal" {
+            pane size="60%" command="yarn" name="Log" {
+                args "start"
+            }
+            pane name="Shell"
+        }
+    }
+
+    tab name="Docs" cwd="/home/ichirou2910/IT/Docs/MasterCloud.Docs" {
+        pane command="nvim" name="Editor"
+    }
+}
+
+// vim:ts=4:sw=4:cms=\/\/\ %s
