@@ -53,4 +53,5 @@ alias \
 	zl="zellij" \
 	ze="zellij edit" \
 	zr="zellij run" \
-	za="zellij_attach" # zfuncs
+	za="zellij_attach" \
+	zd="zellij_delete"
