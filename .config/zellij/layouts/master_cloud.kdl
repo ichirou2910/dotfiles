@@ -1,11 +1,8 @@
 layout {
     default_tab_template {
-        pane size=1 borderless=true {
-            plugin location="zellij:tab-bar"
-        }
         children
         pane size=1 borderless=true {
-            plugin location="zellij:status-bar"
+            plugin location="zellij:compact-bar"
         }
     }
 
@@ -16,20 +13,50 @@ layout {
         }
     }
 
-    tab name="Backend" cwd="/home/ichirou2910/IT/CS/MasterCloud.BE" {
+    tab name="MC.BE" focus=true cwd="/home/ichirou2910/IT/CS/MasterCloud.BE" {
         editor_with_right_sidebar split_direction="horizontal" {
             pane size="60%" command="dotnet" name="Log" cwd="./MasterCloud" {
                 args "run"
+                args "--launch-profile"
+                args "Development"
             }
             pane name="Shell"
         }
     }
 
-    tab name="Frontend" cwd="/home/ichirou2910/IT/Web/MasterCloud.FE" {
+    tab name="Utils.Email" cwd="/home/ichirou2910/IT/CS/Utils.Email" {
         editor_with_right_sidebar split_direction="horizontal" {
-            pane size="60%" command="yarn" name="Log" {
-                args "start"
-            }
+            // pane size="60%" command="dotnet" borderless=true cwd="./Utils.Email" {
+            //     args "run"
+            //     args "--launch-profile"
+            //     args "Development"
+            // }
+            pane name="Shell"
+        }
+    }
+
+    tab name="Utils.Storage" cwd="/home/ichirou2910/IT/CS/Utils.Storage" {
+        editor_with_right_sidebar split_direction="horizontal" {
+            // pane size="60%" command="dotnet" borderless=true cwd="./Utils.Email" {
+            //     args "run"
+            //     args "--launch-profile"
+            //     args "Development"
+            // }
+            pane name="Shell"
+        }
+    }
+
+    tab name="TrueSight" cwd="/home/ichirou2910/IT/CS/TrueSight" {
+        editor_with_right_sidebar split_direction="horizontal" {
+            pane name="Shell"
+        }
+    }
+
+    tab name="MC.FE" cwd="/home/ichirou2910/IT/Web/MasterCloud.FE" {
+        editor_with_right_sidebar split_direction="horizontal" {
+            // pane size="60%" command="yarn" name="Log" {
+            //     args "start"
+            // }
             pane name="Shell"
         }
     }
@@ -37,6 +64,7 @@ layout {
     tab name="Docs" cwd="/home/ichirou2910/IT/Docs/MasterCloud.Docs" {
         pane command="nvim" name="Editor"
     }
+
 }
 
 // vim:ts=4:sw=4:cms=\/\/\ %s

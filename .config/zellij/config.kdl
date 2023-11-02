@@ -19,12 +19,18 @@ keybinds clear-defaults=true {
         bind "_" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "-" { NewPane "Right"; SwitchToMode "Normal"; }
 
-        bind "p" { SwitchFocus; }
-        bind "x" { CloseFocus; SwitchToMode "Normal"; }
-        bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
-        bind "z" { TogglePaneFrames; SwitchToMode "Normal"; }
-        bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
+        bind "a" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/harpoon.wasm" {
+                floating true; move_to_focused_tab true;
+            }
+            SwitchToMode "Normal"
+        }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
+        bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+        bind "p" { SwitchFocus; }
+        bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
+        bind "x" { CloseFocus; SwitchToMode "Normal"; }
+        bind "z" { TogglePaneFrames; SwitchToMode "Normal"; }
 
         bind "R" { SwitchToMode "RenamePane"; PaneNameInput 0;}
     }
@@ -78,8 +84,8 @@ keybinds clear-defaults=true {
         bind "Ctrl c" { ScrollToBottom; SwitchToMode "Normal"; }
         bind "j" "Down" { ScrollDown; }
         bind "k" "Up" { ScrollUp; }
-        bind "Ctrl f" "PageDown" "Right" "l" { PageScrollDown; }
-        bind "Ctrl b" "PageUp" "Left" "h" { PageScrollUp; }
+        bind "J" { PageScrollDown; }
+        bind "K" { PageScrollUp; }
         bind "d" { HalfPageScrollDown; }
         bind "u" { HalfPageScrollUp; }
         bind "n" { Search "down"; }
@@ -97,14 +103,18 @@ keybinds clear-defaults=true {
         bind "Ctrl o" { SwitchToMode "Normal"; }
         bind "Ctrl s" { SwitchToMode "Scroll"; }
         bind "d" { Detach; }
-        bind "q" { Quit; }
+        bind "x" { Quit; }
+        bind "w" {
+            LaunchOrFocusPlugin "zellij:session-manager" {
+                floating true
+                move_to_focused_tab true
+            };
+            SwitchToMode "Normal"
+        }
     }
 
     shared_except "locked" {
         bind "Ctrl x" { SwitchToMode "Locked"; }
-        // bind "Ctrl q" { Quit; }
-
-        bind "Alt n" { NewPane; }
 
         // resize
         bind "Alt =" "Alt +" { Resize "Increase"; }
@@ -168,8 +178,8 @@ ui {
 plugins {
     tab-bar { path "tab-bar"; }
     status-bar { path "status-bar"; }
-    strider { path "strider"; }
     compact-bar { path "compact-bar"; }
+    session-manager { path "session-manager"; }
 }
 
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
@@ -185,7 +195,7 @@ plugins {
 //    - true
 //    - false (Default)
 //
-simplified_ui false
+simplified_ui true
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
@@ -197,7 +207,7 @@ simplified_ui false
 //   - true (default)
 //   - false
 //
-pane_frames true
+pane_frames false
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
@@ -241,7 +251,7 @@ themes {
 
 // Choose the theme that is specified in the themes section.
 // Default: default
-theme "tokyo-night-dark"
+theme "catppuccin-mocha"
 
 // The name of the default layout to load on startup
 // Default: "default"
