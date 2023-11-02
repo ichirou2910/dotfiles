@@ -7,7 +7,7 @@ export NNN_PLUG='d:dragdrop;e:edit;g:goto;p:preview-tui;v:imgview;x:extract;z:au
 export NNN_FIFO="/tmp/nnn.fifo"
 export NNN_OPTS="ioerU"
 
-export npm_config_prefix="$HOME/.local"
+# export npm_config_prefix="$HOME/.local"
 
 ### FZF
 export FZF_DEFAULT_OPTS=" \

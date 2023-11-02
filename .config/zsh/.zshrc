@@ -212,4 +212,10 @@ for e in "${extras[@]}"; do
   [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/$e" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/$e"
 done
 
-eval "$(rbenv init - zsh)"
+if command -v rbenv &> /dev/null; then
+  eval "$(rbenv init - zsh)"
+fi
+
+if [ -f "/usr/share/nvm/init-nvm.sh" ]; then
+  source /usr/share/nvm/init-nvm.sh
+fi

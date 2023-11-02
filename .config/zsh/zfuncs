@@ -1,13 +1,20 @@
 #!/bin/bash
 
 zellij_attach() {
-	ZJ_SESSIONS=$(zellij list-sessions)
-	NO_SESSIONS=$(echo "${ZJ_SESSIONS}" | wc -l)
-
-	if [ "${NO_SESSIONS}" -ge 2 ]; then
-		zellij attach \
-			"$(echo "${ZJ_SESSIONS}" | fzf)"
+	if [ -n "$1" ]; then
+		zellij attach "$1"
 	else
-		zellij attach -c
+		ZJ_SESSIONS=$(zellij list-sessions | awk '{print $1}' | sed -r "s/\x1b\[[0-9;]*[a-zA-Z]//g")
+		NO_SESSIONS=$(echo "${ZJ_SESSIONS}" | wc -l)
+
+		if [ "${NO_SESSIONS}" -ge 2 ]; then
+			session="$(echo "${ZJ_SESSIONS}" | fzf --info=inline --height $((NO_SESSIONS + 1)) --reverse)"
+			if [[ ! -z "$session" ]]; then
+				zellij attach "$session"
+			fi
+		else
+			zellij attach -c
+		fi
 	fi
+
 }
