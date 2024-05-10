@@ -5,6 +5,10 @@
   excludesFile = ~/.gitignore
   editor = nvim
   default = simple
+  pager = delta
+[delta]
+  navigate = true
+  syntax-them = TwoDark
 [color]
   status = auto
   diff = auto
