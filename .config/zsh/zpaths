@@ -4,8 +4,13 @@ export FrameworkPathOverride=/lib/mono/4.7.2-api
 # Android
 export ANDROID_SDK_ROOT=/home/ichirou2910/.local/share/android/Sdk
 
-# C#
+# C# tools
+export PATH="/home/ichirou2910/.dotnet/tools:$PATH"
 # export DOTNET_ROOT=/usr/share/dotnet
 
 # Node.Js
-export PATH=/home/ichirou2910/.npm-packages/bin:$PATH
+export PATH="/home/ichirou2910/.npm-packages/bin:$PATH"
+
+# Android
+export PATH="/opt/flutter/bin:$PATH"
+export PATH="/home/ichirou2910/Android/Sdk/cmdline-tools/latest/bin:$PATH"

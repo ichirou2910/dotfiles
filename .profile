@@ -6,8 +6,6 @@ export VISUAL="/usr/bin/nvim"
 export TERMINAL="alacritty"
 export TERM=xterm-kitty
 export READER="zathura"
-export FILE="ranger"
-export STATUSBAR="polybar"
 export APPLAUNCHER="rofi"
 export GOPATH="/home/ichirou2910/.local/share/go"
 
@@ -15,10 +13,6 @@ export GOPATH="/home/ichirou2910/.local/share/go"
 export ZDOTDIR="$HOME/.config/zsh"
 export SCREENSHOTDIR="$HOME/Pictures/Screenshots"
 export BG_NOTES="$HOME/.config/wallpaper/notes.txt"
-
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-	exec startx
-fi
 
 # Added by Toolbox App
 export PATH="$PATH:/home/ichirou2910/.local/share/JetBrains/Toolbox/scripts"

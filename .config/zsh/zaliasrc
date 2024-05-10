@@ -33,9 +33,9 @@ alias \
 
 # Common apps
 alias \
-	n="n -Ax" \
 	ls="exa" \
 	ml="neomutt" # ml = mail
+# n="n -Ax" \
 
 # Common commands
 alias \
