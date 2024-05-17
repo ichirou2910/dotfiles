@@ -1,159 +1,81 @@
-# Path to your oh-my-zsh installation.
-export ZSH="/home/ichirou2910/.oh-my-zsh"
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-export LIBVIRT_DEFAULT_URI="qemu:///system"
+# Set the directory we want to store zinit and plugins
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+# Install Zinit
+if [[ ! -d "$ZINIT_HOME" ]]; then
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+source "${ZINIT_HOME}/zinit.zsh"
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+# Powerlevel10k
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+# Essential ZSH plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+# VI-mode
+zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
 
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# External snippets
+zinit snippet OMZP::git
+zinit snippet OMZP::sudo
+zinit snippet OMZP::archlinux
+zinit snippet OMZP::kubectl
+zinit snippet OMZP::command-not-found
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# Load completions
+autoload -U compinit && compinit
 
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+zinit cdreplay -q
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# Keybindings
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+# History
+HISTSIZE=10000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git fast-syntax-highlighting zsh-autosuggestions zsh-vi-mode)
-
-ZSH_DISABLE_COMPFIX=true
-source $ZSH/oh-my-zsh.sh
-
-source /usr/share/z/z.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-_comp_options+=(globdots)		# Include hidden files.
-
-#autoload -U promptinit; promptinit
-autoload -Uz compinit
-
-for dump in ~/.config/zsh/.zcompdump(N.mh+24); do
-    compinit
+# Extras files
+extras=("zpaths" "zfuncs" "zvars" "zaliasrc")
+for e in "${extras[@]}"; do
+  [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/$e" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/$e"
 done
 
-compinit -C
-#prompt spaceship
-  # char
-export SPACESHIP_CHAR_SYMBOL="$ "
-export SPACESHIP_CHAR_SYMBOL_FAILURE="$ "
-export SPACESHIP_CHAR_SYMBOL_SUCCESS="$ "
-export SPACESHIP_CHAR_SYMBOL_SECONDARY="⋮ "
-export SPACESHIP_CHAR_COLOR_SUCCESS="#148fee"
-export SPACESHIP_VI_MODE_SHOW=false
-  # git prompt
-export SPACESHIP_GIT_STATUS_DELETED="X"
-export SPACESHIP_GIT_STATUS_BEHIND=""
-export SPACESHIP_GIT_STATUS_AHEAD=""
-export SPACESHIP_GIT_STATUS_DIVERGED=""
-  # jobs
-export SPACESHIP_JOBS_PREFIX=" "
-export SPACESHIP_JOBS_SUFFIX=" "
-export SPACESHIP_JOBS_AMOUNT_PREFIX=" "
-  # misc
-export SPACESHIP_EXEC_TIME_COLOR=magenta
-export SPACESHIP_DIR_COLOR=blue
-export SPACESHIP_PACKAGE_SHOW=false
-  # prefix
-export SPACESHIP_PROMPT_DEFAULT_PREFIX="· "
-export SPACESHIP_HOST_PREFIX="· "
-export SPACESHIP_DIR_PREFIX="· "
-export SPACESHIP_GIT_PREFIX="· "
-export SPACESHIP_DOCKER_PREFIX="· "
-export SPACESHIP_PACKAGE_PREFIX="· "
-export SPACESHIP_NODE_PREFIX="· "
-export SPACESHIP_DOTNET_PREFIX="· "
-export SPACESHIP_EXEC_TIME_PREFIX="· "
-
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export TERM=xterm-kitty
-
-# Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
-
-# NNN integrate
+# NNN integration
 [ -n "$NNNLVL" ] && PS1="N$NNNLVL $PS1"
 n()
 {
@@ -186,38 +108,15 @@ n()
     fi
 }
 
-# # Change cursor shape for different vi modes.
-# function zle-line-init zle-keymap-select {
-#   RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-#   RPS2=$RPS1
-#   zle reset-prompt
-# }
-# zle -N zle-keymap-select
-# zle -N zle-line-init
+# FZF integration
+eval "$(fzf --zsh)"
 
-# Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
-
-bindkey "^P" up-line-or-history
-bindkey "^[OA" up-line-or-history
-bindkey "^[[5~" up-line-or-history
-bindkey "^[[A" up-line-or-search
-bindkey "^N" down-line-or-history
-bindkey "^[OB" down-line-or-history
-bindkey "^[[6~" down-line-or-history
-bindkey "^[[B" down-line-or-search
-
-# Extras files
-extras=("zpaths" "zfuncs" "zvars" "zaliasrc")
-for e in "${extras[@]}"; do
-  [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/$e" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/$e"
-done
-
+# Rbenv
 if command -v rbenv &> /dev/null; then
   eval "$(rbenv init - zsh)"
 fi
 
+# Nvm
 if [ -f "/usr/share/nvm/init-nvm.sh" ]; then
   source /usr/share/nvm/init-nvm.sh
 fi
