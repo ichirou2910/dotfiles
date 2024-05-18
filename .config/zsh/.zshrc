@@ -26,6 +26,7 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
 # VI-mode
+ZVM_INIT_MODE=sourcing
 zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
 
 # External snippets
@@ -108,9 +109,6 @@ n()
     fi
 }
 
-# FZF integration
-eval "$(fzf --zsh)"
-
 # Rbenv
 if command -v rbenv &> /dev/null; then
   eval "$(rbenv init - zsh)"
@@ -120,3 +118,6 @@ fi
 if [ -f "/usr/share/nvm/init-nvm.sh" ]; then
   source /usr/share/nvm/init-nvm.sh
 fi
+
+# FZF integration
+eval "$(fzf --zsh)"
