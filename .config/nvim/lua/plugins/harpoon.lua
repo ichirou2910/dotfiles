@@ -1,0 +1,22 @@
+return {
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            local harpoon = require("harpoon")
+            harpoon:setup({
+                settings = {
+                    save_on_toggle = true,
+                    enter_on_sendcmd = true,
+                },
+            })
+
+            vim.keymap.set("n", "<leader>w", function()
+                harpoon.ui:toggle_quick_menu(harpoon:list())
+            end)
+            --     vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
+            --     vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
+        end,
+    },
+}
