@@ -17,6 +17,7 @@ alias \
 
 # ls replacement
 if [ -x "$(command -v exa)" ]; then
+	alias ls='exa'
 	alias ll="exa -lh -g --icons"
 	alias lla="ll -a"
 fi
@@ -30,12 +31,6 @@ alias \
 	chx="nvim ~/.xinitrc" \
 	chp="nvim ~/.profile" \
 	chxp="nvim ~/.xprofile"
-
-# Common apps
-alias \
-	ls="exa" \
-	ml="neomutt" # ml = mail
-# n="n -Ax" \
 
 # Common commands
 alias \
@@ -55,3 +50,5 @@ alias \
 	zr="zellij run" \
 	za="zellij_attach" \
 	zd="zellij_delete"
+
+alias devpod="devpod-cli"
