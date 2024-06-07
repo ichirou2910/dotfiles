@@ -10,4 +10,4 @@ mkdir -p "$XDG_CACHE_HOME"
 ln -sf "$PWD/.config/nvim" "$XDG_CONFIG_HOME/nvim"
 ln -sf "$PWD/.config/zsh" "$XDG_CONFIG_HOME/zsh"
 
-cp -ru "$PWD/.cache/*" "$XDG_CACHE_HOME/"
+cp -ru "$PWD/.cache/"* "$XDG_CACHE_HOME/"
