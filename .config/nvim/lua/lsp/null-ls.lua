@@ -52,13 +52,13 @@ local sources = {
 
 local M = {}
 M.setup = function()
-    null_ls.setup({ sources = sources, on_attach = lsp_utils.lsp_attach, debounce = 150 })
-
     require("mason-null-ls").setup({
         ensure_installed = nil,
         automatic_installation = true,
         automatic_setup = false,
     })
+
+    null_ls.setup({ sources = sources, on_attach = lsp_utils.lsp_attach, debounce = 150 })
 end
 
 return M
