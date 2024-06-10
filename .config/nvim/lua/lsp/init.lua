@@ -74,16 +74,35 @@ local mason_servers = {
             },
         },
     },
+}
+
+-- Conditional lsp based on available dependencies in the host machine
+local cond_deps = {
     csharp_ls = {
-        on_attach = lsp_utils.lsp_attach,
-        capabilities = lsp_utils.get_capabilities(),
-        handlers = {
-            ["textDocument/definition"] = require("csharpls_extended").handler,
+        cmd = "dotnet",
+        config = {
+            on_attach = lsp_utils.lsp_attach,
+            capabilities = lsp_utils.get_capabilities(),
+            handlers = {
+                ["textDocument/definition"] = require("csharpls_extended").handler,
+            },
         },
     },
+    phpactor = {
+        cmd = "php",
+        config = {
+            on_attach = lsp_utils.lsp_attach,
+            capabilities = lsp_utils.get_capabilities(),
+        },
+    }
 }
-local mason_server_names = vim.tbl_keys(mason_servers)
+for k, v in pairs(cond_deps) do
+    if require("core.utils").is_command_available(v["cmd"]) then
+        mason_servers[k] = v["config"]
+    end
+end
 
+local mason_server_names = vim.tbl_keys(mason_servers)
 mason.setup()
 mason_lspconfig.setup_handlers({
     function(server_name)
@@ -107,18 +126,7 @@ local function lsp_tsserver()
         on_attach = lsp_utils.lsp_attach,
     })
 end
-
-local function lsp_roslyn()
-    require("roslyn").setup({
-        dotnet_cmd = "dotnet", -- this is the default
-        roslyn_version = "4.8.0-3.23475.7", -- this is the default
-        on_attach = lsp_utils.lsp_attach,
-        capabilities = lsp_utils.get_capabilities(),
-    })
-end
-
 lsp_tsserver()
--- lsp_roslyn()
 
 -- null-ls
 require("lsp.null-ls").setup()

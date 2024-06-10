@@ -269,4 +269,9 @@ M.join_paths = function(...)
     return acc
 end
 
+M.is_command_available = function (cmd)
+    local result = os.execute("command -v " .. cmd .. " > /dev/null 2>&1")
+    return result == 0
+end
+
 return M
