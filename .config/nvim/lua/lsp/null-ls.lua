@@ -31,7 +31,7 @@ local sources = {
     }),
     builtins.formatting.shfmt,
     builtins.formatting.stylua,
-    --[[ builtins.formatting.csharpier, ]]
+    builtins.formatting.csharpier,
     builtins.formatting.jq,
     builtins.formatting.dart_format,
 
