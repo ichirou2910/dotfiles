@@ -148,6 +148,20 @@ return {
             }
 
             dap.defaults.fallback.switchbuf = "useopen,uselast"
+
+            -- Check for available dependencies to install accordingly debugger
+            local ensure_installed = {}
+            local cond_deps = {
+                coreclr = "dotnet", -- this is netcoredbg in case you don't know
+            }
+            for k, v in pairs(cond_deps) do
+                if require("core.utils").is_command_available(v) then
+                    table.insert(ensure_installed, k)
+                end
+            end
+            require("mason-nvim-dap").setup({
+                ensure_installed = ensure_installed,
+            })
         end,
     },
     {
