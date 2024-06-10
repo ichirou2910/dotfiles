@@ -6,10 +6,15 @@ return {
         end,
         dependencies = {
             "Decodetalkers/csharpls-extended-lsp.nvim",
-            "jose-elias-alvarez/null-ls.nvim",
-            { "jayp0521/mason-null-ls.nvim", commit = "ab5d99619de2263508abb7fb05ef3a0f24a8d73d" },
             "pmizio/typescript-tools.nvim",
         },
+    },
+    {
+        "nvimtools/none-ls.nvim",
+        dependencies = {
+            "nvimtools/none-ls-extras.nvim",
+            "gbprod/none-ls-shellcheck.nvim",
+        }
     },
     {
         "rmagatti/goto-preview",
