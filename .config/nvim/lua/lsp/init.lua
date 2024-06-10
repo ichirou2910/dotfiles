@@ -75,9 +75,6 @@ local mason_servers = {
         },
     },
     csharp_ls = {
-        cmd = {
-            "/home/ichirou2910/IT/Vendor/csharp-language-server/src/CSharpLanguageServer/bin/Release/net8.0/CSharpLanguageServer",
-        },
         on_attach = lsp_utils.lsp_attach,
         capabilities = lsp_utils.get_capabilities(),
         handlers = {
