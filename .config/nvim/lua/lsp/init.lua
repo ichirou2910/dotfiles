@@ -81,10 +81,6 @@ local mason_servers = {
             ["textDocument/definition"] = require("csharpls_extended").handler,
         },
     },
-    phpactor = {
-        on_attach = lsp_utils.lsp_attach,
-        capabilities = lsp_utils.get_capabilities(),
-    },
 }
 local mason_server_names = vim.tbl_keys(mason_servers)
 
