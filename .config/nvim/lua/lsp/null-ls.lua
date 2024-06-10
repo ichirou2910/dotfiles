@@ -20,7 +20,7 @@ local sources = {
     null_ls.builtins.formatting.shfmt,
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.formatting.csharpier,
-    null_ls.builtins.formatting.jq,
+    require("none-ls.formatting.jq"),
     null_ls.builtins.formatting.dart_format,
 
     -- Code actions
