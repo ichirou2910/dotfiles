@@ -89,7 +89,9 @@ local mason_servers = {
 local mason_server_names = vim.tbl_keys(mason_servers)
 
 mason.setup()
-mason_lspconfig.setup()
+mason_lspconfig.setup({
+    automatic_installation = true,
+})
 
 mason_lspconfig.setup_handlers({
     function(server_name)
