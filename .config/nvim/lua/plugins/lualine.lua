@@ -35,7 +35,33 @@ local function cwd_name()
 end
 
 local function navic_location()
-    return require("core.ui.winbar").get()
+    local winbar_filetype_exclude = {
+        "help",
+        "dbui",
+        "packer",
+        "fugitive",
+        "NvimTree",
+        "Trouble",
+        "spectre_panel",
+        "toggleterm",
+        "",
+    }
+
+    local status_ok, navic = pcall(require, "nvim-navic")
+    if not status_ok then
+        return
+    end
+
+    local navic_data = navic.get_location()
+
+    if navic.is_available() then
+        return navic_data
+    else
+        if not vim.tbl_contains(winbar_filetype_exclude, vim.bo.filetype) then
+            return ""
+        end
+        return navic_data
+    end
 end
 
 return {

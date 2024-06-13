@@ -20,7 +20,7 @@ return {
             local cmp = require("cmp")
             local luasnip = require("luasnip")
 
-            local icons = require("core.ui.icons")
+            local icons = require("core.icons")
 
             local WIDTH = 40
 

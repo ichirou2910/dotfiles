@@ -23,7 +23,6 @@ if not vim.g.vscode then
         "core.mappings",
         "core.autocmds",
         "core.clipboard",
-        "core.ui",
     }
 
     for _, module in ipairs(modules) do

@@ -1,4 +1,4 @@
-local icons = require("core.ui.icons")
+local icons = require("core.icons")
 
 return {
     {
