@@ -30,9 +30,22 @@ local sources = {
 
 local M = {}
 M.setup = function()
+    -- Check for available dependencies to install accordingly tools
+    local ensure_installed = {}
+    local cond_deps = {
+        csharpier = "dotnet",
+        eslint_d = "npm",
+        prettierd = "npm",
+        jq = "jq",
+    }
+    for k, v in pairs(cond_deps) do
+        if require("core.utils").is_command_available(v) then
+            table.insert(ensure_installed, k)
+        end
+    end
     require("mason-null-ls").setup({
-        ensure_installed = nil,
-        automatic_installation = true,
+        ensure_installed = ensure_installed,
+        automatic_installation = false,
         automatic_setup = false,
     })
 
