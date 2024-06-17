@@ -15,7 +15,32 @@ if not vim.g.vscode then
     end
     vim.opt.rtp:prepend(lazypath)
 
-    require("lazy").setup("plugins")
+    require("lazy").setup({
+        spec = {
+            { import = "plugins" },
+        },
+        -- defaults = { lazy = true },
+        performance = {
+            cache = {
+                enabled = true,
+                -- disable_events = {},
+            },
+            checker = { enabled = true },
+            rtp = {
+                disabled_plugins = {
+                    "gzip",
+                    -- "matchit",
+                    -- "matchparen",
+                    "netrwPlugin",
+                    "rplugin",
+                    "tarPlugin",
+                    "tohtml",
+                    "tutor",
+                    "zipPlugin",
+                },
+            },
+        },
+    })
 
     local modules = {
         "core.commands",
