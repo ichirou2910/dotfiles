@@ -19,6 +19,8 @@ vim.opt.expandtab = true -- Converts tabs to spaces
 vim.opt.smartindent = true -- Makes indenting smart
 vim.opt.autoindent = true -- Good auto indent
 
+vim.opt.signcolumn = "yes"
+
 vim.opt.laststatus = 3 -- Always display the status line
 
 vim.opt.rnu = true
