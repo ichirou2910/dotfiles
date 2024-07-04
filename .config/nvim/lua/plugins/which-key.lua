@@ -255,7 +255,7 @@ return {
                     c = { "<cmd>VimuxPromptCommand<CR>", "Vimux commmand" },
                     l = { "<cmd>VimuxRunLastCommand<CR>", "Vimux last commmand" },
                     n = { "<cmd>call VimuxCreateNewPane<CR>", "Vimux new pane" },
-                    t = { "<cmd>ToggleTerm<CR>", "Toggle terminal" },
+                    t = { "<cmd>lua require('toggleterm').toggle(vim.v.count)<CR>", "Toggle terminal" },
                 },
 
                 T = {
