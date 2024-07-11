@@ -9,6 +9,8 @@ vim.opt.wrap = false -- Display long lines as just one line
 vim.opt.equalalways = false -- Prevent auto balance split size when split
 vim.opt.mouse = "a" -- Enable your mouse
 
+vim.opt.showtabline = 0
+
 vim.opt.tabstop = 4 -- Insert 4 spaces for a tab
 vim.opt.shiftwidth = 4 -- Change the number of space characters inserted for indentation
 vim.opt.smarttab = true -- Makes tabbing smarter will realize you have 2 vs 4
@@ -22,6 +24,9 @@ vim.opt.autoindent = true -- Good auto indent
 vim.opt.signcolumn = "yes"
 
 vim.opt.laststatus = 3 -- Always display the status line
+
+vim.opt.splitbelow = true -- set split below
+vim.opt.splitright = true -- set split right
 
 vim.opt.rnu = true
 vim.opt.number = true -- Line numbers
