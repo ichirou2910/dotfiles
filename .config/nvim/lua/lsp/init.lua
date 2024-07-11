@@ -94,8 +94,16 @@ local cond_deps = {
             on_attach = lsp_utils.lsp_attach,
             capabilities = lsp_utils.get_capabilities(),
         },
-    }
+    },
 }
+
+local stat = vim.loop.fs_stat("/media/dev/Vendor/csharp-language-server")
+if stat ~= nil then
+    cond_deps.csharp_ls.config.cmd = {
+        "/media/dev/Vendor/csharp-language-server/src/CSharpLanguageServer/bin/Release/net8.0/CSharpLanguageServer",
+    }
+end
+
 for k, v in pairs(cond_deps) do
     if require("core.utils").is_command_available(v["cmd"]) then
         mason_servers[k] = v["config"]
