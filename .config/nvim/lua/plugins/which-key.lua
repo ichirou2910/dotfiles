@@ -51,7 +51,8 @@ return {
             local n_mappings = {
                 [";"] = { "<cmd>lua require('telescope.builtin').commands()<cr>", "Commands" },
                 ["="] = { "<C-W>=", "Balance windows" },
-                a = { "<cmd>lua require('harpoon'):list():add()<cr>", "Mark" },
+                ["`"] = { "<cmd>lua require('harpoon'):list():add()<cr>", "Mark" },
+                a = { "<cmd>lua require('fzf-lua').buffers()<cr>", "Buffers" },
                 e = { ":NnnPicker %:p:h<CR>", "Explorer @current" },
                 E = { ":NnnPicker<CR>", "Explorer" },
                 n = { ":noh<CR>", "No Highlight" },
