@@ -80,7 +80,6 @@ return {
                 d = {
                     name = "Debug",
                     b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
-                    c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
                     C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run to Cursor" },
                     d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
                     f = { "<cmd>lua require'dapui'.float_element()<cr>", "Elements" },
@@ -97,7 +96,7 @@ return {
                     q = { "<cmd>lua require'dap'.terminate()<cr>", "Terminate" },
                     r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
                     R = { "<cmd>lua require'dap'.restart()<cr>", "Restart" },
-                    s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
+                    s = { "<cmd>lua require'dap'.continue()<cr>", "Start / Continue" },
                     t = {
                         "<cmd>lua require('persistent-breakpoints.api').toggle_breakpoint()<cr>",
                         "Toggle Breakpoint",
