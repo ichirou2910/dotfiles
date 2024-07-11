@@ -1,5 +1,4 @@
 return {
-    -- { "folke/tokyonight.nvim" },
     {
         "scottmckendry/cyberdream.nvim",
         config = function()
@@ -12,6 +11,13 @@ return {
                 theme = {
                     highlights = {
                         InclineNormal = { bg = "#3c4048" },
+                        DapUIPlayPauseNC = { bg = nil },
+                        DapUIRestartNC = { bg = nil },
+                        DapUIStopNC = { bg = nil },
+                        DapUIUnavailableNC = { bg = nil },
+                        DapUIStepIntoNC = { bg = nil },
+                        DapUIStepBackNC = { bg = nil },
+                        DapUIStepOutNC = { bg = nil },
                     },
                 },
             })
