@@ -116,6 +116,7 @@ return {
                                 cwd = cwd,
                                 program = cwd .. "/bin/Debug/net6.0/" .. project .. ".dll",
                                 env = profile_data["environmentVariables"],
+                                args = { "--urls=" .. profile_data["applicationUrl"] },
                             }
                             table.insert(dap_config, config)
                         end
