@@ -1,44 +1,38 @@
 return {
     {
         "folke/which-key.nvim",
+        opts = {
+            plugins = {
+                marks = false, -- shows a list of your marks on ' and `
+                registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
+                -- the presets plugin, adds help for a bunch of default keybindings in Neovim
+                -- No actual key bindings are created
+                presets = {
+                    operators = false, -- adds help for operators like d, y, ...
+                    motions = false, -- adds help for motions
+                    text_objects = false, -- help for text objects triggered after entering an operator
+                    windows = false, -- default bindings on <c-w>
+                    nav = false, -- misc bindings to work with windows
+                },
+                spelling = { enabled = false, suggestions = 20 }, -- use which-key for spelling hints
+            },
+            win = {
+                border = "rounded",
+                position = "bottom", -- bottom, top
+                margin = { 1, 1, 1, 1 }, -- extra window margin [top, right, bottom, left]
+                padding = { 0, 0, 0, 0 }, -- extra window padding [top, right, bottom, left]
+            },
+            layout = {
+                height = { min = 4, max = 25 }, -- min and max height of the columns
+                width = { min = 20, max = 50 }, -- min and max width of the columns
+                spacing = 5, -- spacing between columns
+            },
+            hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
+            show_help = false, -- show help message on the command line when the popup is visible
+            triggers = { "<leader>" },
+        },
         config = function()
             local wk = require("which-key")
-
-            wk.setup({
-                plugins = {
-                    marks = false, -- shows a list of your marks on ' and `
-                    registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
-                    -- the presets plugin, adds help for a bunch of default keybindings in Neovim
-                    -- No actual key bindings are created
-                    presets = {
-                        operators = false, -- adds help for operators like d, y, ...
-                        motions = false, -- adds help for motions
-                        text_objects = false, -- help for text objects triggered after entering an operator
-                        windows = false, -- default bindings on <c-w>
-                        nav = false, -- misc bindings to work with windows
-                    },
-                    spelling = { enabled = false, suggestions = 20 }, -- use which-key for spelling hints
-                },
-                icons = {
-                    breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
-                    separator = "➜", -- symbol used between a key and it's label
-                    group = "+", -- symbol prepended to a group
-                },
-                window = {
-                    border = "rounded",
-                    position = "bottom", -- bottom, top
-                    margin = { 1, 1, 1, 1 }, -- extra window margin [top, right, bottom, left]
-                    padding = { 0, 0, 0, 0 }, -- extra window padding [top, right, bottom, left]
-                },
-                layout = {
-                    height = { min = 4, max = 25 }, -- min and max height of the columns
-                    width = { min = 20, max = 50 }, -- min and max width of the columns
-                    spacing = 5, -- spacing between columns
-                },
-                hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
-                show_help = false, -- show help message on the command line when the popup is visible
-                triggers = { "<leader>" },
-            })
 
             local opts = {
                 prefix = "<leader>",
@@ -56,16 +50,14 @@ return {
                 e = { ":NnnPicker %:p:h<CR>", "Explorer @current" },
                 E = { ":NnnPicker<CR>", "Explorer" },
                 n = { ":noh<CR>", "No Highlight" },
-                q = { "Close buffer" },
-                Q = { "Force close buffer" },
-                w = { "List marks" },
+                w = "List marks",
 
                 b = {
                     name = "Buffer",
                     ["1"] = { "<cmd>lua require('harpoon'):list():select(1)<cr>", "Mark 1" },
-                    ["2"] = { "<cmd>lua require('harpoon'):list():select(1)<cr>", "Mark 2" },
-                    ["3"] = { "<cmd>lua require('harpoon'):list():select(1)<cr>", "Mark 3" },
-                    ["4"] = { "<cmd>lua require('harpoon'):list():select(1)<cr>", "Mark 4" },
+                    ["2"] = { "<cmd>lua require('harpoon'):list():select(2)<cr>", "Mark 2" },
+                    ["3"] = { "<cmd>lua require('harpoon'):list():select(3)<cr>", "Mark 3" },
+                    ["4"] = { "<cmd>lua require('harpoon'):list():select(4)<cr>", "Mark 4" },
                     a = { "<cmd>lua require('harpoon'):list():add()<cr>", "Mark" },
                     p = { ":BufferPin<CR>", "Pin" },
                     s = {
@@ -307,8 +299,49 @@ return {
                 },
             }
 
-            wk.register(n_mappings, vim.tbl_extend("error", opts, { mode = "n" }))
-            wk.register(v_mappings, vim.tbl_extend("error", opts, { mode = "v" }))
+            local function to_which_key_v3(maps, key_prefix)
+                local out = {}
+                for k, v in pairs(maps) do
+                    -- Mapping group
+                    if k == "name" then
+                        table.insert(out, { key_prefix, group = v })
+                    -- Mappings
+                    else
+                        local map = key_prefix .. k
+                        -- print(map)
+                        if type(v) == "table" then
+                            -- If a mapping
+                            if vim.tbl_get(v, "name") == nil then
+                                table.insert(out, { map, v[1], desc = v[2] })
+                            -- If a mapping group
+                            else
+                                local group = to_which_key_v3(v, map)
+                                for _, m in pairs(group) do
+                                    table.insert(out, m)
+                                end
+                            end
+                        elseif type(v) == "string" then
+                            table.insert(out, { map, desc = v })
+                        end
+                    end
+                end
+                return out
+            end
+
+            wk.add(
+                vim.tbl_extend(
+                    "error",
+                    to_which_key_v3(n_mappings, "<leader>"),
+                    vim.tbl_extend("error", opts, { mode = "n" })
+                )
+            )
+            wk.add(
+                vim.tbl_extend(
+                    "error",
+                    to_which_key_v3(v_mappings, "<leader>"),
+                    vim.tbl_extend("error", opts, { mode = "v" })
+                )
+            )
         end,
     },
 }
