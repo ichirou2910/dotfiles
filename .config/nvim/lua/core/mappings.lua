@@ -1,7 +1,5 @@
 local keymap = require("core.utils").keymap
 
-keymap("n", "<space>", "<nop>")
-
 -- Better indenting
 keymap("v", "<", "<gv")
 keymap("v", ">", ">gv")

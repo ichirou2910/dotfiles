@@ -1,46 +1,18 @@
 return {
     {
         "folke/which-key.nvim",
+        event = "VeryLazy",
         opts = {
+            preset = "modern",
             plugins = {
-                marks = false, -- shows a list of your marks on ' and `
-                registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
-                -- the presets plugin, adds help for a bunch of default keybindings in Neovim
-                -- No actual key bindings are created
-                presets = {
-                    operators = false, -- adds help for operators like d, y, ...
-                    motions = false, -- adds help for motions
-                    text_objects = false, -- help for text objects triggered after entering an operator
-                    windows = false, -- default bindings on <c-w>
-                    nav = false, -- misc bindings to work with windows
-                },
                 spelling = { enabled = false, suggestions = 20 }, -- use which-key for spelling hints
             },
             win = {
                 border = "rounded",
-                position = "bottom", -- bottom, top
-                margin = { 1, 1, 1, 1 }, -- extra window margin [top, right, bottom, left]
-                padding = { 0, 0, 0, 0 }, -- extra window padding [top, right, bottom, left]
             },
-            layout = {
-                height = { min = 4, max = 25 }, -- min and max height of the columns
-                width = { min = 20, max = 50 }, -- min and max width of the columns
-                spacing = 5, -- spacing between columns
-            },
-            hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
-            show_help = false, -- show help message on the command line when the popup is visible
-            triggers = { "<leader>" },
         },
         config = function()
             local wk = require("which-key")
-
-            local opts = {
-                prefix = "<leader>",
-                buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-                silent = true, -- use `silent` when creating keymaps
-                noremap = true, -- use `noremap` when creating keymaps
-                nowait = false, -- use `nowait` when creating keymaps
-            }
 
             local n_mappings = {
                 [";"] = { "<cmd>lua require('telescope.builtin').commands()<cr>", "Commands" },
@@ -328,20 +300,8 @@ return {
                 return out
             end
 
-            wk.add(
-                vim.tbl_extend(
-                    "error",
-                    to_which_key_v3(n_mappings, "<leader>"),
-                    vim.tbl_extend("error", opts, { mode = "n" })
-                )
-            )
-            wk.add(
-                vim.tbl_extend(
-                    "error",
-                    to_which_key_v3(v_mappings, "<leader>"),
-                    vim.tbl_extend("error", opts, { mode = "v" })
-                )
-            )
+            wk.add(vim.tbl_extend("error", to_which_key_v3(n_mappings, "<leader>"), { mode = "n" }))
+            wk.add(vim.tbl_extend("error", to_which_key_v3(v_mappings, "<leader>"), { mode = "v" }))
         end,
     },
 }
