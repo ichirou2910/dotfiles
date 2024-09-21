@@ -1,6 +1,6 @@
 local lspconfig = require("lspconfig")
-local mason = require("mason")
-local mason_lspconfig = require("mason-lspconfig")
+-- local mason = require("mason")
+-- local mason_lspconfig = require("mason-lspconfig")
 local lsp_utils = require("lsp.utils")
 
 local common_config = {
@@ -74,54 +74,35 @@ local mason_servers = {
             },
         },
     },
-}
-
--- Conditional lsp based on available dependencies in the host machine
-local cond_deps = {
     csharp_ls = {
-        cmd = "dotnet",
-        config = {
-            on_attach = lsp_utils.lsp_attach,
-            capabilities = lsp_utils.get_capabilities(),
-            handlers = {
-                ["textDocument/definition"] = require("csharpls_extended").handler,
-            },
+        on_attach = lsp_utils.lsp_attach,
+        capabilities = lsp_utils.get_capabilities(),
+        handlers = {
+            ["textDocument/definition"] = require("csharpls_extended").handler,
         },
     },
     phpactor = {
-        cmd = "php",
-        config = {
-            on_attach = lsp_utils.lsp_attach,
-            capabilities = lsp_utils.get_capabilities(),
-        },
+        on_attach = lsp_utils.lsp_attach,
+        capabilities = lsp_utils.get_capabilities(),
     },
 }
 
-local stat = vim.loop.fs_stat("/media/dev/Vendor/csharp-language-server")
-if stat ~= nil then
-    cond_deps.csharp_ls.config.cmd = {
-        "/media/dev/Vendor/csharp-language-server/src/CSharpLanguageServer/bin/Release/net8.0/CSharpLanguageServer",
-    }
+for k, v in pairs(mason_servers) do
+    lspconfig[k].setup(v)
 end
 
-for k, v in pairs(cond_deps) do
-    if require("core.utils").is_command_available(v["cmd"]) then
-        mason_servers[k] = v["config"]
-    end
-end
-
-local mason_server_names = vim.tbl_keys(mason_servers)
-mason.setup()
-mason_lspconfig.setup_handlers({
-    function(server_name)
-        if vim.tbl_contains(mason_server_names, server_name) then
-            lspconfig[server_name].setup(mason_servers[server_name])
-        end
-    end,
-})
-mason_lspconfig.setup({
-    ensure_installed = mason_server_names,
-})
+-- local mason_server_names = vim.tbl_keys(mason_servers)
+-- mason.setup()
+-- mason_lspconfig.setup_handlers({
+--     function(server_name)
+--         if vim.tbl_contains(mason_server_names, server_name) then
+--             lspconfig[server_name].setup(mason_servers[server_name])
+--         end
+--     end,
+-- })
+-- mason_lspconfig.setup({
+--     ensure_installed = mason_server_names,
+-- })
 
 -- tsserver
 local function lsp_tsserver()

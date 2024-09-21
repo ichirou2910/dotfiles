@@ -43,11 +43,11 @@ M.setup = function()
             table.insert(ensure_installed, k)
         end
     end
-    require("mason-null-ls").setup({
-        ensure_installed = ensure_installed,
-        automatic_installation = false,
-        automatic_setup = false,
-    })
+    -- require("mason-null-ls").setup({
+    --     ensure_installed = ensure_installed,
+    --     automatic_installation = false,
+    --     automatic_setup = false,
+    -- })
 
     null_ls.setup({ sources = sources, on_attach = lsp_utils.lsp_attach, debounce = 150 })
 end
