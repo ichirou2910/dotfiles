@@ -1,7 +1,10 @@
 {pkgs, ...}: {
   imports = [
-    # <plasma-manager/modules>
     ../common
+    ./fonts.nix
+    ./hotkeys.nix
+    ./panels.nix
+    ./workspace.nix
   ];
 
   xdg.portal.extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde ];
@@ -14,13 +17,8 @@
     };
   };
 
-  programs.plasma = {
-    enable = true;
-
-    # hotkeys.commands."kitty" = {
-    #   name = "Kitty";
-    #   key = "Meta+Enter";
-    #   command = "kitty";
-    # };
+  programs.plasma.enable = true;
+  programs.plasma.configFile = {
+    "kwinrc"."Wayland"."InputMethod[$e]" = "/run/current-system/sw/share/applications/fcitx5-wayland-launcher.desktop";
   };
 }
