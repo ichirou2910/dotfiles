@@ -13,11 +13,6 @@
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixos-cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Plasma manager
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
@@ -31,7 +26,6 @@
     self,
     nixpkgs,
     home-manager,
-    nixos-cosmic,
     plasma-manager,
     ...
   } @ inputs: let
@@ -66,14 +60,13 @@
       inspiron = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          {
-            nix.settings = {
-              substituters = [ "https://cosmic.cachix.org/" ];
-              trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
-            };
-          }
-          nixos-cosmic.nixosModules.default
           ./hosts/inspiron
+        ];
+      };
+      nixvm = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./hosts/nixvm
         ];
       };
     };
@@ -88,6 +81,16 @@
         modules = [ 
           plasma-manager.homeManagerModules.plasma-manager
           ./home/ichirou2910/inspiron.nix
+          ./home/ichirou2910/nixpkgs.nix
+        ];
+      };
+      # KVM
+      "ichirou2910@nixvm" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          plasma-manager.homeManagerModules.plasma-manager
+          ./home/ichirou2910/nixvm.nix
           ./home/ichirou2910/nixpkgs.nix
         ];
       };
