@@ -8,6 +8,5 @@ let
 in {
   home.packages = with pkgs; [
     dotnet-full
-    csharp-ls
   ];
 }
