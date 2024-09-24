@@ -16,6 +16,7 @@
   home.packages = with pkgs; [
     libnotify
     insync
+    telegram-desktop
   ];
 
   xdg.portal.enable = true;

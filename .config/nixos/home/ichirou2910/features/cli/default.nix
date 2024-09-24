@@ -23,8 +23,13 @@
     fd
     alejandra
 
+    # utilities
     unzip
     atool
     yadm
+
+    # networking
+    inetutils
+    dig
   ];
 }
