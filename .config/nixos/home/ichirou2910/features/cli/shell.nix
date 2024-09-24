@@ -31,16 +31,22 @@
       ka = "killall";
       se = "sudo -e";
 
+      y = "yadm";
+      dfe = "yadm enter nvim";
+
       mkdir = "mkdir -vp";
       rm = "rm -rifv";
       mv = "mv -iv";
       cp = "cp -riv";
       cat = "bat --paging=never --style=plain";
-      ls = "exa -a --icons";
       tree = "exa --tree --icons";
       nd = "nix develop -c $SHELL";
       rebuild = "sudo nixos-rebuild switch --flake $NIXOS_CONFIG_DIR --fast; notify-send 'Rebuild complete\!'";
       q = "exit";
+
+      ls = "exa";
+      ll = "exa -lh -g --icons";
+      lla = "ll -a";
     };
 
     plugins = [
@@ -55,6 +61,10 @@
           file = "powerlevel10k.zsh-theme";
       }
     ];
+  };
+
+  programs.command-not-found = {
+    enable = true;
   };
 }
 

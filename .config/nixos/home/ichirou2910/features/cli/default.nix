@@ -7,8 +7,8 @@
     ./fzf.nix
     ./git.nix
     ./nnn.nix
+    ./shell.nix
     ./ssh.nix
-    ./zsh.nix
   ];
 
   home.packages = with pkgs; [
