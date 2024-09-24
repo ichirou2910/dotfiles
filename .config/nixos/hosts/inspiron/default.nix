@@ -26,6 +26,7 @@
     ../common/optional/kde.nix
     ../common/optional/pipewire.nix
     ../common/optional/systemd-boot.nix
+    ../common/optional/via.nix
     ../common/optional/zerotier.nix
 
     # You can also split up your configuration and import pieces of it here:
