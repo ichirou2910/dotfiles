@@ -22,6 +22,17 @@
 
   programs.openvpn3.enable = true;
 
+  nix = {
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+        "ca-derivations"
+      ];
+      warn-dirty = false;
+    };
+  };
+
   nixpkgs = {
     overlays = builtins.attrValues outputs.overlays;
     config = {
