@@ -7,9 +7,10 @@
     ./brave.nix
     ./discord.nix
     ./firefox.nix
-    ./kitty.nix
-    ./vscode.nix
     ./kdeconnect.nix
+    ./kitty.nix
+    ./syncthing.nix
+    ./vscode.nix
     # ./font.nix
   ];
 
