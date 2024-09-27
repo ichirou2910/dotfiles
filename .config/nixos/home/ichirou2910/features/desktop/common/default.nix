@@ -18,6 +18,11 @@
     libnotify
     insync
     telegram-desktop
+
+    obsidian
+
+    onlyoffice-bin_latest
+    xmind
   ];
 
   xdg.portal.enable = true;
