@@ -24,6 +24,7 @@
     ../common/optional/docker.nix
     ../common/optional/fcitx.nix
     ../common/optional/kde.nix
+    ../common/optional/nvidia.nix
     ../common/optional/pipewire.nix
     ../common/optional/systemd-boot.nix
     ../common/optional/via.nix
@@ -71,6 +72,16 @@
     };
     hostName = "inspiron";
   };
+
+  # NVIDIA Prime
+  hardware.nvidia.prime = {
+    intelBusId = "PCI:0:2:0";
+    nvidiaBusId = "PCI:2:0:0";
+    offload = {
+      enable = true;
+      enableOffloadCmd = true;
+    };
+  }
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
