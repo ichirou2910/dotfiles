@@ -23,6 +23,7 @@
     # Optional features
     ../common/optional/docker.nix
     ../common/optional/fcitx.nix
+    ../common/optional/gaming.nix
     ../common/optional/kde.nix
     ../common/optional/nvidia.nix
     ../common/optional/pipewire.nix
