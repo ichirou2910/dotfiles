@@ -76,6 +76,9 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "ichirou2910";
 
+  services.qemuGuest.enable = true;
+  services.spice-vdagentd.enable = true;
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";
 }
