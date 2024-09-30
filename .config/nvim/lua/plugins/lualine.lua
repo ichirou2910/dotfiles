@@ -1,4 +1,5 @@
 local isEmpty = require("core.utils").isEmpty
+local noice = require("noice")
 
 -- Extensions
 local gitcommit = {
@@ -18,50 +19,12 @@ local gitcommit = {
     filetypes = { "gitcommit" },
 }
 
-local function session_status()
-    local name = require("auto-session.lib").current_session_name()
-    if not isEmpty(name) then
-        return " "
-    end
-    return ""
-end
-
 local function cwd_name()
     local t = {}
     for str in string.gmatch(vim.fn.getcwd(), "([^" .. "/" .. "]+)") do
         table.insert(t, str)
     end
-    return " " .. t[#t]
-end
-
-local function navic_location()
-    local winbar_filetype_exclude = {
-        "help",
-        "dbui",
-        "packer",
-        "fugitive",
-        "NvimTree",
-        "Trouble",
-        "spectre_panel",
-        "toggleterm",
-        "",
-    }
-
-    local status_ok, navic = pcall(require, "nvim-navic")
-    if not status_ok then
-        return
-    end
-
-    local navic_data = navic.get_location()
-
-    if navic.is_available() then
-        return navic_data
-    else
-        if not vim.tbl_contains(winbar_filetype_exclude, vim.bo.filetype) then
-            return ""
-        end
-        return navic_data
-    end
+    return " " .. t[#t]
 end
 
 return {
@@ -86,29 +49,35 @@ return {
                     lualine_b = { "branch", "diff", "diagnostics" },
                     lualine_c = {
                         { "filename", path = 1 },
-                        { navic_location },
+                        "%=",
+                        {
+                            require("tmux-status").tmux_session,
+                            cond = require("tmux-status").show,
+                        },
+                        {
+                            require("tmux-status").tmux_windows,
+                            cond = require("tmux-status").show,
+                        },
                     },
                     lualine_x = {
-                        -- {
-                        --     noice.api.status.search.get,
-                        --     cond = noice.api.status.search.has,
-                        --     color = { fg = "ff9e64" },
-                        -- },
-                        -- {
-                        --     noice.api.status.command.get,
-                        --     cond = noice.api.status.command.has,
-                        --     color = { fg = "ff9e64" },
-                        -- },
-                        { session_status },
-                        "encoding",
-                        "fileformat",
+                        {
+                            noice.api.status.search.get,
+                            cond = noice.api.status.search.has,
+                            color = { fg = "ff9e64" },
+                        },
+                        {
+                            noice.api.status.command.get,
+                            cond = noice.api.status.command.has,
+                            color = { fg = "ff9e64" },
+                        },
+                        "location",
+                    },
+                    lualine_z = {
                         "filetype",
                     },
                 },
                 extensions = {
                     "fugitive",
-                    "nvim-tree",
-                    "symbols-outline",
                     "quickfix",
                     gitcommit,
                 },
