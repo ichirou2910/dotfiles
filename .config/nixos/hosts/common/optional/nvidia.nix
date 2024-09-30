@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }: {
   # Enable graphics driver
-  hardware.graphics.enable = true;
+  # hardware.graphics.enable = true;
 
   # Load "nvidia" driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
@@ -36,4 +36,8 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+
+  environment.systemPackages = with pkgs; [
+    nvtopPackages.nvidia
+  ];
 }

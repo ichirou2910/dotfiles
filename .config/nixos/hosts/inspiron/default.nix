@@ -81,7 +81,7 @@
       enable = true;
       enableOffloadCmd = true;
     };
-  }
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
