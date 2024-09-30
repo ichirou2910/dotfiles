@@ -1,4 +1,5 @@
 local keymap = require("core.utils").keymap
+local toggle = require("core.utils").toggle_vim_opt
 
 -- Better indenting
 keymap("v", "<", "<gv")
@@ -73,3 +74,10 @@ keymap("c", "ww", "noa w")
 -- jumping
 keymap("n", "<A-[>", "<C-o>")
 keymap("n", "<A-]>", "<C-i>")
+
+vim.keymap.set("n", "<leader>tw", function()
+    toggle("wrap", { global = true })
+end, { desc = "On/Off line wrap" })
+vim.keymap.set("n", "<leader>tl", function()
+    toggle("relativenumber", { global = true })
+end, { desc = "Absolute/Relative line numbers" })
