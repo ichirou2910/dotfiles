@@ -7,7 +7,7 @@
       plasma6Support = true;
       addons = with pkgs; [
         kdePackages.fcitx5-with-addons  # alternatively, kdePackages.fcitx5-qt
-        fcitx5-unikey  # table input method support
+        kdePackages.fcitx5-unikey
       ];
       settings = {
         addons = {

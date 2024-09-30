@@ -54,6 +54,9 @@ in
   programs.plasma.enable = true;
   programs.plasma.configFile = {
     "kdeglobals"."General"."BrowserApplication" = "brave-browser.desktop";
+    "kdeglobals"."General"."TerminalApplication" = "kitty";
+    "kdeglobals"."General"."TerminalService" = "kitty.desktop";
+
     "kwinrc"."Wayland"."InputMethod[$e]" = "/run/current-system/sw/share/applications/fcitx5-wayland-launcher.desktop";
   };
   programs.plasma.workspace.wallpaper = "${nothing-theme}/share/wallpapers/Nothing1/contents/images/2396x1080.png";
