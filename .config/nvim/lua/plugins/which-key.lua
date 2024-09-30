@@ -1,7 +1,6 @@
 return {
     {
         "folke/which-key.nvim",
-        event = "VeryLazy",
         opts = {
             preset = "modern",
             plugins = {
@@ -9,6 +8,10 @@ return {
             },
             win = {
                 border = "rounded",
+            },
+            triggers = {
+                { "<auto>", mode = "nixsotc" },
+                { "<esc>", mode = {} },
             },
         },
         config = function()
@@ -216,9 +219,6 @@ return {
 
                 t = {
                     name = "Terminal",
-                    c = { "<cmd>VimuxPromptCommand<CR>", "Vimux commmand" },
-                    l = { "<cmd>VimuxRunLastCommand<CR>", "Vimux last commmand" },
-                    n = { "<cmd>call VimuxCreateNewPane<CR>", "Vimux new pane" },
                     t = { "<cmd>lua require('toggleterm').toggle(vim.v.count)<CR>", "Toggle terminal" },
                 },
 
