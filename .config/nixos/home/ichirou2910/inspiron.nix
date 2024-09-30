@@ -7,6 +7,7 @@
     ./global
     ./features/desktop/kde
     ./features/dev
+    ./features/gaming
     ./features/remote
   ];
 
