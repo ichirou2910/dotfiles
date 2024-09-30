@@ -78,16 +78,6 @@ local mason_servers = {
 
 -- Conditional lsp based on available dependencies in the host machine
 local cond_deps = {
-    csharp_ls = {
-        cmd = "dotnet",
-        config = {
-            on_attach = lsp_utils.lsp_attach,
-            capabilities = lsp_utils.get_capabilities(),
-            handlers = {
-                ["textDocument/definition"] = require("csharpls_extended").handler,
-            },
-        },
-    },
     phpactor = {
         cmd = "php",
         config = {
@@ -96,13 +86,6 @@ local cond_deps = {
         },
     },
 }
-
-local stat = vim.loop.fs_stat("/media/dev/Vendor/csharp-language-server")
-if stat ~= nil then
-    cond_deps.csharp_ls.config.cmd = {
-        "/media/dev/Vendor/csharp-language-server/src/CSharpLanguageServer/bin/Release/net8.0/CSharpLanguageServer",
-    }
-end
 
 for k, v in pairs(cond_deps) do
     if require("core.utils").is_command_available(v["cmd"]) then
@@ -123,7 +106,39 @@ mason_lspconfig.setup({
     ensure_installed = mason_server_names,
 })
 
--- tsserver
+-- c#: roslyn
+local function lsp_roslyn()
+    require("roslyn").setup({
+        config = {
+            on_attach = lsp_utils.lsp_attach,
+            capabilities = lsp_utils.get_capabilities(),
+            settings = {
+                ["csharp|background_analysis"] = {
+                    dotnet_analyzer_diagnostics_scope = false,
+                },
+                ["csharp|inlay_hints"] = {
+                    csharp_enable_inlay_hints_for_implicit_object_creation = true,
+                    csharp_enable_inlay_hints_for_implicit_variable_types = true,
+                    csharp_enable_inlay_hints_for_lambda_parameter_types = true,
+                    csharp_enable_inlay_hints_for_types = true,
+                    dotnet_enable_inlay_hints_for_indexer_parameters = true,
+                    dotnet_enable_inlay_hints_for_literal_parameters = true,
+                    dotnet_enable_inlay_hints_for_object_creation_parameters = true,
+                    dotnet_enable_inlay_hints_for_other_parameters = true,
+                    dotnet_enable_inlay_hints_for_parameters = true,
+                    dotnet_suppress_inlay_hints_for_parameters_that_differ_only_by_suffix = true,
+                    dotnet_suppress_inlay_hints_for_parameters_that_match_argument_name = true,
+                    dotnet_suppress_inlay_hints_for_parameters_that_match_method_intent = true,
+                },
+                ["csharp|code_lens"] = {
+                    dotnet_enable_references_code_lens = true,
+                },
+            },
+        },
+    })
+end
+
+-- js/ts: tsserver
 local function lsp_tsserver()
     vim.tbl_add_reverse_lookup = function(tbl)
         for k, v in pairs(tbl) do
@@ -134,6 +149,8 @@ local function lsp_tsserver()
         on_attach = lsp_utils.lsp_attach,
     })
 end
+
+lsp_roslyn()
 lsp_tsserver()
 
 -- null-ls

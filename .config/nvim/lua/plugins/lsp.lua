@@ -5,7 +5,6 @@ return {
             require("lsp")
         end,
         dependencies = {
-            "Decodetalkers/csharpls-extended-lsp.nvim",
             "pmizio/typescript-tools.nvim",
         },
     },
@@ -14,7 +13,7 @@ return {
         dependencies = {
             "nvimtools/none-ls-extras.nvim",
             "gbprod/none-ls-shellcheck.nvim",
-        }
+        },
     },
     {
         "rmagatti/goto-preview",
@@ -33,8 +32,8 @@ return {
         dependencies = { "neovim/nvim-lspconfig" },
     },
     {
-        "jmederosalvarado/roslyn.nvim",
-        dependencies = { "neovim/nvim-lspconfig" },
+        "seblj/roslyn.nvim",
+        ft = "cs",
     },
     {
         "akinsho/flutter-tools.nvim",
@@ -43,9 +42,5 @@ return {
             "nvim-lua/plenary.nvim",
             "stevearc/dressing.nvim", -- optional for vim.ui.select
         },
-        -- config = true,
-        -- config = function()
-        --     require("lsp.flutter")
-        -- end,
     },
 }

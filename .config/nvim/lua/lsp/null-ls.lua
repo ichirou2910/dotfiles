@@ -19,7 +19,9 @@ local sources = {
     }),
     null_ls.builtins.formatting.shfmt,
     null_ls.builtins.formatting.stylua,
-    null_ls.builtins.formatting.csharpier,
+    null_ls.builtins.formatting.csharpier.with({
+        extra_args = { "--config-path", "~/.csharpierrc.json" },
+    }),
     require("none-ls.formatting.jq"),
     null_ls.builtins.formatting.dart_format,
 
