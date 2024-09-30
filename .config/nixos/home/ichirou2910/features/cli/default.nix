@@ -23,6 +23,10 @@
     fd
     alejandra
 
+    util-linux
+    pciutils
+    usbutils
+
     # utilities
     unzip
     atool
