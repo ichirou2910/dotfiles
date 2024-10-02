@@ -51,8 +51,4 @@ return {
             vim.cmd([[ source ~/.config/nvim/configs/markdown-preview.vim ]])
         end,
     },
-
-    {
-        "hiphish/rainbow-delimiters.nvim",
-    },
 }

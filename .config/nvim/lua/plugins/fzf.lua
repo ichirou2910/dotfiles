@@ -31,7 +31,7 @@ return {
                         ["bg"] = "-1",
                         ["hl"] = { "fg", { "String" } },
                         ["fg+"] = { "fg", "Normal" },
-                        ["bg+"] = { "bg", { "Visual" } },
+                        ["bg+"] = { "bg", { "CursorLine" } },
                         ["hl+"] = { "fg", { "String" } },
                         ["info"] = { "fg", { "WarningMsg" } },
                         -- ["prompt"] = { "fg", "SpecialKey" },
