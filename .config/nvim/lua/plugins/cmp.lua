@@ -119,21 +119,12 @@ return {
                 },
 
                 formatting = {
-                    format = lspkind.cmp_format({
-                        menu = {
-                            buffer = "[Buf]",
-                            luasnip = "[Snip]",
-                            nvim_lsp = "[LSP]",
-                            path = "[Path]",
-                            ["vim-dadbod-completion"] = "[DB]",
-                        },
-                        mode = "symbol_text",
-                        maxwidth = math.floor(vim.o.columns * 0.3),
-                        preset = "codicons",
-                        symbol_map = {
-                            Codeium = "",
-                        },
-                    }),
+                    format = function(_, vim_item)
+                        local icon, hl = MiniIcons.get("lsp", vim_item.kind)
+                        vim_item.kind = icon .. " " .. vim_item.kind
+                        vim_item.kind_hl_group = hl
+                        return vim_item
+                    end,
                 },
 
                 sources = {

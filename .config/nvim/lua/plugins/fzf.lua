@@ -1,7 +1,6 @@
 return {
     {
         "ibhagwan/fzf-lua",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             local fzf = require("fzf-lua")
             local img_prev_bin = vim.fn.executable("ueberzug") == 1 and { "ueberzug" }

@@ -1,30 +1,4 @@
 return {
-    {
-        "folke/neodev.nvim",
-        config = function()
-            local runtime_path = vim.split(package.path, ";")
-            table.insert(runtime_path, "lua/?.lua")
-            table.insert(runtime_path, "lua/?/init.lua")
-
-            require("neodev").setup({
-                library = {
-                    runtime = runtime_path,
-                    plugins = { "nvim-dap-ui" },
-                    types = true,
-                },
-            })
-        end,
-    },
-
-    -- Icons
-    {
-        "nvim-tree/nvim-web-devicons",
-        lazy = true,
-        config = function()
-            require("nvim-web-devicons").setup({ default = true })
-        end,
-    },
-
     -- Working dir
     {
         "notjedi/nvim-rooter.lua",
