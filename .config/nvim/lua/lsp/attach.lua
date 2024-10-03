@@ -1,20 +1,5 @@
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
--- local function lsp_diagnostics()
---     vim.keymap.set(
---         "n",
---         "gn",
---         "<cmd>lua vim.diagnostic.goto_next({float = false})<cr>",
---         { noremap = true, silent = true }
---     )
---     vim.keymap.set(
---         "n",
---         "gp",
---         "<cmd>lua vim.diagnostic.goto_prev({float = false})<cr>",
---         { noremap = true, silent = true }
---     )
--- end
-
 -- This function gets run when an LSP attaches to a particular buffer.
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspAttach", { clear = true }),
