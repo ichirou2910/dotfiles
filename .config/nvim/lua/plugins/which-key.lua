@@ -96,26 +96,12 @@ return {
                     A = { "<cmd>Git add .<CR>", "Add all" },
                     b = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Toggle blame" },
                     c = { "<cmd>Git commit<CR>", "Commit" },
-                    d = { "<cmd>Gitsigns diffthis<CR>", "Diff this" },
-                    D = { "<cmd>lua require('gitsigns').diffthis('~')<CR>", "Diff last commit" },
                     f = { "<cmd>Git fetch<CR>", "Fetch" },
                     l = { "<cmd>Git log<CR>", "Log" },
                     p = { "<cmd>Git push<CR>", "Push" },
                     P = { "<cmd>Git pull<CR>", "Pull" },
                     r = { "<cmd>GRemove<CR>", "Remove" },
                     x = { "<cmd>Git restore %<CR>", "Restore" },
-                },
-
-                h = {
-                    name = "Git hunks",
-                    d = "Diff this",
-                    D = "Diff this",
-                    p = "Preview",
-                    r = "Reset",
-                    R = "Reset buffer",
-                    s = "Stage",
-                    S = "Reset buffer",
-                    u = "Undo staged",
                 },
 
                 l = {
@@ -161,9 +147,7 @@ return {
 
                 u = {
                     name = "UI",
-                    l = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Toggle LSP Lines" },
-                    s = "Toggle shade",
-                    v = "Toggle drawing diagram",
+                    g = { "<cmd>lua MiniDiff.toggle_overlay()<CR>", "Toggle diff overlay" },
                 },
             }
 

@@ -38,7 +38,6 @@ return {
 
     "tpope/vim-eunuch",
     "tpope/vim-sleuth",
-    { "tpope/vim-fugitive", cmd = { "G", "Git" } },
 
     {
         "iamcco/markdown-preview.nvim",
