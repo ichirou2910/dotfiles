@@ -121,10 +121,6 @@ return {
                     name = "Sidebar",
                     c = { "<cmd>lua require('edgy').close()<CR>", "Close" },
                     g = { "<cmd>Git<CR>", "Git" },
-                    n = {
-                        "<cmd>Note<CR>",
-                        "Notes",
-                    },
                 },
 
                 S = {

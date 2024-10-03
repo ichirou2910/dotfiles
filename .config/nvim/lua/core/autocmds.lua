@@ -18,11 +18,13 @@ vim.api.nvim_create_autocmd("WinLeave", {
     pattern = "*",
 })
 
--- Highlight yank
+-- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
-    group = userAugroup,
-    command = "silent! lua vim.highlight.on_yank{higroup='IncSearch', timeout=700}",
-    pattern = "*",
+    desc = "Highlight when yanking (copying) text",
+    group = vim.api.nvim_create_augroup("UserYankHighlight", { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
 })
 
 -- Project notes
