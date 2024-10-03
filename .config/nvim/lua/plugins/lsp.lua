@@ -50,4 +50,17 @@ return {
             })
         end,
     },
+    {
+        "RRethy/vim-illuminate",
+        config = function()
+            vim.api.nvim_set_hl(0, "IlluminatedWordText", { bg = require("lackluster").color.gray3 })
+            vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "IlluminatedWordText" })
+            vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "IlluminatedWordText" })
+        end,
+        init = function()
+            vim.keymap.set("n", "<leader>ui", function()
+                vim.cmd("IlluminateToggle")
+            end, { silent = true, desc = "Toggle document highlight" })
+        end,
+    },
 }
