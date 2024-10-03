@@ -120,86 +120,17 @@ return {
 
                 l = {
                     name = "LSP",
-                    a = { "<cmd>lua require('fzf-lua').lsp_code_actions()<cr>", "Code Action" },
-                    c = { "<cmd>lua vim.lsp.codelens.run()<cr>", "Code Lens" },
-                    d = {
-                        "<cmd>lua require('fzf-lua').lsp_definitions({ jump_to_single_result = true })<cr>",
-                        "Definition",
-                    },
-                    D = { "<cmd>lua require('fzf-lua').lsp_declarations()<cr>", "Declaration" },
-                    f = "Format",
-                    i = {
-                        "<cmd>lua require('fzf-lua').lsp_implementations({ jump_to_single_result = true })<cr>",
-                        "Implementation",
-                    },
-                    I = {
-                        "<cmd>Trouble diagnostics toggle<cr>",
-                        "Diagnostics",
-                    },
-                    k = "Open float",
+                    I = { "<cmd>Trouble diagnostics toggle<cr>", "Diagnostics" },
                     l = { "<cmd>Trouble loclist<cr>", "Loclist" },
-                    o = { "<cmd>lua require('fzf-lua').lsp_document_symbols()<cr>", "Document Symbols" },
-                    p = {
-                        name = "Peek",
-                        d = { "<cmd>lua require('goto-preview').goto_preview_definition()<cr>", "Definition" },
-                        i = { "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", "Implementation" },
-                    },
                     q = { "<cmd>Trouble quickfix<cr>", "Quickfix" },
-                    r = {
-                        "<cmd>lua require('fzf-lua').lsp_references({ ignore_current_line = true })<cr>",
-                        "References",
-                    },
-                    R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
                     x = { "<cmd>TroubleToggle<cr>", "Toggle trouble" },
-                    z = { "<cmd>LspInfo<cr>", "Info" },
-                    ["["] = { "<cmd>lua require('fzf-lua').lsp_incoming_calls()<cr>", "Incoming Calls" },
-                    ["]"] = { "<cmd>lua require('fzf-lua').lsp_outgoing_calls()<cr>", "Outgoing Calls" },
                 },
 
                 L = {
                     name = "LSP Tools",
-                    f = {
-                        "<cmd>Telescope flutter commands<cr>",
-                        "Flutter",
-                    },
+                    f = { "<cmd>Telescope flutter commands<cr>", "Flutter" },
                 },
 
-                p = {
-                    function()
-                        local filename = os.date("%s") .. ".png"
-                        local parent = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":h")
-                        local images = parent .. "/images"
-                        if vim.fn.isdirectory(images) == 0 then
-                            vim.fn.mkdir(images, "p")
-                        end
-                        vim.fn.system("xclip -selection clipboard -t image/png -o > " .. images .. "/" .. filename)
-                        local pos = vim.api.nvim_win_get_cursor(0)[2]
-                        local line = vim.api.nvim_get_current_line()
-                        local nline = line:sub(0, pos) .. "![](./images/" .. filename .. ")" .. line:sub(pos + 1)
-                        vim.api.nvim_set_current_line(nline)
-                    end,
-                    "Paste image",
-                },
-
-                r = {
-                    name = "REST api",
-                    e = {
-                        function()
-                            local env = vim.fn.input({
-                                prompt = "Select environment: ",
-                                default = vim.fn.expand("%:h") .. "/env",
-                                completion = "file",
-                            })
-                            require("rest-nvim").select_env(env)
-                        end,
-                        "Set environment",
-                    },
-                    l = { "<cmd>lua require('rest-nvim').last()<cr>", "Run last" },
-                    p = { "<cmd>lua require('rest-nvim').run(true)<cr>", "Preview" },
-                    r = { "<cmd>lua require('rest-nvim').run()<cr>", "Run at cursor" },
-                },
-
-                -- plugins/sidebar.vim
                 s = {
                     name = "Sidebar",
                     c = { "<cmd>lua require('edgy').close()<CR>", "Close" },

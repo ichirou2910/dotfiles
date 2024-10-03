@@ -31,17 +31,3 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     command = "set filetype=notes | set syntax=markdown",
     pattern = "*.notes",
 })
-
--- C# LSP definition
-vim.api.nvim_command([[
-  autocmd FileType cs nnoremap <buffer> <leader>ld :lua vim.lsp.buf.definition()<CR>
-]])
-
--- Disable semantic token
-vim.api.nvim_create_autocmd("LspAttach", {
-    group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-    callback = function(ev)
-        local client = vim.lsp.get_client_by_id(ev.data.client_id)
-        client.server_capabilities.semanticTokensProvider = nil
-    end,
-})

@@ -1,12 +1,15 @@
 return {
     {
         "neovim/nvim-lspconfig",
+        dependencies = {
+            { "williamboman/mason.nvim", config = true },
+            "williamboman/mason-lspconfig.nvim",
+            "jay-babu/mason-nvim-dap.nvim",
+            "jay-babu/mason-null-ls.nvim",
+        },
         config = function()
             require("lsp")
         end,
-        dependencies = {
-            "pmizio/typescript-tools.nvim",
-        },
     },
     {
         "nvimtools/none-ls.nvim",
@@ -16,20 +19,15 @@ return {
         },
     },
     {
-        "rmagatti/goto-preview",
-        config = function()
-            require("goto-preview").setup({
-                height = 20,
-            })
-        end,
-        dependencies = { "neovim/nvim-lspconfig" },
+        "pmizio/typescript-tools.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "neovim/nvim-lspconfig",
+        },
     },
     {
-        "simrat39/rust-tools.nvim",
-        config = function()
-            require("lsp.rust")
-        end,
-        dependencies = { "neovim/nvim-lspconfig" },
+        "mrcjkb/rustaceanvim",
+        version = "^5", -- Recommended
     },
     {
         "seblj/roslyn.nvim",
@@ -42,5 +40,14 @@ return {
             "nvim-lua/plenary.nvim",
             "stevearc/dressing.nvim", -- optional for vim.ui.select
         },
+    },
+    {
+        "rmagatti/goto-preview",
+        event = "BufEnter",
+        config = function()
+            require("goto-preview").setup({
+                height = 20,
+            })
+        end,
     },
 }
