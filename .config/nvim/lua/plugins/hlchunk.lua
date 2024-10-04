@@ -7,6 +7,9 @@ return {
                 chunk = {
                     enable = true,
                 },
+                indent = {
+                    enable = true,
+                },
             })
         end,
     },
