@@ -32,16 +32,6 @@ function M.setup(capabilities)
         })
     end
 
-    -- js/ts: tsserver
-    local function lsp_tsserver()
-        vim.tbl_add_reverse_lookup = function(tbl)
-            for k, v in pairs(tbl) do
-                tbl[v] = k
-            end
-        end
-        require("typescript-tools").setup({})
-    end
-
     -- dart: flutter
     local function lsp_flutter()
         require("flutter-tools").setup({
@@ -61,7 +51,6 @@ function M.setup(capabilities)
     end
 
     lsp_roslyn()
-    lsp_tsserver()
     lsp_flutter()
 end
 

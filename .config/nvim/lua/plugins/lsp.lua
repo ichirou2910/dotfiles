@@ -19,11 +19,7 @@ return {
         },
     },
     {
-        "pmizio/typescript-tools.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "neovim/nvim-lspconfig",
-        },
+        "yioneko/nvim-vtsls",
     },
     {
         "mrcjkb/rustaceanvim",
