@@ -1,5 +1,3 @@
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
 -- This function gets run when an LSP attaches to a particular buffer.
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspAttach", { clear = true }),
@@ -77,20 +75,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
         map("gk", function()
             vim.diagnostic.open_float({ scope = "cursor", focusable = false })
         end, "Inspect Diagnostic")
-
-        -- Formatting
-        if client.server_capabilities.documentFormattingProvider then
-            map("gf", vim.lsp.buf.format, "Format")
-
-            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                group = augroup,
-                buffer = bufnr,
-                callback = function()
-                    vim.lsp.buf.format()
-                end,
-            })
-        end
 
         -- Codelens
         if client.supports_method("textDocument/codeLens") then

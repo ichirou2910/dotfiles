@@ -174,11 +174,6 @@ return {
 
                 l = {
                     name = "LSP",
-                    a = {
-                        "<cmd>lua vim.lsp.buf.code_action()<cr>",
-                        "Code Action",
-                    },
-                    f = "Format",
                 },
             }
 
