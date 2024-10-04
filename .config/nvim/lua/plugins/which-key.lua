@@ -79,12 +79,8 @@ return {
                     c = { "<cmd>lua require('fzf-lua').git_commits()<cr>", "Commits" },
                     C = { "<cmd>lua require('fzf-lua').git_bcommits()<cr>", "Buffer Commits" },
                     f = { "<cmd>lua require('fzf-lua').files()<cr>", "Files" },
-                    F = { "<cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>", "File Browser" },
                     l = { "<cmd>lua require('fzf-lua').live_grep_last()<cr>", "Last search word" },
-                    n = {
-                        "<cmd>Noice telescope<CR>",
-                        "Notifications",
-                    },
+                    n = { "<cmd>Noice telescope<CR>", "Notifications" },
                     r = { "<cmd>lua require('spectre').open({is_close = true})<cr>", "Replace" },
                     s = { "<cmd>lua require('fzf-lua').search_history()<cr>", "Search history" },
                     w = { "<cmd>lua require('fzf-lua').grep_cword()<cr>", "Word" },

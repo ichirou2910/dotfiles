@@ -6,7 +6,6 @@ return {
         dependencies = {
             "nvim-lua/popup.nvim",
             "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope-file-browser.nvim",
         },
         config = function()
             local actions = require("telescope.actions")
@@ -71,16 +70,6 @@ return {
                     },
                     preview = {
                         treesitter = false,
-                    },
-                    file_browser = {
-                        theme = "ivy",
-                        hijack_netrw = true,
-                        follow_symlinks = true,
-                    },
-                },
-                extensions = {
-                    file_browser = {
-                        hijack_netrw = true,
                     },
                 },
                 pickers = {
