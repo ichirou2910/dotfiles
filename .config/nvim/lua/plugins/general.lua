@@ -11,7 +11,6 @@ return {
     "tpope/vim-repeat",
 
     "tpope/vim-eunuch",
-    "tpope/vim-sleuth",
 
     {
         "iamcco/markdown-preview.nvim",
