@@ -113,6 +113,10 @@ return {
                     f = { "<cmd>Telescope flutter commands<cr>", "Flutter" },
                 },
 
+                m = {
+                    name = "Markview",
+                },
+
                 s = {
                     name = "Sidebar",
                     c = { "<cmd>lua require('edgy').close()<CR>", "Close" },
