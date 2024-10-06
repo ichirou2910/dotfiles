@@ -9,8 +9,8 @@ keymap("v", ">", ">gv")
 keymap("v", "p", '"_dP')
 
 -- Buffer
-keymap("n", "<A-.>", ":BufferNext<CR>")
-keymap("n", "<A-,>", ":BufferPrevious<CR>")
+keymap("n", "<A-.>", ":bnext<CR>")
+keymap("n", "<A-,>", ":bprev<CR>")
 
 keymap("n", "<A-1>", ":BufferGoto 1<CR>")
 keymap("n", "<A-2>", ":BufferGoto 2<CR>")
@@ -55,10 +55,6 @@ keymap("n", "<C-c>", "<Esc>")
 
 keymap("n", "<c-q>", ":BufferClose<CR>")
 
--- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
--- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
--- empty mode is same as using :map
--- also don't use g[j|k] when in operator pending mode, so it doesn't alter d, y or c behaviour
 keymap("n", "j", "v:count ? 'j' : 'gj'", { expr = true })
 keymap("n", "k", "v:count ? 'k' : 'gk'", { expr = true })
 keymap("n", "<Down>", "v:count ? 'j' : 'gj'", { expr = true })
@@ -75,9 +71,9 @@ keymap("c", "ww", "noa w")
 keymap("n", "<A-[>", "<C-o>")
 keymap("n", "<A-]>", "<C-i>")
 
-vim.keymap.set("n", "<leader>tw", function()
+vim.keymap.set("n", "<leader>uw", function()
     toggle("wrap", { global = true })
-end, { desc = "On/Off line wrap" })
-vim.keymap.set("n", "<leader>tl", function()
+end, { desc = "Toggle line wrap" })
+vim.keymap.set("n", "<leader>ul", function()
     toggle("relativenumber", { global = true })
-end, { desc = "Absolute/Relative line numbers" })
+end, { desc = "Toggle relative line numbers" })

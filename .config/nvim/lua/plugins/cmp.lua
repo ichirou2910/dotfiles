@@ -8,15 +8,9 @@ return {
             "hrsh7th/cmp-path",
             "saadparwaiz1/cmp_luasnip",
             "L3MON4D3/LuaSnip",
-            {
-                "onsails/lspkind-nvim",
-                config = function()
-                    require("lspkind").init()
-                end,
-            },
+            "hrsh7th/cmp-nvim-lsp-signature-help",
         },
         config = function()
-            local lspkind = require("lspkind")
             local cmp = require("cmp")
             local luasnip = require("luasnip")
             luasnip.config.setup({})
@@ -128,8 +122,9 @@ return {
                 },
 
                 sources = {
-                    { name = "path", priority_weight = 110 },
-                    { name = "nvim_lsp", max_view_entries = 20, priority_weight = 100 },
+                    { name = "path" },
+                    { name = "nvim_lsp", max_view_entries = 20 },
+                    { name = "nvim_lsp_signature_help" },
                     { name = "luasnip" },
                     {
                         name = "buffer",
@@ -145,7 +140,6 @@ return {
                             indexing_interval = 1000,
                         },
                         max_view_entries = 5,
-                        priority_weight = 70,
                     },
                     { name = "codeium" },
                 },

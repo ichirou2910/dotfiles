@@ -90,12 +90,12 @@ return {
                     name = "Git",
                     a = { "<cmd>Git add %<CR>", "Add current" },
                     A = { "<cmd>Git add .<CR>", "Add all" },
-                    b = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Toggle blame" },
                     c = { "<cmd>Git commit<CR>", "Commit" },
                     f = { "<cmd>Git fetch<CR>", "Fetch" },
                     l = { "<cmd>Git log<CR>", "Log" },
                     p = { "<cmd>Git push<CR>", "Push" },
                     P = { "<cmd>Git pull<CR>", "Pull" },
+                    s = { "<cmd>Git<CR>", "Status" },
                     r = { "<cmd>GRemove<CR>", "Remove" },
                     x = { "<cmd>Git restore %<CR>", "Restore" },
                 },
@@ -120,7 +120,6 @@ return {
                 s = {
                     name = "Sidebar",
                     c = { "<cmd>lua require('edgy').close()<CR>", "Close" },
-                    g = { "<cmd>Git<CR>", "Git" },
                 },
 
                 S = {
