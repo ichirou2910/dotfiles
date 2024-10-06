@@ -93,5 +93,14 @@ return {
             require("telescope").load_extension("notify")
             require("telescope").load_extension("noice")
         end,
+        keys = {
+            {
+                "<F1>",
+                mode = "n",
+                function()
+                    require("telescope.builtin").commands()
+                end,
+            },
+        },
     },
 }
