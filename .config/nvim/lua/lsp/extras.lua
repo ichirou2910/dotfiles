@@ -1,6 +1,8 @@
 local M = {}
 
-function M.setup(capabilities)
+local capabilities = require("lsp.utils").get_capabilities()
+
+function M.setup()
     -- c#: roslyn
     local function lsp_roslyn()
         require("roslyn").setup({
