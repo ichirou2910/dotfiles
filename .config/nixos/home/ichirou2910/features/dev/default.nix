@@ -1,6 +1,6 @@
 {pkgs, ...}:
 let
-  azuredatastudio-fixed = pkgs.unstable.azuredatastudio.overrideAttrs (_: rec {
+  azuredatastudio-fixed = pkgs.azuredatastudio.overrideAttrs (_: rec {
     src = pkgs.fetchurl {
       name = "azuredatastudio-1.48.1.tar.gz";
       url = "https://azuredatastudio-update.azurewebsites.net/1.48.1/linux-x64/stable";
