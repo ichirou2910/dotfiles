@@ -23,27 +23,8 @@ return {
                     end,
                     use_languagetree = true,
                 },
-                playground = {
+                indent = {
                     enable = true,
-                    disable = {},
-                    updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-                    persist_queries = false, -- Whether the query persists across vim sessions
-                },
-                rainbow = {
-                    enable = false,
-                    query = {
-                        "rainbow-parens",
-                        html = "rainbow-tags",
-                        tsx = "rainbow-tags",
-                    },
-                    hlgroups = {
-                        "TSRainbowRed",
-                        "TSRainbowOrange",
-                        "TSRainbowYellow",
-                        "TSRainbowGreen",
-                        "TSRainbowCyan",
-                        "TSRainbowViolet",
-                    },
                 },
                 patterns = {
                     default = {
@@ -58,6 +39,8 @@ return {
                     },
                 },
             })
+
+            vim.treesitter.language.register("c_sharp", "cs")
         end,
     },
     {

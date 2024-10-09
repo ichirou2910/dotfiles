@@ -494,7 +494,7 @@ set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
 unbind f
 set -g @fzf-url-bind 'f'
 set -g @scroll-down-exit-copy-mode "off"
-set -g @resurrect-processes 'ssh psql mysql sqlite3'
+# set -g @resurrect-processes 'ssh psql mysql sqlite3'
 set -g @continuum-restore 'on'
 set -g @continuum-restore-max-delay '10'
 set -g @prefix_highlight_output_prefix "#[fg=#ffc777]#[bg=#1e2030]#[fg=#1e2030]#[bg=#ffc777]"

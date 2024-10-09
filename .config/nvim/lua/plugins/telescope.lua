@@ -6,7 +6,6 @@ return {
         dependencies = {
             "nvim-lua/popup.nvim",
             "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope-file-browser.nvim",
         },
         config = function()
             local actions = require("telescope.actions")
@@ -72,16 +71,6 @@ return {
                     preview = {
                         treesitter = false,
                     },
-                    file_browser = {
-                        theme = "ivy",
-                        hijack_netrw = true,
-                        follow_symlinks = true,
-                    },
-                },
-                extensions = {
-                    file_browser = {
-                        hijack_netrw = true,
-                    },
                 },
                 pickers = {
                     git_commits = {
@@ -104,5 +93,14 @@ return {
             require("telescope").load_extension("notify")
             require("telescope").load_extension("noice")
         end,
+        keys = {
+            {
+                "<F1>",
+                mode = "n",
+                function()
+                    require("telescope.builtin").commands()
+                end,
+            },
+        },
     },
 }

@@ -269,9 +269,46 @@ M.join_paths = function(...)
     return acc
 end
 
-M.is_command_available = function (cmd)
+M.is_command_available = function(cmd)
     local result = os.execute("command -v " .. cmd .. " > /dev/null 2>&1")
     return result == 0
+end
+
+---If vim.opt\[`option`\] is `a`, set it to `b`; otherwise, set it to `a`.
+---@param name string Option name to toggle (`vim.o.<option name>`)
+---@param opts? {a?:any, b?:any, global?:boolean, silent?:boolean} defaults: `a`: `true`, `b`: `false`, `global`: `false`, `silent`: `false`
+function M.toggle_vim_opt(name, opts)
+    local a, b = true, false
+    local global, silent
+    if opts then
+        if opts.a ~= nil then
+            a = opts.a
+            b = opts.b
+        end
+        global = opts.global
+        silent = opts.silent
+    end
+
+    local new_val
+    if vim.api.nvim_get_option_value(name, { win = 0 }) == a then
+        new_val = b
+    else
+        new_val = a
+    end
+
+    if global == true then
+        local current_bufnr = vim.api.nvim_get_current_buf()
+        for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+            vim.api.nvim_set_current_buf(bufnr)
+            vim.o[name] = new_val
+        end
+        vim.api.nvim_set_current_buf(current_bufnr)
+    else
+        vim.o[name] = new_val
+    end
+    if silent ~= true then
+        vim.notify(string.format("%s%s = %s", global and "global " or "", name, new_val, 2))
+    end
 end
 
 return M

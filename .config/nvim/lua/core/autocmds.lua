@@ -18,11 +18,13 @@ vim.api.nvim_create_autocmd("WinLeave", {
     pattern = "*",
 })
 
--- Highlight yank
+-- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
-    group = userAugroup,
-    command = "silent! lua vim.highlight.on_yank{higroup='IncSearch', timeout=700}",
-    pattern = "*",
+    desc = "Highlight when yanking (copying) text",
+    group = vim.api.nvim_create_augroup("UserYankHighlight", { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
 })
 
 -- Project notes
@@ -30,18 +32,4 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     group = userAugroup,
     command = "set filetype=notes | set syntax=markdown",
     pattern = "*.notes",
-})
-
--- C# LSP definition
-vim.api.nvim_command([[
-  autocmd FileType cs nnoremap <buffer> <leader>ld :lua vim.lsp.buf.definition()<CR>
-]])
-
--- Disable semantic token
-vim.api.nvim_create_autocmd("LspAttach", {
-    group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-    callback = function(ev)
-        local client = vim.lsp.get_client_by_id(ev.data.client_id)
-        client.server_capabilities.semanticTokensProvider = nil
-    end,
 })

@@ -36,8 +36,8 @@ return {
                     if vim.bo[props.buf].modified then
                         filename = "[+] " .. filename
                     end
-                    local icon, color = require("nvim-web-devicons").get_icon_color(filename)
-                    return { { icon, guifg = color }, { " " }, { filename } }
+                    local icon = MiniIcons.get("file", filename)
+                    return { { icon }, { " " }, { filename } }
                 end,
                 window = {
                     margin = {

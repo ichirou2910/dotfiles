@@ -54,3 +54,5 @@
   required = true
 [protocol "file"]
   allow = always
+[safe]
+  directory = *

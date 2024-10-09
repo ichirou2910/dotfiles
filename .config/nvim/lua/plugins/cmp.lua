@@ -8,31 +8,19 @@ return {
             "hrsh7th/cmp-path",
             "saadparwaiz1/cmp_luasnip",
             "L3MON4D3/LuaSnip",
-            {
-                "onsails/lspkind-nvim",
-                config = function()
-                    require("lspkind").init()
-                end,
-            },
+            "hrsh7th/cmp-nvim-lsp-signature-help",
         },
         config = function()
-            local lspkind = require("lspkind")
             local cmp = require("cmp")
             local luasnip = require("luasnip")
-
-            local icons = require("core.icons")
+            luasnip.config.setup({})
 
             local WIDTH = 40
-
-            -- local has_words_before = function()
-            --     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-            --     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-            -- end
 
             cmp.setup({
                 snippet = {
                     expand = function(args)
-                        require("luasnip").lsp_expand(args.body)
+                        luasnip.lsp_expand(args.body)
                     end,
                 },
                 performance = {
@@ -90,6 +78,14 @@ return {
                             fallback()
                         end
                     end),
+                    ["<Down>"] = cmp.mapping(
+                        cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+                        { "i" }
+                    ),
+                    ["<Up>"] = cmp.mapping(
+                        cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+                        { "i" }
+                    ),
                     ["<C-d>"] = cmp.mapping.scroll_docs(-4),
                     ["<C-f>"] = cmp.mapping.scroll_docs(4),
                     ["<C-Space>"] = cmp.mapping.complete(),
@@ -103,14 +99,12 @@ return {
                         end
                         if luasnip.expand_or_locally_jumpable() then
                             luasnip.expand_or_jump()
-                        -- elseif has_words_before() then
-                        --     cmp.complete()
                         else
                             fallback()
                         end
                     end, { "i", "s" }),
                     ["<S-Tab>"] = cmp.mapping(function(fallback)
-                        if luasnip.jumpable(-1) then
+                        if luasnip.locally_jumpable(-1) then
                             luasnip.jump(-1)
                         else
                             fallback()
@@ -119,26 +113,18 @@ return {
                 },
 
                 formatting = {
-                    format = lspkind.cmp_format({
-                        menu = {
-                            buffer = "[Buf]",
-                            luasnip = "[Snip]",
-                            nvim_lsp = "[LSP]",
-                            path = "[Path]",
-                            ["vim-dadbod-completion"] = "[DB]",
-                        },
-                        mode = "symbol_text",
-                        maxwidth = math.floor(vim.o.columns * 0.3),
-                        preset = "codicons",
-                        symbol_map = {
-                            Codeium = "",
-                        },
-                    }),
+                    format = function(_, vim_item)
+                        local icon, hl = MiniIcons.get("lsp", vim_item.kind)
+                        vim_item.kind = icon .. " " .. vim_item.kind
+                        vim_item.kind_hl_group = hl
+                        return vim_item
+                    end,
                 },
 
                 sources = {
-                    { name = "path", priority_weight = 110 },
-                    { name = "nvim_lsp", max_view_entries = 20, priority_weight = 100 },
+                    { name = "path" },
+                    { name = "nvim_lsp", max_view_entries = 20 },
+                    { name = "nvim_lsp_signature_help" },
                     { name = "luasnip" },
                     {
                         name = "buffer",
@@ -154,7 +140,6 @@ return {
                             indexing_interval = 1000,
                         },
                         max_view_entries = 5,
-                        priority_weight = 70,
                     },
                     { name = "codeium" },
                 },

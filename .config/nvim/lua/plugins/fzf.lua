@@ -1,7 +1,6 @@
 return {
     {
         "ibhagwan/fzf-lua",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             local fzf = require("fzf-lua")
             local img_prev_bin = vim.fn.executable("ueberzug") == 1 and { "ueberzug" }
@@ -31,7 +30,7 @@ return {
                         ["bg"] = "-1",
                         ["hl"] = { "fg", { "String" } },
                         ["fg+"] = { "fg", "Normal" },
-                        ["bg+"] = { "bg", { "Visual" } },
+                        ["bg+"] = { "bg", { "CursorLine" } },
                         ["hl+"] = { "fg", { "String" } },
                         ["info"] = { "fg", { "WarningMsg" } },
                         -- ["prompt"] = { "fg", "SpecialKey" },

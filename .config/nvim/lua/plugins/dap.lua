@@ -51,13 +51,6 @@ return {
                 })
             end
 
-            -- C/C++/Rust
-            dap.adapters.lldb = {
-                type = "executable",
-                command = "/usr/bin/lldb-vscode", -- adjust as needed
-                name = "lldb",
-            }
-
             -- Godot
             dap.adapters.godot = {
                 type = "server",
@@ -71,23 +64,6 @@ return {
             }
 
             -- Configuration
-            -- C/C++
-            dap.configurations.cpp = {
-                {
-                    name = "Launch",
-                    type = "lldb",
-                    request = "launch",
-                    program = function()
-                        return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-                    end,
-                    cwd = "${workspaceFolder}",
-                    stopOnEntry = false,
-                    args = {},
-                    runInTerminal = false,
-                },
-            }
-            dap.configurations.c = dap.configurations.cpp
-
             -- C#
             dap.configurations.cs = (function()
                 -- Check if we're in a C# project
@@ -116,8 +92,13 @@ return {
                                 cwd = cwd,
                                 program = cwd .. "/bin/Debug/net6.0/" .. project .. ".dll",
                                 env = profile_data["environmentVariables"],
-                                args = { "--urls=" .. profile_data["applicationUrl"] },
                             }
+                            if profile_data["environmentVariables"] ~= nil then
+                                config["env"] = profile_data["environmentVariables"]
+                            end
+                            if profile_data["applicationUrl"] ~= nil then
+                                config["args"] = { "--urls=" .. profile_data["applicationUrl"] }
+                            end
                             table.insert(dap_config, config)
                         end
                     end

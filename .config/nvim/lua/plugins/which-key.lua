@@ -1,7 +1,6 @@
 return {
     {
         "folke/which-key.nvim",
-        event = "VeryLazy",
         opts = {
             preset = "modern",
             plugins = {
@@ -9,6 +8,10 @@ return {
             },
             win = {
                 border = "rounded",
+            },
+            triggers = {
+                { "<auto>", mode = "nixsotc" },
+                { "<esc>", mode = {} },
             },
         },
         config = function()
@@ -76,12 +79,8 @@ return {
                     c = { "<cmd>lua require('fzf-lua').git_commits()<cr>", "Commits" },
                     C = { "<cmd>lua require('fzf-lua').git_bcommits()<cr>", "Buffer Commits" },
                     f = { "<cmd>lua require('fzf-lua').files()<cr>", "Files" },
-                    F = { "<cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>", "File Browser" },
                     l = { "<cmd>lua require('fzf-lua').live_grep_last()<cr>", "Last search word" },
-                    n = {
-                        "<cmd>Noice telescope<CR>",
-                        "Notifications",
-                    },
+                    n = { "<cmd>Noice telescope<CR>", "Notifications" },
                     r = { "<cmd>lua require('spectre').open({is_close = true})<cr>", "Replace" },
                     s = { "<cmd>lua require('fzf-lua').search_history()<cr>", "Search history" },
                     w = { "<cmd>lua require('fzf-lua').grep_cword()<cr>", "Word" },
@@ -91,120 +90,36 @@ return {
                     name = "Git",
                     a = { "<cmd>Git add %<CR>", "Add current" },
                     A = { "<cmd>Git add .<CR>", "Add all" },
-                    b = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Toggle blame" },
                     c = { "<cmd>Git commit<CR>", "Commit" },
-                    d = { "<cmd>Gitsigns diffthis<CR>", "Diff this" },
-                    D = { "<cmd>lua require('gitsigns').diffthis('~')<CR>", "Diff last commit" },
                     f = { "<cmd>Git fetch<CR>", "Fetch" },
                     l = { "<cmd>Git log<CR>", "Log" },
                     p = { "<cmd>Git push<CR>", "Push" },
                     P = { "<cmd>Git pull<CR>", "Pull" },
+                    s = { "<cmd>Git<CR>", "Status" },
                     r = { "<cmd>GRemove<CR>", "Remove" },
                     x = { "<cmd>Git restore %<CR>", "Restore" },
                 },
 
-                h = {
-                    name = "Git hunks",
-                    d = "Diff this",
-                    D = "Diff this",
-                    p = "Preview",
-                    r = "Reset",
-                    R = "Reset buffer",
-                    s = "Stage",
-                    S = "Reset buffer",
-                    u = "Undo staged",
-                },
-
                 l = {
                     name = "LSP",
-                    a = { "<cmd>lua require('fzf-lua').lsp_code_actions()<cr>", "Code Action" },
-                    c = { "<cmd>lua vim.lsp.codelens.run()<cr>", "Code Lens" },
-                    d = {
-                        "<cmd>lua require('fzf-lua').lsp_definitions({ jump_to_single_result = true })<cr>",
-                        "Definition",
-                    },
-                    D = { "<cmd>lua require('fzf-lua').lsp_declarations()<cr>", "Declaration" },
-                    f = "Format",
-                    i = {
-                        "<cmd>lua require('fzf-lua').lsp_implementations({ jump_to_single_result = true })<cr>",
-                        "Implementation",
-                    },
-                    I = {
-                        "<cmd>Trouble diagnostics toggle<cr>",
-                        "Diagnostics",
-                    },
-                    k = "Open float",
+                    I = { "<cmd>Trouble diagnostics toggle<cr>", "Diagnostics" },
                     l = { "<cmd>Trouble loclist<cr>", "Loclist" },
-                    o = { "<cmd>lua require('fzf-lua').lsp_document_symbols()<cr>", "Document Symbols" },
-                    p = {
-                        name = "Peek",
-                        d = { "<cmd>lua require('goto-preview').goto_preview_definition()<cr>", "Definition" },
-                        i = { "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", "Implementation" },
-                    },
                     q = { "<cmd>Trouble quickfix<cr>", "Quickfix" },
-                    r = {
-                        "<cmd>lua require('fzf-lua').lsp_references({ ignore_current_line = true })<cr>",
-                        "References",
-                    },
-                    R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
                     x = { "<cmd>TroubleToggle<cr>", "Toggle trouble" },
-                    z = { "<cmd>LspInfo<cr>", "Info" },
-                    ["["] = { "<cmd>lua require('fzf-lua').lsp_incoming_calls()<cr>", "Incoming Calls" },
-                    ["]"] = { "<cmd>lua require('fzf-lua').lsp_outgoing_calls()<cr>", "Outgoing Calls" },
                 },
 
                 L = {
                     name = "LSP Tools",
-                    f = {
-                        "<cmd>Telescope flutter commands<cr>",
-                        "Flutter",
-                    },
+                    f = { "<cmd>Telescope flutter commands<cr>", "Flutter" },
                 },
 
-                p = {
-                    function()
-                        local filename = os.date("%s") .. ".png"
-                        local parent = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":h")
-                        local images = parent .. "/images"
-                        if vim.fn.isdirectory(images) == 0 then
-                            vim.fn.mkdir(images, "p")
-                        end
-                        vim.fn.system("xclip -selection clipboard -t image/png -o > " .. images .. "/" .. filename)
-                        local pos = vim.api.nvim_win_get_cursor(0)[2]
-                        local line = vim.api.nvim_get_current_line()
-                        local nline = line:sub(0, pos) .. "![](./images/" .. filename .. ")" .. line:sub(pos + 1)
-                        vim.api.nvim_set_current_line(nline)
-                    end,
-                    "Paste image",
+                m = {
+                    name = "Markview",
                 },
 
-                r = {
-                    name = "REST api",
-                    e = {
-                        function()
-                            local env = vim.fn.input({
-                                prompt = "Select environment: ",
-                                default = vim.fn.expand("%:h") .. "/env",
-                                completion = "file",
-                            })
-                            require("rest-nvim").select_env(env)
-                        end,
-                        "Set environment",
-                    },
-                    l = { "<cmd>lua require('rest-nvim').last()<cr>", "Run last" },
-                    p = { "<cmd>lua require('rest-nvim').run(true)<cr>", "Preview" },
-                    r = { "<cmd>lua require('rest-nvim').run()<cr>", "Run at cursor" },
-                },
-
-                -- plugins/sidebar.vim
                 s = {
                     name = "Sidebar",
                     c = { "<cmd>lua require('edgy').close()<CR>", "Close" },
-                    g = { "<cmd>Git<CR>", "Git" },
-                    n = {
-                        "<cmd>Note<CR>",
-                        "Notes",
-                    },
                 },
 
                 S = {
@@ -216,9 +131,6 @@ return {
 
                 t = {
                     name = "Terminal",
-                    c = { "<cmd>VimuxPromptCommand<CR>", "Vimux commmand" },
-                    l = { "<cmd>VimuxRunLastCommand<CR>", "Vimux last commmand" },
-                    n = { "<cmd>call VimuxCreateNewPane<CR>", "Vimux new pane" },
                     t = { "<cmd>lua require('toggleterm').toggle(vim.v.count)<CR>", "Toggle terminal" },
                 },
 
@@ -230,9 +142,7 @@ return {
 
                 u = {
                     name = "UI",
-                    l = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Toggle LSP Lines" },
-                    s = "Toggle shade",
-                    v = "Toggle drawing diagram",
+                    g = { "<cmd>lua MiniDiff.toggle_overlay()<CR>", "Toggle diff overlay" },
                 },
             }
 
@@ -263,11 +173,6 @@ return {
 
                 l = {
                     name = "LSP",
-                    a = {
-                        "<cmd>lua vim.lsp.buf.code_action()<cr>",
-                        "Code Action",
-                    },
-                    f = "Format",
                 },
             }
 
