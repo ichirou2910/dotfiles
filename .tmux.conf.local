@@ -399,8 +399,12 @@ tmux_conf_copy_to_os_clipboard=true
 # increase history size
 #set -g history-limit 10000
 
+# passthrough
+set -gq allow-passthrough on
+
 # start with mouse mode enabled
 set -g mouse on
+set -g visual-activity off
 
 # make tmux interact with system clipboard
 set -s set-clipboard on
