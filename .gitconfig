@@ -6,6 +6,7 @@
   editor = nvim
   default = simple
   pager = delta
+	autocrlf = input
 [delta]
   navigate = true
   syntax-them = TwoDark
