@@ -45,3 +45,5 @@ vim.o.foldlevelstart = 99
 vim.o.sessionoptions = "buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
 
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:,diff:╱]]
+
+vim.g.bigfile_threshold = 2 * 1024 * 1024
