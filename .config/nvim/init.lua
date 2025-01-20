@@ -43,7 +43,6 @@ if not vim.g.vscode then
     })
 
     local modules = {
-        "core.commands",
         "core.options",
         "core.mappings",
         "core.autocmds",
