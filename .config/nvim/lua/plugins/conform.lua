@@ -32,7 +32,6 @@ return {
                 }
             end,
             formatters_by_ft = {
-                cs = { "csharpier" },
                 dart = { "dart_format" },
                 lua = { "stylua" },
                 javascript = { "prettierd", "prettier", stop_after_first = true },

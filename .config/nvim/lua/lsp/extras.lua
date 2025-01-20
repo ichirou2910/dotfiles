@@ -10,7 +10,8 @@ function M.setup()
                 capabilities = capabilities,
                 settings = {
                     ["csharp|background_analysis"] = {
-                        dotnet_analyzer_diagnostics_scope = false,
+                        dotnet_analyzer_diagnostics_scope = "none",
+                        dotnet_compiler_diagnostics_scope = "none",
                     },
                     ["csharp|inlay_hints"] = {
                         csharp_enable_inlay_hints_for_implicit_object_creation = true,
@@ -31,6 +32,7 @@ function M.setup()
                     },
                 },
             },
+            filewatching = false,
         })
     end
 
