@@ -31,11 +31,6 @@ return {
                     open = "Git",
                 },
                 {
-                    title = " NOTES",
-                    ft = "notes",
-                    open = "Note",
-                },
-                {
                     title = " DEBUG SCOPE",
                     ft = "dapui_scopes",
                     size = { height = 0.4 },
