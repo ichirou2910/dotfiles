@@ -17,10 +17,9 @@ return {
                 layouts = {
                     {
                         elements = {
-                            { id = "scopes", size = 0.4 },
-                            { id = "breakpoints", size = 0.2 },
-                            { id = "stacks", size = 0.2 },
-                            { id = "watches", size = 0.2 },
+                            { id = "breakpoints", size = 0.3 },
+                            { id = "stacks", size = 0.4 },
+                            { id = "watches", size = 0.3 },
                         },
                         size = 60,
                         position = "left",
@@ -28,7 +27,6 @@ return {
                     {
                         elements = {
                             "repl",
-                            --[[ "console", ]]
                         },
                         size = 10,
                         position = "bottom",

@@ -36,8 +36,10 @@ return {
             -- .NET Core
             dap.adapters.netcoredbg = function(cb, config)
                 if config.preLaunchTask then
+                    local cur_cwd = vim.fn.getcwd()
                     vim.loop.chdir(config.cwd)
                     vim.fn.system(config.preLaunchTask)
+                    vim.loop.chdir(cur_cwd)
                     -- Doesn't fire debugger if preLaunchTask failed
                     if vim.v.shell_error ~= 0 then
                         vim.notify("Pre-launch Task failed.")
@@ -144,12 +146,6 @@ return {
             require("mason-nvim-dap").setup({
                 ensure_installed = ensure_installed,
             })
-        end,
-    },
-    {
-        "theHamsta/nvim-dap-virtual-text",
-        config = function()
-            require("nvim-dap-virtual-text").setup({})
         end,
     },
 }
