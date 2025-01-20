@@ -58,7 +58,6 @@ require("mason-lspconfig").setup({
 
 -- Extra LSP not managed by lspconfig
 require("lsp.extras").setup()
-require("lsp.null-ls").setup()
 
 -- Setup LspAttach event
 require("lsp.attach").setup()
