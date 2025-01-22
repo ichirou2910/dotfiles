@@ -25,7 +25,7 @@ return {
                 tweak_background = {
                     normal = "none",
                     telescope = "none",
-                    menu = lackluster.color.gray3,
+                    menu = "default",
                     popup = "default",
                 },
                 tweak_ui = {
