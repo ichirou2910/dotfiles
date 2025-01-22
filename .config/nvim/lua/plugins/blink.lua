@@ -1,6 +1,12 @@
 return {
     {
         "saghen/blink.cmp",
+        dependencies = {
+            {
+                "giuxtaposition/blink-cmp-copilot",
+                after = { "copilot.lua" },
+            },
+        },
         version = "*",
         opts = {
             keymap = {
@@ -28,5 +34,14 @@ return {
                 preset = "luasnip",
             },
         },
+    },
+    {
+        "zbirenbaum/copilot.lua",
+        config = function()
+            require("copilot").setup({
+                suggestion = { enabled = false },
+                panel = { enabled = false },
+            })
+        end,
     },
 }
