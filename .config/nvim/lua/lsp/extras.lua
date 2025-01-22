@@ -36,26 +36,7 @@ function M.setup()
         })
     end
 
-    -- dart: flutter
-    local function lsp_flutter()
-        require("flutter-tools").setup({
-            widget_guides = { enabled = true },
-            dev_log = {
-                open_cmd = "split", -- command to use to open the log buffer
-            },
-            dev_tools = {
-                autostart = false, -- autostart devtools server if not detected
-                auto_open_browser = false, -- Automatically opens devtools in the browser
-            },
-            lsp = {
-                capabilities = capabilities, -- e.g. lsp_status capabilities
-            },
-        })
-        require("telescope").load_extension("flutter")
-    end
-
     lsp_roslyn()
-    lsp_flutter()
 end
 
 return M

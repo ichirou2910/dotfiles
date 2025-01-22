@@ -110,7 +110,6 @@ return {
 
                 L = {
                     name = "LSP Tools",
-                    f = { "<cmd>Telescope flutter commands<cr>", "Flutter" },
                 },
 
                 m = {
