@@ -18,12 +18,9 @@ return {
             local wk = require("which-key")
 
             local n_mappings = {
-                [";"] = { "<cmd>lua require('telescope.builtin').commands()<cr>", "Commands" },
                 ["="] = { "<C-W>=", "Balance windows" },
                 ["`"] = { "<cmd>lua require('harpoon'):list():add()<cr>", "Mark" },
-                a = { "<cmd>lua require('fzf-lua').buffers()<cr>", "Buffers" },
-                e = { ":NnnPicker %:p:h<CR>", "Explorer @current" },
-                E = { ":NnnPicker<CR>", "Explorer" },
+                e = { "<cmd>lua Snacks.explorer()<cr>", "Explorer" },
                 n = { ":noh<CR>", "No Highlight" },
                 w = "List marks",
 
@@ -74,16 +71,7 @@ return {
 
                 f = {
                     name = "Find",
-                    a = { "<cmd>lua require('fzf-lua').live_grep()<cr>", "Text" },
-                    b = { "<cmd>lua require('fzf-lua').buffers()<cr>", "Buffers" },
-                    c = { "<cmd>lua require('fzf-lua').git_commits()<cr>", "Commits" },
-                    C = { "<cmd>lua require('fzf-lua').git_bcommits()<cr>", "Buffer Commits" },
-                    f = { "<cmd>lua require('fzf-lua').files()<cr>", "Files" },
-                    l = { "<cmd>lua require('fzf-lua').live_grep_last()<cr>", "Last search word" },
-                    n = { "<cmd>Noice telescope<CR>", "Notifications" },
                     r = { "<cmd>lua require('spectre').open({is_close = true})<cr>", "Replace" },
-                    s = { "<cmd>lua require('fzf-lua').search_history()<cr>", "Search history" },
-                    w = { "<cmd>lua require('fzf-lua').grep_cword()<cr>", "Word" },
                 },
 
                 g = {
@@ -92,7 +80,6 @@ return {
                     A = { "<cmd>Git add .<CR>", "Add all" },
                     c = { "<cmd>Git commit<CR>", "Commit" },
                     f = { "<cmd>Git fetch<CR>", "Fetch" },
-                    l = { "<cmd>Git log<CR>", "Log" },
                     p = { "<cmd>Git push<CR>", "Push" },
                     P = { "<cmd>Git pull<CR>", "Pull" },
                     s = { "<cmd>Git<CR>", "Status" },
@@ -162,7 +149,6 @@ return {
                         "<cmd>lua require('spectre').open_visual()<cr>",
                         "Replace",
                     },
-                    w = { "<cmd>lua require('fzf-lua').grep_visual()<cr>", "Selected words" },
                 },
                 h = {
                     name = "Git hunks",

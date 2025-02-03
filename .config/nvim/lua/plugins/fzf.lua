@@ -1,6 +1,7 @@
 return {
     {
         "ibhagwan/fzf-lua",
+        enabled = false,
         config = function()
             local fzf = require("fzf-lua")
             local img_prev_bin = vim.fn.executable("ueberzug") == 1 and { "ueberzug" }
