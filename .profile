@@ -8,5 +8,7 @@ export TERM=xterm-kitty
 # Directories
 export ZDOTDIR="$HOME/.config/zsh"
 
+export PATH="$PATH:/home/ichirou2910/.nix-profile/bin"
+
 # Added by Toolbox App
 export PATH="$PATH:/home/ichirou2910/.local/share/JetBrains/Toolbox/scripts"
