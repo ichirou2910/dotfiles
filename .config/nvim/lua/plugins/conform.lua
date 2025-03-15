@@ -37,6 +37,7 @@ return {
                 javascript = { "prettierd", "prettier", stop_after_first = true },
                 json = { "jq" },
                 sh = { "shfmt" },
+                nix = { "alejandra" },
             },
         },
     },
