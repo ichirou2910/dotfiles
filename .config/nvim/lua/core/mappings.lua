@@ -60,17 +60,6 @@ keymap("n", "k", "v:count ? 'k' : 'gk'", { expr = true })
 keymap("n", "<Down>", "v:count ? 'j' : 'gj'", { expr = true })
 keymap("n", "<Up>", "v:count ? 'k' : 'gk'", { expr = true })
 
--- turn off search highlighting
-keymap("n", "<C-n>", ":noh <CR>")
-
--- you can't stop me!
-keymap("c", "w!!", "w !sudo tee %")
-keymap("c", "ww", "noa w")
-
--- jumping
-keymap("n", "<A-[>", "<C-o>")
-keymap("n", "<A-]>", "<C-i>")
-
 vim.keymap.set("n", "<leader>uw", function()
     toggle("wrap", { global = true })
 end, { desc = "Toggle line wrap" })

@@ -31,7 +31,7 @@ function M.setup()
             end, "Hover")
 
             -- Disable semantic token
-            client.server_capabilities.semanticTokensProvider = nil
+            -- client.server_capabilities.semanticTokensProvider = nil
 
             -- Inlay hints
             if client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
