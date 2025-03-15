@@ -12,18 +12,6 @@ return {
                 hide = {
                     cursorline = true,
                 },
-                highlight = {
-                    groups = {
-                        InclineNormal = {
-                            default = true,
-                            group = "NormalFloat",
-                        },
-                        InclineNormalNC = {
-                            default = true,
-                            group = "NormalFloat",
-                        },
-                    },
-                },
                 ignore = {
                     buftypes = "special",
                     filetypes = {},

@@ -54,9 +54,6 @@ return {
                                     col = "50%",
                                     row = vim.o.lines / 2 - 9,
                                 },
-                                border = {
-                                    style = "rounded",
-                                },
                             },
                             cmdline_popupmenu = {
                                 position = {
@@ -67,9 +64,6 @@ return {
                                     width = 60,
                                     height = "auto",
                                     max_height = 15,
-                                },
-                                border = {
-                                    style = "rounded",
                                 },
                             },
                         },

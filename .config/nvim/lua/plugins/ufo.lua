@@ -33,11 +33,6 @@ return {
         config = function()
             require("ufo").setup({
                 preview = {
-                    win_config = {
-                        border = { "", "─", "", "", "", "─", "", "" },
-                        winhighlight = "Normal:Folded",
-                        winblend = 0,
-                    },
                     mappings = {
                         scrollU = "<C-u>",
                         scrollD = "<C-d>",
