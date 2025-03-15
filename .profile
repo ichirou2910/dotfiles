@@ -12,3 +12,5 @@ export PATH="$PATH:/home/ichirou2910/.nix-profile/bin"
 
 # Added by Toolbox App
 export PATH="$PATH:/home/ichirou2910/.local/share/JetBrains/Toolbox/scripts"
+
+export MANPAGER="nvim +Man!"
