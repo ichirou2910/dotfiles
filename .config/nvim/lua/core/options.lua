@@ -32,7 +32,6 @@ vim.opt.rnu = true
 vim.opt.number = true -- Line numbers
 
 vim.opt.cursorline = true -- Enable highlighting of the current line
-vim.opt.background = "dark" -- tell vim what the background color looks like
 
 vim.opt.shortmess:append("csI") -- Don't pass messages to |ins-completion-menu|.
 vim.opt.updatetime = 300 -- Faster completion
@@ -46,4 +45,11 @@ vim.o.sessionoptions = "buffers,curdir,folds,help,tabpages,winsize,winpos,termin
 
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:,diff:╱]]
 
-vim.g.bigfile_threshold = 2 * 1024 * 1024
+vim.opt.scroll = 8
+
+-- Colorscheme
+vim.cmd.colorscheme("default")
+vim.cmd([[
+    highlight Normal guibg=None
+    highlight link SnacksPickerDir Comment
+]])
