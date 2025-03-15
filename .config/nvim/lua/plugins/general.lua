@@ -3,4 +3,5 @@ return {
     "tpope/vim-repeat",
 
     "tpope/vim-eunuch",
+    { "echasnovski/mini.extra", config = true },
 }

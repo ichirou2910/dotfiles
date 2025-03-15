@@ -4,15 +4,13 @@ return {
         priority = 1000,
         lazy = false,
         opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
             bigfile = { enabled = true },
+            bufdelete = { enabled = true },
             explorer = { enabled = true },
             indent = { enabled = true },
             input = { enabled = true },
-            picker = { enabled = true },
             notifier = { enabled = true },
+            picker = { enabled = true },
             quickfile = { enabled = true },
             scroll = { enabled = true },
             statuscolumn = {
@@ -29,10 +27,12 @@ return {
                 },
                 refresh = 50, -- refresh at most every 50ms
             },
+            terminal = { enabled = true },
         },
+        -- stylua: ignore
         keys = {
             -- Search
-            { ";", function() Snacks.picker.commands() end, desc = "Commands" },
+            { "<leader>;", function() Snacks.picker.commands() end, desc = "Commands" },
             { "<leader>a", function() Snacks.picker.buffers() end, desc = "Buffers" },
             { "<leader>fa", function() Snacks.picker.grep() end, desc = "Text" },
             { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
@@ -48,8 +48,14 @@ return {
             { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
             { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
             { "gi", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
-            { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
+            { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto Type Definition" },
             { "<leader>lo", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
+            -- Terminal
+            { "<leader>tt", function() Snacks.terminal.toggle() end, desc = "Toggle Terminal" },
+            -- Buffer
+            { "<leader>q", function() Snacks.bufdelete.delete() end, desc = "Delete Buffer" },
+            { "<leader>Q", function() Snacks.bufdelete.other() end, desc = "Delete Other Buffers" },
         }
+,
     },
 }

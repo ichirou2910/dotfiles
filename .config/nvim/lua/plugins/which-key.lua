@@ -95,14 +95,6 @@ return {
                     x = { "<cmd>TroubleToggle<cr>", "Toggle trouble" },
                 },
 
-                L = {
-                    name = "LSP Tools",
-                },
-
-                m = {
-                    name = "Markview",
-                },
-
                 s = {
                     name = "Sidebar",
                     c = { "<cmd>lua require('edgy').close()<CR>", "Close" },
@@ -117,7 +109,6 @@ return {
 
                 t = {
                     name = "Terminal",
-                    t = { "<cmd>lua require('toggleterm').toggle(vim.v.count)<CR>", "Toggle terminal" },
                 },
 
                 T = {

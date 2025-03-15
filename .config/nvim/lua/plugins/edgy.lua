@@ -65,11 +65,14 @@ return {
             },
             bottom = {
                 {
-                    title = " TERMINAL",
-                    ft = "toggleterm",
-                    -- exclude floating windows
-                    filter = function(_, win)
-                        return vim.api.nvim_win_get_config(win).relative == ""
+                    ft = "snacks_terminal",
+                    size = { height = 0.4 },
+                    title = " %{b:snacks_terminal.id}: %{b:term_title}",
+                    filter = function(_buf, win)
+                        return vim.w[win].snacks_win
+                            and vim.w[win].snacks_win.position == "bottom"
+                            and vim.w[win].snacks_win.relative == "editor"
+                            and not vim.w[win].trouble_preview
                     end,
                 },
                 { title = "󰁨 TROUBLE", ft = "Trouble" },
@@ -87,40 +90,6 @@ return {
                     ft = "dap-repl",
                     wo = { winbar = false, statuscolumn = "" },
                     open = "lua require'dapui'.open()",
-                },
-                {
-                    title = "References",
-                    ft = "Trouble",
-                    filter = function(buf, win)
-                        return vim.b[buf].trouble_mode == "lsp_references" and not is_float(win)
-                    end,
-                    open = function()
-                        require("trouble").open("lsp_references")
-                    end,
-                },
-                {
-                    title = "Definitions",
-                    ft = "Trouble",
-                    filter = function(buf, win)
-                        return vim.b[buf].trouble_mode == "lsp_definitions" and not is_float(win)
-                    end,
-                    open = function()
-                        require("trouble").open("lsp_definitions")
-                    end,
-                },
-                {
-                    title = "Type Definitions",
-                    ft = "Trouble",
-                    filter = function(buf, win)
-                        return vim.b[buf].trouble_mode == "lsp_type_definitions" and not is_float(win)
-                    end,
-                    open = function()
-                        require("trouble").open("lsp_type_definitions")
-                    end,
-                },
-                {
-                    title = " REST RESULT",
-                    ft = "httpResult",
                 },
             },
 
