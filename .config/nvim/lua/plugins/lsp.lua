@@ -29,7 +29,14 @@ return {
         "yioneko/nvim-vtsls",
     },
     {
-        "seblj/roslyn.nvim",
+        "GustavEikaas/easy-dotnet.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "folke/snacks.nvim",
+        },
+    },
+    {
+        "seblyng/roslyn.nvim",
         ft = "cs",
     },
     {

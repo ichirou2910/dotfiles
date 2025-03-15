@@ -32,11 +32,53 @@ function M.setup()
                     },
                 },
             },
-            filewatching = false,
         })
     end
 
+    -- c#: dotnet
+    local function lsp_dotnet()
+        local dotnet = require("easy-dotnet")
+
+        dotnet.setup({
+            ---@param action "test" | "restore" | "build" | "run"
+            terminal = function(path, action, args)
+                local commands = {
+                    run = function()
+                        return string.format("dotnet run --project %s %s", path, args)
+                    end,
+                    test = function()
+                        return string.format("dotnet test %s %s", path, args)
+                    end,
+                    restore = function()
+                        return string.format("dotnet restore %s %s", path, args)
+                    end,
+                    build = function()
+                        return string.format("dotnet build %s %s", path, args)
+                    end,
+                }
+
+                local command = commands[action]()
+                vim.cmd("lua Snacks.terminal.open('" .. command .. "')")
+                -- vim.cmd("term " .. command)
+            end,
+            csproj_mappings = true,
+            fsproj_mappings = true,
+            auto_bootstrap_namespace = {
+                --block_scoped, file_scoped
+                type = "block_scoped",
+                enabled = true,
+            },
+            picker = "snacks",
+        })
+
+        -- Example keybinding
+        -- vim.keymap.set("n", "<C-p>", function()
+        --     dotnet.run_project()
+        -- end)
+    end
+
     lsp_roslyn()
+    lsp_dotnet()
 end
 
 return M
