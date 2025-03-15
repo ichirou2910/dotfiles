@@ -2,10 +2,7 @@ return {
     {
         "saghen/blink.cmp",
         dependencies = {
-            {
-                "giuxtaposition/blink-cmp-copilot",
-                after = { "copilot.lua" },
-            },
+            "fang2hou/blink-copilot",
         },
         version = "*",
         opts = {
@@ -26,9 +23,23 @@ return {
             },
             appearance = {
                 use_nvim_cmp_as_default = true,
+                kind_icons = {
+                    Copilot = "",
+                },
             },
             sources = {
-                default = { "lsp", "path", "snippets", "buffer" },
+                default = { "copilot", "lsp", "dotnet", "path", "snippets", "buffer" },
+                providers = {
+                    copilot = {
+                        name = "copilot",
+                        module = "blink-copilot",
+                        score_offset = 100,
+                        async = true,
+                        opts = {
+                            max_completions = 3,
+                            max_attempts = 4,
+                        },
+                    },
                     dotnet = {
                         name = "easy-dotnet",
                         enabled = true,
@@ -45,11 +56,15 @@ return {
     },
     {
         "zbirenbaum/copilot.lua",
-        config = function()
-            require("copilot").setup({
-                suggestion = { enabled = false },
-                panel = { enabled = false },
-            })
-        end,
+        cmd = "Copilot",
+        build = ":Copilot auth",
+        event = "InsertEnter",
+        opts = {
+            suggestion = { enabled = false },
+            panel = { enabled = false },
+            copilot_node_command = vim.fn.system(
+                "NIXPKGS_ALLOW_INSECURE=1 nix eval --impure --raw nixpkgs/e89cf1c932006531f454de7d652163a9a5c86668#nodejs_18"
+            ) .. "/bin/node",
+        },
     },
 }
