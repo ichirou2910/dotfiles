@@ -13,4 +13,8 @@ export PATH="$PATH:/home/ichirou2910/.nix-profile/bin"
 # Added by Toolbox App
 export PATH="$PATH:/home/ichirou2910/.local/share/JetBrains/Toolbox/scripts"
 
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/ichirou2910/.lmstudio/bin"
+
 export MANPAGER="nvim +Man!"
+. "$HOME/.cargo/env"
