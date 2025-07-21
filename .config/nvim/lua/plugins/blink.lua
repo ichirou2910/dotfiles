@@ -62,9 +62,7 @@ return {
         opts = {
             suggestion = { enabled = false },
             panel = { enabled = false },
-            copilot_node_command = vim.fn.system(
-                "NIXPKGS_ALLOW_INSECURE=1 nix eval --impure --raw nixpkgs/e89cf1c932006531f454de7d652163a9a5c86668#nodejs_18"
-            ) .. "/bin/node",
+            copilot_node_command = "/home/ichirou2910/.nvm/versions/node/v20.18.1/bin/node",
         },
     },
 }

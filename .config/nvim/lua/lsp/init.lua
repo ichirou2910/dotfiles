@@ -2,7 +2,7 @@ local lspconfig = require("lspconfig")
 local capabilities = require("lsp.utils").get_capabilities()
 
 -- servers with default config
-local default_servers = { "html", "cssls", "gdscript" }
+local default_servers = { "html", "cssls", "gdscript", "nil_ls" }
 for _, s in pairs(default_servers) do
     lspconfig[s].setup({
         capabilities = capabilities,
@@ -28,12 +28,9 @@ local mason_servers = {
         -- vtsls requires node 16
         cfg = {
             cmd = {
-                "/usr/share/nvm/nvm-exec",
+                "/home/ichirou2910/.nvm/versions/node/v16.20.2/bin/node",
                 vim.fn.stdpath("data") .. "/mason/bin/vtsls",
                 "--stdio",
-            },
-            cmd_env = {
-                NODE_VERSION = "v16.20.2",
             },
         }
         return cfg
