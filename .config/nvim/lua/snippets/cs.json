@@ -1,7 +1,0 @@
-{
-  "Console.WriteLine": {
-    "prefix": "cw",
-    "body": ["Console.WriteLine($0);"],
-    "description": "Console.WriteLine"
-  }
-}
