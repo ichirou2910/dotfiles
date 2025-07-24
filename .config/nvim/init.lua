@@ -16,29 +16,32 @@ o.smartindent = true -- Makes indenting smart
 o.autoindent = true -- Good auto indent
 o.signcolumn = "yes"
 o.rnu = true
-o.number = true -- Line numbers
-o.cursorline = true -- Enable highlighting of the current line
-o.updatetime = 300 -- Faster completion
+o.number = true
+o.cursorline = true
+o.updatetime = 300
 o.completeopt = { "menuone", "noselect" }
+o.clipboard = "unnamedplus"
+
+vim.opt.grepprg = "rg --vimgrep --no-ignore-parent --glob='!.git/**' -- $*"
+
+function _G.f(cmd_arg) return vim.fn.systemlist("rg --files | rg " .. cmd_arg) end 
+vim.o.findfunc = 'v:lua.f'
 
 -- PLUGINS
 vim.pack.add({
-  "https://github.com/fang2hou/blink-copilot",
-  { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("*") },
-  "https://github.com/zbirenbaum/copilot.lua",
-  "https://github.com/mason-org/mason-lspconfig.nvim",
-  "https://github.com/mason-org/mason.nvim",
-  "https://github.com/echasnovski/mini.diff",
-  "https://github.com/echasnovski/mini.extra",
-  "https://github.com/neovim/nvim-lspconfig",
-  "https://github.com/kylechui/nvim-surround",
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
-  "https://github.com/nvim-treesitter/nvim-treesitter-context",
-  "https://github.com/yioneko/nvim-vtsls",
-  "https://github.com/nvim-lua/plenary.nvim",
-  "https://github.com/folke/snacks.nvim",
-  "https://github.com/tpope/vim-eunuch",
-  "https://github.com/tpope/vim-fugitive",
+    "https://github.com/fang2hou/blink-copilot",
+    { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("*") },
+    "https://github.com/zbirenbaum/copilot.lua",
+    "https://github.com/echasnovski/mini.diff",
+    "https://github.com/echasnovski/mini.extra",
+    "https://github.com/neovim/nvim-lspconfig",
+    "https://github.com/kylechui/nvim-surround",
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+    "https://github.com/nvim-treesitter/nvim-treesitter-context",
+    "https://github.com/yioneko/nvim-vtsls",
+    "https://github.com/nvim-lua/plenary.nvim",
+    "https://github.com/tpope/vim-eunuch",
+    "https://github.com/tpope/vim-fugitive",
 })
 
 -- PLUGIN CONFIGURATION
@@ -76,17 +79,6 @@ require("mini.extra").setup()
 require("mini.diff").setup()
 require("nvim-surround").setup()
 
-require("snacks").setup {
-    bigfile = { enabled = true },
-    bufdelete = { enabled = true },
-    explorer = { enabled = true },
-    indent = { enabled = true },
-    picker = { enabled = true },
-    quickfile = { enabled = true },
-    scroll = { enabled = true },
-    terminal = { enabled = true },
-}
-
 local ts_parsers = {
     "bash",
     "c",
@@ -105,7 +97,7 @@ local ts_parsers = {
 }
 local nts = require("nvim-treesitter")
 nts.install(ts_parsers)
-vim.api.nvim_create_autocmd("PackChanged", {
+autocmd("PackChanged", {
 	callback = function(args)
 		local spec = args.data.spec
 		if spec and spec.name == "nvim-treesitter" and args.data.kind == "update" then
@@ -136,12 +128,22 @@ require("treesitter-context").setup({
     line_numbers = true,
 })
 
--- LSP
 require("lsp")
-
+require("utils")
 require("mappings")
-require("clipboard")
 
 -- Hide cursorline on inactive split
 autocmd("WinEnter", { command = "set cul" })
 autocmd("WinLeave", { command = "set nocul" })
+
+-- Highlight when yanking (copying) text
+autocmd("TextYankPost", {
+    group = vim.api.nvim_create_augroup("UserYankHighlight", { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+})
+
+vim.cmd([[
+    highlight Normal guibg=None
+]])
