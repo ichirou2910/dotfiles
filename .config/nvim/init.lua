@@ -24,7 +24,7 @@ o.clipboard = "unnamedplus"
 
 vim.opt.grepprg = "rg --vimgrep --no-ignore-parent --glob='!.git/**' -- $*"
 
-function _G.f(cmd_arg) return vim.fn.systemlist("rg --files | rg " .. cmd_arg) end 
+function _G.f(cmd_arg) return vim.fn.systemlist("rg --files | rg " .. cmd_arg) end
 vim.o.findfunc = 'v:lua.f'
 
 -- PLUGINS
@@ -46,34 +46,33 @@ vim.pack.add({
 
 -- PLUGIN CONFIGURATION
 require("copilot").setup({
-    suggestion = { enabled = false },
     panel = { enabled = false },
     copilot_node_command = "/home/ichirou2910/.nvm/versions/node/v20.18.1/bin/node",
 })
 
-require("blink.cmp").setup({
-    keymap = {
-        preset = "super-tab",
-    },
-    signature = {
-        enabled = true,
-    },
-    sources = {
-        default = { "copilot", "lsp", "path", "snippets", "buffer" },
-        providers = {
-            copilot = {
-                name = "copilot",
-                module = "blink-copilot",
-                score_offset = 100,
-                async = true,
-                opts = {
-                    max_completions = 3,
-                    max_attempts = 4,
-                },
-            },
-        },
-    },
-})
+-- require("blink.cmp").setup({
+--     keymap = {
+--         preset = "super-tab",
+--     },
+--     signature = {
+--         enabled = true,
+--     },
+--     sources = {
+--         default = { "copilot", "lsp", "path", "snippets", "buffer" },
+--         providers = {
+--             copilot = {
+--                 name = "copilot",
+--                 module = "blink-copilot",
+--                 score_offset = 100,
+--                 async = true,
+--                 opts = {
+--                     max_completions = 3,
+--                     max_attempts = 4,
+--                 },
+--             },
+--         },
+--     },
+-- })
 
 require("mini.extra").setup()
 require("mini.diff").setup()
