@@ -29,8 +29,6 @@ vim.o.findfunc = 'v:lua.f'
 
 -- PLUGINS
 vim.pack.add({
-    "https://github.com/fang2hou/blink-copilot",
-    { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("*") },
     "https://github.com/zbirenbaum/copilot.lua",
     "https://github.com/echasnovski/mini.diff",
     "https://github.com/echasnovski/mini.extra",
@@ -49,30 +47,6 @@ require("copilot").setup({
     panel = { enabled = false },
     copilot_node_command = "/home/ichirou2910/.nvm/versions/node/v20.18.1/bin/node",
 })
-
--- require("blink.cmp").setup({
---     keymap = {
---         preset = "super-tab",
---     },
---     signature = {
---         enabled = true,
---     },
---     sources = {
---         default = { "copilot", "lsp", "path", "snippets", "buffer" },
---         providers = {
---             copilot = {
---                 name = "copilot",
---                 module = "blink-copilot",
---                 score_offset = 100,
---                 async = true,
---                 opts = {
---                     max_completions = 3,
---                     max_attempts = 4,
---                 },
---             },
---         },
---     },
--- })
 
 require("mini.extra").setup()
 require("mini.diff").setup()
