@@ -1,7 +1,3 @@
-vim.lsp.enable("lua_ls")
-vim.lsp.enable("vtsls")
-vim.lsp.enable("roslyn_ls")
-
 vim.lsp.config.roslyn_ls = {
     cmd = { vim.env.HOME .. "/.local/bin/Microsoft.CodeAnalysis.LanguageServer/Microsoft.CodeAnalysis.LanguageServer", "--logLevel", "Information", "--extensionLogDirectory", "/tmp/roslyn_ls/logs", "--stdio" },
     capabilities = {
@@ -13,6 +9,10 @@ vim.lsp.config.roslyn_ls = {
         }
     }
 }
+
+vim.lsp.enable("lua_ls")
+vim.lsp.enable("vtsls")
+vim.lsp.enable("roslyn_ls")
 
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspAttach", { clear = true }),

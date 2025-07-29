@@ -3,7 +3,7 @@ local map = vim.keymap.set
 local function run_search(cmd)
     local o = vim.fn.systemlist(cmd)
     if not (o and #o > 0) then
-        return false 
+        return false
     end
 
     vim.cmd("enew")
@@ -16,17 +16,17 @@ end
 
 local function scratch_to_quickfix()
     local items = {}
-    local bufnr = vim.api.nvim_get_current_buf() 
+    local bufnr = vim.api.nvim_get_current_buf()
     for _, line in ipairs(vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)) do
         if line ~= "" then
             local f, lnum, text = line:match("^([^:]+):(%d+):(.*)$")
-            if f and lnum then 
-                table.insert(items, { filename = vim.fn.fnamemodify(f, ":p"), lnum = lnum, text = text, }) 
-            else 
-                local lnum, text = line:match("^(%d+):(.*)$")
+            if f and lnum then
+                table.insert(items, { filename = vim.fn.fnamemodify(f, ":p"), lnum = lnum, text = text, })
+            else
+                lnum, text = line:match("^(%d+):(.*)$")
                 if lnum and text then
                     table.insert(items, { filename = vim.fn.bufname(vim.fn.bufnr("#")), lnum = lnum, text = text, })
-                else 
+                else
                     table.insert(items, { filename = vim.fn.fnamemodify(line, ":p") })
                 end
             end
@@ -80,11 +80,11 @@ map("n", "<leader>/", function()
   end)
 end, { desc = "Search Current File" })
 
-map("n", "<space>c", function() 
+map("n", "<space>c", function()
     vim.ui.input({ prompt = "> " }, function(c)
-        if c and c~="" then 
-            vim.cmd("noswapfile vnew | setlocal buftype=nofile bufhidden=wipe") 
-            vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.fn.systemlist(c)) 
+        if c and c~="" then
+            vim.cmd("noswapfile vnew | setlocal buftype=nofile bufhidden=wipe")
+            vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.fn.systemlist(c))
         end
     end)
 end, { desc = "Run Command" })

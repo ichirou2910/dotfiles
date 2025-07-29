@@ -14,13 +14,12 @@ o.smartcase = true -- Smart case-insensitve/-sensitive search detection
 o.expandtab = true -- Converts tabs to spaces
 o.smartindent = true -- Makes indenting smart
 o.autoindent = true -- Good auto indent
-o.signcolumn = "yes"
 o.rnu = true
 o.number = true
 o.cursorline = true
 o.updatetime = 300
 o.completeopt = { "menuone", "noselect" }
-o.clipboard = "unnamedplus"
+o.clipboard:append("unnamedplus")
 
 vim.opt.grepprg = "rg --vimgrep --no-ignore-parent --glob='!.git/**' -- $*"
 
@@ -31,14 +30,11 @@ vim.o.findfunc = 'v:lua.f'
 vim.pack.add({
     "https://github.com/zbirenbaum/copilot.lua",
     "https://github.com/echasnovski/mini.diff",
-    "https://github.com/echasnovski/mini.extra",
     "https://github.com/neovim/nvim-lspconfig",
     "https://github.com/kylechui/nvim-surround",
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
     "https://github.com/nvim-treesitter/nvim-treesitter-context",
     "https://github.com/yioneko/nvim-vtsls",
-    "https://github.com/nvim-lua/plenary.nvim",
-    "https://github.com/tpope/vim-eunuch",
     "https://github.com/tpope/vim-fugitive",
 })
 
@@ -48,7 +44,6 @@ require("copilot").setup({
     copilot_node_command = "/home/ichirou2910/.nvm/versions/node/v20.18.1/bin/node",
 })
 
-require("mini.extra").setup()
 require("mini.diff").setup()
 require("nvim-surround").setup()
 
