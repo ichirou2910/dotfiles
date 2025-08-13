@@ -1,53 +1,51 @@
-local autocmd = vim.api.nvim_create_autocmd
-local o = vim.opt
-
 vim.g.mapleader = " "
 
--- OPTIONS
-o.wrap = false -- Display long lines as just one line
-o.equalalways = false -- Prevent auto balance split size when split
-o.tabstop = 4 -- Insert 4 spaces for a tab
-o.shiftwidth = 4 -- Change the number of space characters inserted for indentation
-o.smarttab = true -- Makes tabbing smarter will realize you have 2 vs 4
-o.ignorecase = true -- Ignore case, must use for smartcase to work
-o.smartcase = true -- Smart case-insensitve/-sensitive search detection
-o.expandtab = true -- Converts tabs to spaces
-o.smartindent = true -- Makes indenting smart
-o.autoindent = true -- Good auto indent
-o.rnu = true
-o.number = true
-o.cursorline = true
-o.updatetime = 300
-o.completeopt = { "menuone", "noselect" }
-o.clipboard:append("unnamedplus")
+vim.opt.wrap = false
+vim.opt.equalalways = false
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.smarttab = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+vim.opt.autoindent = true
+vim.opt.rnu = true
+vim.opt.number = true
+vim.opt.completeopt:append("noselect")
+vim.opt.winborder = "rounded"
+vim.opt.grepprg = "rg --vimgrep --smart-case"
 
-vim.opt.grepprg = "rg --vimgrep --no-ignore-parent --glob='!.git/**' -- $*"
-
-function _G.f(cmd_arg) return vim.fn.systemlist("rg --files | rg " .. cmd_arg) end
-vim.o.findfunc = 'v:lua.f'
-
--- PLUGINS
 vim.pack.add({
     "https://github.com/zbirenbaum/copilot.lua",
     "https://github.com/echasnovski/mini.diff",
     "https://github.com/neovim/nvim-lspconfig",
-    "https://github.com/kylechui/nvim-surround",
+    "https://github.com/mason-org/mason.nvim",
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
-    "https://github.com/nvim-treesitter/nvim-treesitter-context",
     "https://github.com/yioneko/nvim-vtsls",
     "https://github.com/tpope/vim-fugitive",
 })
 
--- PLUGIN CONFIGURATION
-require("copilot").setup({
-    panel = { enabled = false },
-    copilot_node_command = "/home/ichirou2910/.nvm/versions/node/v20.18.1/bin/node",
-})
-
 require("mini.diff").setup()
-require("nvim-surround").setup()
 
-local ts_parsers = {
+require("mason").setup()
+local mason_packages = {
+    "lua-language-server",
+    "copilot-language-server",
+    "csharp-language-server",
+    "vtsls",
+}
+local to_install = {}
+for _, package in ipairs(mason_packages) do
+    if not require("mason-registry").is_installed(package) then
+        table.insert(to_install, package)
+    end
+end
+if #to_install > 0 then
+    require("mason.api.command").MasonInstall(to_install)
+end
+
+require("nvim-treesitter").install({
     "bash",
     "c",
     "c_sharp",
@@ -62,56 +60,32 @@ local ts_parsers = {
     "rust",
     "typescript",
     "vim",
-}
-local nts = require("nvim-treesitter")
-nts.install(ts_parsers)
-autocmd("PackChanged", {
-	callback = function(args)
-		local spec = args.data.spec
-		if spec and spec.name == "nvim-treesitter" and args.data.kind == "update" then
-			vim.notify("nvim-treesitter was updated, updating parsers", vim.log.levels.INFO)
-			vim.schedule(function()
-				nts.update()
-			end)
-		end
-	end,
 })
 
-autocmd("FileType", {
-    callback = function(args)
-        local ft = args.match
-        local lang = vim.treesitter.language.get_lang(ft)
-        if vim.treesitter.language.add(lang) then
-            vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-            vim.treesitter.start()
-        end
-    end,
-})
+-- Don't copy the replaced text after pasting in visual mode
+vim.keymap.set("v", "p", '"_dP')
 
-require("treesitter-context").setup({
-    max_lines = 3,
-    multiline_threshold = 1,
-    separator = "-",
-    min_window_height = 20,
-    line_numbers = true,
-})
+vim.keymap.set({ "n", "v", "x" }, "<leader>y", '"+y')
+vim.keymap.set({ "n", "v", "x" }, "<leader>d", '"+d')
 
-require("lsp")
-require("utils")
-require("mappings")
-
--- Hide cursorline on inactive split
-autocmd("WinEnter", { command = "set cul" })
-autocmd("WinLeave", { command = "set nocul" })
+vim.keymap.set("n", "<leader>n", ":noh<CR>", { desc = "No Highlight" })
 
 -- Highlight when yanking (copying) text
-autocmd("TextYankPost", {
+vim.api.nvim_create_autocmd("TextYankPost", {
     group = vim.api.nvim_create_augroup("UserYankHighlight", { clear = true }),
     callback = function()
         vim.highlight.on_yank()
     end,
 })
 
-vim.cmd([[
-    highlight Normal guibg=None
-]])
+vim.lsp.enable({ "lua_ls", "vtsls", "csharp_ls" })
+
+require("copilot").setup({
+    panel = { enabled = false },
+    server_opts_overrides = {
+        cmd = {
+            vim.fn.expand("~/.local/share/nvim/mason/bin/copilot-language-server"),
+            "--stdio",
+        },
+    },
+})
