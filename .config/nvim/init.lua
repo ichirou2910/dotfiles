@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 
+vim.opt.path = ".,,**"
 vim.opt.wrap = false
 vim.opt.equalalways = false
 vim.opt.tabstop = 4
@@ -25,8 +26,10 @@ vim.pack.add({
     "https://github.com/yioneko/nvim-vtsls",
     "https://github.com/Decodetalkers/csharpls-extended-lsp.nvim",
     "https://github.com/tpope/vim-fugitive",
+    "https://github.com/stevearc/oil.nvim",
 })
 
+require("oil").setup()
 require("mini.diff").setup()
 
 require("mason").setup()
@@ -69,6 +72,8 @@ vim.keymap.set({ "n", "v", "x" }, "<leader>y", '"+y')
 vim.keymap.set({ "n", "v", "x" }, "<leader>d", '"+d')
 
 vim.keymap.set("n", "<leader>n", ":noh<CR>", { desc = "No Highlight" })
+
+vim.keymap.set("n", "<leader>e", ":Oil<CR>", { desc = "File Explorer" })
 
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
