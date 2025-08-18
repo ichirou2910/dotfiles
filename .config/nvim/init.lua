@@ -31,7 +31,6 @@ require("mini.diff").setup()
 require("mason").setup()
 local mason_packages = {
     "lua-language-server",
-    "copilot-language-server",
     "csharp-language-server",
     "vtsls",
 }
@@ -82,10 +81,4 @@ vim.lsp.enable({ "lua_ls", "vtsls", "csharp_ls" })
 
 require("copilot").setup({
     panel = { enabled = false },
-    server_opts_overrides = {
-        cmd = {
-            vim.fn.expand("~/.local/share/nvim/mason/bin/copilot-language-server"),
-            "--stdio",
-        },
-    },
 })
