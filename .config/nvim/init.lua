@@ -23,6 +23,7 @@ vim.pack.add({
     "https://github.com/mason-org/mason.nvim",
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
     "https://github.com/yioneko/nvim-vtsls",
+    "https://github.com/Decodetalkers/csharpls-extended-lsp.nvim",
     "https://github.com/tpope/vim-fugitive",
 })
 
@@ -78,6 +79,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.lsp.enable({ "lua_ls", "vtsls", "csharp_ls" })
+require("csharpls_extended").buf_read_cmd_bind()
 
 require("copilot").setup({
     panel = { enabled = false },
