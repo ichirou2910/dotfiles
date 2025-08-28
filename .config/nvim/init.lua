@@ -24,7 +24,7 @@ vim.pack.add({
     "https://github.com/mason-org/mason.nvim",
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
     "https://github.com/yioneko/nvim-vtsls",
-    "https://github.com/Decodetalkers/csharpls-extended-lsp.nvim",
+    "https://github.com/seblyng/roslyn.nvim",
     "https://github.com/tpope/vim-fugitive",
     "https://github.com/stevearc/oil.nvim",
 })
@@ -32,10 +32,15 @@ vim.pack.add({
 require("oil").setup()
 require("mini.diff").setup()
 
-require("mason").setup()
+require("mason").setup({
+    registries = {
+        "github:mason-org/mason-registry",
+        "github:Crashdummyy/mason-registry", -- for roslyn
+    },
+})
 local mason_packages = {
     "lua-language-server",
-    "csharp-language-server",
+    "roslyn",
     "vtsls",
 }
 local to_install = {}
@@ -83,9 +88,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
-vim.lsp.enable({ "lua_ls", "vtsls", "csharp_ls" })
-require("csharpls_extended").buf_read_cmd_bind()
-
+vim.lsp.enable({ "lua_ls", "vtsls" })
+require("roslyn").setup()
 require("copilot").setup({
     panel = { enabled = false },
 })
