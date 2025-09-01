@@ -37,11 +37,11 @@ ZVM_INIT_MODE=sourcing
 zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
 
 # External snippets
-zinit snippet OMZP::git
-zinit snippet OMZP::sudo
-zinit snippet OMZP::archlinux
-zinit snippet OMZP::kubectl
-zinit snippet OMZP::command-not-found
+# zinit snippet OMZP::git
+# zinit snippet OMZP::sudo
+# zinit snippet OMZP::archlinux
+# zinit snippet OMZP::kubectl
+# zinit snippet OMZP::command-not-found
 
 # Load completions
 autoload -U compinit && compinit
@@ -49,7 +49,7 @@ autoload -U compinit && compinit
 zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Keybindings
 bindkey '^p' history-search-backward
@@ -80,11 +80,17 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
-# Extras files
-extras=("zpaths" "zfuncs" "zvars" "zaliasrc")
-for e in "${extras[@]}"; do
-  [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/$e" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/$e"
-done
+# alias q="exit"
+
+# export ANDROID_SDK_ROOT="/home/ichirou2910/.local/share/android/Sdk"
+
+export PATH="/home/ichirou2910/.dotnet/tools:$PATH"
+export PATH="/home/ichirou2910/.npm-packages/bin:$PATH"
+export PATH="/opt/flutter/bin:$PATH"
+export PATH="/home/ichirou2910/Android/Sdk/cmdline-tools/latest/bin:$PATH"
+
+export NNN_PLUG='d:dragdrop;e:edit;g:goto;p:preview-tui;v:imgview;x:extract;z:autojump'
+export NNN_FIFO="/tmp/nnn.fifo"
 
 # NNN integration
 [ -n "$NNNLVL" ] && PS1="N$NNNLVL $PS1"

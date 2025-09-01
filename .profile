@@ -6,7 +6,7 @@ export VISUAL="/usr/bin/nvim"
 export TERM=xterm-kitty
 
 # Directories
-export ZDOTDIR="$HOME/.config/zsh"
+# export ZDOTDIR="$HOME/.config/zsh"
 
 export PATH="$PATH:/home/ichirou2910/.nix-profile/bin"
 
