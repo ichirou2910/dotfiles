@@ -33,11 +33,12 @@ vim.pack.add({
     "https://github.com/mason-org/mason.nvim",
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
     "https://github.com/yioneko/nvim-vtsls",
-    "https://github.com/seblyng/roslyn.nvim",
+    "https://github.com/GustavEikaas/easy-dotnet.nvim",
     "https://github.com/tpope/vim-fugitive",
     "https://github.com/stevearc/oil.nvim",
     "https://github.com/kevinhwang91/nvim-bqf",
     "https://github.com/mfussenegger/nvim-dap",
+    "https://github.com/igorlfs/nvim-dap-view",
 })
 
 require("oil").setup()
@@ -103,7 +104,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.lsp.enable({ "lua_ls", "vtsls", "copilot" })
-require("roslyn").setup()
+
+require("easy-dotnet").setup({
+    debugger = {
+        bin_path = "netcoredbg",
+    },
+})
+require("easy-dotnet.netcoredbg").register_dap_variables_viewer()
 
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(args)
@@ -119,67 +126,30 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 
+-- Debugger keymaps
 local dap = require("dap")
+vim.keymap.set("n", "<F5>", dap.continue, { desc = "Start/Continue Debugging" })
+vim.keymap.set("n", "<F6>", dap.pause, { desc = "Pause Debugging" })
+vim.keymap.set("n", "<F17>", dap.terminate, { desc = "Stop Debugging" }) -- Shift+F5
+vim.keymap.set("n", "<F29>", function() -- Ctrl+F5
+    dap.terminate()
+    dap.run_last()
+end, { desc = "Restart Debugging" })
+vim.keymap.set("n", "<F10>", dap.step_over, { desc = "Step Over" })
+vim.keymap.set("n", "<F11>", dap.step_into, { desc = "Step Into" })
+vim.keymap.set("n", "<F23>", dap.step_out, { desc = "Step Out" }) -- Shift+F11
+vim.keymap.set("n", "<F35>", dap.run_to_cursor, { desc = "Run to Cursor" }) -- Ctrl+F11
+vim.keymap.set("n", "<F9>", dap.toggle_breakpoint, { desc = "Toggle Breakpoint" })
+vim.keymap.set("n", "<leader>dB", function()
+    dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
+end, { desc = "Set Conditional Breakpoint" })
 
-dap.adapters.netcoredbg = {
-    type = 'executable',
-    command = 'netcoredbg',
-    args = { '--interpreter=vscode' }
-}
-
-dap.configurations.cs = (function()
-    if vim.tbl_isempty(vim.fn.glob(vim.fn.getcwd() .. "/*.sln", true, true)) then
-        return {}
-    end
-
-    local dap_config = {}
-
-    local csproj_files = vim.fn.glob(vim.fn.getcwd() .. "**/*.csproj", true, true)
-    for _, csproj in ipairs(csproj_files) do
-        local project_name = vim.fn.fnamemodify(csproj, ":t:r")
-
-        -- Determine the target framework from the .csproj file
-        local csproj_content = vim.fn.readfile(csproj)
-        local target_framework = "net6.0" -- Default framework
-        for _, line in ipairs(csproj_content) do
-            local tf = line:match("<TargetFramework>(.-)</TargetFramework>")
-            if tf then
-                target_framework = tf
-                break
-            end
-        end
-
-        -- Read launchSettings.json if it exists
-        local launch_settings_path = vim.fn.fnamemodify(csproj, ":h") .. "/Properties/launchSettings.json"
-        local launch_settings = {}
-        if vim.fn.filereadable(launch_settings_path) == 1 then
-            local content = vim.fn.readfile(launch_settings_path)
-            launch_settings = vim.fn.json_decode(table.concat(content, "\n"))
-        end
-
-        -- Create a DAP configuration for each profile in launchSettings.json
-        if launch_settings["profiles"] then
-            for profile_name, profile in pairs(launch_settings["profiles"]) do
-                local cwd = profile["workingDirectory"] or vim.fn.getcwd() .. "/" .. project_name
-                table.insert(dap_config, {
-                    type = "netcoredbg",
-                    name = project_name .. " - " .. profile_name,
-                    request = "launch",
-                    program = function()
-                        return profile["commandName"] == "Project" and
-                            cwd .. "/bin/Debug/" .. target_framework .. "/" .. project_name .. ".dll" or
-                            profile["executablePath"]
-                    end,
-                    env = profile["environmentVariables"],
-                    args = { "--urls" .. (profile["applicationUrl"] or "http://localhost:5000") },
-                    cwd = cwd,
-                    stopAtEntry = false,
-                })
-            end
-        end
-    end
-
-    return dap_config
-end)()
+require("dap-view").setup({
+    winbar = {
+        controls = {
+            enabled = true,
+        }
+    }
+})
 
 vim.cmd "hi Normal guibg=None"
