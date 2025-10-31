@@ -86,6 +86,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 export PATH="/home/ichirou2910/.dotnet/tools:$PATH"
 export PATH="/home/ichirou2910/.npm-packages/bin:$PATH"
+export PATH="/home/ichirou2910/.nix-profile/bin:$PATH"
 export PATH="/opt/flutter/bin:$PATH"
 export PATH="/home/ichirou2910/Android/Sdk/cmdline-tools/latest/bin:$PATH"
 
