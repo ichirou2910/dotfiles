@@ -55,9 +55,9 @@ require("mason").setup({
 local mason_packages = {
     "lua-language-server",
     "roslyn",
+    "netcoredbg",
     "vtsls",
     "copilot-language-server",
-    "netcoredbg",
 }
 local to_install = {}
 for _, package in ipairs(mason_packages) do
@@ -131,19 +131,23 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local dap = require("dap")
 vim.keymap.set("n", "<F5>", dap.continue, { desc = "Start/Continue Debugging" })
 vim.keymap.set("n", "<F6>", dap.pause, { desc = "Pause Debugging" })
-vim.keymap.set("n", "<F17>", dap.terminate, { desc = "Stop Debugging" }) -- Shift+F5
-vim.keymap.set("n", "<F29>", function() -- Ctrl+F5
-    dap.terminate()
-    dap.run_last()
-end, { desc = "Restart Debugging" })
+vim.keymap.set("n", "<F17>", dap.terminate, { desc = "Stop Debugging" })   -- Shift+F5
+vim.keymap.set("n", "<F41>", dap.run_last, { desc = "Restart Debugging" }) -- Ctrl+Shift+F5
 vim.keymap.set("n", "<F10>", dap.step_over, { desc = "Step Over" })
 vim.keymap.set("n", "<F11>", dap.step_into, { desc = "Step Into" })
-vim.keymap.set("n", "<F23>", dap.step_out, { desc = "Step Out" }) -- Shift+F11
+vim.keymap.set("n", "<F23>", dap.step_out, { desc = "Step Out" })           -- Shift+F11
 vim.keymap.set("n", "<F35>", dap.run_to_cursor, { desc = "Run to Cursor" }) -- Ctrl+F11
 vim.keymap.set("n", "<F9>", dap.toggle_breakpoint, { desc = "Toggle Breakpoint" })
-vim.keymap.set("n", "<leader>dB", function()
+vim.keymap.set("n", "<F21>", function()                                     -- Shift+F9
     dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
 end, { desc = "Set Conditional Breakpoint" })
+vim.keymap.set("n", "K", function()
+    if not dap.session() then
+        vim.lsp.buf.hover()
+        return
+    end
+    require("dap.ui.widgets").hover()
+end, { desc = "Inspect Expression" })
 
 require("dap-view").setup({
     winbar = {
