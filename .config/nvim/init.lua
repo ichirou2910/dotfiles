@@ -39,6 +39,7 @@ vim.pack.add({
     "https://github.com/kevinhwang91/nvim-bqf",
     "https://github.com/mfussenegger/nvim-dap",
     "https://github.com/igorlfs/nvim-dap-view",
+    "https://github.com/f-person/auto-dark-mode.nvim"
 })
 
 require("oil").setup()
@@ -152,4 +153,15 @@ require("dap-view").setup({
     }
 })
 
-vim.cmd "hi Normal guibg=None"
+vim.cmd "colorscheme default"
+
+require("auto-dark-mode").setup({
+    set_dark_mode = function()
+        vim.api.nvim_set_option_value("background", "dark", {})
+        vim.cmd "hi Normal guibg=None"
+    end,
+    set_light_mode = function()
+        vim.api.nvim_set_option_value("background", "light", {})
+        vim.cmd "hi Normal guibg=None"
+    end,
+})
