@@ -107,6 +107,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.lsp.enable({ "lua_ls", "vtsls", "copilot" })
 
 require("easy-dotnet").setup({
+    diagnostics = {
+        setqflist = true,
+    },
     debugger = {
         bin_path = "netcoredbg",
     },
