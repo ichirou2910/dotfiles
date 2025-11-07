@@ -18,10 +18,10 @@ vim.opt.formatoptions:remove({ "c", "r", "o" }) -- Don't continue comments on ne
 
 function _G.RgFindFiles(cmdarg, cmdcomplete)
     local fnames = vim.fn.systemlist('rg --files --hidden --color=never --glob="!.git"')
-    if #cmdarg == 0 then
-        return fnames
-    else
+    if cmdcomplete then
         return vim.fn.matchfuzzy(fnames, cmdarg)
+    else
+        return vim.fn.matchfuzzy(fnames, cmdarg, { limit = 1 })
     end
 end
 
