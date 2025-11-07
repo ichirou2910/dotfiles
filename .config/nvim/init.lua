@@ -47,7 +47,6 @@ vim.pack.add({
 
 require("oil").setup()
 require("mini.diff").setup()
-require("quickfix")
 
 require("mason").setup({
     registries = {
