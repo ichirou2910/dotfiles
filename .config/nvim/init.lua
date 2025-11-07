@@ -34,6 +34,7 @@ vim.pack.add({
     "https://github.com/mason-org/mason.nvim",
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
     "https://github.com/yioneko/nvim-vtsls",
+    "https://github.com/seblyng/roslyn.nvim",
     "https://github.com/GustavEikaas/easy-dotnet.nvim",
     "https://github.com/tpope/vim-fugitive",
     "https://github.com/stevearc/oil.nvim",
@@ -77,6 +78,8 @@ require("nvim-treesitter").install({
     "c_sharp",
     "css",
     "dockerfile",
+    "glsl",
+    "hlsl",
     "html",
     "javascript",
     "json",
@@ -86,6 +89,8 @@ require("nvim-treesitter").install({
     "rust",
     "typescript",
     "vim",
+    "xml",
+    "yaml",
 })
 
 -- Don't copy the replaced text after pasting in visual mode
@@ -108,15 +113,34 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 vim.lsp.enable({ "lua_ls", "vtsls", "copilot" })
 
-require("easy-dotnet").setup({
-    diagnostics = {
-        setqflist = true,
-    },
-    debugger = {
-        bin_path = "netcoredbg",
-    },
-})
-require("easy-dotnet.netcoredbg").register_dap_variables_viewer()
+-- Detect C# project type (Unity/.NET)
+local csharp_project_type = (function()
+    local files = vim.fn.readdir(vim.fn.getcwd())
+    local is_dotnet = false
+
+    for _, file in ipairs(files) do
+        if file == "Assets" or file == "ProjectSettings" then
+            return "unity"
+        elseif file:match("%.sln$") or file:match("%.csproj$") then
+            is_dotnet = true
+        end
+    end
+
+    return is_dotnet and "dotnet" or "none"
+end)()
+
+if csharp_project_type == "unity" then
+    require("roslyn").setup()
+elseif csharp_project_type == "dotnet" then
+    require("easy-dotnet").setup({
+        diagnostics = {
+            setqflist = true,
+        },
+        debugger = {
+            bin_path = "netcoredbg",
+        },
+    })
+end
 
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(args)
