@@ -189,6 +189,7 @@ require("dap-view").setup({
         }
     }
 })
+vim.keymap.set("n", "<C-S-Y>", require("dap-view").toggle, { desc = "Toggle Debug View" })
 
 require("rose-pine").setup({
     dark_variant = "moon",
