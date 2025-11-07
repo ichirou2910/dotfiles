@@ -14,6 +14,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.completeopt = "menuone,noselect,fuzzy,nosort"
 vim.opt.winborder = "rounded"
 vim.opt.grepprg = "rg --vimgrep --hidden -g '!.git/*'"
+vim.opt.formatoptions:remove({ "c", "r", "o" }) -- Don't continue comments on new lines
 
 function _G.RgFindFiles(cmdarg, cmdcomplete)
     local fnames = vim.fn.systemlist('rg --files --hidden --color=never --glob="!.git"')
