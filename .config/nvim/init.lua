@@ -116,22 +116,26 @@ vim.lsp.enable({ "lua_ls", "vtsls", "copilot" })
 local csharp_project_type = (function()
     local files = vim.fn.readdir(vim.fn.getcwd())
     local is_dotnet = false
+    local is_unity = false
 
     for _, file in ipairs(files) do
         if file == "Assets" or file == "ProjectSettings" then
-            return "unity"
+            is_unity = true
+            break
         elseif file:match("%.sln$") or file:match("%.csproj$") then
             is_dotnet = true
         end
     end
 
-    return is_dotnet and "dotnet" or "none"
+    return is_unity and "unity" or (is_dotnet and "dotnet" or nil)
 end)()
 
-if csharp_project_type == "unity" then
-    require("roslyn").setup()
-elseif csharp_project_type == "dotnet" then
+if csharp_project_type == "dotnet" then
     require("easy-dotnet").setup({
+        lsp = {
+            enabled = false,
+            roslynator_enabled = false,
+        },
         diagnostics = {
             setqflist = true,
         },
@@ -179,6 +183,7 @@ end, { desc = "Inspect Expression" })
 
 require("dap-view").setup({
     winbar = {
+        default_section = "repl",
         controls = {
             enabled = true,
         }
