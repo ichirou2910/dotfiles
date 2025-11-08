@@ -14,14 +14,17 @@ vim.opt.signcolumn = "yes:2"
 vim.opt.completeopt = "menuone,noselect,fuzzy,nosort"
 vim.opt.winborder = "rounded"
 vim.opt.grepprg = "rg --vimgrep --hidden -g '!.git/*'"
-vim.opt.formatoptions:remove({ "c", "r", "o" }) -- Don't continue comments on new lines
+--
+-- Don't continue comments on new lines
+vim.cmd('autocmd BufEnter * set formatoptions-=cro')
+vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
 
 function _G.RgFindFiles(cmdarg, cmdcomplete)
     local fnames = vim.fn.systemlist('rg --files --hidden --color=never --glob="!.git"')
-    if cmdcomplete then
-        return vim.fn.matchfuzzy(fnames, cmdarg)
+    if #cmdarg == 0 then
+        return fnames
     else
-        return vim.fn.matchfuzzy(fnames, cmdarg, { limit = 1 })
+        return vim.fn.matchfuzzy(fnames, cmdarg)
     end
 end
 
