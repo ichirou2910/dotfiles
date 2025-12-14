@@ -13,26 +13,16 @@ vim.opt.autoindent = true
 vim.opt.signcolumn = "yes:2"
 vim.opt.completeopt = "menuone,noselect,fuzzy,nosort"
 vim.opt.winborder = "rounded"
-vim.opt.grepprg = "rg --vimgrep --hidden -g '!.git/*'"
---
+
 -- Don't continue comments on new lines
 vim.cmd('autocmd BufEnter * set formatoptions-=cro')
 vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
 
-function _G.RgFindFiles(cmdarg, cmdcomplete)
-    local fnames = vim.fn.systemlist('rg --files --hidden --color=never --glob="!.git"')
-    if #cmdarg == 0 then
-        return fnames
-    else
-        return vim.fn.matchfuzzy(fnames, cmdarg)
-    end
-end
-
-vim.o.findfunc = 'v:lua.RgFindFiles'
-
 vim.pack.add({
     "https://github.com/nvim-lua/plenary.nvim",
     "https://github.com/echasnovski/mini.diff",
+    "https://github.com/nvim-mini/mini.pick",
+    "https://github.com/nvim-mini/mini.extra",
     "https://github.com/neovim/nvim-lspconfig",
     "https://github.com/mason-org/mason.nvim",
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
@@ -50,6 +40,8 @@ vim.pack.add({
 
 require("oil").setup()
 require("mini.diff").setup()
+require("mini.pick").setup()
+require("mini.extra").setup()
 
 require("mason").setup({
     registries = {
@@ -105,6 +97,11 @@ vim.keymap.set("n", "<leader>n", ":noh<CR>", { desc = "No Highlight" })
 
 vim.keymap.set("n", "<leader>e", ":Oil<CR>", { desc = "File Explorer" })
 
+vim.keymap.set("n", "<leader>b", ":Pick buffers<CR>")
+vim.keymap.set("n", "<leader>sf", ":Pick files<CR>")
+vim.keymap.set("n", "<leader>sg", ":Pick grep_live<CR>")
+vim.keymap.set("n", "<leader>sr", ":Pick resume<CR>")
+
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
     group = vim.api.nvim_create_augroup("UserYankHighlight", { clear = true }),
@@ -159,6 +156,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.keymap.set('i', '<M-l>', vim.lsp.inline_completion.get, { buffer = bufnr })
             vim.keymap.set('i', '<M-]>', vim.lsp.inline_completion.select, { buffer = bufnr })
         end
+
+        vim.keymap.set('n', 'gO', ':Pick lsp scope="document_symbol"<CR>', { buffer = bufnr })
     end
 })
 
