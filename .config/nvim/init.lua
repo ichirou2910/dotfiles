@@ -10,7 +10,7 @@ vim.opt.smartcase = true
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
-vim.opt.signcolumn = "yes:2"
+vim.opt.signcolumn = "auto:4"
 vim.opt.completeopt = "menuone,noselect,fuzzy,nosort"
 vim.opt.winborder = "rounded"
 
@@ -20,12 +20,12 @@ vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
 
 vim.pack.add({
     "https://github.com/nvim-lua/plenary.nvim",
-    "https://github.com/echasnovski/mini.diff",
+    "https://github.com/nvim-mini/mini.diff",
     "https://github.com/nvim-mini/mini.pick",
     "https://github.com/nvim-mini/mini.extra",
     "https://github.com/neovim/nvim-lspconfig",
     "https://github.com/mason-org/mason.nvim",
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+    "https://github.com/nvim-treesitter/nvim-treesitter",
     "https://github.com/yioneko/nvim-vtsls",
     "https://github.com/seblyng/roslyn.nvim",
     "https://github.com/GustavEikaas/easy-dotnet.nvim",
@@ -79,6 +79,7 @@ require("nvim-treesitter").install({
     "lua",
     "markdown",
     "python",
+    "razor",
     "rust",
     "typescript",
     "vim",

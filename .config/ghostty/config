@@ -48,6 +48,9 @@ font-feature = -calt
 adjust-cell-height = 40%
 adjust-cursor-height = 40%
 
-adjust-underline-position = 5
+adjust-underline-position = 2
+
+background-opacity = 0.9
+background-blur = true
 
 theme = light:Rose Pine Dawn,dark:Rose Pine Moon
