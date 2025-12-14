@@ -52,7 +52,6 @@ require("mason").setup({
 local mason_packages = {
     "lua-language-server",
     "roslyn",
-    "netcoredbg",
     "vtsls",
     "copilot-language-server",
 }
@@ -138,9 +137,6 @@ if csharp_project_type == "dotnet" then
         },
         diagnostics = {
             setqflist = true,
-        },
-        debugger = {
-            bin_path = "netcoredbg",
         },
     })
 end
