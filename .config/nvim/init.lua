@@ -50,6 +50,7 @@ require("mason").setup({
     },
 })
 local mason_packages = {
+    "html-lsp",
     "lua-language-server",
     "roslyn",
     "vtsls",
@@ -65,7 +66,8 @@ if #to_install > 0 then
     require("mason.api.command").MasonInstall(to_install)
 end
 
-require("nvim-treesitter").install({
+local ts = require("nvim-treesitter")
+ts.install({
     "bash",
     "c",
     "c_sharp",
@@ -138,6 +140,10 @@ if csharp_project_type == "dotnet" then
         },
         diagnostics = {
             setqflist = true,
+        },
+        debugger = {
+            apply_value_converters = true,
+            auto_register_dap = true,
         },
     })
 end
