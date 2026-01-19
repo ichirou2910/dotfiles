@@ -50,7 +50,6 @@ adjust-cursor-height = 40%
 
 adjust-underline-position = 2
 
-background-opacity = 0.9
-background-blur = true
+shell-integration-features= ssh-env,ssh-terminfo
 
-theme = light:Rose Pine Dawn,dark:Rose Pine Moon
+theme = dankcolors
