@@ -45,6 +45,7 @@ layout {
 }
 
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "vicinae" "server"
 
 hotkey-overlay {
     skip-at-startup
@@ -84,6 +85,10 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
+    Mod+D repeat=false { spawn "vicinae" "toggle"; }
+    Mod+Semicolon repeat=false { spawn "vicinae" "vicinae://extensions/vicinae/core/search-emojis"; }
+
+    Mod+E hotkey-overlay-title="Open an App: Dolphin" { spawn "dolphin"; }
     Ctrl+Alt+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
 

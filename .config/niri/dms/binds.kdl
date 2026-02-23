@@ -1,6 +1,3 @@
 binds {
     Ctrl+Semicolon hotkey-overlay-title="Clipboard: Toggle" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
-    Super+D hotkey-overlay-title="App Launcher: Toggle" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
-    Super+E hotkey-overlay-title="Open an App: Dolphin" { spawn "dolphin"; }
-    Super+Semicolon hotkey-overlay-title="Emote: Launch" { spawn "emote"; }
 }
