@@ -21,6 +21,8 @@ vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
 vim.pack.add({
     "https://github.com/nvim-lua/plenary.nvim",
     "https://github.com/nvim-mini/mini.diff",
+    "https://github.com/nvim-mini/mini.bufremove",
+    "https://github.com/nvim-mini/mini.cmdline",
     "https://github.com/nvim-mini/mini.pick",
     "https://github.com/nvim-mini/mini.extra",
     "https://github.com/neovim/nvim-lspconfig",
@@ -40,6 +42,8 @@ vim.pack.add({
 
 require("oil").setup()
 require("mini.diff").setup()
+require("mini.bufremove").setup()
+require("mini.cmdline").setup()
 require("mini.pick").setup()
 require("mini.extra").setup()
 
@@ -99,7 +103,15 @@ vim.keymap.set("n", "<leader>n", ":noh<CR>", { desc = "No Highlight" })
 
 vim.keymap.set("n", "<leader>e", ":Oil<CR>", { desc = "File Explorer" })
 
-vim.keymap.set("n", "<leader>b", ":Pick buffers<CR>")
+vim.keymap.set("n", "<leader>ba", ":b#<CR>")
+vim.keymap.set("n", "<leader>bd", ":lua MiniBufremove.delete()<CR>")
+vim.keymap.set("n", "<leader>bD", ":lua MiniBufremove.delete(0, true)<CR>")
+vim.keymap.set("n", "<leader>bs", function()
+    vim.api.nvim_win_set_buf(0, vim.api.nvim_create_buf(true, true))
+end)
+vim.keymap.set("n", "<leader>bw", ":lua MiniBufremove.wipeout()<CR>")
+vim.keymap.set("n", "<leader>bW", ":lua MiniBufremove.wipeout(0, true)<CR>")
+vim.keymap.set("n", "<leader>bb", ":Pick buffers<CR>")
 vim.keymap.set("n", "<leader>sf", ":Pick files<CR>")
 vim.keymap.set("n", "<leader>sg", ":Pick grep_live<CR>")
 vim.keymap.set("n", "<leader>sr", ":Pick resume<CR>")
