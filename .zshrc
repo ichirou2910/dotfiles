@@ -11,12 +11,19 @@ path=(
 export NNN_PLUG='g:goto;x:extract'
 export NNN_FIFO="/tmp/nnn.fifo"
 
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+autoload -U compinit; compinit
+source /usr/share/zsh/plugins/fzf-tab-git/fzf-tab.plugin.zsh
 
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
 HISTSIZE=10000
 HISTFILE=~/.zsh_history
