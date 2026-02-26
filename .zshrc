@@ -4,7 +4,7 @@ path=(
   "$HOME/.npm-packages/bin"
   "$HOME/.nix-profile/bin"
   "/opt/flutter/bin"
-  "/home/ichirou2910/Android/Sdk/cmdline-tools/latest/bin"
+  "$HOME/Android/Sdk/cmdline-tools/latest/bin"
   $path
 )
 
@@ -17,7 +17,10 @@ autoload -U compinit; compinit
 source /usr/share/zsh/plugins/fzf-tab-git/fzf-tab.plugin.zsh
 
 eval "$(starship init zsh)"
-eval "$(fzf --zsh)"
+
+if [ -f "/usr/share/nvm/init-nvm.sh" ]; then
+  source /usr/share/nvm/init-nvm.sh
+fi
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"

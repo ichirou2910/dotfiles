@@ -1,3 +1,1 @@
-binds {
-    Ctrl+Semicolon hotkey-overlay-title="Clipboard: Toggle" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
-}
+binds {}
