@@ -16,7 +16,7 @@ layout {
         }
     }
 
-    tab name="Backend" cwd="/home/ichirou2910/IT/CS/IWM.BE" {
+    tab name="Backend" cwd="/home/ichirou/IT/CS/IWM.BE" {
         editor_with_right_sidebar split_direction="horizontal" {
             pane size="60%" command="dotnet" name="Log" cwd="./IWM.BE" {
                 args "run"

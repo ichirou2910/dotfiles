@@ -16,7 +16,7 @@ layout {
         }
     }
 
-    tab name="Rust" cwd="/home/ichirou2910/IT/Rust/hello_cargo" {
+    tab name="Rust" cwd="/home/ichirou/IT/Rust/hello_cargo" {
         editor_with_right_sidebar split_direction="horizontal" {
             pane size="60%" command="cargo" {
                 args "run"

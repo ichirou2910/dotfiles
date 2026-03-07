@@ -315,7 +315,7 @@ scroll_buffer_size 40000
 // mirror_session true
 
 // The folder in which Zellij will look for layouts
-layout_dir "/home/ichirou2910/.config/zellij/layouts/"
+layout_dir "/home/ichirou/.config/zellij/layouts/"
 
 // The folder in which Zellij will look for themes
 //

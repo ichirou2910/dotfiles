@@ -1,7 +1,7 @@
 layout {
     pane
     pane size=1 borderless=true {
-        plugin location="file:/home/ichirou2910/.config/zellij/plugins/zjstatus.wasm" {
+        plugin location="file:/home/ichirou/.config/zellij/plugins/zjstatus.wasm" {
             format_left  "{mode} #[fg=#89B4FA,bold]{session} {tabs}"
             format_right ""
             format_space ""

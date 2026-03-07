@@ -16,7 +16,7 @@ layout {
         }
     }
 
-    tab name="IOT.EBE" cwd="/home/ichirou2910/IT/CS/IOT.EBE" {
+    tab name="IOT.EBE" cwd="/home/ichirou/IT/CS/IOT.EBE" {
         editor_with_right_sidebar split_direction="horizontal" {
             pane size="60%" command="dotnet" name="Log" cwd="./IOT.EBE" {
                 args "run"
@@ -25,7 +25,7 @@ layout {
         }
     }
 
-    tab name="IOT.Docs" cwd="/home/ichirou2910/IT/Docs/IOT.Docs" {
+    tab name="IOT.Docs" cwd="/home/ichirou/IT/Docs/IOT.Docs" {
         pane command="nvim" name="Editor"
     }
 }

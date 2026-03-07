@@ -13,7 +13,7 @@ layout {
         }
     }
 
-    tab name="MC.BE" focus=true cwd="/home/ichirou2910/IT/CS/MasterCloud.BE" {
+    tab name="MC.BE" focus=true cwd="/home/ichirou/IT/CS/MasterCloud.BE" {
         editor_with_right_sidebar split_direction="horizontal" {
             pane size="60%" command="dotnet" name="Log" cwd="./MasterCloud" {
                 args "run"
@@ -24,7 +24,7 @@ layout {
         }
     }
 
-    tab name="Utils.Email" cwd="/home/ichirou2910/IT/CS/Utils.Email" {
+    tab name="Utils.Email" cwd="/home/ichirou/IT/CS/Utils.Email" {
         editor_with_right_sidebar split_direction="horizontal" {
             // pane size="60%" command="dotnet" borderless=true cwd="./Utils.Email" {
             //     args "run"
@@ -35,7 +35,7 @@ layout {
         }
     }
 
-    tab name="Utils.Storage" cwd="/home/ichirou2910/IT/CS/Utils.Storage" {
+    tab name="Utils.Storage" cwd="/home/ichirou/IT/CS/Utils.Storage" {
         editor_with_right_sidebar split_direction="horizontal" {
             // pane size="60%" command="dotnet" borderless=true cwd="./Utils.Email" {
             //     args "run"
@@ -46,13 +46,13 @@ layout {
         }
     }
 
-    tab name="TrueSight" cwd="/home/ichirou2910/IT/CS/TrueSight" {
+    tab name="TrueSight" cwd="/home/ichirou/IT/CS/TrueSight" {
         editor_with_right_sidebar split_direction="horizontal" {
             pane name="Shell"
         }
     }
 
-    tab name="MC.FE" cwd="/home/ichirou2910/IT/Web/MasterCloud.FE" {
+    tab name="MC.FE" cwd="/home/ichirou/IT/Web/MasterCloud.FE" {
         editor_with_right_sidebar split_direction="horizontal" {
             // pane size="60%" command="yarn" name="Log" {
             //     args "start"
@@ -61,7 +61,7 @@ layout {
         }
     }
 
-    tab name="Docs" cwd="/home/ichirou2910/IT/Docs/MasterCloud.Docs" {
+    tab name="Docs" cwd="/home/ichirou/IT/Docs/MasterCloud.Docs" {
         pane command="nvim" name="Editor"
     }
 
