@@ -10,7 +10,7 @@ vim.opt.smartcase = true
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
-vim.opt.signcolumn = "auto:4"
+vim.opt.signcolumn = "auto"
 vim.opt.completeopt = "menuone,noselect,fuzzy,nosort"
 vim.opt.winborder = "rounded"
 
@@ -29,14 +29,11 @@ vim.pack.add({
     "https://github.com/mason-org/mason.nvim",
     "https://github.com/nvim-treesitter/nvim-treesitter",
     "https://github.com/yioneko/nvim-vtsls",
-    "https://github.com/seblyng/roslyn.nvim",
-    "https://github.com/GustavEikaas/easy-dotnet.nvim",
     "https://github.com/tpope/vim-fugitive",
     "https://github.com/stevearc/oil.nvim",
     "https://github.com/kevinhwang91/nvim-bqf",
     "https://github.com/mfussenegger/nvim-dap",
     "https://github.com/igorlfs/nvim-dap-view",
-    "https://github.com/f-person/auto-dark-mode.nvim",
     "https://github.com/rose-pine/neovim"
 })
 
@@ -145,11 +142,10 @@ local csharp_project_type = (function()
 end)()
 
 if csharp_project_type == "dotnet" then
+    vim.pack.add({
+        "https://github.com/GustavEikaas/easy-dotnet.nvim",
+    })
     require("easy-dotnet").setup({
-        lsp = {
-            enabled = false,
-            roslynator_enabled = false,
-        },
         diagnostics = {
             setqflist = true,
         },
@@ -157,6 +153,10 @@ if csharp_project_type == "dotnet" then
             apply_value_converters = true,
             auto_register_dap = true,
         },
+    })
+elseif csharp_project_type == "unity" then
+    vim.pack.add({
+        "https://github.com/seblyng/roslyn.nvim",
     })
 end
 
@@ -215,5 +215,3 @@ require("rose-pine").setup({
     }
 })
 vim.cmd "colorscheme rose-pine"
-
-require("auto-dark-mode").setup()
