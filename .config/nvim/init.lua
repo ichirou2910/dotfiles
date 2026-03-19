@@ -1,5 +1,7 @@
-vim.g.mapleader = " "
+vim.g.mapleader = vim.keycode("<space>")
 
+vim.opt.nu = true
+vim.opt.rnu = true
 vim.opt.wrap = false
 vim.opt.equalalways = false
 vim.opt.tabstop = 4
@@ -11,15 +13,14 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 vim.opt.signcolumn = "auto"
-vim.opt.completeopt = "menuone,noselect,fuzzy,nosort"
-vim.opt.winborder = "rounded"
+vim.opt.completeopt = "menu,noinsert,popup,fuzzy"
+vim.opt.completeitemalign = "kind,abbr,menu"
 
 -- Don't continue comments on new lines
 vim.cmd('autocmd BufEnter * set formatoptions-=cro')
 vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
 
 vim.pack.add({
-    "https://github.com/nvim-lua/plenary.nvim",
     "https://github.com/nvim-mini/mini.diff",
     "https://github.com/nvim-mini/mini.bufremove",
     "https://github.com/nvim-mini/mini.cmdline",
@@ -34,15 +35,23 @@ vim.pack.add({
     "https://github.com/kevinhwang91/nvim-bqf",
     "https://github.com/mfussenegger/nvim-dap",
     "https://github.com/igorlfs/nvim-dap-view",
-    "https://github.com/rose-pine/neovim"
+    "https://github.com/nmac427/guess-indent.nvim",
+    "https://github.com/AvengeMedia/base46",
 })
 
 require("oil").setup()
 require("mini.diff").setup()
 require("mini.bufremove").setup()
 require("mini.cmdline").setup()
-require("mini.pick").setup()
+require("mini.pick").setup {
+    window = {
+        config = {
+            width = vim.o.columns
+        }
+    }
+}
 require("mini.extra").setup()
+require('guess-indent').setup()
 
 require("mason").setup({
     registries = {
@@ -158,6 +167,15 @@ elseif csharp_project_type == "unity" then
     vim.pack.add({
         "https://github.com/seblyng/roslyn.nvim",
     })
+    require('roslyn').setup({
+        choose_target = function(target)
+            return vim.iter(target):find(function(item)
+                if item:match("%.sln$") then
+                    return item
+                end
+            end)
+        end
+    })
 end
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -208,10 +226,4 @@ require("dap-view").setup({
 })
 vim.keymap.set("n", "<C-S-Y>", require("dap-view").toggle, { desc = "Toggle Debug View" })
 
-require("rose-pine").setup({
-    dark_variant = "moon",
-    styles = {
-        transparency = true
-    }
-})
-vim.cmd "colorscheme rose-pine"
+vim.cmd "colorscheme dms"
