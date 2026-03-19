@@ -52,4 +52,7 @@ adjust-underline-position = 2
 
 shell-integration-features= ssh-env,ssh-terminfo
 
+window-inherit-working-directory = false
+tab-inherit-working-directory = true
+
 theme = dankcolors
