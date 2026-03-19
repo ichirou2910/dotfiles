@@ -45,7 +45,9 @@ layout {
 }
 
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "valent" "--gapplication-service"
 spawn-at-startup "vicinae" "server"
+spawn-sh-at-startup "~/.scripts/urchin-battery.sh"
 
 hotkey-overlay {
     skip-at-startup
@@ -54,7 +56,17 @@ hotkey-overlay {
 screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d %H-%M-%S.png"
 
 window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^com\.gabm\.satty$"#
     open-floating true
 }
 
@@ -66,11 +78,6 @@ window-rule {
 window-rule {
     match app-id=r#"^org\.kde\.kwalletmanager$"#
     block-out-from "screencast"
-}
-
-window-rule {
-    geometry-corner-radius 12
-    clip-to-geometry true
 }
 
 window-rule {
