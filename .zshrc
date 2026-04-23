@@ -1,13 +1,3 @@
-typeset -U path
-path=(
-  "$HOME/.dotnet/tools"
-  "$HOME/.npm-packages/bin"
-  "$HOME/.nix-profile/bin"
-  "/opt/flutter/bin"
-  "$HOME/Android/Sdk/cmdline-tools/latest/bin"
-  $path
-)
-
 export NNN_PLUG='g:goto;x:extract'
 export NNN_FIFO="/tmp/nnn.fifo"
 
