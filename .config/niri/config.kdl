@@ -3,23 +3,33 @@ input {
         numlock
     }
 
+    mouse {
+        accel-speed 0.4
+        accel-profile "adaptive"
+    }
+
     touchpad {
         tap
         natural-scroll
-        accel-speed 0.2
+        accel-speed 0.4
         accel-profile "adaptive"
     }
 }
 
 layout {
+    empty-workspace-above-first
+
     gaps 5
+
     center-focused-column "on-overflow"
+    always-center-single-column
+
     preset-column-widths {
         proportion 0.33333
         proportion 0.5
         proportion 0.66667
     }
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 0.66667; }
 
     focus-ring {
         width 2
@@ -44,6 +54,13 @@ layout {
     }
 }
 
+blur {
+    passes 3
+    offset 3.0
+    noise 0.02
+    saturation 1.5
+}
+
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "valent" "--gapplication-service"
 spawn-at-startup "vicinae" "server"
@@ -52,6 +69,8 @@ spawn-sh-at-startup "~/.scripts/urchin-battery.sh"
 hotkey-overlay {
     skip-at-startup
 }
+
+prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d %H-%M-%S.png"
 
@@ -93,7 +112,7 @@ binds {
     Ctrl+Semicolon repeat=false { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
 
     Mod+E hotkey-overlay-title="Open File Manager" { spawn "nautilus"; }
-    Ctrl+Alt+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
+    Ctrl+Alt+T hotkey-overlay-title="Open Terminal: kitty" { spawn "kitty"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }

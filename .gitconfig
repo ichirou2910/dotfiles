@@ -33,3 +33,7 @@
   allow = always
 [safe]
   directory = *
+[difftool "nvim_difftool"]
+  cmd = nvim -c \"packadd nvim.difftool\" -d \"$LOCAL\" \"$REMOTE\"
+[diff]
+  tool = nvim_difftool
