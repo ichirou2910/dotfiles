@@ -4,99 +4,130 @@ vim.opt.nu = true
 vim.opt.rnu = true
 vim.opt.wrap = false
 vim.opt.equalalways = false
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.smarttab = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
-vim.opt.signcolumn = "auto"
 vim.opt.completeopt = "menu,noinsert,popup,fuzzy"
 vim.opt.completeitemalign = "kind,abbr,menu"
+vim.opt.foldenable = false
 
 -- Don't continue comments on new lines
 vim.cmd('autocmd BufEnter * set formatoptions-=cro')
 vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
 
+require('vim._core.ui2').enable({})
+
 vim.pack.add({
-    "https://github.com/nvim-mini/mini.diff",
-    "https://github.com/nvim-mini/mini.bufremove",
-    "https://github.com/nvim-mini/mini.cmdline",
-    "https://github.com/nvim-mini/mini.pick",
-    "https://github.com/nvim-mini/mini.extra",
-    "https://github.com/neovim/nvim-lspconfig",
-    "https://github.com/mason-org/mason.nvim",
-    "https://github.com/nvim-treesitter/nvim-treesitter",
-    "https://github.com/yioneko/nvim-vtsls",
-    "https://github.com/tpope/vim-fugitive",
-    "https://github.com/stevearc/oil.nvim",
-    "https://github.com/kevinhwang91/nvim-bqf",
-    "https://github.com/mfussenegger/nvim-dap",
-    "https://github.com/igorlfs/nvim-dap-view",
-    "https://github.com/nmac427/guess-indent.nvim",
-    "https://github.com/AvengeMedia/base46",
+  "https://github.com/nvim-lua/plenary.nvim",
+  "https://github.com/nvim-mini/mini.bufremove",
+  "https://github.com/nvim-mini/mini.cmdline",
+  "https://github.com/nvim-mini/mini.completion",
+  "https://github.com/nvim-mini/mini.diff",
+  "https://github.com/nvim-mini/mini.extra",
+  "https://github.com/nvim-mini/mini.files",
+  "https://github.com/nvim-mini/mini.pick",
+  "https://github.com/neovim/nvim-lspconfig",
+  "https://github.com/mason-org/mason.nvim",
+  "https://github.com/nvim-treesitter/nvim-treesitter",
+  "https://github.com/GustavEikaas/easy-dotnet.nvim",
+  "https://github.com/yioneko/nvim-vtsls",
+  "https://github.com/tpope/vim-fugitive",
+  "https://github.com/mfussenegger/nvim-dap",
+  "https://github.com/igorlfs/nvim-dap-view",
+  "https://github.com/mfussenegger/nvim-lint",
+  "https://github.com/nmac427/guess-indent.nvim",
+  "https://github.com/AvengeMedia/base46",
 })
 
-require("oil").setup()
-require("mini.diff").setup()
+vim.cmd("packadd nohlsearch")
+vim.cmd("packadd nvim.undotree")
+vim.cmd("packadd nvim.difftool")
+
 require("mini.bufremove").setup()
 require("mini.cmdline").setup()
+require("mini.completion").setup()
+require("mini.diff").setup()
+require("mini.files").setup()
 require("mini.pick").setup {
-    window = {
-        config = {
-            width = vim.o.columns
-        }
+  window = {
+    config = {
+      width = vim.o.columns
     }
+  }
 }
 require("mini.extra").setup()
 require('guess-indent').setup()
 
 require("mason").setup({
-    registries = {
-        "github:mason-org/mason-registry",
-        "github:Crashdummyy/mason-registry", -- for roslyn
-    },
+  registries = {
+    "github:mason-org/mason-registry",
+  },
 })
 local mason_packages = {
-    "html-lsp",
-    "lua-language-server",
-    "roslyn",
-    "vtsls",
-    "copilot-language-server",
+  "html-lsp",
+  "lua-language-server",
+  "vtsls",
 }
 local to_install = {}
 for _, package in ipairs(mason_packages) do
-    if not require("mason-registry").is_installed(package) then
-        table.insert(to_install, package)
-    end
+  if not require("mason-registry").is_installed(package) then
+    table.insert(to_install, package)
+  end
 end
 if #to_install > 0 then
-    require("mason.api.command").MasonInstall(to_install)
+  require("mason.api.command").MasonInstall(to_install)
 end
 
 local ts = require("nvim-treesitter")
-ts.install({
-    "bash",
-    "c",
-    "c_sharp",
-    "css",
-    "dockerfile",
-    "glsl",
-    "hlsl",
-    "html",
-    "javascript",
-    "json",
-    "lua",
-    "markdown",
-    "python",
-    "razor",
-    "rust",
-    "typescript",
-    "vim",
-    "xml",
-    "yaml",
+local parsers = {
+  "bash",
+  "c",
+  "c_sharp",
+  "css",
+  "dart",
+  "diff",
+  "dockerfile",
+  "glsl",
+  "gitignore",
+  "gitcommit",
+  "hlsl",
+  "html",
+  "javascript",
+  "json",
+  "lua",
+  "markdown",
+  "python",
+  "razor",
+  "rust",
+  "tsx",
+  "typescript",
+  "vim",
+  "vimdoc",
+  "xml",
+  "yaml",
+}
+ts.install(parsers)
+
+local patterns = {}
+for _, parser in ipairs(parsers) do
+  local parser_patterns = vim.treesitter.language.get_filetypes(parser)
+  for _, pp in pairs(parser_patterns) do
+    table.insert(patterns, pp)
+  end
+end
+
+vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.wo.foldmethod = 'expr'
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = patterns,
+  callback = function()
+    vim.treesitter.start()
+  end,
 })
 
 -- Don't copy the replaced text after pasting in visual mode
@@ -105,124 +136,87 @@ vim.keymap.set("v", "p", '"_dP')
 vim.keymap.set({ "n", "v", "x" }, "<leader>y", '"+y')
 vim.keymap.set({ "n", "v", "x" }, "<leader>d", '"+d')
 
-vim.keymap.set("n", "<leader>n", ":noh<CR>", { desc = "No Highlight" })
+vim.keymap.set("n", "<leader>u", require("undotree").open)
 
-vim.keymap.set("n", "<leader>e", ":Oil<CR>", { desc = "File Explorer" })
+vim.keymap.set("n", "<leader>e", ":lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>", { desc = "File Explorer" })
+vim.keymap.set("n", "<leader>E", ":lua MiniFiles.open()<CR>", { desc = "File Explorer (Root)" })
 
-vim.keymap.set("n", "<leader>ba", ":b#<CR>")
-vim.keymap.set("n", "<leader>bd", ":lua MiniBufremove.delete()<CR>")
-vim.keymap.set("n", "<leader>bD", ":lua MiniBufremove.delete(0, true)<CR>")
-vim.keymap.set("n", "<leader>bs", function()
-    vim.api.nvim_win_set_buf(0, vim.api.nvim_create_buf(true, true))
-end)
-vim.keymap.set("n", "<leader>bw", ":lua MiniBufremove.wipeout()<CR>")
-vim.keymap.set("n", "<leader>bW", ":lua MiniBufremove.wipeout(0, true)<CR>")
-vim.keymap.set("n", "<leader>bb", ":Pick buffers<CR>")
+vim.keymap.set("n", "<leader>q", ":lua MiniBufremove.delete()<CR>")
+vim.keymap.set("n", "<leader>b", ":Pick buffers<CR>")
+
 vim.keymap.set("n", "<leader>sf", ":Pick files<CR>")
 vim.keymap.set("n", "<leader>sg", ":Pick grep_live<CR>")
 vim.keymap.set("n", "<leader>sr", ":Pick resume<CR>")
 
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
-    group = vim.api.nvim_create_augroup("UserYankHighlight", { clear = true }),
-    callback = function()
-        vim.highlight.on_yank()
-    end,
+  group = vim.api.nvim_create_augroup("UserYankHighlight", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })
 
-vim.lsp.enable({ "lua_ls", "vtsls", "copilot" })
+vim.lsp.enable({ "lua_ls", "vtsls" })
+require('lint').linters_by_ft = {
+  javascript = { 'eslint_d' },
+  typescript = { 'eslint_d' },
+  javascriptreact = { 'eslint_d' },
+  typescriptreact = { 'eslint_d' },
+}
 
--- Detect C# project type (Unity/.NET)
-local csharp_project_type = (function()
-    local files = vim.fn.readdir(vim.fn.getcwd())
-    local is_dotnet = false
-    local is_unity = false
-
-    for _, file in ipairs(files) do
-        if file == "Assets" or file == "ProjectSettings" then
-            is_unity = true
-            break
-        elseif file:match("%.sln$") or file:match("%.csproj$") then
-            is_dotnet = true
-        end
-    end
-
-    return is_unity and "unity" or (is_dotnet and "dotnet" or nil)
-end)()
-
-if csharp_project_type == "dotnet" then
-    vim.pack.add({
-        "https://github.com/GustavEikaas/easy-dotnet.nvim",
-    })
-    require("easy-dotnet").setup({
-        diagnostics = {
-            setqflist = true,
+require("easy-dotnet").setup({
+  lsp = {
+    config = {
+      settings = {
+        ["csharp|background_analysis"] = {
+          dotnet_analyzer_diagnostics_scope = "openFiles",
+          dotnet_compiler_diagnostics_scope = "openFiles"
         },
-        debugger = {
-            apply_value_converters = true,
-            auto_register_dap = true,
+        ["csharp|code_lens"] = {
+          dotnet_enable_references_code_lens = false,
         },
-    })
-elseif csharp_project_type == "unity" then
-    vim.pack.add({
-        "https://github.com/seblyng/roslyn.nvim",
-    })
-    require('roslyn').setup({
-        choose_target = function(target)
-            return vim.iter(target):find(function(item)
-                if item:match("%.sln$") then
-                    return item
-                end
-            end)
-        end
-    })
-end
+      },
+    },
+  },
+})
 
 vim.api.nvim_create_autocmd('LspAttach', {
-    callback = function(args)
-        local bufnr = args.buf
-        local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+  callback = function(args)
+    local bufnr = args.buf
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
 
-        if client:supports_method(vim.lsp.protocol.Methods.textDocument_inlineCompletion, bufnr) then
-            vim.lsp.inline_completion.enable(true, { bufnr = bufnr })
-
-            vim.keymap.set('i', '<M-l>', vim.lsp.inline_completion.get, { buffer = bufnr })
-            vim.keymap.set('i', '<M-]>', vim.lsp.inline_completion.select, { buffer = bufnr })
-        end
-
-        vim.keymap.set('n', 'gO', ':Pick lsp scope="document_symbol"<CR>', { buffer = bufnr })
+    if client:supports_method('textDocument/foldingRange') then
+      local win = vim.api.nvim_get_current_win()
+      vim.wo[win][0].foldexpr = 'v:lua.vim.lsp.foldexpr()'
     end
+
+    vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+
+    vim.keymap.set('n', 'gO', ':Pick lsp scope="document_symbol"<CR>', { buffer = bufnr })
+  end
 })
 
 -- Debugger keymaps
 local dap = require("dap")
-vim.keymap.set("n", "<F5>", dap.continue, { desc = "Start/Continue Debugging" })
-vim.keymap.set("n", "<F6>", dap.pause, { desc = "Pause Debugging" })
-vim.keymap.set("n", "<F17>", dap.terminate, { desc = "Stop Debugging" })   -- Shift+F5
-vim.keymap.set("n", "<F41>", dap.run_last, { desc = "Restart Debugging" }) -- Ctrl+Shift+F5
-vim.keymap.set("n", "<F10>", dap.step_over, { desc = "Step Over" })
-vim.keymap.set("n", "<F11>", dap.step_into, { desc = "Step Into" })
-vim.keymap.set("n", "<F23>", dap.step_out, { desc = "Step Out" })           -- Shift+F11
-vim.keymap.set("n", "<F35>", dap.run_to_cursor, { desc = "Run to Cursor" }) -- Ctrl+F11
-vim.keymap.set("n", "<F9>", dap.toggle_breakpoint, { desc = "Toggle Breakpoint" })
-vim.keymap.set("n", "<F21>", function()                                     -- Shift+F9
-    dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
-end, { desc = "Set Conditional Breakpoint" })
-vim.keymap.set("n", "K", function()
-    if not dap.session() then
-        vim.lsp.buf.hover()
-        return
-    end
-    require("dap.ui.widgets").hover()
-end, { desc = "Inspect Expression" })
+vim.keymap.set("n", "<F5>", dap.continue)
+vim.keymap.set("n", "<F6>", dap.pause)
+vim.keymap.set("n", "<S-F5>", dap.terminate)
+vim.keymap.set("n", "<C-S-F5>", dap.run_last)
+vim.keymap.set("n", "<F10>", dap.step_over)
+vim.keymap.set("n", "<F11>", dap.step_into)
+vim.keymap.set("n", "<S-F11>", dap.step_out)
+vim.keymap.set("n", "<C-F11>", dap.run_to_cursor)
+vim.keymap.set("n", "<F9>", dap.toggle_breakpoint)
+vim.keymap.set("n", "<S-F9>", function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) end)
+vim.keymap.set("n", "<leader>k", require("dap.ui.widgets").hover)
 
 require("dap-view").setup({
-    winbar = {
-        default_section = "repl",
-        controls = {
-            enabled = true,
-        }
+  winbar = {
+    default_section = "repl",
+    controls = {
+      enabled = true,
     }
+  }
 })
 vim.keymap.set("n", "<C-S-Y>", require("dap-view").toggle, { desc = "Toggle Debug View" })
 
