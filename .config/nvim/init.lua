@@ -14,6 +14,7 @@ vim.opt.autoindent = true
 vim.opt.completeopt = "menu,noinsert,popup,fuzzy"
 vim.opt.completeitemalign = "kind,abbr,menu"
 vim.opt.foldenable = false
+vim.opt.showmode = false
 
 -- Don't continue comments on new lines
 vim.cmd('autocmd BufEnter * set formatoptions-=cro')
@@ -31,14 +32,12 @@ vim.pack.add({
   "https://github.com/nvim-mini/mini.files",
   "https://github.com/nvim-mini/mini.pick",
   "https://github.com/neovim/nvim-lspconfig",
-  "https://github.com/mason-org/mason.nvim",
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/GustavEikaas/easy-dotnet.nvim",
   "https://github.com/yioneko/nvim-vtsls",
   "https://github.com/tpope/vim-fugitive",
   "https://github.com/mfussenegger/nvim-dap",
   "https://github.com/igorlfs/nvim-dap-view",
-  "https://github.com/mfussenegger/nvim-lint",
   "https://github.com/nmac427/guess-indent.nvim",
   "https://github.com/AvengeMedia/base46",
 })
@@ -61,26 +60,6 @@ require("mini.pick").setup {
 }
 require("mini.extra").setup()
 require('guess-indent').setup()
-
-require("mason").setup({
-  registries = {
-    "github:mason-org/mason-registry",
-  },
-})
-local mason_packages = {
-  "html-lsp",
-  "lua-language-server",
-  "vtsls",
-}
-local to_install = {}
-for _, package in ipairs(mason_packages) do
-  if not require("mason-registry").is_installed(package) then
-    table.insert(to_install, package)
-  end
-end
-if #to_install > 0 then
-  require("mason.api.command").MasonInstall(to_install)
-end
 
 local ts = require("nvim-treesitter")
 local parsers = {
@@ -157,20 +136,25 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.lsp.enable({ "lua_ls", "vtsls" })
-require('lint').linters_by_ft = {
-  javascript = { 'eslint_d' },
-  typescript = { 'eslint_d' },
-  javascriptreact = { 'eslint_d' },
-  typescriptreact = { 'eslint_d' },
-}
 
 require("easy-dotnet").setup({
+  background_scanning = false,
   lsp = {
+    preload_roslyn = false,
     config = {
       settings = {
         ["csharp|background_analysis"] = {
-          dotnet_analyzer_diagnostics_scope = "openFiles",
           dotnet_compiler_diagnostics_scope = "openFiles"
+        },
+        ["csharp|inlay_hints"] = {
+          csharp_enable_inlay_hints_for_implicit_object_creation = true,
+          csharp_enable_inlay_hints_for_implicit_variable_types = true,
+          csharp_enable_inlay_hints_for_lambda_parameter_types = true,
+          csharp_enable_inlay_hints_for_types = true,
+          dotnet_enable_inlay_hints_for_indexer_parameters = true,
+          dotnet_enable_inlay_hints_for_literal_parameters = true,
+          dotnet_enable_inlay_hints_for_object_creation_parameters = true,
+          dotnet_enable_inlay_hints_for_parameters = true,
         },
         ["csharp|code_lens"] = {
           dotnet_enable_references_code_lens = false,
@@ -192,7 +176,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 
-    vim.keymap.set('n', 'gO', ':Pick lsp scope="document_symbol"<CR>', { buffer = bufnr })
+    vim.keymap.set('n', 'gO', ':Pick lsp scope="document_symbol"<CR>', { buffer = 0 })
+    vim.keymap.set('n', 'gr/', ':Pick lsp scope="workspace_symbol"<CR>', { buffer = 0 })
+
+    vim.keymap.set('n', 'gd', ':lua vim.lsp.buf.definition<CR>', { buffer = 0 })
+
+    vim.keymap.set('n', 'grq', function() vim.diagnostic.setqflist() end, { buffer = 0 })
+    vim.keymap.set('n', 'gK', function() vim.diagnostic.open_float() end, { buffer = 0 })
   end
 })
 
@@ -208,7 +198,13 @@ vim.keymap.set("n", "<S-F11>", dap.step_out)
 vim.keymap.set("n", "<C-F11>", dap.run_to_cursor)
 vim.keymap.set("n", "<F9>", dap.toggle_breakpoint)
 vim.keymap.set("n", "<S-F9>", function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) end)
-vim.keymap.set("n", "<leader>k", require("dap.ui.widgets").hover)
+vim.keymap.set("n", "gk", function()
+  if dap.session() then
+    require("dap.ui.widgets").hover()
+  else
+    vim.cmd.normal({ "gk", bang = true })
+  end
+end)
 
 require("dap-view").setup({
   winbar = {
