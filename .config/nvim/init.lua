@@ -217,3 +217,4 @@ require("dap-view").setup({
 vim.keymap.set("n", "<C-S-Y>", require("dap-view").toggle, { desc = "Toggle Debug View" })
 
 vim.cmd "colorscheme dms"
+vim.cmd "hi! Normal guibg=NONE"
