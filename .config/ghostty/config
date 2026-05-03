@@ -43,6 +43,7 @@
 # resize-overlay-duration = 4s 200ms
 font-family = monospaced
 font-size = 12
+font-feature = "-calt, -liga, -dlig"
 
 adjust-cell-height = 20%
 adjust-cursor-height = 40%
@@ -53,5 +54,8 @@ shell-integration-features= ssh-env,ssh-terminfo
 
 window-inherit-working-directory = false
 tab-inherit-working-directory = true
+
+background-opacity = 0.8
+background-blur = true
 
 theme = dankcolors
