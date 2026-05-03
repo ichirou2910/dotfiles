@@ -15,3 +15,6 @@ export PATH="$PATH:/opt/flutter/bin"
 
 export MANPAGER="nvim +Man!"
 . "$HOME/.cargo/env"
+
+export XCURSOR_THEME=breeze_cursors
+export XCURSOR_SIZE=24

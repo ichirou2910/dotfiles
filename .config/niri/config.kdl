@@ -54,13 +54,6 @@ layout {
     }
 }
 
-blur {
-    passes 3
-    offset 3.0
-    noise 0.02
-    saturation 1.5
-}
-
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "valent" "--gapplication-service"
 spawn-at-startup "vicinae" "server"
@@ -77,6 +70,7 @@ screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d %H-%M-%S.png"
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
+    draw-border-with-background false
 }
 
 window-rule {
@@ -111,8 +105,8 @@ binds {
     Mod+Semicolon repeat=false { spawn "vicinae" "vicinae://extensions/vicinae/core/search-emojis"; }
     Ctrl+Semicolon repeat=false { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
 
-    Mod+E hotkey-overlay-title="Open File Manager" { spawn "nautilus"; }
-    Ctrl+Alt+T hotkey-overlay-title="Open Terminal: kitty" { spawn "kitty"; }
+    Mod+E hotkey-overlay-title="Open File Manager" { spawn "dolphin"; }
+    Ctrl+Alt+T hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
